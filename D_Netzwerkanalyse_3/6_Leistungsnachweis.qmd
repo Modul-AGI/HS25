@@ -1,0 +1,9 @@
+# Leistungsnachweis
+
+Um den Leistungsnachweis für Netzwerkanalyse zu erbringen, müsst ihr die Übungen aus @sec-netzwerk-iii-entsorgung, @sec-netzwerk-iii-oev, @sec-netzwerk-iii-zentralitaet und @sec-netzwerk-multikriterien, ausführen und dokumentieren (maximal zwei A4-Seiten).
+
+- Abgeben müsst Ihr ein PDF Dokument mit Eurem Lösungsansatz der Multikriterien-Analyse (@sec-netzwerk-multikriterien) inkl. einer kurzen Beschreibung (ca. 400 - 600 Wörter), wie Ihr hier vorgegangen seid.
+- Beschreibt vor allem auch, was für ein Zentralitätsmass Ihr für die Teilfrage "Durchfahrtsstrasse" gewählt habt. Begründet Eure Wahl durch einen konzeptionellen Vergleich mit den beiden anderen Zentralitätsmassen.
+- Für den Leistungsnachweis erwarten wir, dass Ihr die Kriterien (ÖV, Abfall, Durchfahrtsstrasse) unterschiedlich gewichtet und die Wahl der Gewichte erklärt.
+- Achtet darauf, dass Eure Karte die nötigen Elemente enthält (Datenherkunft, Datum, Legende usw.).
+- Abgabe erfolgt via Moodle

@@ -1,0 +1,53 @@
+# Übung Story Map
+
+Story Maps vermitteln in interaktiver Form Informationen zu einem Ort, Ereignis, Problem, Trend oder Muster in einem geographischen Kontext. Textliche Inhalte können mit Fotos, Videos, Audiodateien und interaktiven Karten kombiniert werden.
+
+Für diese Übung werden keine Daten zur Verfügung gestellt. Du kannst eine Story Map basierend auf einem in diesem Modul behandelten Themenbereich und deren vorhandenen Daten aufbauen – oder alternativ – die Grundlage für die Story Map (eine mögliche Dokumentationsart) Deines Semesterprojekts entwerfen. Die Story Map erstellst Du auf dem ZHAW ArcGIS Online Portal. 
+
+## Übung 1: Story Map im ZHAW ArcGIS Online Portal erstellen
+
+Der einfachste Weg eine Story Map zu erstellen, geht am schnellsten via ZHAW ArcGIS Online Oberfläche im Menü «Inhalt». Am besten erstellst Du vorgängig einen eigenen Ordner, in dem alle Inhalte der Story Map abgelegt sind.
+
+1. Melde Dich mit Deinen persönlichen Nutzerdaten auf dem ArcGIS Online Organisationskonto der ZHAW an: https://zhaw.maps.arcgis.com
+
+2. Wechsle von der Startseite in das Register Inhalt. Erstelle bei Bedarf einen neuen Ordner für die Story Map (via Symbol «Neuen Ordner erstellen»).
+
+3. Gehe auf «App Erstellen».
+
+    ![](figures/story_map_1.PNG)
+
+    Wähle die Option «StoryMaps»
+
+    ![](figures/story_map_2.PNG)
+
+4. Über das Hilfemenü (oben rechts) hast Du Zugriff auf verschieden Links, unter denen Du Hilfe zur Erstellung einer Story Map erhältst.
+
+    ![](figures/story_map_3.PNG)
+
+    Öffne die Links jeweils in einem neuen Browser-Tab.
+
+    - Überblick: Allgemein Information zu Story Maps.
+
+    - Dokumentation: Lese was eine Story Map ist und informiere Dich, wie Du eine erste Story erstellen und veröffentlichen kannst.
+
+        ![](figures/story_map_4.PNG)
+
+    - Ressourcen: Hier findest Du Tipps, was Du bei der Erstellung von Story Maps beachten musst damit diese aussagekräftig und fesselnd sind. Beachte hier die Story «Nine steps to great storytelling» (https://storymaps.arcgis.com/stories/429bc4eed5f145109e603c9711a33407). Über folgendes Tutorial wird Dir vermittelt, wie Du deine Story erstellen kannst: [Tutorial](https://storymaps.arcgis.com/stories/cea22a609a1d4cccb8d54c650b595bc4)
+
+    - FAQ: Hier findest Du Antworten zu häufig gestellten Fragen.
+
+5. Erstelle nun den ersten Entwurf einer Story Map. Über die Option «Entwerfen» kannst Du das Erscheinungsbild Deiner Story anpassen. 
+
+    ![](figures/story_map_5.PNG)
+
+    Über die Option «Vorschau» kannst Du dir eine Vorschau der erarbeiteten Story anzeigen lassen (am besten in einem neuen Browser-Tab öffnen).
+
+    ![](figures/story_map_6.PNG)
+
+6. Die Option «Veröffentlichen» ermöglicht Dir, die Story zu veröffentlichen und die Freigabeeinstellungen anzupassen.
+
+    ![](figures/story_map_7.PNG)
+
+7. Erstelle nun Deine Story Map, fülle die Story mit Inhalten (Text, Bilder, Grafiken, Web Maps, Videos, Links etc.). Nutze selbständig die zur Verfügung stehenden Hilfe-Optionen (vorangehende Seite). Beachte: Bevor Du eine Web Map in eine Story Map integrieren kannst, muss diese vorgängig erstellt werden. Dabei müssen alle Inhalte auf die gleiche Art und Weise freigegeben werden.
+
+8. Arbeite selbständig und sei kreativ. Probiere verschiedene Dinge aus. Beachte jeweils die Freigabeeigenschaften.

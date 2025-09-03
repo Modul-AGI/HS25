@@ -1,0 +1,6 @@
+# Willkommen! {.unnumbered .unlisted}
+
+Willkommen im Kurs *[Angewandte Geoinformatik](https://bsc-ui.studienplaner.lsfm.zhaw.ch/module/angewandte-geoinformatik)* an der Zürcher Hochschule für Angewandte Wissenschaften (ZHAW). Wir nutzen diese Plattform (modul-agi.github.io) um euch Zugriff auf unsere Übungsunterlagen und Theorieinputs zu gewährleisten. 
+
+Der gesamte Quellcode um dieses Buch zu erstellen ist in dem folgenden github-repo verfügbar: [github.com/Modul-AGI](https://github.com/Modul-AGI/).
+

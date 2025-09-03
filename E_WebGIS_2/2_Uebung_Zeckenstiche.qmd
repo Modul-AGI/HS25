@@ -1,0 +1,327 @@
+---
+echo: false                      # set to true to show solution
+code-fold: false                 # set to true to show solution
+code-summary: "Musterlösung"    
+---
+
+# Übung Visualisierung Zeckenstiche
+
+In dieser Übung wollen wir mit unseren originalen und simulierten Zeckenstichen aus dem Block Programmieren eine interaktive Karte erstellen.
+Zudem werdet ihr weitere Tools und Tipps erhalten, wie ihr euren Code aufwerten und zum Schluss als HTML darstellen könnt.
+
+## Übung 1: Vorbereitung
+
+1. Bitte ladet zuerst die Übungsdaten [hier](https://moodle.zhaw.ch/mod/resource/view.php?id=1370500) runter und entpackt diese.
+
+2. Kreiert eine neue Python-Environment und installiert die für diese Übung benötigten Packages via Terminal gemäss @sec-conda-env
+
+    ```bash
+    conda create --name geopython3
+    conda activate geopython3
+    conda install -c conda-forge geopandas folium matplotlib mapclassify jupiterlab quarto
+    ```
+
+3. Startet nun Positron via Terminal gemäss @sec-conda-env
+
+4. Kreiert ein neues Quarto-File (New > New File... > Quarto Document) und speichert es in eurem Arbeitsordner ab.
+
+### Aufbau eines Quarto Dokumentes
+
+Ein Quarto Dokument hat grob drei Elemente: (1) Den Header bzw. die Metadaten, (2) die Code Chunks und (3) die Textbereiche 
+
+1. Der Header wird beim Erstellen des Dokumentes bereits erstellt. Beim `format` könnt ihr definieren, wie am Ende eurer Dokument *gerendert* werden soll. Möglich sind u.a. HTML, PDF und MS Word. Wir belassen für heute das vordefinierte Format `html`, weitere Anpassungen folgen weiter unten.
+
+    ```bash
+    ---
+    title: "Untitled"
+    format: html
+    ---
+    ```
+
+2. Der Code wird in sogenannten *Code Chunks* geschrieben. Eine neue Zelle fügt ihr ein, indem ihr `Ctrl+Shift+I` drückt. Falls in der eckigen Klammer nicht *python* stehen sollte, müsst ihr das in diesem Fall anpassen.
+
+3. Zwischen die Code Chunks könnt ihr euren Text schreiben. Die Basics, wie ihr euren Text formatieren könnt, findet ihr [hier](https://quarto.org/docs/authoring/markdown-basics.html)
+
+
+Ein Auschnitt des Quarto Dokumentes für die Übungen von Programmieren I hat z.B. so ausgesehen: 
+![](figures/quarto.png)
+
+### Packages und Daten laden
+
+Importiert nun als erstes die zwei Packages `geopandas` und `folium`. Schreibt den Code in einer Code Cell.
+
+```{python}
+import geopandas as gpd
+import folium
+```
+
+Ladet zudem die drei Datensätze `wald.gpkg`, `zeckenstiche_original.gpkg` und `zeckenstiche_simuliert.gpkg` mit der `read_file` Funktion von Geopandas.
+
+```{python}
+zeckenstiche_original_gpd = gpd.read_file("data/zeckenstiche_original.gpkg")
+zeckenstiche_sim_gpd = gpd.read_file("data/zeckenstiche_simuliert.gpkg")
+wald = gpd.read_file("data/wald.gpkg")
+```
+
+## Übung 2: Base Map
+
+Nun können wir unsere Karte bauen. Zuerst müssen wir eine Basiskarte erstellen, zu welcher wir dann die weiteren Layer hinzufügen können. Dazu nutzen wir nun Folium. Als Mittelpunkt der Karte wählen wir die WGS84 Koordinaten der Stadt Zürich (Zurich latitude: 47.36667, longitude: 8.55) aus.
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+# Zurich latitude longitude: 47.36667, 8.55
+map = folium.Map(location=[47.36667, 8.55], zoom_start = 13, tiles = "cartodbpositron")
+```
+
+Ihr könnt mit den Tiles und dem Zoom Level experimentieren. Information zu den Tiles findet ihr [hier](https://python-visualization.github.io/folium/latest/user_guide/raster_layers/tiles.html).
+
+## Übung 3: Wald Layer hinzufügen
+
+Nun wollen wir die Waldflächen als unseren ersten Layer hinzufügen. Ihr habt die .explore() Funktion bereits kennengelernt. Sie verfügt über diverse interessante Attribute, welche wir nun benutzen wollen.
+
+Da unser Wald-Datensatz aus zwei Zeilen mit Wald und Nicht-Wald besteht, müssen wir die Waldflächen zuerst noch rausfiltern. 
+
+Folium kann nur das weltweite CRS WGS84 (EPSG:4326) verarbeiten und da der Geodataframe Wald das Schweizer CRS CH1903+ / LV95 (EPSG:2056) verwendet, müssen wir dieses mittels `to_crs()` transformieren, bevor wir ihn visualisieren können.
+
+Tipp: Wenn ihr am Schluss des Commands ein ; hinzufügt, wird kein Output generiert. Somit wird nicht für jeden Layer den wir hinzufügen, eine Karte erstellt.
+
+```{python}
+#| echo: true
+#| output: false
+#| code-fold: false
+
+# Wald zur Karte hinzufügen
+is_wald = wald[wald["Wald_text"] == "ja"] # Selektieren nur den Wald
+is_wald.to_crs(4326).explore(
+    m = map,           # Fügt diesen Layer der Map map hinzu
+    color = "green",   # Der Layer wird grün dargestellt
+    tooltip = False,   # Es werden keine Daten angezeigt, wenn man über ein Objekt hovered.
+    highlight = False, # Das Objekt wird nicht hervorgehoben, wenn man darüber hovered.
+    name = "Wald"      # Der Name des Layers
+);
+```
+
+## Übung 4: Original und simulierter Zeckenstich Layer hinzufügen
+
+Nun wollen wir neben dem Wald Layer (Polygon) den originalen Zeckenstiche Layer (Punkte) hinzufügen. Kopiere dazu den unteren Code. 
+
+```{python}
+#| echo: true
+#| output: false
+#| code-fold: false
+
+# Original Zeckenstiche zur Karte hinzufügen
+zeckenstiche_original_gpd.to_crs(4326).explore(
+    m = map,                                     # Fügt diesen Layer der Map map hinzu
+    color = "red",                               # Der Layer wird rot dargestellt
+    marker_kwds = dict(radius = 1, fill = True), # Optionen für das Aussehen der Punkte
+    tooltip = "ID",                              # Beim Hovern über das Objekt wird die ID dargestellt
+    name = "Original Zeckenstiche"               # Der Name des Layers
+);
+```
+
+Nun wollen wir die simulierten Zeckenstiche darstellen. Als Vorlage könnt ihr den Code von oben kopieren. Erweitere die Funktion `explore` um folgende Logik:
+
+- Gerne würden wir die Spalte "Radius" mit der Farbvariation viridis visualisieren. Nutze hierfür die Attribute `column` und `cmap`.
+- Zudem soll die Legende des Layers dargestellt werden. Zudem wollen wir keine Colorbar als Legende haben. Nutze dafür die Optionen der Legende `legend_kwds = dict(colorbar = False)`. 
+- In den Tooltips sollen neben der ID noch der Radius und der Run dargestellt werden. 
+- Nenne den Layer "Simulation Zeckenstiche".
+
+Weitere Informationen zur `explore` Funktion findet ihr [hier](https://geopandas.org/en/stable/docs/reference/api/geopandas.GeoDataFrame.explore.html).
+
+```{python}
+#| output: false
+
+# Visualisieren der Simulierten Zeckenstiche
+zeckenstiche_sim_gpd.to_crs(4326).explore(
+    m = map,
+    column = "Radius",                              # Die Spalte Radius wird dargestellt 
+    cmap = "viridis",                               # Einfärbung der Werte anhand des column Wert (Radius)
+    legend = True,                                  # Legende soll angezeigt werden
+    legend_kwds = dict(colorbar = False),           # Optionen der Legende, die Colorbar soll nicht angezeigt werden
+    marker_kwds = dict(radius = 1, fill = True),    # Optionen für das Aussehen der Punkte
+    tooltip = ["ID", "Radius", "Run"],              # Beim Hovern über das Objekt wird die ID, Radius, Run dargestellt 
+    name = "Simulation Zeckenstiche"                # Der Name des Layers
+);
+```
+
+## Übung 5: Layer Control hinzufügen
+
+Zum Abschluss wollen wir noch ein `Layer Control` hinzufügen, damit wir die verschiedenen Layer ein- und ausblenden können.
+Schaut dafür im [User Guide von Folium](https://python-visualization.github.io/folium/latest/user_guide.html) und sucht nach der Layer Control Funktion und versucht diese eurer `map` hinzuzufügen. Zum Schluss kannst du die `map` aufrufen, damit diese Dargestellt wird. Das finale Produkt sollte wie folgt aussehen:
+
+```{python}
+folium.LayerControl().add_to(map);
+```
+
+```{python}
+map
+```
+
+Nun ist unsere Map fertig. Inspiziert diese und spielt mit den `Radien` und `Runs` herum und versucht auch die Grössen und Farben der Points anzupassen, bis Ihr mit dem Resultat zufrieden seid.
+
+## Übung 6: Quarto Dokument verschönern
+
+#### Vorbereiten von Quarto und Darstellung (Preview) unseres Dokumentes
+
+Wir erweiteren jetzt unseren Header mit den Metadaten. Dies bewirkt, dass euer Quarto Output neben einem Titel auch einen Autor hat. Zudem sagen wir Quarto, dass wir mit Python3 arbeiten. Für unseren Ausgabeformat, welches HTML sein soll, definieren wir folgende globale Optionen:
+
+- `embed-resources: true`:  Generiert ein einzelnes HTML File.
+- `code-fold: true`: Alle Code Cells werden eingeklappt.
+
+```{.default}
+---
+title: Visualisierung Zeckenstiche
+author: Vorname Nachname
+jupyter: python3
+format:
+    html:
+        embed-resources: true
+        code-fold: true
+---
+```
+Quarto gibt uns zudem die Möglichkeit, unser File als Vorschau darzustellen. Wechselt hierfür zum Terminal in Positron. Mit dem Command `quarto preview NameQuartoDokument.qmd` erhaltet ihr ein Preview in eurem Browser. Achtet darauf, dass im Terminal *geopython3* als Interpreter steht.
+
+#### Cell Options
+
+Cell Options können dazu benutzt werden, um das Verhalten einer Cell zu verändern. Dabei werden diese Optionen mittels des Vorschubs `#|` am Anfang der Cell eingefügt. Wenn ihr eine Option für alle Cells haben wollt, könnt ihr diese als globale Optionen in den Metadaten von Quarto setzen (analog zu `code-fold: true`).
+
+```{.default}
+#| echo: false
+#| code-summary: This is a Title for a collapsed Code Block
+
+Python Code...
+```
+
+Die häufigsten Options sind:
+
+- `eval`: Soll die Code Cell ausgeführt werden.
+- `echo`: Soll der Code der Cell angezeigt werden.
+- `output`: Soll der Code Output dargestellt werden.
+- `code-fold`: Soll die Code Cell eingeklappt werden.
+- `code-summary`: Wenn `code-fold` auf `true` gesetzt ist kann ein Titel für die Code Cell gesetzt werden.
+
+Es gibt aber noch viele weitere Möglichkeiten (siehe [hier](https://quarto.org/docs/reference/cells/cells-jupyter.html)). 
+
+#### Page Layout
+
+Mit Quarto könnt ihr euer Webseiten-Layout relativ einfach anpassen. Ihr könnt zum Beispiel mit folgendem Code ein Grid erstellen, welcher aus zwei Spalten besteht. Eine Spalte ist 9 und die zweite 3 breit. Die Gesamtbreite ist immer 12.
+
+```{.default}
+::: {.grid}
+
+::: {.g-col-9}
+Text 1
+:::
+
+::: {.g-col-3}
+Text 2
+:::
+
+:::
+```
+
+Weitere Möglichkeiten findet ihr [hier](https://quarto.org/docs/output-formats/page-layout.html).
+
+#### Tabellen
+
+Eine Tabelle muss nach folgender Markdown Syntax erstellt werden (siehe [Quarto Tables](https://quarto.org/docs/authoring/tables.html)):
+
+```{.default}
+|Name |Gender|Age  |Origin | 
+|-----|:-----|:---:|:-----:|
+|Jack |Male  |23   |USA    |
+|Susan|Female|22   |Canada |
+
+: Name der Tabelle {#tbl-names}
+```
+
+- Die erste Zeile ist die Tabellenüberschrift
+- Die zweite Zeile beinhaltet Bindestriche "-" und optionalen Doppelpunkten ":", um den Text in den Spalten auszurichten.
+    - `:---` für die linke Ausrichtung
+    - `:---:` für die mittlere Ausrichtung
+    - `---:` für die rechte Ausrichtung
+- Die weiteren Zeilen beinhalten der Tabelleninhalt. 
+- Mit dem : unter der Tabelle kannst du den Namen der Tabelle definieren. Mit `{#tbl-???}` kannst du den Namen für einen Querverweise im Text erstellen. Dieser kann dann mittels `@tbl-???` im Text aufrufen.
+
+Eine praktische Hilfe für das Erstellen einer Tabelle ist der [Tablesgenerator](https://www.tablesgenerator.com/).
+
+#### Bilder
+
+Ein Bild kann ebenfalls via Markdown Syntax hinzugefügt werden. Zuerst folgt die Caption des Bildes, gefolgt vom Bild selbst. Mit `{#fig-???}` kannst du einen Querverweis für das Bild erstellen. Gleich wie bei der Tabelle kannst du ihn im Text mittels `@fig-???` aufrufen.
+
+```{.default}
+![Caption](../images/test.png){#fig-???}
+```
+
+Weitere Information findet ihr auf [Quarto](https://quarto.org/docs/authoring/figures.html).
+
+### Aufgabe 
+
+Seht euch die [Webseite](https://modul-agi.github.io/WebGIS2_Zeckenstiche/) an. Versucht nun die Struktur dieser Webseite so gut wie möglich in eurem Quarto Dokument nachzubauen. Nutzt dafür die oben beschriebenen Methoden. Das Bild findet ihr in den Übungsdaten.
+
+Benutze zudem die Cell Options, um euren Code sauber darzustellen. Nutzt dazu `echo` und `output`, um unnötige Cell Codes und Outputs nicht auszugeben. Benenne zudem alle eingeklappten Code Cells sinnvoll mittels `code-summary`. 
+
+## Übung 7: Notebook in HTML konvertieren und publizieren
+
+Damit wir nun unser Quarto Dokument publizieren können, müssen wir davon einen Output generieren.
+
+Dazu nutzen wir wieder Quarto im Terminal. Aber anstelle des `preview` Commands nutzen wir den `render` Command, sprich `quarto render NameQuartoDokument.qmd`. Da wir in den Quarto Metadaten als Format HTML angegeben haben, wird Quarto ein HTML File generieren.
+
+Erstellt nun einen neuen Ordner und kopiert euer HTML File hinein. Ändere den Namen des HTMLs auf `index.html`. Euer HTML werden wir nun kurzfristig auf Netlify publizieren. Öffnet dazu diesen [Link](https://app.netlify.com/drop) und drag und drop euren eben erstellten Ordner. Über den angezeigten Link könnt ihr nun, nachdem ihr das automatisch generierte Passwort eingegeben habt, eine Stunde lang auf eure Webseite zugreifen.
+
+<!--## Übung 8: GitHub und Publizieren
+
+:::{.callout-note}
+GitHub ist eine webbasierte Plattform, die Hosting für Git-Repositories bereitstellt. Es bietet Tools für die Zusammenarbeit, Codeüberprüfung und Projektverwaltung. GitHub wird von Entwicklern weit verbreitet genutzt, um Open-Source-Projekte zu teilen, dazu beizutragen und zusammenzuarbeiten. Es bietet auch Funktionen wie die Verfolgung von Problemen (Issues) und Pull-Anfragen (Pull Requests).
+:::
+
+1. Registriert euch mit eurer privaten Email Adresse auf [GitHub](https://github.com/).
+
+2. Nun da ihr eingeloggt seid, könnt ihr euer Repository erstellen. Drücke hierfür oben rechts auf euren Avatar und wähle dann "Your repositories". Klicke anschliessend auf das grüne Symbol "New". Im neuen Fenster kannst du nun einen Namen für dein Repository definieren. Zudem kannst du die Sichtbarkeit des Repository anpassen, aber wir belassen es bei Public, damit wir dann auch das HTML File publizieren können. Schliesse das Ganze mit "Create repository" ab.
+
+    ![Repository erstellen Schritt 1](figures/github_1.PNG)
+
+    ![Repository erstellen Schritt 2](figures/github_2.PNG)
+
+3. Nun hast du ein leeres Repository. Es gibt verschiedene Möglichkeiten nun Daten in dieses Repository zu kriegen. Am einfachsten ist aber das direkte Hochladen von Files. Klicke hierfür auf "uploading an existing file" und ziehe anschliessend das Jupyter Notebook und dein daraus generiertes HTML File (`index.html`) in den Explorer. Gib eine kurze Commit Beschreibung und klicke auf "Commit changes". 
+
+    ![](figures/github_3.PNG)
+
+    ![](figures/github_4.PNG)
+
+:::{.callout-note}
+# Update existierende Files
+
+Wenn ihr nochmals Änderungen an den Files vornehmt, könnte ihr diese auf der Repository Seite über `Add File` vornehmen. Achte darauf das die Files den gleichen Namen haben, damit wird sichergestellt, dass das auf GitHub existierende File überschrieben wird.
+
+![](figures/github_11.PNG)
+:::
+
+4. Ihr seht nun eure Files im Repository. Geht nun auf Einstellungen um eure Webseite zu Publizieren. 
+
+    ![](figures/github_5.PNG)
+
+    Geht auf Pages und setzt bei Branch die Einstellungen auf `main` und `/root` und klickt auf Save. Dies bewirkt, dass GitHub nun nach einem index.html in deinem main Branch sucht und aus diesem eine Webseite macht. 
+
+    ![](figures/github_6.PNG)
+
+    Diesen Vorgang könnt ihr unter Actions finden. Sobald der orange Punkt zu einem grünen Häkchen wird, ist die Webseite fertig erstellt. 
+
+    ![](figures/github_7.PNG)
+
+    Kehr nun zurück zu Pages in den Settings. Ihr sollten nun eine URL sehen, auf welcher eure Webseite läuft.
+
+    ![](figures/github_8.PNG) 
+
+5. Zum Abschluss könnt ihr diese URL im About des Repositorys hinzufügen. Dies macht es euch einfacher auf die Webseite zuzugreifen, da ihr nicht immer den Link in den Settings suchen müsst, sondern direkt in eurem Repository angezeigt wird. 
+
+    ![](figures/github_9.PNG)
+
+    Kopiere hierfür die URL und gehe auf den Code Tab und wählt dort das Rädchen neben dem About. Im Feld Webseite könnt ihr nun die URL reinkopieren. Speichert das mit "Save Changes". Nun sieht ihr unter dem About eure Webseite.
+
+    ![](figures/github_10.PNG)
+-->

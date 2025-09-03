@@ -1,0 +1,154 @@
+# Markdown {.unnumbered}
+
+Um Änderungen an diesem Dokument machen zu können, braucht man einen kostenlosen Github Account <https://github.com/signup>. 
+
+- Kursleiter melden sich am besten bei Nils, damit er sie als "Collaborator" hinzufügen kann. 
+- Kursteilnehmer arbeiten über ein "Fork" des Repositories, siehe [diese Anleitung](https://modul-agi.github.io/GitHub-Anleitung/){target="_blank"}.
+
+Um bestehende Einträge zu verändern, navigiert ihr auf der Webseite ([modul-agi.github.io](https://modul-agi.github.io)) zum entsprechenden Eintrag und klickt dort auf den Button `Seite editieren` (ganz Rechts unter dem Inhaltsverzeichnis). Nun könnt ihr eure Änderungen im Online Editor auf Github.com vornehmen. Anders als mit Microsoft Word, arbeiten wir hier in einer "Markup" Sprache. Das heisst, der Inhalt wird gewissermassen programmiert. Beispiele findet ihr unten:
+
+### Text
+
+- Kursiv: Wörter, die mit \* umgeben werden, sind Kursiv: `*kursiv*` wird zu *kursiv*
+- Fett: Wörter die mit doppelten \* umgeben werden, sind Fett:  `**fett**` wird zu **fett**
+- Hyperlinks: Eine hyperlink wird folgenermassen erstellt: 
+  - `[ZHAW Website](https://www.zhaw.ch)` wird zu [ZHAW Website](https://www.zhaw.ch)
+  - `<https://www.zhaw.ch>` wird zu <https://www.zhaw.ch>
+- Überschriften werden mit vorangestelltem `#` erstellt
+  - Kapitel: `# Programmieren I`
+  - Unterkapitel: `## Komplexe Datentypen`
+  - Unter-Unterkapitel: `### Integer und Floats`
+  - ... usw. (bis Stufe 6)
+
+
+
+:::{.callout-note}
+Mehr zum Markdown Syntax: <https://quarto.org/docs/authoring/markdown-basics.html>
+:::
+
+
+### Querverweise
+
+Um im Text einen Querverweis auf ein Kapitel zu machen, müsst ihr diesem Zuerst eine eindeutige "ID" geben. Zum Beispiel sieht der Titel in @sec-conda folgendermassen aus:
+
+```markdown
+# Conda {#sec-conda}
+```
+
+Nun kann ich auf dieses Kapitel mit `@sec-conda` verweisen. 
+
+- `@sec-conda` wird zu 
+- @sec-conda
+
+Das Verweisen funktioniert aber nur auf Nummerierte Kapitel und deren Unterkapitel. Wichtig ist auch, das die "ID" ein `sec-` vorangestellt wird. Dieses `sec-` kommuniziert Quarto, dass es sich bei der Referenz um einen Kapitelverweis handelt. Bilder werden mit `fig-` referenziert und Tabellen mit `tbl-`. Mehr dazu später, in @sec-md-tables und @sec-md-images.
+
+
+:::{.callout-note}
+Mehr zu Querverweisen: <https://quarto.org/docs/authoring/cross-references.html>
+:::
+
+
+
+### Tabellen{#sec-md-tables}
+
+Tabellen werden ebenfalls im Markdown-Syntax erstellt, und zwar folgendermassen:
+
+```markdown
+| BMI         | Nutritional status       | 
+|:------------|:-------------------------|
+| Below 18.5  | Underweight              |
+| 18.5–24.9   | Normal weight            |
+| 25.0–29.9   | Pre-obesity              |
+| 30.0–34.9   | Obesity class I          |
+| 35.0–39.9   | Obesity class II         |
+| Above 40    | Obesity class III        |
+
+: WHO Nutritional status {#tbl-beispielstabelle}
+
+``` 
+
+Diese obige Markdown tabelle wird in eine html Tabelle umgewandelt. Diese Markdown Tabelle muss nicht von hand erstellt werden, auf [tablesgenerator.com](https://www.tablesgenerator.com/markdown_tables) können bestehende Tabellen in den Markdown Syntax konvertiert werden.
+
+
+| BMI         | Nutritional status       | 
+|:------------|:-------------------------|
+| Below 18.5  | Underweight              |
+| 18.5–24.9   | Normal weight            |
+| 25.0–29.9   | Pre-obesity              |
+| 30.0–34.9   | Obesity class I          |
+| 35.0–39.9   | Obesity class II         |
+| Above 40    | Obesity class III        |
+
+: WHO Nutritional status {#tbl-beispielstabelle}
+
+Beachtet, dass man eine Tabellenüberschrift nach einen `:` anbringen kann. Nach der Tabellenüberschrift kann man einen "Key" erstellen, mit dem man diese Tabelle referenzieren kann. Der "Key" muss 
+
+- *nach* der Tabellenüberschrift angebracht werden (mit leerschlag!)
+- sich in geschweiften Klammern befinden
+- mit `#tbl-` beginnen
+
+Nun kann ich mich im Text auf diese Tabelle beziehen.
+
+- `siehe @tbl-beispielstabelle` wird zu:
+- siehe @tbl-beispielstabelle
+
+:::{.callout-note}
+Mehr zum einfügen von Tabellen: <https://quarto.org/docs/authoring/tables.html>
+:::
+
+### Bilder{#sec-md-images}
+
+Um Bilder einzufügen muss man diese erstmals auf Github hochladen. Dafür wählt man auf Github.com den "Parent Folder" des Dokuments, wo das Bild hin soll und dort dann *Add file > Upload file*. Nun kann man das Bild folgendermasen einfügen:
+
+- Nur Bild: `![](bild.jpg)`
+- Bild mit Bildunterschrift: `![Hier kommt die Bildunterschrift ](bild.jpg)`
+- Bild mit Querverweis: `![Bildunterschrift](bild.jpg){#fig-test}` (Bildunterschrift zwingend notwendig)
+
+````
+![Logo der ZHAW](zhaw_lsfm_iunr_blau.jpg){#fig-zhaw-logo}
+````
+
+Wird dann zu:
+
+![Logo der ZHAW](zhaw_lsfm_iunr_blau.jpg){#fig-zhaw-logo}
+
+Genau wie auf Tabellen verweist man folgendermasssen auf Bilder im Text:
+
+- `@fig-zhaw-logo` wird zu
+- @fig-zhaw-logo
+
+
+:::{.callout-note}
+Mehr zum einfügen von Bildern: <https://quarto.org/docs/authoring/figures.html>
+:::
+
+### Übungsziele
+
+Übungsziele werden folgendermassen dargestellt:
+
+
+
+:::{.callout-note}
+## Übungsziele
+
+- Ziel 1
+- Ziel 2
+- Ziel 3
+:::
+
+Um diese zu erstellen verwendet man folgender Syntax:
+
+````markdown
+:::{.callout-note}
+## Übungsziele
+
+- Ziel 1
+- Ziel 2
+- Ziel 3
+:::
+````
+
+
+:::{.callout-note}
+Mehr zu diesen sogenannten *Callout Blocks*: <https://quarto.org/docs/authoring/callouts.html>
+:::

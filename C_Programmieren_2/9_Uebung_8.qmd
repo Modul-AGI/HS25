@@ -1,0 +1,125 @@
+---
+output: false
+echo: false                      # set to true to show solution
+code-fold: true                  # set to true to show solution
+code-summary: "Musterlösung"    
+---
+
+# Übung 8
+
+## Übung 8.1 {#sec-ex-ifelse-gruezi2}
+
+Erstelle eine neue Funktion `gruezi3` die `gruezi` (aus @sec-functions1-ex-gruezi) um einem weiteren Parameter `uhrzeit` erweitert. Die Funktion soll vor 18 Uhr (`uhrzeit < 18`) mit "Guten Tag" und sonst mit "Guten Abend" grüssen. Um es einfach zu halten: Die Zeitangbe muss in Dezimalzahlen erfolgen (also nicht `20:15 Uhr` sondern `20.25`).
+
+```{python}
+def gruezi3(nachname, uhrzeit):
+    if(uhrzeit < 18):
+        grussform = "Tag"
+    else:
+        grussform = "Abend"
+
+    return "Guten " + grussform + " " + nachname
+```
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+# die Lösung sollte etwa folgendermasssen funktionieren:
+
+gruezi3("Guido", uhrzeit = 21)
+```
+
+## Übung 8.2
+
+Erweitere die Funktion `gruezi2` so, dass zwischen folgende Uhrzeiten berücksichtigt werden:
+
+| Uhrzeit  | Begrüssungsform | 
+|:---|:---|:---|
+| 5 bis 11 Uhr  | Guten Morgen |
+| 11 bis 18 Uhr  | Guten Tag |
+| 18 bis 22 Uhr  | Guten Abend |
+| 22 bis 5 Uhr  | Gute Nacht |
+
+: Uhrzeiten und ihre Begrüssungsformen {#tbl-begruesung}
+
+Das Problem ist etwas schwierig zu Packen weil wir die "von - bis" Uhrzeiten in eine Ja/Nein Logik überführen müssen. Überlege dir zuerst eine Ausführungslogik und schreibe danach die `if`, `elif`und `else` Operationen. Hier unser Vorschlag:
+
+
+
+```{mermaid}
+graph LR
+    A[uhrzeit < 5] 
+    A-->|yes| B[Gute Nacht]
+    A-->|no| C[Uhrzeit < 11]
+    C-->|yes| D[Guten Morgen]
+    C-->|no| E[Uhrzeit < 18]
+    E-->|yes| F[Guten Tag]
+    E-->|no| G[Uhrzeit < 22]
+    G-->|yes| H[Guten Abend]
+    G-->|no| I[Gute Nacht]
+``` 
+
+
+
+
+```{python}
+def gruezi2(nachname, anrede, uhrzeit):
+    if(uhrzeit < 5):
+        was = "Gute Nacht"
+    elif(uhrzeit < 11):
+        was = "Guten Morgen"
+    elif(uhrzeit < 18):
+        was = "Guten Tag"
+    elif(uhrzeit < 22):
+        was = "Guten Abend"
+    else:
+        was = "Gute Nacht"
+
+    return was + ", " + anrede + " "+ nachname
+```
+
+Teste die Funktion mit verschiedenen Optionen um sicherzustellen, dass sie richtig funktioniert.
+
+## Übung 8.3
+
+Erweitere die Funktion `bmi` aus @sec-ex-functions-bmi so, dass statt dem berechneten BMI der "Nutritional status" aufgrund der [WHO Klassifizierung](https://www.euro.who.int/en/health-topics/disease-prevention/nutrition/a-healthy-lifestyle/body-mass-index-bmi) ausgegeben wird:
+
+| BMI  | Nutritional status | 
+|:---|:---|
+| Below 18.5  | Underweight |
+| 18.5–24.9  | Normal weight |
+| 25.0–29.9  | Pre-obesity |
+| 30.0–34.9  | Obesity class I |
+| 35.0–39.9  | Obesity class II |
+| Above 40  | Obesity class III |
+
+: WHO Nutritional status {#tbl-who-bmi}
+
+```{python}
+def bmi2(groesse_m, gewicht_kg):
+    bmi = gewicht_kg / (groesse_m * groesse_m)
+    if(bmi < 18.5):
+        cat = "Underweight"
+    elif(bmi <= 24.9):
+        cat = "Normal weight"
+    elif(bmi <= 29.9):
+        cat = "Pre-obesity"
+    elif(bmi <= 34.9):
+        cat = "Obesity class I"
+    elif(bmi <= 39.9):
+        cat = "Obesity class II"
+    else:
+        cat = "Obesity class III"
+    return "Who classification: " + cat
+```
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+# Der Output sollte etwa folgedermassen aussehen
+bmi2(1.7, 70)
+```

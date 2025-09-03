@@ -1,0 +1,83 @@
+# Versionierung und Mehrbenutzerbetrieb in ArcGIS Pro
+
+## Übung 10: Version erstellen in ArcGIS Pro
+
+Die Nutzung von Enterprise Server Geodatenbanken wie z.B. PostgreSQL erlaubt einen Mehrbenutzerbetrieb derselben Datenbank. In den vorigen Übungen haben wir jeweils alle Einträge in die Datenbank mehr oder weniger gleichzeitig durchgeführt, ohne auf eine Version zu achten. In solchen Fällen gilt für die Datenbank, dass der letzte Eintrag einen vorangehenden Eintrag überschreiben würde. Macht ein Benutzer Änderungen an einem Objekt, z.B. einem Polygon und gleichzeitig ein anderer Benutzer ebenfalls Änderungen am selben Polygon, so gilt jeweils die letzte Eintragung als aktuell. Alle vorigen Anpassungen werden überschrieben. Um dies zu verhindern, braucht es einen Mechanismus, welcher diese Mehrfachänderungen im Mehrbenutzerbetrieb managen kann. Hierzu wird Versionierung verwendet. 
+
+1. Kehren Sie in das Projekt "Datenbankzugriff" in ArcGIS Pro zurück und verbinden zur Datenbank "waelder" mit Ihrem zugewiesenen Benutzer (studentNr).
+2. Zeigen Sie die Sichtungsmeldungen aus der Datenbank in der Karte an.
+3. Starten Sie jetzt den Editor und erfassen ein paar beliebige Sichtungsmeldungen. Erfassen Sie auch die Attribute über die Attributtabelle. Speichern Sie anschliessend Ihre neuen Punkte.
+4. Wechseln Sie anschliessend die Ansicht im Contents-Fenster von "List By Drawing Order" auf "List By Data Source" (siehe @fig-db2-uebung10-1). 
+5. Schauen Sie sich die Verbindung zum Layer im Contents-Fenster an. Sie sehen dort zu Anfang "sde.DEFAULT". Dies ist wie der Name vermuten lässt die Standard-Version in welche automatisch alle Änderungen usw. eingespielt werden, sofern keine weiteren Versionen vorhanden sind. "student1@..." zeigt hier auch noch den verbundenen Benutzer. (siehe @fig-db2-uebung10-2).
+6. Selektieren Sie die Verbindung und achten auf die Registerkarten im ArcGIS Pro Hauptmenü (ganz oben). Es wird ein neues Register "Versioning" angezeigt.
+7. Hier sehen Sie alle Werkzeuge zur Verwaltung der Versionen. Erstellen Sie eine neue eigene Version durch Klick auf "New Version". Achten Sie darauf das Häkchen bei "Change to this new version" zu setzen, damit die neue Version aktiviert wird (siehe @fig-db2-uebung10-3). 
+    a. Name: studentNr_name
+    b. Description: beliebiger Text
+    c. Access Permission: Protected
+        - Private: Alle Änderungen in dieser Version sind privat, d.h. kein anderer Benutzer kann diese Version sehen und/oder benutzen.
+        - Protected: Alle Änderungen sind privat und niemand kann in dieser Version Daten bearbeiten. Andere Benutzer können aber die Version anzeigen und Änderungen sehen.
+        - Public: Öffentliche Nutzung, d.h. auch andere Benutzer können zu dieser Version wechseln und Daten bearbeiten
+8. Erstellen Sie die neue Version mit "OK".
+9. Schauen Sie wiederum die Datenbankverbindung im Contents-Fenster an. Die neue Version student1 ist jetzt aktiv. Ab sofort werden alle Änderungen innerhalb dieser Version gemacht und nicht mehr in der sde.DEFAULT Version (siehe @fig-db2-uebung10-4). 
+10.  Starten Sie den Editor und löschen einige der bereits von Ihnen erfassten Sichtungsmeldungen und erfassen auch ein paar neue Punkte. Speichern Sie die Änderungen im Editor.
+11. Merken Sie sich ungefähr die Lage der von Ihnen jetzt digitalisierten Punkte (siehe @fig-db2-uebung10-5).
+12. Wechseln Sie jetzt zurück auf die DEFAULT Version. Dies können Sie über das Kontextmenü des Eintrags im Contents-Fenster→Change Version. Alternativ kann die Version auch in der Registerkarte "Versioning" gewechselt werden.
+13. Wechseln Sie die Version zurück auf die sde.DEFAULT Version. 
+14. Schauen Sie sich das Kartenbild an. Was fällt auf?
+15. Alle Ihre Anpassungen/Änderungen, welche Sie in der Version studentNr gemacht haben, sind in der sde.DEFAULT nicht mehr vorhanden. Dies ist normal, da die  Änderungen eben in einer anderen Version gemacht wurden (siehe @fig-db2-uebung10-6 und @fig-db2-uebung10-7).
+16. ACHTUNG: Es kann natürlich sein, dass Ihre Mit-Studierenden etwas schneller waren und bereits Änderungen auch in die sde.DEFAULT eingespielt haben und Ihr Kartenbild jetzt deshalb trotzdem anders aussieht als vorher.
+17. Speichern Sie Ihr ArcGIS Pro Projekt.
+
+![Data Source in Contents-Fenster](figures/screenshot_uebung10_1.jpg){#fig-db2-uebung10-1 width="70%" fig-align="center"}
+
+![ArcGIS Pro Versionierung](figures/screenshot_uebung10_2.jpg){#fig-db2-uebung10-2}
+
+::: {layout-ncol=2 layout-valign="bottom"}
+![ArcGIS neue Version erstellen](figures/screenshot_uebung10_3.jpg){#fig-db2-uebung10-3}
+
+![Neue Version in Data Source in Contents-Fenster](figures/screenshot_uebung10_4.jpg){#fig-db2-uebung10-4}
+:::
+
+![Neue Punkte in ArcGIS GUI](figures/screenshot_uebung10_5.jpg){#fig-db2-uebung10-5}
+
+::: {layout-ncol=2 layout-valign="bottom"}
+![Ändere Version in Contents-Fenster](figures/screenshot_uebung10_6.jpg){#fig-db2-uebung10-6}
+
+![Ändere Version in Contents-Fenster](figures/screenshot_uebung10_7.jpg){#fig-db2-uebung10-7}
+:::
+
+## Übung 11: Versionen zusammenführen in ArcGIS Pro
+
+In vielen Anwendungsfällen bearbeiten viele Mitarbeiter die Daten in derselben Datenbank. Z.B. können unterschiedliche Mitarbeiter jeweils einen Teil eines Untersuchungsgebiets kartieren. Durch die Versionierung können alle Arbeiten unabhängig voneinander auf derselben Datenbank durchgeführt werden. Zu einem gewissen Zeitpunkt, spätestens nach Abschluss der Arbeiten sollten alle Arbeiten aber wieder in einer gemeinsamen Version zusammengeführt werden. 
+
+1. Bleiben Sie im Projekt "Datenbankzugriff" in ArcGIS Pro und in der Datenbank "waelder" mit Ihrem zugewiesenen Benutzer (studentNr).
+2. Wechseln Sie wiederum auf die "List By Data Source" Ansicht im Contents-Fenster.
+3. Schauen Sie sich den Versionsmanager an. Sie öffnen diesen über die Registerkarte "Data Source Versioning" über die Schaltfläche "Manage Versions" (siehe @fig-db2-uebung11-1).
+4. Hier können Sie alle vorhandenen (sofern berechtigten) Versionen einsehen und verwalten.
+5. Da Sie Ihre jeweilige Version als "protected" erstellt haben, sollten auch die Versionen Ihrer MitStudierenden sichtbar sein (siehe @fig-db2-uebung11-2).
+6. Schliessen Sie den Versionsmanager wieder.
+7. Wechseln Sie anschliessend für den Sichtungsmeldungen Layer die Version. Wählen Sie diesmal die Version eines anderen Teilnehmers z.B. Ihres Tischnachbarn (siehe @fig-db2-uebung11-3).
+8. Sie sollten im Kartenbild wieder eine andere Version mit anderen Punkten sehen.
+9. Starten Sie den Editor und versuchen ein paar neue Punkte zu erfassen.
+10. Sie bekommen eine Fehlermeldung (siehe @fig-db2-uebung11-4).
+11. Wie bereits erwähnt können "fremde" Versionen nicht bearbeitet werden, wenn diese nicht öffentlich sind.
+12. Wechseln Sie wieder zurück zu Ihrer eigenen Version "studentNr".
+13. Zeigen Sie die Registerkarte "Versioning" an.
+14. Bevor wir unsere eigenen Änderungen zurück in die sde.DEFAULT Version einspielen können, müssen wir auf Fehler bzw. Versionierungsprobleme prüfen, um sicher zu stellen, dass keine Inkonsistenzen entstehen.
+15. Klicken Sie dazu im Menü auf "Manage Versions". Selektieren Sie Ihre Version und klicken "Reconcile/Post". Wählen Sie die Zielversion so wie Einstellungen für das Fehlerhandling. Wählen Sie als Zielversion die sde.DEFAULT Datenbank und als Edit versions Ihre zuvor erstellte Version. Setzen Sie noch den Haken bei "Post versions after reconcile". Lassen Sie ansonsten die Voreinstellungen (siehe @fig-db2-uebung11-5). 
+16. Sollte der Prozess ohne Fehler durchgeführt werden, so können im Anschluss die Änderungen in die sde.DEFAULT Datenbank geschrieben werden.
+17. Klicken Sie auf "Ok". Alle Ihre Änderungen sollten jetzt auch in die sde.DEFAULT Version importiert worden sein.
+18. Prüfen Sie dies, indem Sie zurück auf die sde.DEFAULT Version wechseln. Diese sollte jetzt identisch mit Ihrer eigenen Version sein
+
+!["Manage Versions" in Data Source [ArcGIS Pro]](figures/screenshot_uebung11_1.jpg){#fig-db2-uebung11-1 width="70%" fig-align="center"} 
+
+![Verschiedene Versionen sind verfügbar](figures/screenshot_uebung11_2.jpg){#fig-db2-uebung11-2}
+
+::: {layout-ncol=2 layout-valign="bottom"}
+::: {layout-nrow=2}
+![Änderung der Version](figures/screenshot_uebung11_3.jpg){#fig-db2-uebung11-3}
+
+![Fehlermeldung in ArcGIS Pro](figures/screenshot_uebung11_4.jpg){#fig-db2-uebung11-4}
+:::
+![Fehlerbehebung mit Reconcile/Post](figures/screenshot_uebung11_5.jpg){#fig-db2-uebung11-5}
+:::

@@ -1,0 +1,102 @@
+
+# Vorbereitung
+
+Damit wir im ersten Teil von Netzwerkanalyse direkt loslegen können, solltet ihr euch vorgängig mit QGIS vertraut machen. Dafür haben wir ein paar Übungen zusammengestellt, die ihr als Vorbereitung auf Netzwerkanalyse I erledigen solltet.
+
+:::{.callout-note}
+## Übungsziele
+
+- QGIS herunterladen und installieren
+- QGIS starten und kennenlernen
+- Modularer Aufbau von QGIS verstehen
+- Plugins installieren und anwenden können
+- Daten für Übungseinheit Netzwerkanalyse I vorbereiten
+:::
+
+## Datensätze
+
+Laden Sie das File [netzwerkanalyse.gpkg](https://moodle.zhaw.ch/mod/resource/view.php?id=974542) von Moodle herunter. 
+Hier befinden sich alle Datensätze, die im Laufe des Blocks "Netzwerkanalyse" benötigt werden:
+
+| Layer | Koord. System | Beschreibung | 
+|:---|:---|:---|
+| Gemeinde_Waedenswil | EPSG 2056 | Die Gemeindegrenze von Wädenswil. Dieser Datensatz basiert auf swissBOUNDARIES3D von Swisstopo. |
+| osm_highway | EPSG 4326 | Alle "Highway" Linien aus dem OpenStreetmaps (Stand  nach* @sec-ex-network-osmdownload) |
+| osm_highway_prepared | EPSG 2056 | Alle "Highway" Linien transformiert und neu projiziert (Output aus @sec-ex-clip) |
+| shops_waedenswil | EPSG 2056 | Alle Läden in Wädenswil, für @sec-ex-network-traveling-shops |
+| buildings_waedenswil_polygons | EPSG 2056 | Alle Gebäudestandorte (Polygon Daten) in Wädenswil, für @sec-ex-network-traveling-buildings |
+| abfallentsorgung_waedenswil | EPSG 2056 | Entsorgungsstellen Wädenswil |
+| waedenswil_centrality | EPSG 2056 | Zentralitätsmasse für Wädenswil (aus @sec-ex-centrality-calculate) |
+| Haltestellen_waedenswil | EPSG 2056 | Haltestellen in Wädenswil |
+
+: Datensätze im File *netzwerkanalyse.gpkg* für den Block "Netzwerkanalyse" {#tbl-datensaetze-netzwerkanalyse}
+
+## Übung 1: QGIS installieren
+
+Auf der QGIS Homepage [qgis.org](https://www.qgis.org/de/site/forusers/download.html) finden Sie die aktuellen QGIS Versionen für Windows, Linux, Mac und weitere Betriebssysteme in 32 und 64 bit. Laden Sie den passenden Standalone Installer des "Longterm release (most stable)" herunter (aktuell **3.34**). Installieren Sie QGIS nach dem Download.
+
+
+:::{.callout-important}
+
+Wir empfehlen dringend, dass ihr QGIS auf Englisch umstellt:
+
+Settings → Options → General → User interface translation
+
+:::
+
+## Übung 2: Tutorials anschauen
+
+Schauen Sie sich danach zum Einstieg einzelne Videos vom Youtube Nutzer [Marshal Mappers](https://www.youtube.com/channel/UCKwC9hcJr-4mgsNUeJzMAvA/videos) an. Schauen Sie die Videos bis Sie die grundlegendsten Arbeitsschritte von QGIS (Daten importieren, Werkzeuge finden, Karte zu pdf exportieren) verstanden haben. Erstellen Sie dann ein neues Projekt (Projekt→New) und speichern Sie dieses direkt ab (Projekt→Save As..). 
+
+## Übung 3: Daten importieren
+
+Während Shapefiles im GIS-Unterricht bisher oft zur Speicherung von Vektordaten verwendet wurden, werden in QGIS vor allem Geopackage Dateien verwendet (.gpkg). QGIS kann Shapefiles durchaus lesen und schreiben, wir werden in den Übungen aber vor allem mit Geopackage Daten arbeiten. Geopackages sind eine alternative Methode, Vektordaten abzuspeichern. Sie beheben einige Defizite, die Shapefiles mit sich bringen. Siehe dazu auch die Website ["Shapefiles must die"](http://switchfromshapefile.org/). 
+
+1. Neues QGIS Projekt starten und Projektdatei speichern
+2. CRS auf EPSG 2056 setzen
+3. Aus dem File *netzwerkanalyse.gpgk* den Layer *Gemeinde_Waedenswil* (siehe @tbl-datensaetze-netzwerkanalyse) in QGIS importieren
+4. Symbologie folgendermassen ändern: Fläche transparent, Stadtgrenze schwarz
+
+## Übung 4: Plugin installieren {#sec-ex-network-plugins}
+
+QGIS wird von zahlreichen Einzelpersonen und Gruppen entwickelt. Aus diesem Grund ist die Software modular aufgebaut und nur ein Teil wird mit der Standard-Installation mitgeliefert. Für einige Funktionen müssen zusätzliche Erweiterungen (sogenannte "Plugins") installiert werden. Installieren Sie das Plugin "QuickOSM", um OpenStreetMap (OSM) Vektordaten rasch und einfach lokal abspeichern zu können.
+
+1. Reiter Plugins→Manage and Install Plugins
+2. Im Suchfenster "QuickOSM" suchen
+3. Plugin anwählen und auf "install" klicken
+
+Die wichtigsten Metadaten zu allen Plugins werden auf plugins.qgis.org festgehalten. Dort findet man auch Links zur Projektseite, weiteren Dokumentation und ggf. Tutorials: Zu QuickOSM sind die Metadaten hier abrufbar: [https://plugins.qgis.org/plugins/QuickOSM/](https://plugins.qgis.org/plugins/QuickOSM/)
+
+## Übung 5: OpenStreetMap Vektordaten herunterladen {#sec-ex-network-osmdownload}
+
+Mit dem neuen Plugin "QuickOSM" laden Sie nun den Strassendatensatz der Gemeinde Wädenswil herunter. Dies geschieht folgendermassen:
+
+1. Rechtsklick auf den Layer *Gemeinde_Waedenswil* → Zoom to layer
+2. Reiter Vektor → Quick OSM → Quick OSM
+3. Wählen Sie bei der Option key "highway" und lassen value leer
+4. Wählen Sie Option "Canvas Extent"
+5. Klicken Sie anschliessend auf "Run query"
+
+Das Query lädt nebst den Liniendaten auch noch Punkt- und Polygon-Daten herunter. Diese interessieren uns nicht und können entfernt werden (Rechtsklick→remove).
+
+## Übung 6: Temporäre Datei abspeichern
+
+Outputs werden in QGIS standardmässig in einem Temp-Folder abgelegt. Diese Dateien werden nach Beendigung von QGIS gelöscht. Um die Daten auch zu einem späteren Zeitpunkt verwenden zu können, müssen sie an einem geeigneten Ort abgespeichert werden. Führen Sie diesen Schritt mit den eben beschafften OSM Strassendaten (nur Linien) aus. Im gleichen Schritt können Sie alle unnötigen Spalten aus der grossen Attributtabelle löschen.
+
+1. Rechtsklick auf den temporären Linien-Layer → Export → Save Features As...
+2. Unter "Select fields to export and their export options" nur Spalte *highway* auswählen
+3. Format: Geopackage
+4. Filename: Geeigneter Speicherort[^speicherort] aufsuchen und Datei abspeichern als "osm_highway.gpkg"
+   (Erweiterung muss nochmals angegeben werden)
+
+[^speicherort]: Merken Sie sich den Speicherort, Sie werden das File in der kommenden Übung brauchen.
+
+:::{.callout-note}
+## Merken Sie sich:
+
+- Es lohnt sich, vor jedem Projekt eine sinnvolle Ordnerstruktur aufzubauen
+- Neben Shapefiles gibt es weitere (bessere?) Wege, wie Vektordaten abgespeichert werden können. Eine gute Variante ist Geopackage.
+- QGIS ist mittlerweile ein mächtiges Werkzeug, welches für die Bearbeitung vieler klassischer GIS Fragestellungen geeignet ist.
+- QGIS ist modular aufgebaut, wichtige Funktionen sind über Plugins verfügbar. Dadurch kommt QGIS nicht aus "einem Guss" daher.
+- Outputs werden in temporären Dateien abgespeichert, die bei der Schliessung von QGIS gelöscht werden. Sollen Geodaten permanent verfügbar sein, müssen sie entsprechend explizit abgespeichert werden.
+:::

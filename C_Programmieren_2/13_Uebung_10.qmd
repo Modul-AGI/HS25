@@ -1,0 +1,147 @@
+---
+output: false
+echo: false                      # set to true to show solution
+code-fold: true                  # set to true to show solution
+code-summary: "Musterlösung"    
+---
+
+# Übung 10
+
+Für diese Übung brauchen wir
+
+1. Die Python-Module `pandas` sowie `random`
+2. Die Funktion `offset_coordinate` aus @sec-ex-offset-function
+3. *zeckenstiche.csv* importiert als `pandas DataFrame` in der Variabel `zeckenstiche`
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+import pandas as pd
+import random
+
+def offset_coordinate(old, distance = 100):
+    new = old + random.normalvariate(0, distance)
+    return new
+
+zeckenstiche = pd.read_csv("data/zeckenstiche.csv")
+```
+
+## Übung 10.1
+
+Mache dich nochmals damit vertraut, einzelne Spalten zu selektieren. Schau dir @sec-dataframes nochmals an wenn du nicht mehr weisst wie das geht.
+
+```{python}
+zeckenstiche["x"]
+zeckenstiche["y"]
+```
+
+<!-- % Neue Spalten erstellen -->
+## Übung 10.2
+
+Mache dich nochmals damit vertraut, wie man neue Spalten erstellt. Schau dir @sec-dataframes nochmals an wenn du nicht mehr weisst wie das geht. Erstelle ein paar neue Spalten nach dem Beispiel unten um die Hangriffe zu üben. Lösche die Spalten im Anschluss wieder mit `del zeckenstiche['test1']` etc.
+
+```{python}
+#| echo: true
+
+zeckenstiche["test1"] = "test1"
+
+zeckenstiche["test2"] = 10
+
+zeckenstiche["test3"] = range(10)
+```
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+# zeckenstiche könnte danach folgendermassen aussehen:
+zeckenstiche
+```
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+# unnötigen Spalten wieder entfernen:
+del zeckenstiche['test1']
+del zeckenstiche['test2']
+del zeckenstiche['test3']
+```
+
+## Übung 10.3 {#sec-ex-apply}
+
+`pandas` kennt eine ganze Familie von Methoden, um Spalten zu Manipulieren und Daten zu Aggregieren (`apply`, `map`, `mapapply`, `assign`). Es würde den Rahmen dieses Kurses sprengen, die alle im Detail durchzugehen, es lohnt sich aber sehr sich mit diesen auseinanderzusetzen wenn man sich näher mit Python befassen möchte.
+
+Im unserem Fall brauchen wir lediglich die Methode `apply` um die Funktion `offset_coordinate()` auf die Zeckenstichkoordinaten anzuwenden. Dabei gehen wir wie folgt for:
+
+```{python}
+#| echo: true
+#| output: false
+#| code-fold: false
+
+zeckenstiche["x"].apply(offset_coordinate)
+#\______1_______/ \_2_/\_______3_________/
+
+# 1. Spalte selektieren (["x"])
+# 2. Methode "apply" aufrufen
+# 3. Function übergeben
+```
+
+Verwende dieses Schema um auch `offset_coordinate` auf die `y` Spalte anzuwenden und speichere den Output dieser beiden Operationen als neue Spalten `x_sim` sowie `y_sim`. Die *DataFrame* `zeckenstiche` sollte danach wie folgt aussehen:
+
+```{python}
+#| echo: true
+
+zeckenstiche["x_sim"] = zeckenstiche["x"].apply(offset_coordinate)
+zeckenstiche["y_sim"] = zeckenstiche["y"].apply(offset_coordinate)
+```
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+zeckenstiche
+```
+
+## Übung 10.4 {#sec-ex-param}
+
+In @sec-ex-apply haben wir unsere Funktion `offset_coordinate` aufgerufen, ohne den Parameter `distance` zu spezifizieren. Dies war möglich, weil wir für `distance` einen Defaultwert festgelegt hatten (100 Meter). Wir können aber auch zusätzliche Parameter kommagetrennt nach der Funktion angeben. Dies sieht folgendermassen aus:
+
+```{python}
+#| echo: true
+#| output: false
+#| code-fold: false
+
+zeckenstiche["x"].apply(offset_coordinate, distance = 200)
+```
+
+Nutze diese Möglichkeit, um den Offset (`distance`) auf maximal 10 Meter zu reduzieren.
+
+```{python}
+zeckenstiche["x_sim"] = zeckenstiche["x"].apply(offset_coordinate, distance = 10)
+zeckenstiche["y_sim"] = zeckenstiche["y"].apply(offset_coordinate, distance = 10)
+```
+
+## Übung 10.5
+
+Um die Original `x`/`y`-Werte sowie die simulierten Daten im gleichen Plot darzustellen, wird folgendermassen vorgegangen: Der erste Datensatz wird mit `.plot()` visualisiert, wobei der Output einer Variabel  (z.B. `basemap`)  zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit `.plot()` visualisiert, wobei auf den ersten Plot via dem Argument `ax` verwiesen wird.
+
+Bei den roten Punkten handelt es sich um die Original-Zeckenstichen, bei den blauen um die simulierten (leicht verschoben) Zeckenstiche. Visualisiere deine eigenen Zeckenstiche auf diese Weise.
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+from matplotlib import pyplot as plt
+
+basemap = zeckenstiche.plot("x", "y", kind = "scatter", color = "red")
+zeckenstiche.plot("x_sim", "y_sim", kind = "scatter", ax = basemap, color = "blue")
+
+plt.axis("equal")
+```

@@ -1,0 +1,16 @@
+# Leistungsnachweis
+
+Als Leistungsnachweis wird eine schriftliche Dokumentation der Lösung dieser Übung erwartet. Die Dokumentation sollte vier A4-Seiten nicht überschreiten und muss Folgendes beinhalten:
+
+- Name und Vorname der Autorin oder des Autors.
+- Resultate der Übung aufbereitet mittels ansprechenden Grafiken, Tabellen und evtl. Karten.
+- Beantwortung der in dieser Übung enthaltenen Fragen.
+- Kurze Diskussion der Resultate.
+- Beschreibung des ModelBuilder Modells inklusive:
+  - Grafische Abbildung des ModelBuilder Modells
+  - Welche Modellparameter wurden definiert und weshalb
+  - Stichwortartige Beschreibung was das Modell berechnet
+
+**Abgabeform und -termin**
+
+Lade deine vollständige Dokumentation spätestens bis Freitag 2. Oktober 2024 als PDF über Moodle hoch (Abgabe Leistungsnachweis Datenqualität und Unsicherheit).

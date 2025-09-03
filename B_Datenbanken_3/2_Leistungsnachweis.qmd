@@ -1,0 +1,15 @@
+# Leistungsnachweis
+
+Die Ergebnisse dieser folgenden Übungen sollen als Leistungsnachweis aufbereitet und eingereicht werden. In diesem Fall muss zu jeder Übung im Abschnitt 4 "Geoverarbeitung in der Datenbank mit ArcGIS Pro und SQL" (Übung 7‐12), ausgenommen optionale und Wiederholungsübungen, eine kurze schriftliche Dokumentation der Lösung abgegeben werden. Die Aufgabe gilt als Einzelarbeit. Eine gemeinsame Abgabe in Gruppen ist nicht erlaubt. Abgeschriebenes gilt sofort als nicht bestanden.
+
+Die Dokumentation muss Folgendes beinhalten:
+
+- Name und Vorname der Autoren oder Autorinnen.
+- Kurze Beschreibung des Lösungsweges inkl. der formulierten SQL‐Statements.
+- Beschreiben Sie sowohl das Vorgehen in ArcGIS Pro als auch das Vorgehen in pgAdmin. Betrachten Sie dabei insbesondere die Geometrien und die Sachdaten und gehen Sie auf Unterschiede in den Vorgehensweisen und Ergebnissen ein.
+- Stellen Sie zum Schluss ArcGIS Pro und SQL/PostGIS gegenüber. Überlegen Sie sich Argumente für und gegen den Einsatz von ArcGIS Pro bzw. von SQL/PostGIS. Wann würden Sie ArcGIS Pro nutzen? Wann eher SQL/PostGIS? Befragen Sie dazu auch einschlägige Literatur und starten Sie eine Web‐Recherche. Dokumentieren Sie Ihre Erkenntnisse in ein paar kurzen Sätzen.
+
+#### Abgabeform und ‐termin:
+Reichen Sie Ihre vollständige Dokumentation spätestens bis Mittwoch 23. Oktober 2024 (2 Wochen nach letztem Input) als PDF über Moodle ein. Ihr findet dies unter der Aufgabenstellung im Abschnitt Geodatenbanken 3.
+
+[Abgabe Leistungsnachweis](https://moodle.zhaw.ch/mod/assign/view.php?id=974520)

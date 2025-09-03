@@ -1,0 +1,43 @@
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+name: Quarto Publish
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
+
+      - uses: conda-incubator/setup-miniconda@v3
+        with:
+          activate-environment: modul-agi
+          environment-file: environment.yml
+          python-version: 3.11
+          auto-activate-base: false
+
+      - name: get QUARTO_PYTHON
+        run: |
+          conda init
+          source /home/runner/.bashrc
+          conda info --envs
+          conda activate modul-agi
+          which python3
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          QUARTO_PYTHON: /usr/share/miniconda/envs/modul-agi/bin/python3

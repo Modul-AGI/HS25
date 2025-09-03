@@ -1,0 +1,16 @@
+{
+  "hash": "fb8a9abecbe655e5f5f5985d3fb0e265",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "# DataFrames {#sec-dataframes}\n\nSchauen wir uns nochmals die *Dictionary* `people` aus der letzten Übung an. Diese ist ein Spezialfall einer Dictionary: Jeder Eintrag besteht aus einer Liste von gleich vielen Werten. Wie bereits erwähnt, kann es in einem solchen Fall sinnvoll sein, die Dictionary als Tabelle darzustellen.\n\n::: {#47bddd2b .cell execution_count=1}\n``` {.python .cell-code}\npeople = {\"vornamen\": [\"Christopher\", \"Henning\", \"Severin\"], \"nachnamen\": [\"Annen\",\"May\", \"Kantereit\"], \"groessen\": [174, 182, 162]}\n```\n:::\n\n\n::: {#6c0cdffa .cell execution_count=2}\n``` {.python .cell-code}\nimport pandas as pd # Was diese Zeile beudeutet lernen wir später\n\npeople_df = pd.DataFrame(people)\n\npeople_df\n```\n\n::: {.cell-output .cell-output-display execution_count=2}\n```{=html}\n<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>vornamen</th>\n      <th>nachnamen</th>\n      <th>groessen</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>Christopher</td>\n      <td>Annen</td>\n      <td>174</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>Henning</td>\n      <td>May</td>\n      <td>182</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>Severin</td>\n      <td>Kantereit</td>\n      <td>162</td>\n    </tr>\n  </tbody>\n</table>\n</div>\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "10_Tabellarische_Daten_files"
+    ],
+    "filters": [],
+    "includes": {
+      "include-in-header": [
+        "<script src=\"https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js\" integrity=\"sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==\" crossorigin=\"anonymous\"></script>\n<script src=\"https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js\" integrity=\"sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==\" crossorigin=\"anonymous\" data-relocate-top=\"true\"></script>\n<script type=\"application/javascript\">define('jquery', [],function() {return window.jQuery;})</script>\n"
+      ]
+    }
+  }
+}

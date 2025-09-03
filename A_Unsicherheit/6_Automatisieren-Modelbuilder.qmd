@@ -1,0 +1,31 @@
+# Automatisierung mit ModelBuilder
+
+ModelBuilder ist eine visuelle Programmiersprache für die Erstellung von Geoverarbeitungs-Workflows. ModelBuilder wird zum Modellieren und Automatisieren von räumlichen Analysen und Datenverwaltungsprozessen verwendet. Du kannst Geoverarbeitungsmodelle in ModelBuilder erstellen und ändern, wo ein Modell als ein Schema dargestellt wird, das Sequenzen von Prozessen und Geoverarbeitungswerkzeugen verkettet, indem die Ausgabe eines Prozesses als die Eingabe eines anderen Prozesses verwendet wird.
+
+Mache dich auf der Online Hilfe von ArcGIS Pro mit den Möglichkeiten des ModelBuilders vertraut:
+
+:::{.callout-note}
+## ArcGIS Pro Help: What is ModelBuilder
+
+<https://pro.arcgis.com/en/pro-app/help/analysis/geoprocessing/modelbuilder/what-is-modelbuilder-.htm>{target="_blank"}
+:::
+
+## Übung 12: Waldrand-Fuzzy-Modell in ModelBuilder erstellen
+
+Erstelle ein Modell mit ModelBuilder in dem die 5 Prozesse von Übung 9 bis 11 automatisiert ausgeführt werden können. Das Modell kann anschliessend wie ein normales Werkzeug aufgerufen werden. Als Modellparameter müssen die Fuzzy Tallness Distanzen resp. Werte angepasst sowie ein neuer Output Datensatz erstellt werden können. 
+
+Vorgehen:
+
+1. Gehe in das Menüband "Analysis".
+2. Wähle den Button ModelBuilder. Damit wird ein neues, noch leeres Modell erstellt.
+3. Gehe in das Catalog Pane und navigiere zu "Toolboxes > Unsicherheit.tbx" und benenne das Modell sinnvoll (Name und Label). Hinweis: keine Sonderzeichen und Leerschläge erlaubt.
+4. Gehe im Catalog Pane in das Register "History".
+5. Füge die letzten 5 Prozesse (Übungen 9 bis 11) nacheinander mittels Drag und Drop dem neuen Modell hinzu.
+6. Klicke im Modell mit rechter Maustaste auf das Tool Reclassify und wähle im Kontextmenü Create Variable > From Parameter > Reclassification
+7. Klicke mit rechter Maustaste auf die soeben erstellte Modellvariable und wähle im Kontextmenü "Parameter". Diese Modellvariable erscheint nun beim Aufrufen des Modells als veränderbarer Parameter, d.h. die Fuzzy Tallness Distanzen und Werte können angepasst werden.
+8. Klicke mit rechter Maustaste auf den Final Output und definiere ihn ebenfalls als Modellparameter.
+9. Speichere das Modell via Menüband ModelBuilder > Save
+10. Gehe im Catalog auf Toolboxes > Unsicherheit.tbx > und öffne dein Modell mittels Doppelklick.
+11. Gebe die Modellparameter ein (Fuzzy Tallness Distanzen & Werte und Output Dataset) und führe das Modell mit Run aus.
+
+Mit Hilfe von solchen Modellen kannst du deine Geoverarbeitungsketten auf einfache Art und Weise automatisieren ☺.

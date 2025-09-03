@@ -1,0 +1,67 @@
+
+# Software Anleitungen
+
+## Conda Environment erstellen {#sec-conda-env}
+
+Mit der Software `conda` verwalten wir unsere Python Packages in sogenannte *Conda Environments*.  Wenn ihr auf Windows mit einer ArcGIS installation arbeitet, verwendet ihr für Conda den *Python Command Prompt*, wenn ihr auf Mac / Linux arbeitet, verwendet ihr für Conda den Terminal innerhalb von Positron (siehe @sec-terminal).
+
+Folgende commands erstellen die *Environment* für den ersten Kurstag (sollte einzeln ausgeführt werden!):
+
+```bash
+conda create --name geopython1
+conda activate geopython1
+conda install -c conda-forge jupyterlab pandas matplotlib
+```
+
+## Arbeitsordner / Working Directory erstellen {#sec-wd}
+
+Um in Positron arbeiten zu können, braucht ihr eine designierte Working Directory. Erstellt auf eurem Computer einen solchen Ordner, wo ihr die Pythonskripts und die zugehörigen Daten abspeichern könnt. Diese lautet zum Beispiel: 
+
+`C:\Pfad\zu\deinem\Modul-AGI-Kurs\Programmieren1\Python_Code`
+
+## Positron starten und verwenden
+
+Startet Positron und klickt auf *File → Open Folder* und öffnet den Pfad, den ihr im letzten Schritt erstellt habt (@sec-wd). Jetzt solltet ihr die Environment, die ihr in @sec-conda-env erstellt habt, als *Python interpreter* nutzen können (siehe @fig-positron-intereter).
+
+
+![Wenn Positron erstellte *Environment* findet, kann diese im Dropdown (drei Pünktchen neben Python) ausgewählt werden](figures/positron-interpreter.png){#fig-positron-intereter width=50%}
+
+
+Die Erfahrung hat aber gezeigt, dass Positron diese erstellten *Environments* nicht immer findet. Sollte dies der Fall sein, gibt es den folgenden Workaround: 
+
+Startet Positron *aus der Conda Environment* mit dem entsprechenden Befehl im Terminal (siehe @sec-terminal). Verwendet dazu den Pfad, den ihr im Schritt @sec-wd erstellt habt.
+
+```{.bash}
+conda activate geopython1                                      
+          # ↓ euer Pfad verwenden!
+positron C:/Pfad/zu/deinem/Modul-AGI-Kurs/Programmieren1/Python_Code
+```
+
+Nun wird in Positron automatisch eure erstellte Environment (`geopython1`) verwendet.
+
+
+
+
+## Terminal {#sec-terminal}
+
+:::{.panel-tabset}
+
+## Mit ArcGIS installation (Windows) {#sec-terminal-windows}
+
+Startet dazu den *Python Command Prompt*, indem ihr `Windowstaste` drückt und nach dieser Applikation sucht (einfach den Namen eingeben). Nach dem Öffnen der Applikation sollte sich ein schwarzes Fenster öffnen und auf eure Eingabe warten (siehe @fig-python-cmd).
+
+![Python Command Prompt (i.e. "Eingabeaufforderung")](figures/python-command-prompt.PNG){#fig-python-cmd}
+
+
+## Ohne ArcGIS installation (Linux / Mac) {#sec-terminal-nonwindows}
+
+Verwendet als Terminal den `TERMINAL` innerhalb von Positron (rechts von `CONSOLE`)
+
+
+![](figures/positron-terminal.png)
+
+:::
+
+
+
+

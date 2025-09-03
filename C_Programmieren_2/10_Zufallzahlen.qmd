@@ -1,0 +1,51 @@
+## Zufallszahlen generieren {#sec-random-numbers}
+
+Im Block "*Datenqualität und Unsicherheit*" habt ihr euch bereits mit Zufallszahlen und Simulationen auseinandergesetzt. Programmiersprachen sind für eine solche Anwendung sehr gut geeignet, und deshalb werden wir in diesem Abschnitt eine Erweiterung zur Erstellung von Zufallszahlen kennenlernen. Diese Erweiterung lautet `random` und ist Teil der ["Python Standard Library"](https://en.wikibooks.org/wiki/Python_Programming/Standard_Library), was bedeutet das dieses Erweiterung bereits installiert ist, und wir sie nicht installieren müssen. 
+
+```{python}
+import random
+```
+
+```{python}
+random.seed(2)
+```
+
+Innerhalb vom `random` gibt es zahlreiche Funktionen um Zufallszahlen zu generieren, je nachdem was unsere Anforderungen an die Zufallszahl ist. Eine Anforderung könnte zum Beispiel sein, dass die Zahl innerhalb eines bestimmten Bereichs luegen soll (z.B. "*generiere eine Zufallszahl zwischen 1 und 9*"). Oder aber, dass sie eine ganze Zahl sein muss. Weiter könnte die Anforderung sein, dass sie aus einer bestimmten Verteilung kommen sollte, zum Beispiel einer Normalverteilung. In diesem letzten Fall müssen wir den Mittlwert sowie die Standartabweichung unserer Verteilung angeben.
+
+Um eine ganzzahlige Zufallszahl zwischen 1 und 9 zu generieren, können wir die Funktion `randrange()` nutzen:
+
+```{python}
+random.randrange(start = 1, stop = 10)
+```
+
+Wenn wir auf diese Weise mit `randrange()` immer wieder neue Zufallszahlen generieren fällt auf, dass die Verteilung der Zahlen ziemlich gleichmässig ist. Es ist also gleich wahrscheinlich eine 9 zu bekommen, wie eine 1 oder eine 5. Die Zahlen kommen also aus einer "uniformen" Verteilung. Um dies zu verdeutlichen generiere ich in den folgenden Codezeilen 500 Zufallszahlen zwischen 1 und 9 mit der Funktion `randrange` und visualisiere die Häufigkeit der einzelnen Zahlen in einem Histogramm. 
+
+```{python}
+# erstellt eine Liste von Zufallszahlen 1 - 9
+# (lernen wir zu einem späteren Zeitpunkt)
+a = [random.randrange(1, 10) for x in range(500)]
+
+import pandas as pd
+
+# visualisiert die zufällig generierten Zahl in Form 
+# eines Histogramms (lernen wir ebenfalls später)
+pd.Series(a).plot(kind = "hist", bins = range(1, 11), edgecolor = "black", align = "left", xticks = range(1, 10))
+```
+
+Die Funktion `randrange()` generiert nur ganzzahlige Zufallszahlen. Wenn wir aber eine Zufallszahl mit Nachkommastellen brauchen, verwenden wir die Funktion `uniform()`. 
+
+Um Zufallszahlen aus einer "Normalverteilung" zu erhalten, verwenden wir die Funktion `normalvariate`. Hier müssen wir den Mittelwert und die Standartabweichung dieser Verteilung angeben. Tatsächlich können wir bei dieser Variante keine Minimum- und Maximumwerte festlegen: Theoretisch könnte der Generator jeden erdenklichen Zahlenwert rausspucken, am wahrscheinlichsten ist jedoch eine Zahl nahe am angegebenen Mittelwert.
+
+```{python}
+# mu = Mittelwert, sigma = Standartabweichung
+random.normalvariate(mu = 5, sigma = 2)
+```
+
+Wenn wir die obige Funktion 10'000x laufen lassen und uns das Histogramm der generierten Zahlen anschauen, dann zeichnet sich folgendes Bild ab. 
+
+```{python}
+#| echo: true
+#| output: true
+b = [random.normalvariate(mu = 5, sigma = 2) for b in range(10000)]
+pd.Series(b).plot(kind = "hist", bins = 30, edgecolor = "black")
+```

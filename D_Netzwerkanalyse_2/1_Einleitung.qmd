@@ -1,0 +1,11 @@
+# Netzwerkanalyse II
+
+:::{.callout-note}
+## Übungsziele
+
+- In einem gegebenen Netzwerk kürzeste Pfade mit QGIS berechnen können
+- Weitere GRASS GIS Werkezeuge innerhalb von QGIS ansteuern können
+- Verschiedene QGIS / GRASS GIS Tools kennenlernen und deren Outputs interpretieren können
+- Eigene einfache Vektor-Datensätze erstellen können, resp. Punkte von Hand digitalisieren können
+- Alternative, professionelle Routing Services kennenlernen und ausserhalb herkömmlicher Services (z.B. Google) nutzen
+:::

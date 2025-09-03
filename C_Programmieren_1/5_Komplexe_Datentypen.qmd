@@ -1,0 +1,54 @@
+# Komplexe Datentypen
+
+Im letzten Kapitel haben wir primitive Datentypen angeschaut. Diese stellen eine gute Basis dar, in der Praxis haben wir aber meistens nicht *einen* Temperaturwert, sondern eine Liste von Temperaturwerten. Wir haben nicht *einen* Vornamen, sondern eine Tabelle mit Vor- und Nachnamen. Dafür gibt es in Python komplexere Datenstrukturen die als Gefässe für primitive Datentypen betrachtet werden können.  Auch hier finden wir viele Ähnlichkeiten mit R:
+
+| Python | R | Beschreibung | Beispiel | 
+|:---|:---|:---|:---|:---|
+| List | (Vector) | werden über die Position abgerufen | Beachtet die eckigen Klammern: `hexerei = [3,2,1]` |
+| Dict | List | werden über ein Schlüsselwort abgerufen | Beachtet die geschweiften Klammern: `langenscheidt = {"trump":"erdichten"}` |
+| DataFrame | Dataframe | Tabellarische Daten | Spezialfall einer `dict` `pd.DataFrame({"x":[1,2,3], "y": [3,4,5]}` |
+
+In Python gibt es noch weitere komplexe Datentypen wie *Tuples* und *Sets*. Diese spielen in unserem Kurs aber eine untergeordnete Rolle. Ich erwähne an dieser Stelle zwei häufig genannte Typen, damit ihr sie schon mal gehört habt:
+
+- *Tuples*: 
+  - sind ähnlich wie *Lists*, nur können sie nachträglich nicht verändert werden. Das heisst, es ist nach der Erstellung keine Ergänzung von neuen Werten oder Löschung von bestehenden Werten möglich.
+  - sie werden mit runden Klammern erstellt: `mytuple = (2,2,1)`
+- *Sets*
+  - sind ähnlich wie *Dicts*, verfügen aber nicht über `keys` und `values`
+  - jeder Wert wird nur 1x gespeichert (Duplikate werden automatisch entfernt)
+  - sie werden mit geschweiften Klammern erstellt: `myset = {3,2,2}`
+
+Wohl das einfachste Gefäss, um mehrere Werte zu speichern, sind Python-Listen, sogenannte *Lists*. Diese *Lists* werden mit eckigen Klammern erstellt. Die Reihenfolge, in denen die Werte angegeben werden, wird gespeichert. Das erlaubt es uns, bestimmte Werte aufgrund ihrer Position abzurufen. 
+
+Eine *List* wird folgendermassen erstellt:
+
+```{python}
+hexerei = [3,1,2]
+```
+
+Der erste Wert wird in Python mit `0` (!!!) aufgerufen:
+
+```{python}
+hexerei[0]
+```
+
+```{python}
+type(hexerei)
+```
+
+Im Prinzip sind *Lists* ähnlich wie *Vectors* in R, mit dem Unterschied, dass in Python-Lists unterschiedliche Datentypen abgespeichert werden können. Zum Beispiel auch weitere, verschachtelte Lists:
+
+```{python}
+chaos = [23, "ja", [1,2,3]]
+```
+
+```{python}
+# Der Inhalt vom ersten Wert ist vom Typ "Int"
+type(chaos[0])
+```
+
+```{python}
+# Der Inhalt vom dritten Wert ist vom Typ "List"
+
+type(chaos[2])
+```

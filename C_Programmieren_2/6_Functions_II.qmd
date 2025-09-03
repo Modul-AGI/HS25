@@ -1,0 +1,135 @@
+# *Function* Advanced {#sec-function-advanced}
+
+## Standart-Werte
+
+Man kann für einzelne (oder alle) Parameter auch Standardwerte festlegen. Das sind Werte die dann zum Zug kommen, wenn der Nutzer der Funktion das entsprechende Parameter leer lässt. Schauen wir dazu nochmals `sag_hallo()` an.
+
+```{python}
+def sag_hallo(vorname):
+    return "Hallo " + vorname + "!" 
+```
+
+Um diese Funktion zu nutzen muss dem Parameter `vorname` ein Argument übergeben werden, sonst erhalten wir eine Fehlermeldung. 
+
+```{python}
+#| tags: [raises-exception]
+#| error: true
+sag_hallo()
+```
+
+Wenn wir möchten, dass gewisse Parameter auch ohne Argument auskommen, dann könnnen wir einen Standartwert festlegen. So wird der Parameter optional. Bespielsweise könnte `sag_hallo()` einfach *Hallo Du!* zurückgeben, wenn kein Vorname angegeben wird. Um dies zu erreichen, definieren wir den Standartwert bereits innerhalb der Klammer, und zwar folgendermassen:
+
+```{python}
+def sag_hallo(vorname = "Du"):
+    return "Hallo " + vorname + "!" 
+
+# Wenn "vorname" nicht angegeben wird:
+sag_hallo()
+```
+
+:::{.callout-note}
+
+# Wichtig
+
+Wenn mehrere Parameter in einer Funktion definiert werden, dann kommen die optionalen Parameter **immer zum Schluss**.
+:::
+
+## Reihenfolge der Argumente
+
+Wenn die Argumente in der gleichen Reihenfolge eingegeben werden, wie sie in der *Function* definiert sind, müssen die Parameter **nicht** spezifiziert werden (z.B: `anrede=`, `nachname=`).
+
+```{python}
+def gruezi2(nachname, anrede):
+    return "Guten Tag, " + anrede + " "+nachname
+
+gruezi2("van Rossum", "Herr")
+```
+
+Wenn wir die Reihenfolge missachten, ist der Output unserer Funktion fehlerhaft:
+
+```{python}
+gruezi2("Herr", "van Rossum")
+```
+
+Aber wenn die Parameter der Argumente spezifiziert werden, können wir sie in jeder beliebigen Reihenfolge auflisten:
+
+```{python}
+gruezi2(anrede = "Herr", nachname = "van Rossum")
+```
+
+## Funktionen auf mehreren Zeilen
+
+Bisher waren unsere Funktionen sehr kurz und einfach und wir benötigten dafür immer nur zwei Zeilen: Die erste Zeile begann die *Function*-Definition (`def..`) und die zweite Zeile retournierte bereits die Lösung `return(...)`. 
+
+Zwischen diesen beiden Komponenten haben wir aber viel Platz, den wir uns zu Nutze machen können. Wir können hier Kommentare hinzufügen wie auch unsere Funktion in Einzelschritte aufteilen um den Code lesbarer zu machen.
+
+```{python}
+def gruezi2(nachname, anrede):
+    """ 
+    Meine coole Grüezi funktion
+    Diese Funktion soll Menschen freundlich grüssen. 
+    Sie nimmt zwei Inputs: nachname und andrede, beides "strings"
+    """
+    gruss = "Guten Tag, " + anrede + " "+nachname
+    return gruss
+```
+
+Allgemeine Kommentare werden in Python mit `#` hinzugefügt, Funktionen werden aber mit drei Anführungs- und Schlusszeichen kommentiert. Diese Kommentare erscheinen eleganterweise wenn man die Hilfe zu dieser Funktion mit `help()` aufruft:
+
+```{python}
+help(gruezi2)
+```
+
+## Globale und Lokale Variabeln
+
+Innerhalb einer *Function* können nur die Variabeln verwendet werden, die der *Function* als Argumente übergeben (oder innerhalb der Funktion erstellt) werden. Diese nennt man "lokale" Variabeln und sind nur lokal in der *Function* vorhanden. Im Gegensatz dazu stehen "globale" Variabeln, welche Teil der aktuellen Session sind. 
+
+Versuchen wir das mit einem Beispiel zu verdeutlichen. Angenommen wir definieren gobal die Variabel `vorname`:
+
+```{python}
+#| tags: [raises-exception]
+#| error: true
+# Wir definieren globale Variabel
+vorname = "Guido"
+
+# Nun erstellen wir eine Function, welche diese Variabel ("vorname") nutzen soll:
+def sag_hallo(vorname):
+    return "Hallo " + vorname
+
+# Wenn wir jetzt aber die Function ausführen wollen, entsteht die Fehlermeldung,
+# dass "vorname" fehlt (obwohl wir vorname ja schon definiert haben)
+sag_hallo()
+```
+
+## Lambda-Function {#sec-functions-lambda}
+
+Mit dem Begriff `lambda` kann eine *Function* verkürzt geschrieben werden. Wir werden dies im Unterricht kaum verwenden, es ist aber doch gut davon gehört zu haben. Nachstehend wird die Funktion `sag_hallo()` in der bekannten, wie auch in der verkürzten Form definiert. 
+
+:::: columns
+
+::: {.column width="48%"}
+
+Herkömmliche Weise:
+
+```python
+def sag_hallo(vorname):
+    return "Hi "+vorname
+```
+
+:::
+
+::: {.column width="2%"}
+
+:::
+
+::: {.column width="48%"}
+
+Verkürzt mit `lambda`:
+
+```python
+sag_hallo = lambda vorname: "Hi "+vorname
+```
+
+:::
+
+::::

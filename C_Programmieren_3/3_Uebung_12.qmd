@@ -1,0 +1,54 @@
+---
+output: false
+echo: false                      # set to true to show solution
+code-fold: true                  # set to true to show solution
+code-summary: "Musterlösung"    
+---
+
+# Übung 12
+
+## Übung  12.1 {#sec-ex-for-loops-gruesse}
+
+Nehmen wir nochmals das Beispiel aus @sec-for-gruss. Erstelle nochmal ein Loop, wo drei Personen aus einer Liste gegrüsst werden. Diesmal sollen aber die drei Grüsse in einer Liste (z.B. `mylist`) gespeichert werden.
+
+```{python}
+mylist = []
+
+for name in ["Il Buono", "Il Brutto", "Il Cattivo"]:
+    mylist.append("Ciao "+name)
+```
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+# Das Resultat sieht dann so aus:
+mylist
+```
+
+## Übung  12.2 {#sec-ex-loopoutput}
+    
+Der im Beispiel verwendete Refrain aus [dem Lied "Bitch" von Meredith Brooks](https://www.metrolyrics.com/bitch-lyrics-meredith-brooks.html) besteht bis auf zwei Zeilen aus Wiederholungen. Versuche mit **zwei verschiedenen**, aneinander gereihten *for loops* den ganzen Refrain in einer Liste zu speichern. Die beiden Teile die vom Muster Abweichen ("*I do not feel ashamed*" und "*You know you wouldn't want it any other way*") kannst du auch ausserhalb der Loops in die Listen einfügen (`append`).
+
+```{python}
+refrain = []
+
+for rolle in ["bitch","lover","child","mother","sinner","saint"]:
+    liedzeile = "I'm a "+ rolle 
+    refrain.append(liedzeile)
+refrain.append("I do not feel ashamed")
+for rolle in ["your hell","your dream","nothing in between"]:
+    liedzeile = "I'm "+ rolle 
+    refrain.append(liedzeile)
+refrain.append("You know you wouldn't want it any other way") 
+```
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+# Das Resultat sieht dann so aus:
+refrain
+```

@@ -1,0 +1,113 @@
+# Advanced *for loops* {#sec-forloops-3}
+
+In diesem Kapitel kommen noch zwei Aspekte von *for loops*, die als "*Advanced*" eingestuft werden können aber in der Praxis sehr nützlich sind. Dabei geht es einerseits um verschachtelte *for loops* und zum andere um eine verkürzte Schreibweise von *for loops*. 
+
+## Verschachtelte *for loops*
+
+Wir können verschiedene *for loops* auch ineinander verschachteln (englisch: *nested loops*). Das ist vor allem dann nützlich, wenn alle Kombinationen aus zwei Datensätzen miteinander verrechnet werden müssen. Angenommen du willst die drei Mitglieder deiner Band (bestehend aus *Il Buono*, *Il Brutto*, *Il Cattivo*) deinen Eltern vorstellen und auch umgekehrt deine Eltern deiner Band vorstellen. Für so was eignen sich zwei verschachtelte *for Loops* hervorragend:
+
+:::{.callout-note collapse="true"}
+
+Als Platzhaltervariabel nutze ich wenn immer möglich das Singulär und für den Iterator das Plural von dem Objekt, über das ich iteriere. `for bandmitglied in band`, `for vogel in voegel` usw, dies hilft mir den Überblick im *loop* zu bewahren.
+
+:::
+
+```{python}
+eltern = ["Papa", "Mama"]
+band = ["Il Buono", "Il Brutto", "Il Cattivo"]
+
+for bandmitglied in band:
+    for elternteil in eltern:
+        print(elternteil, "das ist",bandmitglied)
+        print(bandmitglied, "das ist",elternteil)
+        print("---")
+```
+
+:::{.callout-note collapse="true"}
+
+Ein anderes Beispiel:  In @sec-forloops-ex-party haben wir die beiden Zeilen `"Who likes to party?"`, "We like to party?" 5x wiederholt. Dabei werden die Wörter `to party für jede Wiederholung zwei mal wiederholt:
+
+```
+Who likes to party?
+We like to party!
+Who likes to party?
+We like to party!
+...
+
+```
+
+Dies kann man in zwei verschachtelte *For Loops* umschreiben:
+
+```python
+for i in range(5):
+    inner = ["Who likes", "We like"]
+    for j in inner:
+        print(j+" to party")
+
+Who likes to party
+We like to party
+Who likes to party
+We like to party
+```
+
+:::
+
+## Verkürzte Schreibweise
+
+Es ist äusserst häufig der Fall, dass wir den Output aus einem Loop in einer Liste abspeichern wollen. Wie das geht haben wir ja bereits in @sec-forloops-2 gelernt:
+
+```{python}
+rollen = ["bitch","lover","child","mother","sinner","saint"]
+
+refrain = []
+for rolle in rollen:
+    liedzeile = "I'm a "+ rolle 
+    refrain.append(liedzeile)
+```
+
+Nur ist das ein *bisschen* umständlich, weil wir dafür viele Zeilen Code brauchen, um etwas eigentlich ganz simples zu bewerkstelligen. Es gibt deshalb dafür auch eine verkürzte Schreibweise, welche ich in der letzten Woche bereits einmal verwendet habe (siehe @sec-offset-vis). Der obige Loop hat in der verkürzten Schreibweise die folgende Form:
+
+```{python}
+refrain = ["I'm a "+ rolle for rolle in rollen]
+```
+
+Diese verkürzte Schreibweise heisst in Python *list comprehension* und sie ist äusserst praktisch, wenn man sie beherrscht. Das Beherrschen ist aber nicht zentral, es reicht schon wenn ihr eine solche Schreibweise wieder erkennt und richtig interpretieren könnt (im Sinne von "*Aha, hier wird also in einem Loop eine Liste erstellt*"). In der folgenden Darstellung seht ihr farblich, welche Elemente sich in der verkürzten Schreibweise wo wiederfinden und welche Elemente gar nicht wiederverwendet werden.
+
+```{python}
+#| echo: true
+rollen = ["bitch","lover","child","mother","sinner","saint"]
+```
+
+:::: columns
+
+::: {.column width="49%"}
+
+Herkömmlicher For-Loop:
+
+<div class="sourceCode cell-code">
+  <pre class="sourceCode python">
+  <span class = "grp1">ref =</span> <span class = "grp2">[]</span>
+  <span class = "grp3">for</span> <span class = "grp4">r in rollen</span>:
+      <del>liedzeile =</del> <span class = "grp5">"I'm a "+ r</span>
+      <del>refrain.append(liedzeile)</del>
+  </pre>
+</div>
+
+:::
+
+::: {.column width="2%"}
+
+:::
+
+::: {.column width="49%"}
+
+Verkürzte Schreibweise:
+<div class="sourceCode cell-code">
+  <pre class="sourceCode python">
+<span class = "grp1">ref =</span> <span class = "grp2">[</span><span class = "grp5">"I'm a "+ r</span> <span class = "grp3">for</span> <span class = "grp4">r in rollen</span><span class = "grp2">]</span>
+</pre>
+</div>
+
+:::
+
+::::

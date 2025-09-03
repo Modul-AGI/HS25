@@ -1,0 +1,131 @@
+# Abfragen aus der Datenbank in ArcGIS Pro einbinden
+
+In den nächsten Übungen wollen wir mit den Daten in unserer Beispiel-Datenbank umgehen (siehe @fig-db3-uebung3-1). Dazu versuchen wir die Daten aus den einzelnen Tabellen zu verknüpfen und sinnvoll aufzubereiten, um Sie anschliessend im ArcGIS Pro einzubinden und zu visualisieren. Unsere Pflanzendatenbank hat hierbei immer den Namen "modulagi_pdb". Verwenden Sie, wenn nicht anders angegeben diese Datenbank. Erstellen Sie zunächst noch einen beliebigen Ordner auf Ihrem Rechner in welchem wir die jeweiligen Ergebnisse speichern können. Sie finden ein Datenbankschema der Pflanzendatenbank auf dem Moodle. Dies hilft Ihnen beim Verständnis der Datenbank und seinen Beziehungen. Nutzen Sie auch die PostGIS Referenz, um die PostGIS Funktionen zu verstehen.
+
+- [Datenbankschema](https://moodle.zhaw.ch/mod/resource/view.php?id=1370411)
+- [PostGIS Referenz](https://postgis.net/docs/manual-3.3/reference.html)
+  
+Wenn Sie sich bei den SQL-Befehlen nicht ganz sicher sind, so versuchen Sie schrittweise zum Ziel zu kommen. Formulieren Sie zunächst einen einfacheren Teil der Abfrage, z.B. nur Attribute aus einer Tabelle und fügen Sie dann die weiteren Attribute und/oder Tabellen schrittweise hinzu. Probieren Sie bei Bedarf nach jedem Zwischenschritt die Abfrage aus und schauen sich die Ergebnisse an.
+
+![Datenbankschema: Pflanzendatenbank (die gelben Schlüssel sind Primärschlüssel, die blauen Pfeile sind Fremdschlüssel).](figures/screenshot-uebung3-1.jpg){#fig-db3-uebung3-1}
+    
+## Übung 3: Werkzeug "Make Query Table" anwenden
+
+Das Werkzeug erstellt aus einer beliebigen Datenbankabfrage eine von ArcGIS Pro lesbare temporäre Tabelle. Dies ist immer dann sinnvoll, wenn z.B. nur eine Teilmenge aller Objekte gebraucht wird. Diese Teilmenge wird dabei in eine neue Tabelle geschrieben. 
+
+:::{.callout-tip}
+Die Tabelle wird nur temporär in dem Projekt abgelegt, 
+d.h. es wird keine konkrete Datei geschrieben und auch keine neue 
+Tabelle in der Datenbank erstellt, sondern nur die Abfrage im Projekt gespeichert. 
+:::
+
+1. Starten Sie pgAdmin und verbinden Sie mit der Pflanzendatenbank "modulagi_pdb" mit Ihrem Benutzer studentNr.
+2. Probieren Sie folgende SQL-Abfrage zu formulieren.
+3. Suchen Sie alle Gattungen der Familie "Asteraceae". Zeigen Sie den Namen der Familie und den Namen der Gattung an (siehe @fig-db3-uebung3-2).
+4. Starten Sie ArcGIS Pro und öffnen das Projekt "Pflanzendatenbank_III".
+5. Erstellen Sie eine neue Karte.
+6. Öffnen Sie das Werkzeug "Make Query Table"
+7. Wählen Sie die beteiligten Tabellen familien und gattungen (über die Datenbankverbindung)
+8. Wählen Sie die anzuzeigenden Felder name_familie und name_gattung
+9. Filtern Sie die Abfrage über die SQL-Expression nach ‘Asteraceae’.
+
+:::{.callout-tip}
+Sie brauchen im Werkzeug nur den WHERE Teil der Abfrage ohne das Schlüsselwort WHERE 
+eingeben. Achten Sie auch auf die verknüpften Schlüssel (id_familie) in beiden Tabellen. 
+Sie können den WHERE Teil natürlich aus pgAdmin kopieren. 
+Achten Sie in dem Fall darauf im Werkzeug auf die SQL-Ansicht umzustellen.
+:::
+10.	Geben Sie der neuen Tabelle einen Namen.
+11.	Prüfen Sie die Inhalte der neuen Tabelle. Vergleichen Sie mit dem Ergebnis aus pgAdmin.
+
+:::{.callout-tip}
+"Make Query Table" erlaubt nur NICHT-räumliche Abfragen. 
+Es können zwar Felder aus räumlichen Tabellen abgefragt werden, 
+das Ergebnis ist aber immer eine einfache Tabelle und keine Feature Class.
+:::
+
+![Ausschnitt Datenbankschema modulagi_pdb](figures/screenshot-uebung3-2.jpg){#fig-db3-uebung3-2 width="50%"}
+
+## Übung 4: Werkzeug "Make Query Layer" anwenden
+
+Das Werkzeug erstellt aus einer beliebigen Datenbankabfrage eine von ArcGIS Pro lesbare temporäre Feature Class. 
+
+:::{.callout-tip}
+ Die Feature Class wird nur temporär in dem Projekt abgelegt, d.h. 
+es wird keine konkrete Datei geschrieben und auch keine neue Tabelle 
+in der Datenbank erstellt, sondern nur die Abfrage im Projekt gespeichert.
+:::
+
+1. Probieren Sie folgende SQL-Abfrage in pgAdmin zu formulieren.
+2. Suchen Sie den Standort aller Eichen (Gattung = Quercus). Zeigen Sie Gattung, Art und den Standort mit der objectid (Attribut shape + objectid) (siehe @fig-db3-uebung4-1).
+3. Wechseln Sie zu ArcGIS Pro.
+4. Öffnen Sie das Werkzeug "Make Query Layer".
+5. Schreiben Sie das SQL-Query.
+
+:::{.callout-tip }
+Sie können die Abfrage aus pgAdmin (Schritt 3) kopieren und hier 
+wieder einfügen. Klicken Sie danach auf eine leere graue Fläche 
+irgendwo im Werkzeug-Fenster damit das Kopierte angenommen wird.
+:::
+6. Die folgenden Einstellungen sollten dadurch dann automatisch gefunden werden.
+7. Achten Sie auf den korrekten Geometrietyp (Shape Type) und das Koordinatensystem, die SRID Nummer für das Schweizer Koordinatensystem CH1903+_LV95 lautet 2056.
+
+:::{.callout-tip}
+Eine Abfrage mit dem Werkzeug "Make Query Layer" benötigt 
+immer ein eindeutiges Identifizierungsfeld (Unique identifier Field(s)). 
+In diesem Fall nutzen wir das Attribut "objectid". 
+Achten Sie auch in den kommenden Abfragen auf ein solches ID-Feld.
+:::
+9. Schauen Sie sich den neuen Layer in der Karte an und werfen Sie auch einen Blick auf die Attributtabelle.
+10. Vergleichen Sie wieder mit dem Ergebnis aus pgAdmin.
+
+:::{.callout-tip}
+Über das Kontextmenü des neuen Layers im Contents Fenster (Data→Export Features) 
+können Sie den Layer auch dauerhaft z.B. als neue Feature Class in eine eigene 
+Datenbank oder als neues Shapefile speichern.
+:::
+
+![Ausschnitt Datenbankschema modulagi_pdb](figures/screenshot-uebung4-1.jpg){#fig-db3-uebung4-1 width="50%"}
+
+## Übung 5: Werkzeug "Create Database View" anwenden
+
+"Create Database View" kann dazu benutzt werden, eine Sicht auf eine Tabelle zu erzeugen bzw. eine Abfrage in der Datenbank zu speichern. Hierbei wird dann nur eine Auswahl von Attributspalten und/oder Objekten zurückgegeben. Eine Sicht ist oft auch nützlich, um komplizierte Abfragen aus mehreren Tabellen in eine Tabelle "zusammen zu fassen", um dann einfacher darauf zugreifen zu können. 
+
+:::{.callout-tip}
+Die Sicht wird bei diesem Werkzeug, anders als in den beiden vorigen Werkzeugen, in der 
+Datenbank gespeichert. D.h. es wird eine neue Tabelle bzw. View in der Datenbank erstellt.
+:::
+
+1. Probieren Sie folgende SQL-Abfrage in pgAdmin zu formulieren.
+2. Machen Sie eine Liste mit allen Pflanzen des Kurses "UÖ Stauden Gärtnerisch". Die Liste soll dabei die ID der Spezies, die Gattung, Art und Sorte der Pflanze sowie den Namen des Kurses und den Standort (Attribut shape) enthalten. Speichern Sie diese Abfrage als View mit dem Namen "pdb.view_kursliste_stauden_gaertnerisch_studentNr" in der Datenbank. (CREATE VIEW … AS SELECT…) (siehe @fig-db3-uebung5-1). 
+
+:::{.callout-tip}
+Mit zwei Minus Zeichen vor einer Zeile können Sie die Zeile auskommentieren.
+::: 
+4. Wechseln Sie zu ArcGIS Pro.
+5. Erneuern Sie die Datenbankverbindung (Refresh / F5), damit die neue View sichtbar ist.
+6. Eine View verhält sich wie eine neue Tabelle in ArcGIS Pro. Aus diesem Grund müsste die Tabelle eigentlich mit der Datenbank registriert werden. Sie erkennen dies auch in der Catalog Ansicht an dem nicht ausgefüllten Rechteck (siehe @fig-db3-uebung5-2).
+7. Eine Registrierung bewirkt das Freischalten der Geodatenbank-Funktionen für diese Tabelle, damit auch neue Daten erfasst und bearbeitet werden können. Da Ihr Benutzer studentNr keine Berechtigungen zum Schreiben im Datenbankschema auf der Datenbank hat, kann die Tabelle jetzt nicht registriert werden. Da wir aber die Tabelle nur abfragen wollen ist dies nicht weiter schlimm.
+8. Öffnen Sie das Werkzeug "Create Database View".
+9. Speichern Sie mit dem Werkzeug eine identische Liste für den Kurs “UÖ Gehölze”. Geben Sie der View den Namen “pdb.view_kursliste_gehoelze_studentNr”. Achten Sie auf das "pdb." vor dem eigentlichen Namen. Dies gibt das Schema an indem die View gespeichert werden soll. Sie können hierzu wieder das SQL-Select-Statement von oben kopieren (ohne den CREATE VIEW Teil) und den Kursnamen entsprechend anpassen.
+10. Schauen Sie sich das Ergebnis in der Attributtabelle und in der Karte an.
+11. Sie sehen an dieser Übung, dass nur der Datenbankbesitzer neue Tabellen erstellen und hinzufügen kann. Andere Benutzer wie der student1 können nur vorhandene Tabellen und Daten bearbeiten und ändern. Neue Tabellen können nur ohne Schreibberechtigung erstellt werden.
+
+![ Ausschnitt Datenbankschema modulagi_pdb](figures/screenshot-uebung5-1.jpg){#fig-db3-uebung5-1}
+
+![Catalog Ansicht in ArcGIS Pro](figures/screenshot-uebung5-2.jpg){#fig-db3-uebung5-2 width="50%"} 
+
+## Übung 6: (optional) Werkzeug "Make Table View"
+"Make Table View" kann dazu benutzt werden, um eine reduzierte Sicht auf eine Tabelle zu erzeugen. Hierbei wird dann nur eine Auswahl von Attributspalten (ohne Geometrie-Attribut) angezeigt. 
+
+:::{.callout-tip}
+Die Sicht wird nur temporär in dem Projekt abgelegt, d.h. es wird keine 
+konkrete Datei geschrieben und auch keine neue Tabelle in der Datenbank 
+erstellt, sondern nur die Abfrage im Projekt gespeichert.
+:::
+
+1. Starten Sie ArcGIS Pro und laden das Projekt mit dem Namen "Pflanzendatenbank_III"
+2. Öffnen Sie das Werkzeug "Make Table View".
+3. Erstellen Sie eine Abfrage wie in Übung 5 und filtern nach der Art "japonicum". 
+4. Wählen Sie als Input Table die zuvor erstellte View, lassen Sie aber das Geometriefeld (shape) in der Abfrage weg und filtern über eine "new Expression" nach name_art = "japonicum".
+5. Lassen Sie sich die Attributtabelle der neuen Tabelle anzeigen.

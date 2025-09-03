@@ -1,0 +1,40 @@
+# JupyterLab {#sec-jupyternotebook}
+
+Bisher haben wir ohne Enwicklungsumgebung (IDE) gearbeitet, was auf die Dauer sehr mühsam sein kann. Erstens wird unser Code nirgens gespeichert und zweitens wird bei der Entwicklung des Codes wenig unterstützt (z.B. keine Autovervollständigung).
+
+Deshalb arbeiten wir von nun an in einer ordentlichen Entwicklungsumgebung, und zwar in JupyterLab. JupyterLab ist eine unter *Data Scientists* sehr beliebte Entwicklungsumgebung. Sie hat zwei Eigenheiten, die anfänglich zu etwas Verwirrung sorgen können. JupyterLab wird:
+
+1. mit dem "Command Prompt" gestartet
+2. über den Webbrowser bedient
+
+Um JupyterLab zu starten verlässt ihr Python im Command Prompt in dem ihr `exit()` oder `quit()` eintippt und mit Enter bestätigt. Danach könnt ihr mit dem Befehl `jupyter lab` eben diesen starten.
+
+![Beendet den Python mit dem Befehl `quit()` oder `exit()`](figures/chdir.jpg){#fig-cwd}
+
+:::{.callout-note}
+## Hinweis
+
+- JupyterLab wird nun in eurem Browser angezeigt, das Programm läuft aber in eurer Konsole. Das heisst:
+  - ihr düft die Konsole nicht schliessen, während ihr mit JupyterLab arbeitet
+  - um JupyterLab zu beenden verwendet ihr in der Konsole die Tastenkombination <kbd>Ctrl</kbd> + C
+- Beachtet den Pfad, der in Python Command Prompt dargestellt wird (in @fig-cwd wird der Pfad `C:\Users\bako\AppData\Local\ESRI\conda\envs\arcgispro-py3-clone2` angezeigt)
+  - Dieser Pfad ist das "Arbeitsverzeichnis", in welchem JupyterLab gestartet wird
+  - Dieser Pfad ist nicht sinnvoll, wir werden ihn in einem nächsten Schritt ändern.
+
+:::
+
+Wie erwähnt ist das automatisch gewählte Arbeitsverzeichnis (im Beispiel `C:\Users\bako\AppData\Local\ESRI\conda\envs\arcgispro-py3-clone2`) nicht ideal. Es macht viel mehr Sinn, ein vertrautes Verzeichnis zu wählen (z.B. den Desktop oder wo ihr eure Unterrichtsunterlagen abspeichert). Dieses Verzeichnis müssen wir wählen, *bevor* wir JupyterLab starten. Schliesst deshalb JupyterLab wieder in dem ihr in der Konsole die Tastenkombination <kbd>Ctrl</kbd> + <kbd>C</kbd> verwendet.
+
+Wählt nun ein sinvolleres Verzeichnis und kopiert dessen Pfad aus dem File Explorer. Gebt nun in der Konsole den Befehl `cd` *(change directory)*, gefolgt von dem Pfad zu dem von uns gewünschten Verzeichnis. Im Beispiel werden wir auf den Desktop wechseln `cd C:\Users\bako\Desktop` (siehe @fig-notebook). 
+
+Nun sollte sich der angezeigte Pfad (vor dem `>`) in eurer Konsole ändern. **Ist dies nicht der Fall, hat das Wechseln des Verzeichnisses nicht funktioniert**. War das wechseln des Verzeichnisses erfolgreich, könnt ihr erneut JupyterLab starten: Im Unterschied zu vorher sollten die Dateien, die Ihr nun seht (siehe @fig-newfile) vertrauter sein.
+
+![JupyterLab starten](figures/notebook.jpg){#fig-notebook}
+
+Öffnet nun ein neues Jupyter Notebook File in dem ihr auf *New > Python 3* klickt (siehe @fig-notebook). 
+
+![Öffnen eines neuen Jupyter Notebook Files](figures/newFile.png){#fig-newfile}
+
+Das Bedienen von JupyterLab lässt sich nicht gut in Worte fassen. Wir wollen diese deshalb in einer kurzen Demo vorzeigen, alternativ (falls du selbständig arbeitest) kannst du dir auch nachstehenden Video anschauen (ab 1:46):
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A5YyoCKxEOU?si=-TROSqlOTofe3K6y&amp;start=106" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

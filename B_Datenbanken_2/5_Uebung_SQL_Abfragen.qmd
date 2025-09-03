@@ -1,0 +1,42 @@
+# Abfragen in SQL mit pgAdmin und ArcGIS Pro
+
+## (Optional) Übung 12: Abfragen in SQL
+
+Wir haben in der Vorlesung ein paar SQL-Abfragen über die "waelder" Datenbank definiert. Da wir jetzt über die vorigen Übungen ein paar Beispiel Daten in die Datenbank importiert haben, können wir diese Datenbank nutzen, um noch ein paar Abfragen zu üben. Es ist nicht Ziel alle Abfragen gemacht zu haben. Machen Sie einfach so viele Abfragen wie Sie können. Beachten Sie auch, dass es oft mehr als einen Lösungsweg gibt.
+
+1. Starten Sie pgAdmin und verbinden mit der Datenbank "waelder" mit Ihrem zugewiesenen Login
+(studentNr).
+2. Formulieren Sie die folgenden SQL-Abfragen und führen diese über das Query Tool von pgAdmin aus.
+Schauen Sie sich anschliessend das Ergebnis in der Attributtabelle und im Geometry Viewer an.
+- Nicht räumliche Abfragen:
+    a. Welche Sichtungsmeldungen wurden von "id_erfasser = x" erfasst?
+    b. Wurden Löwen gesichtet? Wenn ja, wie viele?
+    c. Wie viele Tiere von jeder Art wurden jeweils gesichtet. Geben Sie eine Liste mit den Namen der Tierarten und der Anzahl der Sichtungen aus.
+    d. Wie viele Hasen wurden gesichtet? Geben Sie eine Zahl aus.
+    e. Welcher Erfasser hat am meisten Meldungen erfasst? Geben Sie die id_erfasser und die Anzahl der erfassten Tiere aus.
+    f. Welcher Erfasser hat am meisten unterschiedliche Tiere erfasst? Geben Sie die id_erfasser und die Anzahl der unterschiedlichen Tiere aus.
+    g. In welchen Wäldern kommen Rehe vor? Geben Sie die Namen und die Beschreibung der betroffenen Wälder und die Tierart aus.
+    h. Wie viele unterschiedliche Tierarten wurden gesichtet und welche sind das? Zeigen Sie jede Tierart mit dem Datum der letzten Sichtung. SQL→MAX(datum).
+    i. Welche Tierarten wurden NICHT gesichtet?
+    j. In welchen Monaten wurden die meisten Tiere gesichtet? Geben Sie die drei "besten" Monate für Tiersichtungen aus.
+- Räumliche Abfragen:
+    k. Wie gross sind die erfassten Wälder? Geben Sie eine Liste mit den Waldflächen in qm aus.
+        - Funktion: ST_AREA
+    l. Wie viel Fläche in qm haben alle Wälder zusammen?
+        - Funktion: ST_AREA und SUM
+    m. Welche Sichtungsmeldungen liegen innerhalb eines Waldes?
+        - Funktion: ST_CONTAINS oder ST_WITHIN
+    n. Welche Sichtungsmeldungen liegen ausserhalb des Waldes?
+        - Funktion: ST_UNION und ST_CONTAINS
+    o. In welchem Wald gibt es die meisten Sichtungen?
+        - Funktion: ST_CONTAINS und SUM
+    p. Wie weit sind die ausserhalb liegenden Sichtungsmeldungen vom Wald entfernt?
+        - Funktion: ST_DISTANCE, ST_UNION und ST_CONTAINS
+    q. Welche Tiere wurden ausserhalb vom Wald gesichtet?
+        - Funktion: ST_UNION, ST_CONTAINS + JOIN
+- Weitere Abfragen:
+    r. Gibt es Tierarten, welche nur im Wald gesichtet wurden? Welche sind das?
+    s. Gibt es Tierarten, welche nie im Wald gesichtet wurden? Welche sind das?
+    t. In welchen Wäldern wurden Füchse gesichtet?
+    u. In welchen Wäldern kommen Rehe und Füchse gemeinsam vor?
+    v. Wo gibt es Hermeline aber keine Mauswiesel?

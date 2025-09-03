@@ -1,0 +1,11 @@
+{
+  "hash": "797093086b24efa090bb0082972508d7",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "# Funktionen in *DataFrames* {#sec-offset-dataframe}\n\nIn dieser Aufgabe haben wir das Ziel, die in der letzten Aufgabe (@sec-random-numbers) erstellte Funktion `offset_coordinate()` auf alle Zeckenstich-Koordinaten anwenden. Bildlich gesprochen: Wir nehmen unsere Zeckenstichdatensatz und schütteln ihn **einmal** durch. So erhalten wir einen Datensatz ähnlich wie in @fig-arcgiszecken mit dem Unterschied, dass jede Zeckenstichmeldung nicht eine *Wolke* von simulierten Punkten enthält, sondern nur einen einzelnen Punkt.\n\nNutze hier die Datei *zeckenstiche.csv* von letzter Woche (siehe @tbl-datensaetze). Erstelle ein neues Notebook und nutze nachstehenden Code um die nötigen Module und Functions zu haben:\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nimport pandas as pd\n\ndef offset_coordinate(old, distance = 100):\n    import random\n    new = old + random.normalvariate(0,distance)\n\n    return new\n\nzeckenstiche = pd.read_csv(\"data/zeckenstiche.csv\")\n#           ______________________↗____________________\n#         < verwendet hier euren eigenen relativen pfad >\n#           -------------------------------------------\n     \n\nzeckenstiche\n```\n\n::: {.cell-output .cell-output-error}\n```\nModuleNotFoundError: No module named 'pandas'\n```\n:::\n:::\n\n\n",
+    "supporting": [
+      "12_Funktionen_in_DataFrames_files"
+    ],
+    "filters": []
+  }
+}

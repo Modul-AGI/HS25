@@ -1,0 +1,40 @@
+graph TB
+    subgraph c ["Modul installieren (1x pro Modul)"]
+    CA[no module name 'pandas']
+    CA --> CB{{"Du musst 'pandas' installieren! CWeisst du wie das geht?"}}
+    CB -->|Ja| CZ
+    CB -->|Nein| CF{{"Ist ein freier Terminal verfügbar (1)?"}}
+    CF --> |Nein| CK[Neuer Terminal starten]
+    CF --> |Ja|M{{Ist die richtige environment aktiviert?}}
+    CK --> CT
+    CM -->|Nein| CT["Environment aktivieren (2)"]
+    CM --> |Ja| CZ["'pandas' installieren (3)"]
+    CT --> CZ
+    end
+    subgraph a["Conda Environment erstellen (1x pro Projekt)"]
+    AH{{Hast du eine conda environment erstellt?}}
+    AH --nein--> AI["Environment erstellen (4)"]
+    AI --> AJ["Environment aktivieren (5)"]
+    AH --Ja--> AJ
+    AJ --> AK["Hast du jupyter lab installiert (6)?"]
+    AK --ja--> AL[JupyterLab starten]
+    AK --nein--> AM["JupyterLab installieren (7)"]
+    AM --> AL
+    end
+
+    subgraph b["Conda installieren (1x pro Computer)"]
+    BB{{hast du conda installiert?}}
+    BB --ich weiss es nicht --> BC{{hast du arcgis installiert?}}
+    BC --ja--> BD[du hast conda installiert]
+    BC --nein--> BG["Conda installieren (4)"]
+    BB --ja --> BE
+    BB -- nein--> BG
+    BD --> BE{{"Kannst du Conda vom Terminal bedienen? (2)"}}
+    BG --> BE
+    BE -->|Nein| BF{{"Setze die Systemvariabel (3). Kannst du jetzt Conda vom Terminal bedienen?"}}
+    BE --Ja--> BH["Super! Fahre fort mit 'Environment erstellen'"]
+    BF --Ja--> BH
+    BF --Nein--> BJ[Melde dich bei uns]
+    end
+
+

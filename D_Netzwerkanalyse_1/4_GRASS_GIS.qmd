@@ -1,0 +1,63 @@
+# Aufgabe 2: Zentralitätsmasse berechnen
+
+Die mächtigsten (aber nicht die einzigen[^plugins]) Netzwerkanalyse-Werkzeuge in QGIS stammen aus dem eigenständigen GIS "GRASS GIS", welches bei der Installation von QGIS mitinstalliert wird. Diese können innerhalb von QGIS verwendet werden.
+
+[^plugins]: Da QGIS wie bereits erwähnt von verschiedenen Personen und Gruppen entwickelt wird, gibt es auch Doppelspurigkeiten, die man so in einer kommerziellen Software wie ArcGIS weniger vorfindet. In dieser Hinsicht ist QGIS sehr ähnlich wie die Programmiersprachen R und Python.
+
+## Übung 2.1: Topologie bereinigen
+
+Das OSM Strassennetz "osm_highway" ist topologisch nicht perfekt für unsere Zwecke vorbereitet. An Kreuzungen fehlen teilweise Knoten, welche ein "Abbiegen" auf der Kreuzung ermöglichen. Um diesen Umstand zu beheben, nutzen wir das Tool `v.clean` und führen damit die Operation "break" durch. Dadurch werden Linien an Kreuzungen unterbrochen. Diese Operation löst einige topologische Fehler, führt z.B. bei Brücken und Tunnels aber zu neuen Unstimmigkeiten, die Sie an dieser Stelle aber getrost ignorieren können.
+
+1. Werkzeug `v.clean` auswählen
+2. Parameter:
+    - _Layer to clean_ : Transformierter und geclippter OSM Strassendatensatz
+    - _Cleaning tool_ : break
+    - _v.out.ogr output type:_ auto
+    - _cleaned (output)_: Save to File...
+3. Mit "Run" ausführen
+
+## Übung 2.2: Losgelöste (getrennte) Elemente entfernen
+
+Aufmerksamen Anwendern könnte nun auffallen, dass gewisse Bestandteile des Netzwerks nicht mit dem Hauptnetz verbunden sind. Diese getrennten Elemente können mit dem Werkzeug `v.net.components` identifiziert werden. Das Werkzeug prüft, welche Bestandteile des Netzwerkes miteinander verbunden sind und gruppiert diese mit Nummern. Diese Nummern werden in der Spalte "comp" abgespeichert. 
+
+Im Idealfall sollte unser Netzwerk aus einer Gruppe bestehen; so wäre jeder Knotenpunkt mit jedem andern Knotenpunkt verbunden: Bei uns ist dies jedoch nicht der Fall. Damit wir in den nächsten Übungen mit einem sauberen Datensatz arbeiten können, bereinigen wir dieses Problem an dieser Stelle:
+
+1. Führen Sie das Werkzeug `v.net.components` aus
+    - _Type of components_ : "strong"
+    - _V.out.ogr output type:_ auto
+    - _Network_Components_Line:_ Save to File...
+    - _Network_Components_Point:_ Save to File...
+2. Der neue Linien-Datensatz verfügt (wie oben beschrieben) über eine Spalte "comp". Überprüfen Sie dies, indem Sie die Attributtabelle anschauen.
+4. Färben Sie die Linien nach der Spalte ("comp") ein, sodass jede Gruppe eine Farbe erhält.
+3. Ermitteln Sie die Nummer der Hauptkategorie (z.B. mit dem Werkzeug "Identify Features")
+4. Öffnen Sie die Attributtabelle und machen sie eine "Selektion anhand einer Abfrage" ("Select Features
+    using an expression" [1])
+5. Selektieren Sie die Hauptkategorie mittels einer korrekten Abfrage (z.B. `comp = 99`).
+6. Um die anderen Kategorien zu entfernen, haben Sie nun zwei Möglichkeiten:
+    - Eine Editiersession starten [2], die Selektion invertieren [3] und die selektierten Daten löschen [4]. **ODER**
+    - Selektierte Daten (ohne Invertierung) in ein neues File exportieren mittels Rechtsklick auf den Layer → "Save as" → Häkchen bei "Save only selected features"
+7. Speichern Sie den Layer anschliessend mit folgendem Namen ab: "osm_highway_prepared.gpkg" 
+       
+![](figures/ueb1_fig2.jpg){#fig-figure2}
+
+## Übung 2.3: Zentralitätsmasse berechnen {#sec-ex-centrality-calculate}
+
+Nun kann mit der eigentlichen Netzwerkanalyse begonnen werden. Wir rechnen für unser bereinigtes Strassennetz verschiedene Zentralitätsmasse.
+
+1. `v.net.centrality` starten
+2. Parameter
+    - _Input vector line layer_ : Bereinigter Output aus letzter Übung
+    - _v.out.ogr output type_ : auto
+    - _Network Centrality_: Save to File...
+3. Mit "run" ausführen
+4. Speichern Sie die resultierende Datei in ihrem Ordner ab ("waedenswil_centrality.gpkg")
+
+## Übung 2.4: Zentralitätsmasse Visualisieren
+
+Visualisieren Sie die Ausprägung "Closeness" der berechneten Zentralitätswerte über die Symbologie (Layer Properties → Style → Graduated). Wählen Sie eine geeignete Methode und passen Sie den Stil an, bis er Ihnen gefällt. Spielen Sie dabei mit der Klassifikationsmethode (Mode: Equal interval, Quantile, Natural Breaks..) sowie der Color ramp rum. Achten Sie darauf, dass Sie immer auf "Classify" klicken müssen, um Änderungen anzuwenden.
+
+## Übung 2.5: Zentralitätsmasse vergleichen
+
+Installieren Sie das Plugin "QuickMapServices", um eine OSM Hintergrundkarte einzubinden (e.g. Web → QuickMapServices → OSM → OSM Standard). Um direkt in QGIS die Zentralitätsmasse zu vergleichen, duplizieren sie den entsprechenden Layer noch zweimal (rechtsklick > Duplicate) – so können Sie jede der Zentralitäten separat symbolisieren und vergleichen. Sie können auch für jedes der Zentralitätsmasse eine Karte exportieren via *Project > Import / Export Export Map to Image*.
+
+Vergleichen Sie die drei Zentralitätsmasse und setzen Sie sie in den Kontext der Theorie.

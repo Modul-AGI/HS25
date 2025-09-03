@@ -1,0 +1,10 @@
+# Datenintegrität
+
+## Übung 1: Datenintegrität und Konsistenz
+
+Sie haben den Auftrag ein Datenmodell zur Speicherung von unterschiedlichen Sozialen Schlüssel-Indikatoren für schweizerische Gemeinden zu überprüfen. Hierbei werden jedes Jahr Datenwerte auf Basis einer Gemeinde erhoben. Diese sollen später in der Datenbank gespeichert und ausgewertet werden können. Wichtig hierbei ist, dass die Daten später in einer Karte visualisiert werden können. Deshalb ist es notwendig, dass Gemeinde-Geometrien ebenfalls in der Datenbank gespeichert werden sollen. Ebenfalls ist es sinnvoll bestimmte Indikatoren auch für den gesamten Kanton hochzurechnen, damit diese als Karte dargestellt werden können.
+Sie bekommen als erste Grundlage folgendes Datenbankmodell vom Auftraggeber gestellt. Leider gibt es in diesem Modell ein paar Konsistenzfehler.
+
+![](figures/Übung_Datenbanken2.jpg)
+
+Untersuchen Sie das Datenmodell auf Konsistenzfehler und korrigieren Sie diese. Lesen Sie den Aufgabentext aufmerksam und schauen sich die Abbildung an und entwickeln Sie daraus ein passendes logisches Datenmodell, welches alle Regeln der Datenintegrität einhält. Es muss nicht perfekt sein. Es geht in dieser Übung darum etwas Erfahrung im Lesen von gegebenen Modellen zu bekommen.

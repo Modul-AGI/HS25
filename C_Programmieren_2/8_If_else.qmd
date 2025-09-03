@@ -1,0 +1,84 @@
+# If / Else
+
+Ein wichtiger Bestandteil von Programmieren sind Fallunterscheidungen. Mit Fallunterscheidungen können wir mit unterschiedlichen Situationen verschieden umgehen.
+
+Die einfache Fallunterscheidung ist die bedingte Verzweigung. Die Syntax der einfachen `if`-Anweisung lautet folgendermassen:
+
+```python 
+if Bedingung:
+    # Anweisungen 1
+else:
+    # Anweisungen 2
+```
+
+Zum Beispiel:
+
+```{python}
+# hier alter eingeben:
+alter = 35
+
+if alter < 40:
+    print("Backstreet Boys: 'I want it that way'")
+else:
+    print("The Jackson 5: 'I want you back'")
+```
+
+Wenn wir mehr als zwei verschiedene Fälle haben, können diese mit `elif` dazwischen geschaltet werden. 
+
+```python
+if Bedingung1:
+    # Anweisungen 1
+elif Bedingung2:
+    # Anweisungen 2
+elif Bedingung3:
+    # Anweisungen 3
+else:
+    # Anweisungen 4
+```
+
+Zum Beispiel:
+
+```{python}
+# hier alter eingeben:
+alter = 35
+
+if alter < 20:
+    print("Kesha: 'Tik Tok'")
+elif alter < 30:
+    print("Destiny's Child: 'Say My Name'")
+elif alter < 40:
+    print("Mariah Carey: 'Vision of love'")
+else:
+    print("Blondie: 'Call me'")
+```
+
+Solche Fallunterscheidungen sind vor allem in Funktionen sehr praktisch. Aus dem obigen Beispiel können wir beispielsweise eine Funktion erstellen, die uns ein Lied in Abhängigkeit zu unserem Alter vorschlägt:
+
+```{python}
+def suggest_song(alter):
+    if alter < 20:
+        song = "Kesha: 'Tik Tok'"
+    elif alter < 30:
+        song = "Destiny's Child: 'Say My Name'"
+    elif alter < 40:
+        song = "Mariah Carey: 'Vision of love'"
+    else:
+        song = "Blondie: 'Call me'"
+    return "I suggest the song " + song + ". Enjoy!"
+
+suggest_song(24)
+```
+
+Dabei ist wichtig, dass man sich jeweils die Ausführungslogik vor Augen führt.
+
+```{mermaid}
+graph LR
+    A[alter < 20] 
+    A-->|yes| B[Kesha: 'Tik Tok']
+    A-->|no| C[Alter < 30]
+    C-->|yes| D[Destiny's Child: 'Say My Name']
+    C-->|no| E[alter < 40]
+    E-->|yes| F[Mariah Carey: 'Vision of love']
+    E-->|no| G[Blondie: 'Call me']
+```
+

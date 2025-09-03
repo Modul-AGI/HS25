@@ -1,0 +1,12 @@
+# Netzwerkanalyse I
+
+Die Lerneinheit vermittelt die Grundlagen bei der Verwendung von Netzwerk-Geodaten. Die Anwendungsfelder reichen von Streckenfindung und Reisezeitberechnungen zu Energienetzwerk-Systeme bis hin zu Gewässernetzen in der Hydrologie. Diese Lerneinheit vermittelt die dafür relevanten Grundlagen aus der Graphentheorie und knüpft dabei an die bekannten Grundlagen der Vektordatenmodellierung (Definitionen, Elemente von Graphen, Eigenschaften von Graphen, Bäume) an. Zudem werden im theoretischen Teil Netzwerkmasse, insbesondere Zentralitätsmasse nähergebracht. Der praktische Teil basiert auf der Einführung und Verwendung von QGIS als Alternative zu den ESRI-Produkten.
+
+:::{.callout-note}
+## Übungsziele
+
+- Einfache GIS-Operationen mit QGIS durchführen können (Clip, Reproject, Abfrage der Attributtabelle, Symbolisierung, Export als jpg)
+- Schnittstelle zwischen QGIS und anderen GIS-Software am Beispiel GRASS kennenlernen
+- Erste Netzwerkoperationen mit QGIS/GRASS GIS durchführen
+- Netzwerk-Zentralitätsmasse verstehen und für einfache Netzwerkdaten berechnen können
+:::

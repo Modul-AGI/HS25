@@ -1,0 +1,47 @@
+# Datengrundlage
+
+Auf Moodle steht ein ArcGIS Pro Project Package (Name: Unsicherheit) mit den heutigen Übungsdaten zum Download zur Verfügung. 
+
+Als Packages aufbereitete ArcGIS Pro Projekte können als File anderen Personen zur Verfügung gestellt werden. Damit können auf elegante Art und Weise die eigenen Projektdaten geteilt werden. 
+
+<!--[Create a project package](https://pro.arcgis.com/en/pro-app/help/sharing/overview/project-package.htm)-->
+
+:::{.callout-note}
+## ArcGIS Pro Help: Create a project package
+
+<https://pro.arcgis.com/en/pro-app/help/sharing/overview/project-package.htm>
+:::
+
+Das ArcGIS Pro Projekt "Unsicherheit" beinhaltet eine Geodatenbank mit folgenden Feature Classes:
+
+- Feature Dataset Grundlagendaten
+    - Untersuchungsgebiet (Polygon)
+    - Wald_NichtWald (Polygon)
+- Feature Dataset Zeckenstichdaten
+    - Tick_Original (Point)
+    - Tick_Run_1 bis Tick_Run_40 (Point)
+
+## Layer
+
+Die Feature Class Tick_Original beinhaltet die Originalstandorte der via Zecken App gemeldeten Zeckenstiche im Raum Zürich aus dem Zeitraum März 2015 bis Juli 2019. Es handelt sich dabei um 1076 Meldungen. Die anderen 40 Feature Classes mit den Bezeichnungen Tick_Run_1 (bis …40) enthalten die mittels Zufall veränderten Positionen der Originalstandorte (vgl. Abschnitt Datenvorverarbeitung).
+
+Der Layer Wald_NichtWald beinhaltet die Waldausdehnung innerhalb des Untersuchungsraums. Die Daten stammen aus dem Landschaftsmodell swissTLM3D von swisstopo (Layer Bodenbedeckung).
+
+![](figures/zeckenstiche.png)
+
+- FC Wald_Nichtwald
+  - Wald: 0 = Kein Wald / 1 = Wald
+- FC Tick_Original
+  - ID: ID Zeckenstichmeldung
+  - acc_: Zoomstufe in Karte während der Erfassung des Stiches in der App
+  - x_lv95: X Koordinate (CH1903+ LV95)
+  - y_lv95: Y Koordinate (CH1903+ LV95)
+  - Run_Nr: 0 (Original)
+- FC Tick_Run_1 bis Tick_Run_40
+  - ID: ID Zeckenstichmeldung (gleich wie in Original)
+  - acc_: Zoomstufe in Karte während der Erfassung des Stiches in der App (gleich wie in Original)
+  - x_lv95: X Koordinate (Originalstandort)
+  - y_lv95: Y Koordinate (Originalstandort)
+  - Run_Nr_x: X Zufallskoordinate Run Nr
+  - Run_Nr_y: Y Zufallskoordinate Run Nr
+  - Run_Nr: Nummer Zufallsdurchgang

@@ -1,0 +1,58 @@
+# Aufgabe 3: Kürzeste Pfade (shortest path)
+
+:::{.callout-note}
+
+Standartmässig werden Dateien als temporäre Files abgespeichert, die nach dem Schliessen von QGIS gelöscht werden. Um einen Output an einem festgelegten Ort abzuspeichern muss der Output definiert werden. Dazu klickt man neben [Save to temporary file] auf die drei Punkte und wählt "Save to File" aus.
+
+![Save to File](figures/saveToTemp.jpg){#fig-saveToTempFile}
+:::
+
+## Übung 3.1: Projekt vorbereiten {#sec-ex-osm-background}
+
+Starten Sie QGIS und beginnen Sie ein neues Projekt mit dem CRS CH1903+ LV95 (EPSG 2056). Lesen Sie den Datensatz "osm_highway_prepared.gpkg" von letzter Woche ein. Wer den Datensatz von letzter Woche nicht auffinden kann, findet die Datei in @tbl-datensaetze-netzwerkanalyse. Prüfen Sie, ob das CRS richtig erkannt wurde (Rechtsklick → Properties → Reiter Source → *Set source coordinate reference system* → Hier sollte EPSG 2056 stehen).
+
+Wir brauchen zudem eine Hintergrundkarte zur Orientierung. Blenden Sie mit dem Plugin "QuickMapServices" die Openstreetmap Hintergrundkarte ein (Web → QuickMapServices → OSM → OSM Standard) ein. Falls Sie diese Option nicht finden, müssen Sie das enstprechede Plugin "QuickMapServices" installieren (siehe dazu @sec-ex-network-plugins).
+
+Die Hintergrundkarte dient lediglich zur Orientierung, die Farben lenken uns jedoch vom Netzwerk ab. Wechseln Sie deshalb den Darstellungsmodus auf Graustufen mittels Rechtklick auf den Layer "OSM Standard" → Properties → Symbology → Grayscale Auswahl: "By lightness".
+
+## Übung 3.2: Kürzester Pfad berechnen {#sec-ex-shortestpath}
+
+Nun können wir mittels "*Shortest path (point to point)*" (aus dem Toolset "Network analyses" den kürzesten Pfad zwischen zwei Knotenpunkten auf dem Netzwerk berechnen. Starten sie das Tool und wählen sie als Input Datensatz ("Vector Layer representing network") _osm_highway_prepared_ aus.
+
+Die Start- und Endpunkte können Sie interaktiv in der Karte setzen. Klicken Sie dazu auf das Symbol neben den entsprechenden Feldern ("Start point" bzw. "End point") und klicken Sie in der Karte an die gewünschten Stellen. Führen Sie das Tool mit "Run" aus.
+
+Visualisieren Sie nun den neuen Layer "Shortest Path" so, dass er gut ersichtlich ist.
+
+**Hinweis:** Auch GRASS GIS bietet einen Shortest Path Algorithmus an (v.net.path). Dieser ist darauf ausgelegt, viele kürzeste Pfade für viele Punkte zu berechnen, und nimmt als Input deshalb ein Textfile.
+
+## Übung 3.3: Mit ORS Routing vergleichen
+
+Nun wollen wir diese Route mit derjenigen eines professionellen Routing Services vergleichen. https://maps.openrouteservice.org/ bietet ihre Dienste bis zu einem bestimmten Kontingent kostenlos an. Installieren Sie das Plug-In "ORS Tools" um diesen Service zu nutzen.
+
+Führen Sie das Tool nach der Installation via Web → ORS Tools → ORS Tools aus. Gehen Sie zu Settings siehe @fig-ORS-einstellung). 
+
+![Öffnen der Einstellungen im ORS Tool](figures/ORS_Einstellungen.png){#fig-ORS-einstellung width=50%}
+
+Fügen Sie unter "API Key" den Schlüssel ein (siehe @fig-ORS-key). Den Schlüssel findet ihr auf Moodle. Über diesen Schlüssel wird sichergestellt, dass die Anzahl Abfragen pro Minute und Tag ein gewisses Maximum nicht überschreiten.
+
+![Einfügen des API Keys](figures/ORS_key.png){#fig-ORS-key width=50%}
+
+Geben Sie Start und Endpunkt mit der Maus ein (Klick auf das +, siehe @fig-ORS-route) und orientieren sich dabei an dem Layer "Shortest_Path" (aus der vorherigen Übung). Die Punkte setzen Sie mit einem Linksklick, den letzen Punkt setzen Sie mit einem Doppelklick.
+
+![ Beachten Sie, dass Sie mit + eine ganze Route setzen müssen und nicht einzelne Punkte.](figures/ORS_Punkte.png){#fig-ORS-route width=50%}
+
+Allenfalls verschwindet das "ORS Tools" Fenster, sie können es aber über die Toolbar (siehe @fig-orsrouting) wieder aufrufen.
+
+![ORS Routing](figures/osm.jpg){#fig-orsrouting}
+
+Mit einem Klick auf dieses Symbol erscheint das ORS Routing wieder.
+
+Führen Sie die Berechnung mit "Apply" aus und vergleichen Sie den resultierenden Pfad mit dem "Shortest Path" aus @sec-ex-shortestpath. Führen Sie die gleiche Berechnung mit verschiedenen Einstellungen durch (kürzeste Route, schnellste Route, Fahrrad, zu Fuss). Vergleichen Sie die unterschiedlichen Routen mit unserer eigenen Berechnung und visualisieren Sie diese in einer Karte.
+
+Berechnen Sie nun mit OSM Routing den kürzesten Pfad zwischen dem Campus Grüental und dem Campus Reidbach, auch wieder je einmal mit der Verkehrsmodalität Auto, Fahrrad und Fussweg. Vergleichen Sie die drei Resultate.
+
+:::{.callout-note}
+
+Das `ORS Tools Plugin` bietet keine Möglichkeit, die blauen Linien zu entfernen, die die ausgewählten Punkte auf der Karte verbinden (https://github.com/GIScience/orstools-qgis-plugin/issues/120). Diese Linien sind temporär, d.h. sie werden beim nächsten Öffnen des QGIS-Projekts wieder verschwinden.
+
+:::

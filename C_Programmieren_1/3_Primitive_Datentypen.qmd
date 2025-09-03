@@ -1,0 +1,79 @@
+# Primitive Datentypen
+
+Bei primitiven Datentypen handelt es sich um die kleinste Einheit der Programmiersprache, sie werden deshalb auch "atomare Datentypen" genannt. Alle komplexeren Datentypen (Tabellarische Daten, Bilder, Geodaten) basieren auf diesen einfachen Strukturen. Die für uns wichtigsten Datentypen lauten: *Boolean*, *String*, *Integer* und *Float*. Das sind ähnliche Datentypen wie ihr bereits aus R kennt:
+
+| Python | R | Beschreibung | Beispiel | in Python | 
+|:---|:---|:---|:---|:---|
+| Boolean | Logical | Logische Werte ja / nein | Wahr / Falsch | `regen = True` |
+| String | Character | Textinformation | Bern, Luzern | `stadt = "Bern"` |
+| Integer | Integer | Zahl ohne Nachkommastelle | Anzahl Einwohner | `bern = 133115` |
+| Float | Double | Zahl mit Nachkommastelle | Temperatur | `temp = 22.5` |
+
+
+:::{#tip-positron-project .callout-tip}
+
+:::
+
+
+## Boolean
+
+Hierbei handelt es sich um den einfachsten Datentyp. Er beinhaltet nur zwei Zustände: *Wahr* oder *Falsch*. In Python werden diese mit `True` oder `False` definiert (diese Schreibweise muss genau beachtet werden). Beispielsweise sind das Antworten auf geschlossene Fragen.
+
+```{python}
+regen = True # "es regnet"
+
+sonne = False # "die Sonne scheint nicht"
+
+type(sonne)
+```
+
+Um zu prüfen, ob ein bestimmter Wert `True` oder `False` ist, verwendet man `is True`. Will man also fragen, ob es regnet, wird dies folgendermassen formuliert:
+
+```{python}
+# regnet es?
+regen is True
+```
+
+Ob die Sonne scheint, lautet folgendermassen (natürlich müssen dazu die Variabel `sonne` bereits existieren):
+
+```{python}
+# scheint die Sonne?
+sonne is True
+```
+
+## String
+
+In sogenannten *Strings* werden Textinformationen gespeichert. Beispielsweise können das die Namen von Ortschaften sein.
+
+```{python}
+stadt = "Bern"
+land = "Schweiz"
+
+type(stadt)
+```
+
+Strings können mit `+` miteinander verbunden werden
+
+```{python}
+stadt + " ist die Hauptstadt der " + land
+```
+
+## Integer
+
+In *Integer* werden ganzzahlige Werte gespeichert, beispielsweise die Anzahl Einwohner einer Stadt. 
+
+```{python}
+bern_einwohner = 133115
+
+type(bern_einwohner)
+```
+
+## Float
+
+Als *Float* werden Zahlen mit Nachkommastellen gespeichert, wie zum Beispiel die Temperatur in Grad Celsius.
+
+```{python}
+bern_flaeche = 51.62
+
+type(bern_flaeche)
+```

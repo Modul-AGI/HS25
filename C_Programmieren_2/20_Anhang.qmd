@@ -1,0 +1,168 @@
+# Anhang
+
+## Anhang I: Conda cheat sheet {#sec-conda}
+
+In der folgenden Tabelle werden die Einzelschritte in der Verwendung von Conda nochmal zusammengefasst. Wichtig ist vor allem, wann dieser Schritt nötig ist und wie er ausgeführt wird. Um die Tabelle kompakt zu halten werden gewisse Details als Fussnote verlinkt.
+
+| Schritt  | Wann ist dies nötig?  | Details zum Vorgehen / Befehl für die Konsole[^konsole] | 
+|:---|:---|:---|
+| **1\. Conda installieren** (installiert das Program *conda*)  | einmalig (ist nicht nötig, wenn ArcGIS Pro installiert ist)  | [Miniconda](https://docs.conda.io/en/latest/miniconda.html) (empfohlen) oder [anaconda](https://www.anaconda.com/products/individual) herunterladen und installieren |
+| **2\. *Virtual environment* erstellen** (erstellt eine neue Arbeitsumgebung)  | einmal pro Projekt nötig (wobei eine environment auch wiederverwendet werden kann)  | in der Konsole: `conda create --name geopython` |
+| **3\. *Virutal environment* aktivieren** (schaltet den "Bearbeitungsmodus" ein)  | jedes mal nöig wenn ein  *Erweiterung installiert** werden soll  | in der Konsole [^linux]: `activate geopython` |
+| **4\. weitere Module [^weiteremodule] installieren** (fügt der *environment* zB `pandas` hinzu)  | jedes mal nötig, wenn ein Modul in einer Environment fehlt[^modulfehlt]  | in der Konsole [^activate]<sup>,</sup>[^jupyterlabbeenden]: `conda install -c conda-forge pandas` |
+
+[^konsole]: Mit Konsole ist unter Windows *cmd* gemeint (Windowstaste > cmd). Unter Linux wird bash, auf Mac der Terminal verwendet. 
+
+[^linux]: Unter Linux: `conda activate geopython`
+
+[^activate]: Falls die richtige environment noch nicht aktiviert ist, muss dies zuerst noch erfolgen (z.B `activate geopython`).
+
+[^modulfehlt]: Dies macht sich bemerkbar duch die Fehlermeldung `ModuleNotFoundError: No module named 'pandas'`
+
+[^weiteremodule]: In Programmieren I - III brauchen wir die Module `pandas`, `matplotlib`, `geopandas` und `descartes`
+
+
+
+
+## Anhang 2: Probleme mit Conda: Umlaute im Bentzernamen
+
+Alle *conda environments* werden an einem zentralen Ort gespeichert. Typischerweise im folgenden Verzeichnis: `C:\Users\DEIN-WINDOWS-BENUTZERNAME\AppData\Local\ESRI\conda\envs\`. Wenn ihr Umlaute in eurem Windows Benutzernamen habt, findet `conda` eure *environment* möglicherweise nicht. Eine Möglichkeit, dieses Problem zu beheben, ist einen alternativen Speicherort für eure *conda environments* zu definieren. Dazu geht ihr wie folgt vor[^envsdirs]:
+
+1. Überlege dir eine Location, wo du deine conda nvironments abspeichern möchtest (z.B. `C:\conda-envs`). Erstelle diesen Ordnerpfad und prüfe ob du dort Schreibrechte hast indem du in diesem Orner `C:\conda-envs` eine Dateie erstellst. Wenn das klappt, hast du Schreibrechte.
+2. Füge diesen Pfad deiner conda configuration hinzu:
+
+    ```cmd
+    conda config --append envs_dirs C:\conda-envs
+    ```
+        
+3. Prüfe ob der letzte Schritt funktioniert hat indem du folgendem Befehl laufen lässt und prüfst, ob `C:\conda-envs` vorkommt:
+
+    ```cmd
+    conda config --show envs_dirs
+    ```
+
+4. Erstelle eine neue conda environment in dieser neu erstellten directory:
+
+    ```cmd   
+    conda create --prefix=C:\conda-envs\geopython
+    ```
+
+5. Prüfe, ob das geklappt hat, indem du die verfügbaren environments auflistest.
+
+    ```cmd
+    conda info --envs
+    ```
+
+6. Wenn das geklappt hat, kannst du nun deine environment aktivieren
+
+    ```cmd
+    conda activate geopython
+    ```
+
+[^envsdirs]: Aus: <https://stackoverflow.com/a/67376348/4139249>
+
+## Anhang 3: Conda und `arcpy`
+
+Um die ganzen Befehle von ArcGIS direkt in Python ansteuern zu können, muss das package arcpy installiert werden. Bisher haben wir alle unsere Packages mit conda installiert, z.B:
+
+```default
+conda install -c conda-forge geopandas
+```
+
+Mit `arcpy` geht dies leider nicht, weil `arcpy` ein kostenpflichtiges Modul ist welches eine ArcGIS Lizenz benötigt. Glücklicherweise nutzt ArcGIS aber auch Conda Environments. Wir müssen also nur bewerkstelligen, das Juypter Lab die gleiche Conda environment verwendet wie ArcGIS. Dazu gehen wir wie folgt vor:
+
+- Schritt 1: ArcGIS Python Umgebung Klonen
+- Schritt 2: Die neue Environment aktivieren
+- Schritt 3: weitere Module installieren
+
+
+### Schritt 1: ArcGIS Python Umgebung Klonen
+
+Zuerst prüfen wir die Python Umgebung in ArcGIS. Diese findet man in ArcGIS unter Project > Python
+
+![](figures/arcgis-conda-zoom.png)
+
+Hier ist einerseits die Project Environement ersichtlich (1), andererseits steht aber auch, dass diese Environment "read only" ist (2). Das bedeutet, dass wir keine neuen module installieren können, wenn wir diese Environment benutzen. Wir folgen deshalb den Vorschlag "Clone and activate a new environment". Dazu klicken wir auf "Manage Environment" (3). Übrigens: Das ArcGIS Conda benutzt sehen wir an (4).
+
+
+Klicke hier auf "Clone Default" um die Umgebung zu kopieren. Das dauert eine Weile, danach kann man die neue Environment auswählen (Klick auf den Button "Active"). Notiert dir den Namen der neuen Environment, speichere das ArcGIS Projekt ab und starte das ArcGIS neu
+
+### Schritt 2: Die neue Environment aktivieren
+
+Nun haben wir uns eine wunderschöne Python Umgebung parat gemacht und können diese jetzt in CMD aktivieren. Starte dazu Command Prompt / CMD und schaue dir die verfügbaren environments an:
+
+```default
+conda env list
+```
+
+Bei mir sieht der output folgendermassen aus:
+
+```default
+# conda environments:
+#
+arcgisonline             C:\Users\rata\AppData\Local\ESRI\conda\envs\arcgisonline
+arcgisonline2            C:\Users\rata\AppData\Local\ESRI\conda\envs\arcgisonline2
+arcgispro-py3-clone      C:\Users\rata\AppData\Local\ESRI\conda\envs\arcgispro-py3-clone
+arcgispro-py3-clone1     C:\Users\rata\AppData\Local\ESRI\conda\envs\arcgispro-py3-clone1
+cameratraps-detector     C:\Users\rata\AppData\Local\ESRI\conda\envs\cameratraps-detector
+geopython                C:\Users\rata\AppData\Local\ESRI\conda\envs\geopython
+test                     C:\Users\rata\AppData\Local\ESRI\conda\envs\test
+arcgispro-py3         *  C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3
+root                     C:\Program Files\ArcGIS\Pro\bin\Python
+```
+
+Aktiviere nun die eben erstelle environment mit folgendem code (ersetzte `name-der-environment` mit dem tatsächlichen Namen deiner neuen environment aus dem letzten Schritt. 
+
+```default
+activate name-der-environment
+```
+
+### Schritt 3: weitere Module installieren
+
+Glücklicherweise ist `jupyterlab` bereits in der `arcgis` environment installiert, dies können wir mit folgendem code überprüfen:
+
+```default
+conda list
+```
+
+```default
+# packages in environment at C:\Users\rata\AppData\Local\ESRI\conda\envs\arcgispro-py3-clone1:
+#
+affine                    2.3.0                      py_0    anaconda
+arcgis                    1.8.2                 py36_1275    esri
+arcgispro                 2.6                           0    esri
+.
+.
+.
+jupyterlab                2.2.9                      py_0    conda-forge
+jupyterlab_pygments       0.1.2              pyh9f0ad1d_0    conda-forge
+jupyterlab_server         1.2.0                      py_0    conda-forge
+.
+.
+.
+```
+
+Wenn jetzt aber noch module fehlen (wie z.B. `geopandas`), dann können wir diese wie gewohnt installieren.
+
+### Schritt 4: `arcpy` verwenden
+
+Wenn alles gewünschten Module installiert sind können wir nun JupyterLab starten.
+
+Sobald JupyterLab gestartet ist, können wir innerhalb einer cell das Modul `arcpy` mit `import arcpy` importieren und nun auch verwenden. Zum Beispiel folgendermassen:
+
+```python
+import arcpy
+from arcpy import env
+
+# Set environment settings
+env.workspace = "C:/data/Habitat_Analysis.gdb"
+
+# Select suitable vegetation patches from all vegetation
+veg = "vegtype"
+suitableVeg = "C:/output/Output.gdb/suitable_vegetation"
+whereClause = "HABITAT = 1" 
+arcpy.Select_analysis(veg, suitableVeg, whereClause)
+```
+
+Der Syntax ist auf jeder jeweiligen Tool Beschreibung gut dokumentiert (Abschnitt "Code Sample", z.B. [hier](https://pro.arcgis.com/en/pro-app/tool-reference/analysis/buffer.htm))
+

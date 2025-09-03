@@ -1,0 +1,145 @@
+project: 
+  type: book
+  preview: 
+      port: 5678
+  execute-dir: project
+
+lang: de-DE
+
+format:
+  # pdf: default
+  html:
+    toc: true
+    theme:
+      dark: [darkly, theme-custom.scss, custom-dark.scss]
+      light: [flatly, theme-custom.scss]
+    number-sections: false
+    css:
+      - custom.css
+#      - present-exercises.css
+    include-in-header:
+      - script.html
+
+execute:
+  freeze: true
+  error: true
+  echo: true
+  output: true
+  message: false
+  warning: false
+    
+book:
+  title: "Modul AGI"
+  subtitle: "HS24"
+  author: "Forschungsgruppe Geoinformatik"
+  reader-mode: true
+  downloads: [pdf]
+  sidebar: 
+    position: left
+    logo: zhaw_sw_pos.png
+    collapse-level: 1
+    style: floating
+  repo-url: https://github.com/modul-AGI/hs24
+  repo-actions: [edit]
+  chapters: 
+    - index.qmd
+    - part: "A_Unsicherheit/1_Einleitung.qmd"
+      chapters:
+      - A_Unsicherheit/2_Datengrundlage.qmd
+      - A_Unsicherheit/3_Datenvorverarbeitung.qmd
+      - A_Unsicherheit/4_Unsicherheit-Zeckenstandorte.qmd
+      - A_Unsicherheit/5_Unschaerfe-des-Waldrandes.qmd
+      - A_Unsicherheit/6_Automatisieren-Modelbuilder.qmd
+      - A_Unsicherheit/7_Leistungsnachweis.qmd
+    - ---
+    - part: "🗃️ Teil: Datenbanken"
+    - part: "B_Datenbanken_1/1_Einleitung.qmd"
+      chapters: 
+      - B_Datenbanken_1/2_Uebung.qmd
+    - part: "B_Datenbanken_2/1_Einleitung.qmd"
+      chapters: 
+      - B_Datenbanken_2/2_Uebung_Datenintegritaet.qmd
+      - B_Datenbanken_2/3_Uebung_Server_Datenbanken.qmd
+      - B_Datenbanken_2/4_Uebung_Versionierung_Mehrbenutzer.qmd
+      - B_Datenbanken_2/5_Uebung_SQL_Abfragen.qmd
+    - part: "B_Datenbanken_3/1_Einleitung.qmd"
+      chapters: 
+      - B_Datenbanken_3/2_Leistungsnachweis.qmd
+      - B_Datenbanken_3/3_Uebung_Datenbankverbindung.qmd
+      - B_Datenbanken_3/4_Uebung_Abfragen_einblenden.qmd
+      - B_Datenbanken_3/5_Uebung_Geoverarbeitung.qmd
+    - ---
+    - part: "🤖 Teil: Programmieren"
+    - part: "C_Programmieren_1/1_Einleitung.qmd"
+      chapters:
+      - C_Programmieren_1/2_Python-Command-Prompt.qmd
+      - C_Programmieren_1/3_Primitive_Datentypen.qmd
+      - C_Programmieren_1/4_Uebung_1.qmd
+      - C_Programmieren_1/5_Komplexe_Datentypen.qmd
+      - C_Programmieren_1/6_Uebung_2.qmd
+      # - C_Programmieren_1/7_JupyterNotebook.qmd
+      - C_Programmieren_1/8_Dictionary.qmd
+      - C_Programmieren_1/9_Uebung_3.qmd
+      - C_Programmieren_1/10_Tabellarische_Daten.qmd
+      - C_Programmieren_1/11_Uebung_4.qmd
+      - C_Programmieren_1/12_Uebung_5.qmd
+    - part: "C_Programmieren_2/1_Einleitung.qmd"
+      chapters:
+      - C_Programmieren_2/3_Python_Module.qmd
+      - C_Programmieren_2/4_Functions_I.qmd
+      - C_Programmieren_2/5_Uebung_6.qmd
+      - C_Programmieren_2/6_Functions_II.qmd
+      - C_Programmieren_2/7_Uebung_7.qmd
+      - C_Programmieren_2/8_If_else.qmd
+      - C_Programmieren_2/9_Uebung_8.qmd
+      - C_Programmieren_2/10_Zufallzahlen.qmd
+      - C_Programmieren_2/11_Uebung_9.qmd
+      - C_Programmieren_2/12_Funktionen_in_DataFrames.qmd
+      - C_Programmieren_2/13_Uebung_10.qmd
+      - C_Programmieren_2/20_Anhang.qmd 
+    - part: "C_Programmieren_3/1_Einleitung.qmd"
+      chapters:
+      - C_Programmieren_3/2_For_Loops_Intro.qmd
+      - C_Programmieren_3/2_Uebung_11.qmd
+      - C_Programmieren_3/3_For_Loops_Basics.qmd
+      - C_Programmieren_3/3_Uebung_12.qmd
+      - C_Programmieren_3/4_For_Loops_Advanced.qmd
+      - C_Programmieren_3/4_Uebung_13.qmd
+      - C_Programmieren_3/5_GIS_in_Python.qmd
+      - C_Programmieren_3/6_Raeumliche_Operationen.qmd
+      - C_Programmieren_3/6_Uebung_14.qmd
+      - C_Programmieren_3/7_Spatial_Joins.qmd
+      - C_Programmieren_3/7_Uebung_15.qmd
+      # - C_Programmieren_3/8_Daten_Visualisieren.qmd moved to 10_Anhang.qmd
+      - C_Programmieren_3/9_Leistungsnachweis.qmd
+      - C_Programmieren_3/10_Anhang.qmd
+    - ---
+    - part: "🛣️ Teil: Netzwerkanalyse"
+    - part: "D_Netzwerkanalyse_1/1_Netzwerkanalyse_I.qmd"
+      chapters: 
+      - D_Netzwerkanalyse_1/2_Vorbereitung.qmd
+      - D_Netzwerkanalyse_1/3_QGIS.qmd
+      - D_Netzwerkanalyse_1/4_GRASS_GIS.qmd
+    - part: "D_Netzwerkanalyse_2/1_Einleitung.qmd"
+      chapters: 
+      - D_Netzwerkanalyse_2/1_Shortest_Path.qmd
+      - D_Netzwerkanalyse_2/2_Travelling_Salesman.qmd
+    - part: "D_Netzwerkanalyse_3/1_Einleitung.qmd"
+      chapters: 
+      - D_Netzwerkanalyse_3/2_Entsorgungsstelle.qmd
+      - D_Netzwerkanalyse_3/3_OEV-Gueteklassen.qmd
+      - D_Netzwerkanalyse_3/4_Zentralitaetsmasse.qmd
+      - D_Netzwerkanalyse_3/5_Flaechen_verrechnen.qmd
+      - D_Netzwerkanalyse_3/6_Leistungsnachweis.qmd
+    - ---
+    - part: "🌍 Teil: WebGIS"
+    - part: "E_WebGIS_1/1_Einleitung.qmd"
+      chapters: 
+      - E_WebGIS_1/2_Uebung_Web_Map.qmd
+      - E_WebGIS_1/3_Uebung_Story_Map.qmd
+      - E_WebGIS_1/4_Leistungsnachweis.qmd
+    - part: "E_WebGIS_2/1_Einleitung.qmd"
+      chapters: 
+      - E_WebGIS_2/2_Uebung_Zeckenstiche.qmd
+      - E_WebGIS_2/3_Uebung_Leaflet.qmd
+    # - Markdown.qmd

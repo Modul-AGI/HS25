@@ -1,0 +1,79 @@
+---
+output: false
+echo: true                      # set to true to show solution
+code-fold: true
+code-summary: "Musterlösung"    
+---
+
+# Übung 2
+
+## Übung 2.1
+
+1. Erstelle eine Variable `vornamen` bestehend aus einer *List* mit 3 Vornamen
+2. Erstelle eine zweite Variable `nachnamen` bestehend aus einer *List* mit 3 Nachnamen
+3. Erstelle eine Variable `groessen` bestehend aus einer *List* mit 3 Grössenangaben in Zentimeter.
+
+```{python}
+vornamen = ["Christopher", "Henning", "Severin"]
+nachnamen = ["Annen", "May", "Kantereit"]
+
+groessen = [174, 182, 162]
+```
+
+## Übung 2.2
+
+Wie erhältst du den ersten Eintrag in der Variable `vornamen`? 
+
+```{python}
+vornamen[0]
+```
+
+## Übung 2.3
+
+Listen können durch die Methode `append` ergänzt werden (s.u.). Ergänze die Listen `vornamen`, `nachnamen` und `groessen` durch je einen Eintrag.
+
+```{python}
+#| echo: true
+#| code-fold: false
+
+vornamen.append("Malte")
+```
+
+```{python}
+nachnamen.append("Huck")
+
+groessen.append(177)
+```
+
+## Übung 2.4
+
+Ermittle die Summe aller Werte in `groessen`. Tipp: Nutze dazu `sum()`
+
+```{python}
+sum(groessen)
+```
+
+## Übung 2.5
+
+Ermittle die Anzahl Werte in `groessen` . Tipp: Nutze dazu `len()`
+
+```{python}
+len(groessen)
+```
+
+## Uebung 2.6 {#sec-mittelwert}
+
+Berechne die durchschnittliche Grösse aller Personen in `groessen`. Tipp: Nutze dazu `len()` und `sum()`.
+
+```{python}
+sum(groessen) / len(groessen)
+```
+
+## Übung 2.7
+
+Ermittle nun noch die Minimum- und Maximumwerte aus `groessen` (finde die dazugehörige Funktion selber heraus).
+
+```{python}
+min(groessen)
+max(groessen)
+```

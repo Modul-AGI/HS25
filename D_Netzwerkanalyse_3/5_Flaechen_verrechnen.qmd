@@ -1,0 +1,26 @@
+# Aufgabe 8: Flächen verrechnen {#sec-netzwerk-multikriterien}
+
+In dieser Übung verschneiden wir die Informationen aus Entsorgungsstellen (abfall_raster.tif), ÖV-Güteklassen (oev_raster.tif), und Zentralitätsmass (centrality_raster.tif), die wir in den vorherigen Übungen berechnet und in Raster überführt haben. Durch die Verschneidung können wir den optimalen Wohnort eruieren. Diese Methode ist auch als Multikriterienevaluation bekannt und kennt ihr bereits vom GIS "Basic" Modul.
+In einem ersten Schritt müssen wir alle drei Rasterdatensätze auf eine einheitliche Skala (z.B. 0 – 100) bringen um sie anschliessend miteinander verrechnen zu können. Dafür brauchen wir die Minimum- und Maximumwerte der drei Raster Datensätzen oev_raster.tif, centrality_raster.tif, abfall_raster.tif. Gehen Sie dafür in die Properties→Information von jedem Layer und notieren Sie sich die minimalen und maximalen Zellenwerte.
+
+## Übung 8.1: Rasterdatensätze skalieren
+
+Öffnen Sie anschliessend das Tool `Rescale Raster` und skalieren Sie jeden der drei Rasterdatensätze jeweils so, dass Sie Werte von 0 bis 100 erhalten. Geben Sie dabei bei "New minimum value" 0 und bei "New maximum value" 100 ein.
+
+Speichern Sie die Ergebnisse unter folgenden Namen ab: oev_scaled.tif, abfall_scaled.tif, centrality_scaled.tif.
+
+## Übung 8.2: Zusammenführen mit Raster Calculator
+
+Nutzen Sie nun den Raster Calculator (Raster→Raster Calculator) um die drei Rasterdatensätze miteinander zu verrechnen. 
+
+![](figures/rastCalc.jpg)
+
+Die einfachste Variante ist die Berechnung des Mittelwertes der drei Rasterdatensätze. Dafür muss man alle drei summieren und durch drei dividieren:
+
+$raster_{neu}$ = $\frac{oev_{scaled}+abfall_{scaled}+centrality_{scaled}}{3}$
+
+Optional kann man auch die drei Rasterdatensätze unterschiedlich gewichten, wie beispielweise nachstehende Berechnung zeigt. Beachten Sie, dass in diesem Fall nicht mehr durch 3, sondern durch die Summe der Gewichte dividiert wird. Visualisieren und interpretieren Sie anschliessend das Resultat.
+
+$raster_{neu}$ = $\frac{oev_{scaled}\times1+abfall_{scaled}\times10+centrality_{scaled}\times5}{16}$
+
+Zum Abschluss clippen Sie den Output mit dem Werkezeug `Clip raster by Mask Layer (GDAL)` auf die Gemeindegrenze von Wädenswil. Speichern Sie den Output unter final_result.tif in ihrem Projektordner ab. Passen Sie die Symbolisierung entsprechend an.

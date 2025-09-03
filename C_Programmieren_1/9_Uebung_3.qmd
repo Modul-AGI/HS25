@@ -1,0 +1,76 @@
+---
+output: false
+echo: true                      # set to true to show solution
+code-fold: true
+code-summary: "Musterlösung"    
+---
+
+# Übung 3
+
+## Übung 3.1
+
+Erstelle eine *Dictionary* mit folgenden Einträgen: Vorname und Nachname von (d)einer Person. Weise diese *Dictionary* der Variable `me` zu.
+
+```{python}
+me = {"vorname": "Guido", "nachname": "van Rossum"}
+```
+
+## Übung 3.2
+
+Rufe verschiedene Elemente aus der *Dictionary* via *Key* ab.
+
+```{python}
+me["nachname"]
+```
+
+## Übung 3.3
+
+Nutze `me`, um nachstehenden Satz (mit **deinen** *Values*) zu erstellen:
+
+```{python}
+"Mein Name ist "+me["nachname"] +", "+ me["vorname"]+" "+me["nachname"]
+```
+
+``` python
+'Mein Name ist van Rossum, Guido van Rossum'
+```
+
+## Übung 3.4
+
+Ergänze die *Dictionary* `me` durch einen Eintrag "groesse" mit (d)einer Grösse.
+
+```{python}
+me["groesse"] = 181
+```
+
+## Übung 3.5
+
+Erstelle eine neue *Dictionary* `people` mit den *Keys* "vornamen", "nachnamen" und "groesse" und jeweils 3 Einträge pro *Key*.
+
+```{python}
+people = {"vornamen": ["Christopher", "Henning", "Severin"], "nachnamen": ["Annen","May", "Kantereit"], "groessen": [174, 182, 162]}
+```
+
+## Übung 3.6
+
+Rufe den **ersten** Vornamen deiner *Dict* auf. Dazu musst du dein Wissen über Listen und Dictionaries kombinieren.
+
+```{python}
+people["vornamen"][0]
+```
+
+## Übung 3.7
+
+Rufe den **dritten** Nachname deiner *Dict* auf.
+
+```{python}
+people["nachnamen"][2]
+```
+
+## Übung 3.8
+
+Berechne den Mittelwert aller grössen in deiner *Dict*
+
+```{python}
+sum(people["groessen"])/len(people["groessen"])
+```

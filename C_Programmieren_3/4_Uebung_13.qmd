@@ -1,0 +1,108 @@
+---
+output: false
+echo: false                      # set to true to show solution
+code-fold: true                  # set to true to show solution
+code-summary: "Musterlösung"    
+---
+
+## Übung 13
+
+## Übung  13.1
+
+Erstelle zwei Listen bestehend aus 3 Hundenamen (`hunde`) und 3 Katzennamen (`katzen`). Erstelle einen verschachtelten *For Loop*, wo jeder Hund jede Katze beisst und jede Katze jeden Hund kratzt.
+
+```python
+Bruno beisst Greta und Greta kratzt  Bruno
+Berta beisst Greta und Greta kratzt  Berta
+Helmi beisst Greta und Greta kratzt  Helmi
+....
+```
+
+```{python}
+hunde = ["Bruno", "Berta","Helmi"]
+katzen = ["Greta", "Xavier", "Zachy"]
+
+for katze in katzen:
+    for hund in hunde:
+        print(hund, "beisst", katze+" und "+katze, "kratzt ", hund)
+```
+
+<!-- % Nested Loop: Multiplikation -->
+## Übung  13.2 
+
+Erstelle einen verschachtelten Loop, wo alle Kombinationen von 0 bis 9 miteinander addiert werden.
+
+```{python}
+addition = []
+
+werte = range(10)
+
+for i in werte:
+    for j in werte:
+        resultat = i+j
+        addition.append(resultat)
+```
+
+## Übung  13.3 
+
+Nutze die Funktion `offset_coordinate` (Lösung aus [Übung 9.5](#sec-ex-offset-function)) um einen Punkt in einem Koordinatensystem zu verschieben. Diesmal soll der Punkt aber nicht nur 1x, sondern 100x verschoben werden (100 Simulationen).
+
+```{python}
+import random
+
+def offset_coordinate(old, distance = 100):
+    new = old + random.normalvariate(0, distance)
+    return new
+
+x_start = 0
+y_start = 0
+
+x_random = []
+y_random = []
+for i in range(100):
+    x_new = offset_coordinate(x_start)
+    y_new = offset_coordinate(y_start)
+
+    x_random.append(x_new)
+    y_random.append(y_new)
+```
+
+## Übung  13.4 (fakultativ)
+
+Versuche die Monte Carlo Simulation für die Annäherung an Pi (aus der ersten Übung "Datenqualität und Unsicherheit) mit einer Funktion und einem For Loop zu lösen.
+
+Zur Erinnerung, die Vorgehensweise für die Annäherung an Pi geht folgendermassen:
+
+1. Zufallskoordinaten (`x`, `y`) zwischen 0 und 1 erstellen
+2. Distanz zum Ursprung (0) mit der Formel $\sqrt(x^2+y^2)$ berechnen
+3. Bestimmen ob sich der Punkt innerhalb des Kreisviertels befindet ($d < 1$)
+4. Schritte 1 & 2 mehrfach wiederholen
+5. Anteil der Punkte *innerhalb* des Kreisviertels mit 4 Multiplizieren
+
+Tipps:
+
+- Für die Erstellung der Zufallspunkte brauchst du die Funktion `random()` aus dem modul `random`
+- Schritte 1 - 3 werden am sinnvollsten ein eine Funktion verpakt, welche keine Argumente benötigt
+- Schritt 4 löst du am besten mit einer `For loop` mit `range(100)` (für 100 Wiederholungen)
+
+
+```{python}
+import random
+
+# erstelle eine Funktion, die zwei Zufallszahlen zwischen 0 und 1 generiert,
+# die Distanz zum Ursprung (0,0) berechnet und True retourniert, wenn der Wert ausserhalb des Kreisviertels liegt
+def get_pi(): 
+    x = random.random()
+    y = random.random()
+    pythagoras = (x**2+y**2)**0.5
+    ausserhalb = pythagoras > 1
+    return ausserhalb
+
+get_pi()
+
+# die Funktion 100x wiederholen und die Anzahl Werte > 1 zählen
+res = [get_pi() for x in range(100)]
+
+# Anteil der Werte > 1 berechnen und mit 4 multiplizieren
+(100-sum(res))/100*4
+```

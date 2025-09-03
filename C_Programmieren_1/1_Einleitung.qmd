@@ -1,0 +1,75 @@
+# Programmieren I {#sec-intro-cig1}
+
+In diesem Block bekommt ihr euren ersten Kontakt mit Python. Er soll einen Einstieg in die Programmierwelt von Python bieten und spezifisch zeigen, wie man räumliche Fragestellungen mit frei verfügbarer Software lösen kann. 
+Die Voraussetzung für diesen Kurs ist eine Offenheit, neue Tools und Ansätze kennen zu lernen, die Bereitschaft für lösungsorientiertes Arbeiten sowie etwas Hartnäckigkeit. 
+
+## Vorbereitung
+
+Um Python sinnvoll lernen und anwenden zu können, müsst ihr ein paar Programme installieren. Die folgenden Kapitel leiten euch dabei an.
+
+### Positron IDE
+
+Um mit `R` zu programmieren, habt ihr bisher in RStudio gearbeitet. RStudio ist eine sogenannte "Integrierte Entwicklungsumgebung" (*Integrated development environment*, IDE), wo ihr eure R-Scripts entwicklen konntet. Posit, die Hersteller von RStudio, haben eine zweite IDE erstellt, die von der Bedienung sehr ähnlich ist wie RStudio, aber Python besser unterstützt. Diese IDE heisst *Positron* und ist ebenfalls kostenlos und mit freiem Quellcode verfügbar.  
+
+Ladet die neuste Version von Positron für euer Betriebssystem herunter (siehe [hier](https://github.com/posit-dev/positron/releases)) und installiert diese. 
+
+### Python 
+
+Im Modul Angewandte Geoinformatik benutzen wir Python. Mit der Installation von ArcGIS sollte Python bereits installiert sein. Es muss also lediglich getestet werden, ob dies auch wie erwartet funktioniert. Bitte führt die Instruktionen unter dem Punkt **Windows** (s.u.) durch.
+
+Wer lieber auf einem anderen Betriebssystem als Windows arbeiten möchte, sollte es für den Teil Programmieren I - III auch können. In diesem Fall braucht es aber ein bisschen Vorbereitung. Befolgt in diesem Fall die Schritte **Mac / Linux** (s.u.).
+
+
+
+
+:::{.panel-tabset}
+
+
+#### Windows {#sec-mit-arcgis}
+
+**Mit ArcGIS Installation**
+
+Um zu testen, ob die Installation bei Dir auch funktioniert, musst Du die paar Schritte ausführen:
+
+1. *Python Command Prompt* suchen und starten (siehe @sec-terminal)
+2. Folgender Befehl eingeben: 
+
+    ```bash
+    python3 --version   
+    # oder:
+    python --version
+    ```
+3. Wenn der obige Befehl eine Fehlermeldung verursacht, bitte die Anleitung **Mac / Linux** befolgen.
+
+
+#### Mac / Linux {#sec-ohne-arcgis}
+
+**Ohne ArcGIS Installation**
+
+Wer keine ArcGIS Installation hat, sollte folgendermassen vorgehen:
+
+1. Überprüfe, ob Python ≥ 3.11 installiert ist. Tippe dafür folgenden Befehl in den Terminal:
+
+    ```bash
+    python3 --version   
+    # oder:
+    python --version
+    ```
+2. Wenn Python nicht vorhanden oder die Version < 3.11 ist, solltet ihr eine aktuelle Version von Python installieren: <https://www.python.org/downloads/>
+3. Installiert Miniconda von dieser Website: <https://docs.conda.io/projects/miniconda/en/latest/>. Wählt den installer für eure Plattform aus, und verwendet *nicht* den grossen grünnen Button "Download Anaconda".
+
+
+:::
+
+
+## Daten
+
+Im Kurs werdet ihr nachstehende Datensätze benötigen, die ihr im Moodlekurs unter *Programmieren I → Datensätze* herunterladen könnt.
+
+| Datensatz              | Beschreibung          |
+|:-----------------------|:----------------------|                     
+| zeckenstiche.csv       | Eine CSV mit 10 Zeckenstich-Meldungen im Kanton Zürich |
+| zeckenstiche_full.csv  | Eine CSV mit 1'076 Zeckenstich-Meldungen im Kanton Zürich |
+| wald.gpkg | Ein Geodatensatz mit einem flächendeckenden (lückenlosen) Polygon, welche den Kanton Zürich in "Wald" und "nicht Wald" unterscheidet |
+: Datensätze für den Teil "Programmieren I - III" {#tbl-datensaetze}
+

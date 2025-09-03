@@ -1,0 +1,13 @@
+# WebGIS II
+
+![](figures/web_map_leaflet_1.PNG)
+
+:::{.callout-note}
+## Übungsziele
+- Du kannst eine Map mit mehreren Layern und einer Legende in Python erstellen.
+- Du kannst deine Map und weitere Elemente mittels Chunk Options als HTML publizieren.
+<!-- Du kennst Github und kannst ein Repository erstellen, Files hochladen und diese publizieren.-->
+- Optional: Du kennst die grundlegenden Webtechnologien wie HyperText Markup Language (HTML), JavaScript und Cascading Style Sheets (CSS).
+- Optional: Du hast dich mit Leaflet, der beliebtesten Open-Source-JavaScript-Bibliothek, vertraut gemacht.
+- Optional: Du kannst das GeoJson-Dateiformat verwenden.
+:::

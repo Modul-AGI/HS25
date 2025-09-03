@@ -1,0 +1,72 @@
+# Leistungsnachweis
+
+## Ziel und Vorgehen
+
+Für den Leistungsnachweis von *Programmieren* sollt ihr den Anteil der Zeckenstiche im Wald unter der Berücksichtigung der Unsicherheit mit einer Monte Carlo Simulation ermitteln. 
+
+Gehe dazu wie folgt vor: Erstelle einen `for loop` (siehe @sec-forloops-2), welcher pro Iteration folgende Schritte ausführt:
+
+1. Schritt: Zeckenstiche importieren
+2. Schritt: Zeckenstiche auf der Basis von gemeldeten Stiche simulieren (siehe @sec-offset-dataframe)
+3. Schritt: Simulierte Zeckenstiche von pandas DataFrame in *geo*pandas *Geo*DataFrame umwandeln (siehe @sec-pythongis-geodataframe)
+4. Schritt: Spatial Join mit wald.gpkg (siehe @sec-ex-spatialjoin)
+5. Schritt: Der Anteil der Zeckenstiche im Wald Berechnen (siehe @sec-ex-count)
+6. Schritt: Schritte 2 - 5 mindestens 50x Wiederholen (`for loop`)
+7. Schritt: Die verschiedenen Waldanteile visualiseren (z.B. in einem Boxplot, siehe @sec-viz)
+8. Schritt: Schritte 6 und 7 für drei verschiedene Radien wiederholen
+9. Schritt (Optional): Eine Karte mit den simulierten Zeckenstichen erstellen (siehe @sec-geoviz)
+
+
+```{mermaid}
+%%| echo: false
+
+flowchart LR
+   
+    A["zeckenstiche_full.csv"]
+    G["Anteil Wald"]
+    H["Boxplot"]
+    subgraph loop ["for loop (>50x)"]
+        direction TB
+        
+        B["zeckenstiche (DataFrame)"]
+        C["Sim. Zeckenstiche (DataFrame)"]
+        D["Sim. Zeckenstiche (GeoDataFrame)"]
+        E["Sim. Zecken. Join (GeoDataFrame)"]
+
+        B -->|offset coordinate|C
+        C -->|gpd.GeoDataFrame|D
+        D -->|gpd.sjoin|E
+    end
+    A --> |pd.read_csv|loop
+    loop -->|Anteil Wald berechnen| G
+    G --> H
+```
+ 
+## Anforderungen
+
+Führe die Analyse folgendermassen durch:
+
+- mit dem **ganzen** Datensatz `zeckenstiche_full.csv` (1'076 Meldungen, siehe @tbl-datensaetze)
+- mit mindestens 50 Iterationen
+- mit drei verschiedenen Distanz-Werten (`distance =` in @sec-ex-offset-function). 
+
+Visualisiere für jeden Distanzwert die Verteilung der Anteile (z.B: mittels einem Boxplot)
+
+<!-- ## Struktur
+
+Führe die Datenanalyse durch, indem du Python Code mit Markdown Text ergänzt.
+
+Strukturiere den Bericht **mithilfe von Markdown** in folgende Unterkapitel
+
+- Einleitung
+- Material & Methoden
+- Resultate
+- Diskussion
+
+Sorge dafür, dass der Bericht sauber und ordentlich daher kommt (vermeide zum Beispiel lange Python Messages im Bericht, entferne unnötigen Code). Führt die Datenanalyse durch, indem ihr den Python Code **mit Markdown Text** unterstützt. Beschreibt und begründet eure Analyseschritte und wie die Resultate zu interpretieren sind. Der Fokus soll auf der technischen Umsetzung liegen, nicht auf der Interpretation der Resultate. -->
+
+## Abgabeformat
+
+Lauffähigen Python Script file via Moodle.
+
+<!-- . **Wichtig:** Zuerst alle Zellen ausführen (*Run > Restart Kernel and Run all cells...*). **Notebooks, bei denen dieser Schritt nicht ausgeführt wurden, werden nicht akzeptiert!** -->

@@ -1,0 +1,11 @@
+name: modul-agi
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.11
+  - pip  
+  - pandas
+  - matplotlib
+  - geopandas
+  - descartes
+  - jupyter

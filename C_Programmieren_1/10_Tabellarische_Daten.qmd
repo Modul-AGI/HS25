@@ -1,0 +1,15 @@
+# DataFrames {#sec-dataframes}
+
+Schauen wir uns nochmals die *Dictionary* `people` aus der letzten Übung an. Diese ist ein Spezialfall einer Dictionary: Jeder Eintrag besteht aus einer Liste von gleich vielen Werten. Wie bereits erwähnt, kann es in einem solchen Fall sinnvoll sein, die Dictionary als Tabelle darzustellen.
+
+```{python}
+people = {"vornamen": ["Christopher", "Henning", "Severin"], "nachnamen": ["Annen","May", "Kantereit"], "groessen": [174, 182, 162]}
+```
+
+```{python}
+import pandas as pd # Was diese Zeile beudeutet lernen wir später
+
+people_df = pd.DataFrame(people)
+
+people_df
+```

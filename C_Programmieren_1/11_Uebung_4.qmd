@@ -1,0 +1,93 @@
+---
+output: false
+echo: true                      # set to true to show solution
+code-fold: true
+code-summary: "Musterlösung"    
+---
+
+# Übung 4
+
+## Übung 4.1
+
+Importiere `pandas` und nutze die Funktion `DataFrame`, um `people` in eine DataFrame umzuwandeln (siehe dazu das Beispiel unten). Weise den Output der Variablen `people_df` zu und schau dir `people_df` an.
+
+```{python}
+#| echo: true
+#| code-fold: false
+
+import pandas as pd
+
+people = {"vornamen": ["Christopher", "Henning", "Severin"], "nachnamen": ["Annen","May", "Kantereit"], "groessen": [174, 182, 162]}
+
+
+people_df = pd.DataFrame(people)
+```
+
+## Übung 4.2 {#sec-ex-to-csv}
+
+In der Praxis kommen tabellarische Daten meist als "csv" Dateien daher. Wir können aus unserer eben erstellten DataFrame sehr einfach eine csv-Datei erstellen. Führe das mit folgendem Code aus und suche anschliessend die erstellte csv-Datei.
+
+```{python}
+#| echo: true
+#| code-fold: false
+
+people_df.to_csv("people.csv")
+```
+
+<!-- :::{.callout-note}
+## Achtung!
+
+Falls ihr nicht wisst, wo das csv abgespeichet ist solltet ihr das Kapitel @sec-jupyternotebook nochmals durchlesen. 
+
+Die *Working Directory* zu kennen ist wichtig, besonders auch für die nächste Aufgabe. Falls ihr die aktuelle Working Directory neu setzen und dafür JupyterLab schliessen müsst, denkt daran die Notebook vorgängig zu speichern und im File Explorer aufzusuchen.
+::: -->
+
+## Übung 4.3 {#sec-ex-import-zeckenstiche}
+
+Genau so einfach ist es, ein csv zu importieren. Lade die Datei "zeckenstiche.csv" (siehe @tbl-datensaetze) herunter und speichere es im aktuellen Arbeitsverzeichnis ab. Importiere mit folgendem Code die Datei "zeckenstiche.csv".
+
+```{python}
+#| echo: true
+#| code-fold: false
+
+# ich habe die Daten in einem Unterordner "data" abgespeichert
+zeckenstiche = pd.read_csv("data/zeckenstiche.csv")
+```
+
+## Übung 4.4 {#sec-ex-scatterplot}
+
+Die *DataFrame* `zeckenstiche` beinhaltet x und y Koordinaten für jeden Unfall in den gleichnamigen Spalten. Wir können die Stiche mit einem Scatterplot räumlich visualisieren. Führe dazu folgenden Code aus. 
+
+```{python}
+#| echo: true
+#| code-fold: false
+
+fig = zeckenstiche.plot.scatter("x","y")
+
+fig.axis("equal")
+# "equal" stellt sicher, das die x und y Achsen gleich skaliert sind
+# dies ist sinnvoll, da es sich ja um Schweizer Koordinaten (Meter) handelt
+```
+
+## Übung 4.5 {#sec-ex-sel-col}
+
+Um eine einzelne Spalte zu selektieren (z.B. die Spalte "ID"), kann man gleich vorgehen wie bei der Selektion eines Eintrags in einer *Dictionary*. Probiere es aus.
+
+```{python}
+zeckenstiche["ID"]
+```
+
+## Übung 4.6 {#sec-ex-new-col}
+
+Auch das Erstellen einer neuen Spalte ist identisch mit der Erstellung eines neuen *Dictionary* Eintrags. Erstelle eine neue Spalte "Stichtyp" mit dem Wert "Zecke" auf jeder Zeile (s.u.).
+
+```{python}
+#| echo: true
+#| code-fold: false
+
+zeckenstiche["Stichtyp"] = "Zecke"
+```
+
+```{python}
+zeckenstiche
+```

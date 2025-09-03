@@ -1,0 +1,195 @@
+---
+echo: true
+---
+
+# Anhang
+
+## Anhang 1: Daten visualisieren {#sec-viz}
+
+Es ist äusserst Zentral, Daten regelmässig und oft zu visualisieren. Die *de facto* standart Library hierfür in Python ist `matplotlib`. Diese Library kann man direkt ansteuern wie in [diesem Tutorial](https://matplotlib.org/stable/tutorials/introductory/usage.html) beschrieben wird. Wir verwenden die library jedoch etwas anders: Dabei nutzen wir die Tatsache aus, dass sowohl `pandas` wie auch `geopandas` eingebaute Methoden (*methods*) haben um deren Inhalte zu visualisieren. Die Methode heisst in beiden Fällen `.plot()`, wie wir weiter unten noch sehen werden.
+
+### Histogramm aus `List`
+
+`pandas` vereinfacht das Visualisieren von Daten sogar soweit, dass es sich jewils lohnt seine Listen, Dictionaries usw. zuerst in eine `Series` oder `DataFrame` zu überführen um sie zu visualisieren (wie ich zum Beispiel in @sec-random-numbers jeweils gemacht habe). 
+
+```{python}
+import random
+import pandas as pd
+
+random_gamma = [random.gammavariate(1, 1) for x in range(1000)]
+
+random_gamma = pd.Series(random_gamma)
+
+random_gamma.plot(kind = "hist", bins = 50)
+```
+
+Weitere Beispiele zu Histogrammen aus Listen findet ihr im Kapitel @sec-random-numbers .
+
+### Boxplot aus `List`
+
+Das Visualisieren als Boxplot ist sehr ähnlich, man ersetzt `"hist"` lediglich durch `"box`. Eine komplette liste der möglichen Argumente für findet ihr hier: <https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.plot.html>
+
+```{python}
+random_gamma.plot(kind = "box")
+```
+
+### Scatterplot aus DataFrame
+
+Um einen Scatterplot zu erstellen, braucht es eine `DataFrame` (eine `Series` reicht hierfür nicht aus).
+
+```{python}
+zeckenstiche = pd.read_csv("data/zeckenstiche.csv")
+```
+
+```{python}
+zeckenstiche.plot("x", "y", kind = "scatter")
+```
+
+### Statische Karte aus GeoDataFrame
+
+Um aus *GeoDataFrames* Karten zu machen verwendet man ebenfalls die `.plot()` Methode. Um wirklich schöne Karten mit Python herzustellen braucht man viel Übung. Für eine schnelle Visualisierung reicht aber die `.plot()` Methode.
+
+```{python}
+import geopandas as gpd
+
+zeckenstiche = gpd.read_file("data/zeckenstiche.gpkg")
+wald = gpd.read_file("data/wald.gpkg")
+```
+
+**Einfache Plots ohne anpassung:**
+
+```{python}
+wald.plot()
+```
+
+**Anpassung der Plot Grösse:**
+
+```{python}
+wald.plot(figsize = (5,5))
+```
+
+**Choroplethenkarte Karte**
+
+```{python}
+from matplotlib.colors import ListedColormap
+
+my_cmap = ListedColormap(["green","lightgrey"])
+wald.plot(column = "Wald_text", legend = True, cmap = my_cmap)
+```
+
+**Mehrere Layers:**
+
+```{python}
+base = wald.plot(column = "Wald_text", legend = True, cmap = my_cmap)
+zeckenstiche.plot(color = "Red", ax = base)
+```
+
+### Interaktive Karten aus GeoDataFrame
+
+Weitere Informationen dazu findet ihr hier: <https://geopandas.org/docs/user_guide/interactive_mapping.html>
+
+Vollautomatisch, ohne Anpassungen:
+
+```{python}
+#| eval: false
+zeckenstiche.explore()
+```
+
+Zeckenstiche Rot eingefärbt:
+
+```{python}
+#| eval: false
+zeckenstiche.explore(color = "red")
+```
+
+Zeckenstiche nach `"accuracy"` eingefärbt:
+
+```{python}
+#| eval: false
+zeckenstiche.explore(column = "accuracy")
+```
+
+Wald nach `"Wald_text"` eingefärbt (beachte, dass ich `my_cmap` weiter oben erstellt habe!):
+
+```{python}
+#| eval: false
+wald.explore(column = "Wald_text", cmap = my_cmap)
+```
+
+Zwei übereinander gelagerte Layers:
+
+```{python}
+base = wald.explore(column = "Wald_text", cmap = my_cmap)
+zeckenstiche.explore(m = base, color = "red")
+```
+
+## Anhang 2: Geodaten visualisieren {#sec-geoviz}
+
+In folgenden Beispielen zeigen wir noch ein paar einfache Wege, wie ihr die Zeckenstichdaten visualisieren könnt.
+
+```{python}
+import pandas as pd
+import geopandas as gpd
+import matplotlib.pyplot as plt
+import descartes
+
+wald = gpd.read_file("data/wald.gpkg")
+zeckenstiche_full = pd.read_csv("data/zeckenstiche_full.csv")
+
+geom = gpd.points_from_xy(zeckenstiche_full['x'], zeckenstiche_full['y'])
+
+zeckenstiche_gpd = gpd.GeoDataFrame(
+    zeckenstiche_full,
+    geometry=geom,
+    crs = 2056)
+```
+
+### Kernel Density Plot
+
+Mit der Erweiterung `seaborn` lassen sich mit wenigen Zeilen Code eine *Kernel Density* rechnen und visualisieren. Siehe nachstehenden Code:
+
+```{python}
+import seaborn as sns
+
+f, ax = plt.subplots(1, figsize=(6, 6))
+wald.boundary.plot(linewidth=0.1, ax=ax)
+zeckenstiche_gpd.plot(color='red', linewidth=0.1, ax=ax)
+
+sns.kdeplot(x = zeckenstiche_full.x, y= zeckenstiche_full.y,shade = False,n_levels = 10, cmap = "viridis", ax = ax)
+
+ax.set_axis_off()
+plt.show()
+```
+
+### Hintergrundkarte
+
+Mit der Erweiterung `contextily` kann man sehr schnell und einfach Hintergrundkarten in den Plot einbinden. Dafür muss das *GeoDataFrame* vorher aber in WGS84 Koordinaten (EPSG 3857) konvertiert werden (mit `to_crs`, s.u.).
+
+```{python}
+
+import contextily as ctx
+
+f, ax = plt.subplots(1, figsize=(6, 6))
+zeckenstiche_gpd.to_crs(epsg = 3857).plot(ax = ax)
+ctx.add_basemap(ax)
+
+ax.set_axis_off()
+plt.show()
+```
+
+### KDE mit Hintergrundkarte
+
+Kernel Denisty und Hintergrundkarte können auch kombiniert werden:
+
+```{python}
+lat = zeckenstiche_gpd.to_crs(epsg = 3857).geometry.x
+lng = zeckenstiche_gpd.to_crs(epsg = 3857).geometry.y
+
+f, ax = plt.subplots(1, figsize=(6, 6))
+
+sns.kdeplot(x = lat,y = lng,shade = False,n_levels = 25, cmap = "viridis", ax = ax)
+ctx.add_basemap(ax)
+
+ax.set_axis_off()
+plt.show()
+```

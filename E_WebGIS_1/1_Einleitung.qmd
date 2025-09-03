@@ -1,0 +1,10 @@
+# WebGIS I
+
+:::{.callout-note}
+## Übungsziele
+
+- Du bist in der Lage auf dem ArcGIS Online Organisationskonto Deine Inhalte zu organisieren und die Freigabeeigenschaften von Inhalten zu ändern.
+- Du kannst in ArcGIS Pro eine Karte vorbereiten, eine Zeitanimation aktivieren und ArcGIS Pro Karten auf einem ArcGIS Online Organisationskonto als Web Maps veröffentlichen. 
+- Du kannst eine Web Map zielgerichtet gestalten und basierend auf bestehenden Web Maps neue Web Map Applikationen erstellen.
+- Du weisst, wie Du eine Story Map erstellen und diese mit Inhalten füllen kannst.
+:::

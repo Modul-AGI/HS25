@@ -1,0 +1,58 @@
+---
+output: false
+---
+
+# Übung 5 {#sec-conda2}
+
+Diese letzte Übung dient lediglich der Vorbereitung auf Programmieren II. Ihr müsst die Übung nicht verstehen, sondern nur ausführen. Melde dich, falls es Probleme gibt.
+
+## Übung 5.1 Neue Conda Umgebung erstellen
+
+1. Starte Python Command Prompt oder den Terminal in Positron (siehe @sec-terminal)
+2. Führe den Befehl: `conda create --name geopython2` aus
+3. Bestätige die Installation mit `y`
+4. Prüfe, ob u.a. folgende Meldung im Terminal erscheint (melde dich falls nicht):
+
+    ```sh
+    #
+    # To activate this environment, use
+    #
+    #     $ activate geopython2
+    #
+    # To deactivate an active environment, use
+    #
+    #     $ deactivate
+    ```
+
+5. Führe den Befehl aus, der in der Meldung steht:
+
+    ```bash
+    activate geopython2               # (Windows) 
+    conda activate geopython2         # (MacOS, Linux)
+    ```
+
+6. Prüfe, ob die Eingabeforderung im Terminal nun mit `(geopython2)` beginnt (melde dich falls nicht)
+
+    ```default
+    # ↓ vorher
+    (arcgispro-py3) C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3>
+
+    # ↓ nachher
+    (geopython2)  C:\Users\rata\AppData\Local\ESRI\conda\envs\geopython>
+    ```
+
+7. Führe den folgenden Befehl aus:
+
+    ```bash 
+    conda install -c conda-forge jupyterlab geopandas matplotlib descartes
+    ```
+
+8. Bestätige die Installation mit `y`
+9. Prüfe, ob die Installation erfolgreich war (erscheint folgende Meldung im Terminal?):
+
+    ```default
+    Preparing transaction: done
+    Verifying transaction: done
+    Executing transaction: done
+    Retrieving notices: ...working... done
+    ```

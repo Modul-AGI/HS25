@@ -1,0 +1,19 @@
+graph TB  
+    B{{hast du conda installiert?}}
+
+    B --ich weiss es nicht --> C{{hast du arcgis installiert?}}
+    C --ja--> D[du hast conda installiert]
+    C --nein--> G["Conda installieren (4)"]
+    B --ja -->E
+    B -- nein--> G
+    D --> E{{"Kannst du Conda vom Terminal bedienen? (2)"}}
+    G --> E
+    E -->|Nein|F["Systemvariabel setzen (3)"]
+    F --> I{{Kannst du jetzt Conda vom Terminal bedienen?}}
+    E --Ja-->H["Super! Fahre fort mit"]
+    I --Ja-->H
+    I --Nein-->J[Melde dich bei uns]
+    
+
+
+

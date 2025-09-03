@@ -1,0 +1,112 @@
+---
+output: false
+echo: false                      # set to true to show solution
+code-fold: true                  # set to true to show solution
+code-summary: "Musterlösung"    
+---
+
+# Übung 7
+
+## Übung 7.1
+
+Erstelle eine Funktion namens `times`, die zwei Zahlen miteinander multipliziert. 
+
+```{python}
+def times(x, y):
+    return x * y
+```
+
+```{python}
+times(2, 2)
+```
+
+## Übung 7.2
+
+Die eben erstellte Funktion `times` benötigt 2 Argumente (die miteinander multipliziert werden). Wandle den zweiten Parameter in einen optionalen Parameter um (mit dem Defaultwert `1`). 
+
+**Zusatzaufgabe**: Was passiert, wenn du den ersten Parameter in einen optionalen Parameter umwandelst?
+
+```{python}
+def times(x, y = 1):
+    return x * y
+```
+
+```{python}
+times(3)
+```
+
+```{python}
+#| error: false
+
+# (Zusatzaufgabe)
+def times(x = 1, y):
+    return x * y
+```
+
+## Übung 7.3 {#sec-ex-functions-bmi}
+
+Erstelle eine Funktion namens `bmi`, die aus Grösse und Gewicht einen BodyMassIndex berechnet ($BMI=\frac{m}{l^2}$, $m$: Körpermasse in Kilogramm, $l$: Körpergrösse in Meter). Das Resultat soll etwa folgendermassen aussehen:
+
+```{python}
+
+def bmi(groesse_m, gewicht_kg):
+    return gewicht_kg / (groesse_m * groesse_m)
+```
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+bmi(groesse_m = 1.8, gewicht_kg = 88)
+```
+
+<!-- %  Mittelwert -->
+## Übung 7.4
+
+Erstelle eine Funktion `mittelwert()`, welche den Mittelwert aus einer Liste (`List`) von Zahlen berechnet. Nutze dazu `sum()` und `len()` analog @sec-mittelwert. Das Resultat sollte folgendermassen aussehen:
+
+```{python}
+
+def mittelwert(zahlen):
+    return sum(zahlen) / len(zahlen)
+```
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+meine_zahlen = [50, 100, 550, 1000]
+mittelwert(meine_zahlen)
+```
+
+<!-- %  Grad Celsius in Farenheit -->
+## Übung 7.5
+
+Erstelle eine Funktion `celsius_zu_farenheit`, welche eine beliebige Zahl von Grad Celsius in Grad Farenheit konvertiert. Zur Erinnerung: *Temperatur in °F = Temperatur in °C x 1,8 + 32*. 
+
+```{python}
+def celsius_zu_farenheit(celsius):
+    farenheit = celsius * 1.8 + 32
+    return farenheit
+```
+
+Das Resultat sollte folgendermassen aussehen:
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+celsius_zu_farenheit(celsius = 25)
+```
+
+<!-- % Lambda Function -->
+## Übung 7.6
+
+Schreibe die letzte Funktion `celsius_zu_farenheit` in der *lambda* Notation.
+
+```{python}
+celsius_in_farenheit2 = lambda celsius: celsius * 1.8 + 32
+```

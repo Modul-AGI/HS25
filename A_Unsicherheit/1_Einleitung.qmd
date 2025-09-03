@@ -1,0 +1,11 @@
+# 💥 Teil: Unsicherheit {#sec-unsicherheit}
+
+:::{.callout-note}
+## Übungsziele
+
+- Du bist in der Lage bei zukünftigen GIS Arbeiten mit der Unsicherheit von Punktdaten umzugehen.
+- Du kannst reale räumliche Objekte dahin beurteilen, ob diese grenzscharf oder nur mit einer Unschärfe abgebildet werden können.
+- Du kannst mit Fuzzy-Tallness umgehen und diese definieren.
+- Du kannst unscharfe Phänomene in deinen zukünftigen Projekten berücksichtigen und deren Unschärfe in den Geoverarbeitungsprozess integrieren und auswerten.
+- Du kannst ein Modell mit ModelBuilder erstellen und ausführen.
+:::

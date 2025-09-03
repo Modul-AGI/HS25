@@ -1,0 +1,98 @@
+---
+output: false
+echo: false                      # set to true to show solution
+code-fold: true                  # set to true to show solution
+code-summary: "Musterlösung"    
+---
+
+# Übung 11
+
+## Übung 11.1
+
+Kopiere den folgenden *for Loop* und lasse ihn bei dir laufen. Spiele mit den Werten rum, um ein Gefühl für *For Loops* zu bekommen: Ergänze die Liste mit weiteren Zahlen, verändere den Namen der Platzhaltervariabel und verändere den Text, der in `print` ausgegeben wird.
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+for platzhalter in [0,1,2,5,10]:
+    print("Iteration",platzhalter)
+```
+
+## Übung 11.2 {#sec-for-gruss}
+
+Konstruiere eine Liste bestehend aus 3 Namen und nenne diese Liste `namen`. Erstelle danach einen *for loop*, mit welcher jede Person in der Liste gegrüsst wird. Nutze dafür `print`.
+
+```{python}
+namen = ["Il Buono", "Il Brutto", "Il Cattivo"]
+
+for name in namen:
+    print("Ciao ",name)
+```
+
+Der Output könnte etwa so aussehen:
+
+```{python}
+#| output: true
+
+for name in namen:
+    print("Ciao ",name)
+```
+
+## Übung 11.3
+
+Kopiere den folgenden *For Loop* und spiele hier mit den Werten herum. Verändere den *For Loop* so, dass er über die Werte von -5 bis +5 iteriert.
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+for nonsense in range(3, 5):
+    print("Iteration",nonsense)
+```
+
+```{python}
+# Iteriert von -5 bis +5
+for platzhalter in range(-5,6):
+    print("Iteration",platzhalter)
+```
+
+## Übung 11.4
+
+Bis jetzt haben unsere *Loops* nicht viel Arbeiten müssen. Erstelle nun einen *For Loop*, welcher für die Werte -5 bis +5 folgendes ausgibt:
+
+```default
+Das Quadrat von -5 ist 25
+Das Quadrat von -4 ist 16
+...
+```
+
+```{python}
+for platzhalter in range(-5,6):
+    print("Das Quadrat von",platzhalter, "ist",platzhalter*platzhalter)
+```
+
+## Übung 11.5 {#sec-forloops-ex-party}
+
+Bisher haben wir die Platzhaltervariabel immer in unserem *Loop* wiederverwendet. Das müssen wir aber gar nicht, wir können den *for loop* einfach nutzen um etwas x mal zu wiederholen. Erstellen einen *for loop* der folgende beiden Sätze 5x wiederholt:
+
+```
+Who likes to party?
+We like to party!
+Who likes to party?
+....
+```
+
+:::{.callout-note collapse="true"}
+
+Nutze dafür zwei verschiedene `print` Befehle auf zwei Zeilen.
+
+:::
+
+```{python}
+for i in range(5):
+    print("Who likes to party?")
+    print("We like to party!")
+```

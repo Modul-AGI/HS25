@@ -1,0 +1,107 @@
+---
+output: false
+echo: false                      # set to true to show solution
+code-fold: true                 # set to true to show solution
+code-summary: "Musterlösung"    
+---
+# Übung 6
+
+Bevor du mit den Übungen anfägst, solltest du bereits eine eigene Conda Environment nach der Anleitung in Übung 5 "@sec-conda2" erstellt haben.
+
+## Übung 6.1 {#sec-functions1-ex-gruezi}
+
+Erstelle eine Function, die `gruezi` heisst, einen Nachnamen als Input annimmt und per Sie grüsst. 
+
+```{python}
+def gruezi(nachname):
+    return "Guten Tag, " + nachname
+```
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+# Das Resultat soll in etwa folgendermassen aussehen:
+gruezi(nachname = "van Rossum")
+```
+
+## Übung 6.2 {#sec-gruezi2}
+
+Erstelle eine neue Funktion `gruezi2` welche im Vergleich zu `gruezi` einen weiteren Parameter namens `anrede` annimmt. 
+
+```{python}
+def gruezi2(nachname, anrede):
+    return "Guten Tag, " + anrede + " " + nachname
+```
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+# Das Resultat soll in etwa folgendermassen aussehen:
+gruezi2(nachname = "van Rossum", anrede = "Herr")
+```
+
+## Übung 6.3
+
+Erstelle eine Funktion `add` die zwei Zahlen summiert.
+
+```{python}
+def add(zahl1, zahl2):
+    return zahl1 + zahl2
+```
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+# Das Resultat sollte folgendermassen aussehen:
+add(zahl1 = 2, zahl2 = 10)
+```
+
+## Übung 6.4
+
+Erstelle eine Funktion `square`, welche den Input quadriert.
+
+```{python}
+def square(zahl):
+    return zahl * zahl
+
+# oder
+
+def square(zahl):
+    return zahl**2
+```
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+# Das Resultat sollte folgendermassen aussehen:
+square(zahl = 5)
+```
+
+## Übung 6.5
+
+Erstelle eine Funktion `meter_zu_fuss`, die eine beliebige Zahl von Meter in Fuss konvertiert. Zur Erinnerung: 30.48 cm ergeben 1 Fuss. 
+
+```{python}
+def meter_zu_fuss(meter):
+    fuss = meter * 100 / 30.48
+    return fuss
+```
+
+```{python}
+#| echo: true
+#| output: true
+#| code-fold: false
+
+
+# Das Resultat sollte folgendermassen aussehen:
+
+meter_zu_fuss(meter = 1.80)
+```

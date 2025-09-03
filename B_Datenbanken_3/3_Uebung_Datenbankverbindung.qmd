@@ -1,0 +1,47 @@
+# Datenbankverbindung zum Server aufbauen 
+
+In den nächsten Übungen wollen wir mit Daten unserer Pflanzendatenbank aus der ersten Datenbank‐Lektion vor 2 Wochen umgehen. Dazu versuchen Sie die Daten aus den einzelnen Tabellen zu verknüpfen und sinnvoll
+aufzubereiten, um Sie anschliessend im ArcGIS Pro einzubinden und zu visualisieren. Unsere Pflanzendatenbank hat hierbei immer den Namen "modulagi_pdb". Verwenden Sie, wenn nicht anders angegeben diese Datenbank.
+
+OPTIONAL: Es ist Ihnen selbst überlassen, ob Sie in den kommenden Übungen die bestehende Server Datenbank nutzen möchten oder Ihre eigene lokale Pflanzendatenbank. Die Übungen beziehen sich auf die Server Variante. Bei eigener Datenbank passen Sie die Datanbank Verbindungsparameter entsprechend an. Wie Sie Ihre eigene lokale Pflanzendatenbank aufsetzen ist in den Vorbereitungsübungen auf Moodle beschrieben.
+
+[Unterlagen auf Moodle](https://moodle.zhaw.ch/mod/resource/view.php?id=974496)
+
+## Übung 1: (Wiederholung) Datenbankverbindung zum Server in pgAdmin herstellen
+
+In den folgenden Übungen wollen wir mit einer Datenbank auf einem ZHAW‐Server arbeiten. Hierzu erstellen wir zunächst eine Verbindung zu dieser Datenbank über pgAdmin. ACHTUNG: funktioniert nur im ZHAW Netz (VPN).
+
+1. Starten Sie pgAdmin.
+2. Im Dashboard klicken Sie auf NEW Server und geben die folgenden Verbindungsparameter ein:
+3. Register General: Name: svma‐s‐01323_modulagi_pdb_studentNr. Verwenden Sie dabei die Nr.
+Ihres zugewiesenen Benutzers.
+4. Register Connection (siehe @fig-db3-uebung1-1):
+    - Host name/address: svma‐s‐01323.zhaw.ch
+    - Port: 5432
+    - Maintenance database: modulagi_pdb
+    - studentNr (Verwenden Sie hier Ihren zugewiesenen Anmeldenamen)
+    - Passwort: (Verwenden Sie hier Ihr zugewiesenes Passwort)
+5. Alle anderen Einstellungen können belassen werden. Speichern Sie mit Klick auf Save.
+6. Lassen Sie sich nicht davon verunsichern, dass es bereits einige Einträge hat. Da auf dem Server bereits andere Datenbanken installiert sind, sehen Sie auch diese. Navigieren Sie zur Datenbank "modulagi_pdb" und verschaffen sich einen Überblick über die vorhandenen Tabellen usw..
+7. Verwenden Sie für alle folgenden Übungen diese Datenbankverbindung, wenn nichts anderes angegeben.
+
+![Register Connection pgAdmin](figures/screenshot-uebung1-1.jpg){#fig-db3-uebung1-1 width="50%"}
+
+## Übung 2: (Wiederholung) Datenbankverbindung zum Server in ArcGIS Pro herstellen
+
+In den folgenden Übungen wollen wir mit einer Datenbank auf einem ZHAW-Server arbeiten. Hierzu erstellen wir zunächst eine Verbindung zu dieser Datenbank über ArcGIS Pro. 
+
+1. Starten Sie ArcGIS Pro und erstellen Sie ein neues Projekt "Pflanzendatenbank_III".
+2. Sie können alle folgenden Übungen in diesem Projekt durchführen.
+3. Navigieren Sie im Catalog Fenster zum Eintrag Databases. Über das Kontextmenü (Rechtsklick) können Sie eine neue Datenbankverbindung herstellen.
+4. Verwenden Sie folgende Parameter (siehe @fig-db3-uebung2-1):
+    - Database Platform: PostgreSQL
+    - Instance: svma-s-01323.zhaw.ch
+    - Authentication Type: Database authentication
+    - User Name: studentNr (Verwenden Sie Ihren zugewiesenen Benutzer)
+    - Password: (Verwenden Sie ihr zugewiesenes Passwort)
+    - Database: modulagi_pdb (Achtung, auch hier sehen sie eine Reihe von anderen Datenbanken, Achten Sie darauf die korrekte Datenbank zu wählen)
+5. Speichern Sie die Einstellungen mit Klick auf OK und geben der neuen Datenbankverbindung einen sinnvollen Namen.
+6. Verwenden Sie für alle folgenden Übungen diese Datenbankverbindung, wenn nichts anderes angegeben.
+
+![Register Connection ArcGIS Pro](figures/screenshot-uebung2-1.jpg){#fig-db3-uebung2-1 width="50%"}

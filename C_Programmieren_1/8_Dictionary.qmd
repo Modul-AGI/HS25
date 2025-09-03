@@ -1,0 +1,48 @@
+# Dictionaries
+
+In den letzten Übungen haben wir einen Fokus auf Listen gelegt. Nun wollen wir ein besonderen Fokus auf den Datentyp *Dictionary* legen.
+
+Ähnlich wie eine List ist eine Dictionary ein Behälter, wo mehrere Elemente abgespeichert werden können. Wie bei einem Wörterbuch bekommt jedes Element ein "Schlüsselwort", mit dem man den Eintrag finden kann. 
+Unter dem Eintrag "trump" findet man im Langenscheidt Wörterbuch (1977) die Erklärung "erdichten, schwindeln, sich aus den Fingern saugen".  
+
+![](figures/trump.jpg)
+
+In Python würde man diese *Dictionary* folgendermassen erstellen:
+
+```{python}
+langenscheidt = {"trump":"erdichten- schwindeln- sich aus den Fingern saugen"}
+```
+
+Schlüssel (von nun an mit *Key* bezeichnet) des Eintrages lautet "trump" und der dazugehörige Wert (*Value*) "erdichten- schwindeln- aus den Fingern saugen". Beachte die geschweiften Klammern (`{` und `}`) bei der Erstellung einer *Dictionary*.
+
+Eine *Dictionary* besteht aber meistens nicht aus einem, sondern aus mehreren Einträgen: Diese werden Kommagetrennt aufgeführt. 
+
+```{python}
+langenscheidt = {"trump":"erdichten- schwindeln- sich aus den Fingern saugen", "trumpery":"Plunder- Ramsch- Schund"}
+```
+
+Der Clou der *Dictionary* ist, dass man nun einen Eintrag mittels dem *Key* aufrufen kann. Wenn wir also nun wissen wollen, was "trump" heisst, ermitteln wir dies mit der nachstehenden Codezeile:  
+
+```{python}
+langenscheidt["trump"]
+```
+
+Um eine *Dictionary* mit einem weiteren Eintrag zu ergänzen, geht man sehr ähnlich vor wie beim Abrufen von Einträgen. 
+
+```{python}
+langenscheidt["trumpet"] = "trompete" 
+```
+
+Ein *Key* kann auch mehrere Einträge enthalten. An unserem Langenscheidt Beispiel: Das Wort "trump" ist zwar eindeutig, doch "trumpery" hat vier verschiedene Bedeutungen. In so einem Fall können wir einem Eintrag auch eine *List* von Werten zuweisen. Beachte die eckigen Klammern und die Kommas, welche die Listeneinträge voneinander trennt.
+
+```{python}
+langenscheidt["trumpery"] = ["Plunder- Ramsch- Schund", 
+                             "Gewäsch- Quatsch", 
+                             "Schund- Kitsch", 
+                             "billig- nichtssagend"]    
+langenscheidt["trumpery"]
+```
+
+```{python}
+len(langenscheidt["trumpery"])
+```

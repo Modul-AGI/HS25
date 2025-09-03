@@ -1,0 +1,111 @@
+---
+output: false
+echo: false                      # set to true to show solution
+code-fold: true                  # set to true to show solution
+code-summary: "Musterlösung"    
+---
+
+## Übung 14
+
+Nun ist es Zeit, dass ihr selbst mit *GeoDataFrames* Hand anlegt. Achtet dabei immer auf die Datentypen eurer Daten (mit `type`) und konsultiert dazu @sec-pythongis-datenstruktur. Zudem ist Geopandas gut dokumentiert, es lohnt ich diese immer wieder zu konsultieren: [geopandas.org](https://geopandas.org)
+
+<!-- % *DataFrame* zu *GeoDataFrame* -->
+## Übung  14.1
+
+Importiere *Geopandas* und wandle `zeckenstiche` in eine *GeoDataFrame* um (`zeckenstiche`). Vergiss nicht, das Koordinatenbezugssystem festzulegen!
+
+```{python}
+import pandas as pd
+import geopandas as gpd
+
+# Übung 14.1
+zeckenstiche = pd.read_csv("data/zeckenstiche.csv")
+
+geom = gpd.points_from_xy(
+  zeckenstiche['x'],    # ↘
+  zeckenstiche['y']     # → die Geometrie Spalte
+  )   
+
+zeckenstiche_gpd = gpd.GeoDataFrame(
+    zeckenstiche,    # die DataFrame ("Attributtabelle")
+    geometry = geom, #
+    crs = 2056       # das Koordinatenbezugssystem (EPSG Code)
+)
+```
+
+<!-- % Punkte Buffern -->
+## Übung  14.2
+
+Buffere die Zeckenstiche um eine Distanz von 12 Meter und speichere den Output in der Variabel `zeckenstiche_buffer`. Visualisiere die gebufferten Punkte mit `.explore()`.
+
+```{python}
+#| output: true
+
+zeckenstiche_buffer = zeckenstiche_gpd.buffer(12)
+zeckenstiche_buffer.explore()
+```
+
+## Übung  14.3
+
+Extrahiere die Umrisse von `zeckenstiche_buffer` und speichere diese in `zeckenstiche_buffer_outline`. Visualisiere anschliessend diese Umrisse.
+
+```{python}
+#| output: true
+
+zeckenstiche_buffer_outline = zeckenstiche_buffer.boundary
+
+zeckenstiche_buffer_outline.explore()
+```
+
+## Übung  14.4
+
+
+Nutze nachstehenden Code, um zwei Datensätze im gleichen Plot darzustellen. 
+
+```{python}
+#| echo: true
+#| output: true
+
+# Nicht interaktiv:
+from matplotlib import pyplot as plt
+fig, ax = plt.subplots()
+
+zeckenstiche_buffer_outline.plot(ax = ax, color = "green")
+zeckenstiche_gpd.plot(ax = ax, color = "pink")
+```
+
+```{python}
+#| echo: true
+#| output: true
+
+# Interaktiv:
+base = zeckenstiche_buffer_outline.explore(color = "green")
+zeckenstiche_gpd.explore(m = base, color = "pink")
+```
+
+<!-- % Envelope -->
+## Übung  14.5
+
+Berechne "Envelope" von `zeckenstiche_gpd` anhand der Beispiele in @sec-raeumliche-operationen. Speichere den Output als `zeckenstiche_envelope`.
+
+:::{.callout-note collapse="true"}
+
+Denk daran, dass du zuerst noch einen Union machen musst (siehe @sec-raeumliche-operationen)
+
+:::
+
+```{python}
+zeckenstiche_envelope = zeckenstiche_gpd.unary_union.envelope
+
+zeckenstiche_envelope
+```
+
+## Übung  14.6
+
+Exportiere `zeckenstiche_gpd` als "Geopackage" mit dem Namen "zeckenstiche.gpkg". Lese nochmal @sec-pythongis-formate, wenn du nicht mehr weisst, wie das geht. Versuche anschliessend, "zeckenstiche.gpkg" wieder einzulesen.
+
+```{python}
+#| eval: false
+
+zeckenstiche.to_file("data/zeckenstiche.gpkg")
+```

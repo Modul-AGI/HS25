@@ -1,0 +1,11 @@
+{
+  "hash": "0a45187ad85f3ba2259846ea1265b2b0",
+  "result": {
+    "engine": "jupyter",
+    "markdown": "---\noutput: false\necho: true                      # set to true to show solution\ncode-fold: true\ncode-summary: \"Musterlösung\"    \n---\n\n# Übung 2\n\n## Übung 2.1\n\n1. Erstelle eine Variable `vornamen` bestehend aus einer *List* mit 3 Vornamen\n2. Erstelle eine zweite Variable `nachnamen` bestehend aus einer *List* mit 3 Nachnamen\n3. Erstelle eine Variable `groessen` bestehend aus einer *List* mit 3 Grössenangaben in Zentimeter.\n\n::: {.cell execution_count=1}\n``` {.python .cell-code}\nvornamen = [\"Christopher\", \"Henning\", \"Severin\"]\nnachnamen = [\"Annen\", \"May\", \"Kantereit\"]\n\ngroessen = [174, 182, 162]\n```\n:::\n\n\n## Übung 2.2\n\nWie erhältst du den ersten Eintrag in der Variable `vornamen`? \n\n::: {.cell execution_count=2}\n``` {.python .cell-code}\nvornamen[0]\n```\n:::\n\n\n## Übung 2.3\n\nListen können durch die Methode `append` ergänzt werden (s.u.). Ergänze die Listen `vornamen`, `nachnamen` und `groessen` durch je einen Eintrag.\n\n::: {.cell execution_count=3}\n``` {.python .cell-code code-fold=\"false\"}\nvornamen.append(\"Malte\")\n```\n:::\n\n\n::: {.cell execution_count=4}\n``` {.python .cell-code}\nnachnamen.append(\"Huck\")\n\ngroessen.append(177)\n```\n:::\n\n\n## Übung 2.4\n\nErmittle die Summe aller Werte in `groessen`. Tip: Nutze dazu `sum()`\n\n::: {.cell execution_count=5}\n``` {.python .cell-code}\nsum(groessen)\n```\n:::\n\n\n## Übung 2.5\n\nErmittle die Anzahl Werte in `groessen` . Tip: Nutze dazu `len()`\n\n::: {.cell execution_count=6}\n``` {.python .cell-code}\nlen(groessen)\n```\n:::\n\n\n## Uebung 2.6 {#sec-mittelwert}\n\nBerechne die durchschnittliche Grösse aller Personen in `groessen`. Tip: Nutze dazu `len()` und `sum()`.\n\n::: {.cell execution_count=7}\n``` {.python .cell-code}\nsum(groessen) / len(groessen)\n```\n:::\n\n\n## Übung 2.7\n\nErmittle nun noch die Minimum- und Maximumwerte aus `groessen` (finde die dazugehörige Funktion selber heraus).\n\n::: {.cell execution_count=8}\n``` {.python .cell-code}\nmin(groessen)\nmax(groessen)\n```\n:::\n\n\n",
+    "supporting": [
+      "6_Uebung_2_files"
+    ],
+    "filters": []
+  }
+}

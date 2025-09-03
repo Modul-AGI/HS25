@@ -1,0 +1,41 @@
+# Basic *for loop* {#sec-forloops-2}
+
+Bis jetzt haben wir lediglich Sachen in die Konsole herausgeben lassen, doch wie schon bei Functions ist der Zweck einer *for loop* meist, dass nach Durchführung etwas davon zurückbleibt. Aber `return()` gibt es wie bereits erwähnt bei *for loops* nicht. Nehmen wir folgendes Beispiel:
+
+```{python}
+for rolle in ["bitch","lover","child","mother","sinner","saint"]:
+    liedzeile = "I'm a "+ rolle 
+    print(liedzeile)
+```
+
+Der Output von dieser For-Loop sind zwar sechs Liederzeilen, wenn wir die Variabel `liedzeile` aber jetzt anschauen ist dort nur das Resultat aus der letzten Durchführung gespeichert. Das gleiche gilt auch für die Variabel `rolle`.
+
+```{python}
+liedzeile
+```
+
+```{python}
+rolle
+```
+
+Das verrät uns etwas über die Funktionsweise des *for loops*: Bei jedem Durchgang werden die Variablen immer wieder überschrieben. Wenn wir also den Output des ganzen For-Loops abspeichern wollen, müssen wir dies etwas vorbereiten.
+
+Dafür erstellen wir unmittelbar for dem *for loops* einen leeren Behälter, zum Beispiel eine leere Liste:
+
+```{python}
+refrain = []
+```
+
+Nun können wir innerhalb des *Loops* `append()` nutzen, um den Output von einem Durchgang dieser Liste hinzuzufügen.
+
+```{python}
+for rolle in ["bitch","lover","child","mother","sinner","saint"]:
+    liedzeile = "I'm a "+ rolle 
+    refrain.append(liedzeile)
+```
+
+In unserer Liste `refrain` ist nun der Wert *jeder* Iteration gespeichert.
+
+```{python}
+refrain
+```

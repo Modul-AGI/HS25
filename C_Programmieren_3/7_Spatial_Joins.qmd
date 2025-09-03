@@ -1,0 +1,33 @@
+# Spatial Joins {#sec-spatialjoin}
+
+
+In dieser Aufgabe wollen wir für jeden Zeckenstich ermitteln, ob er sich im Wald befindet oder nicht. Den Wald-Layer kennt ihr bereits aus dem Block "Datenqualität und Unsicherheit" und wir haben ihn in @sec-pythongis-formate kurz angeschaut. Nutzen wir hier nochmal die Gelegenheit, um den Wald und die Zeckenstiche (siehe @tbl-datensaetze) als Geodaten einzulesen und in einem grossen Plot zu visualisieren.
+
+```{python}
+import geopandas as gpd
+
+zeckenstiche_gpd = gpd.read_file("data/zeckenstiche.gpkg")
+wald = gpd.read_file("data/wald.gpkg")
+
+minx, miny, maxx, maxy = zeckenstiche_gpd.geometry.total_bounds  # holt die x und y min bzw. max werte und speichert diese in 4 variabeln
+
+from matplotlib.colors import ListedColormap
+
+base = wald.plot(column = "Wald_text", legend = True, cmap = ListedColormap(["green","lightgrey"]))
+zeckenstiche_gpd.plot(color = "Red", ax = base)
+
+base.set_xlim(minx - 10, maxx + 10) 
+base.set_ylim(miny - 5, maxy + 5)
+```
+
+## Wie funktioniert ein *Spatial Join*?
+
+In @sec-pythongis habt ihr euch mit den GIS-Funktionalitäten von `geopandas` vertraut gemacht. Eine ganz zentrale Funktion in GIS sind die sogenannten "Spatial Joins". Dabei werden Attribute von einem Geodatensatz auf einen anderen Geodatensatz aufgrund einer räumlichen Beziehung der beiden Datensätze übertragen. Konkret für unsere Zeckenstiche bedeutet dies: Jedem Zeckenstich sollte die Eigenschaft "Wald: ja" / "Wald: nein" aus `wald zugewiesen werden. Am einfachsten lässt sich dies in einer Darstellung erklären:
+
+!["Spatial Join" zwischen `zeckenstiche` und `wald`. In diesem Spatial Join wurde die Geometrie von `zeckenstiche` übernommen, das heisst das Resultat des Joins ist ein Punkt-Layer.](figures/spatialjoin.jpg){#fig-spatialjoin}
+
+In Python wird ein *Spatial Join* zwischen `zeckenstiche` und `wald` wie folgt durchgeführt (wichtig ist dabei auch die Reihenfolge der Argumente: `left_df` bestimmt den Geometrietyp des Outputs):
+
+```{python}
+gpd.sjoin(left_df = zeckenstiche_gpd, right_df = wald)
+```

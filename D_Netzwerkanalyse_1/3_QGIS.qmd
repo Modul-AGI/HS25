@@ -1,0 +1,28 @@
+# Aufgabe 1: Operationen mit QGIS
+
+Starten Sie QGIS, erstellen Sie ein neues QGIS Projekt und speichere dieses an einem geeigneten Ort (siehe Vorbereitungsübungen) ab. Weisen Sie dem Projekt das Koordinatensystem EPSG 2056 zu und importiere die Gemeindegrenze sowie die OSM Strassendaten aus der Vorbereitungsübung (siehe @tbl-datensaetze-netzwerkanalyse).
+
+## Übung 1.1: Daten transformieren {#sec-ex-network-transfrom}
+
+Die OSM Daten sind aktuell noch im Koordinatensystem WGS84 (EPSG 4326). Die Gemeindegrenze hingegen ist mit den neuen Schweizer Landeskoordinaten CH1903+ LV95 (EPSG 2056) abgespeichert. Wir wollen in unserer Analyse mit CH1903+ LV95 (EPSG 2056) arbeiten. Transformieren Sie dazu den Strassendatensatz in das Koordinatensystem CH1903+ LV95 (EPSG 2056). Nutzen Sie dazu das Tool `Reproject Layer`. **Wichtig**: Speichern Sie den transformierten Strassendatensatz *in einer neuen Datei* (siehe @fig-saveToFile)
+
+![](figures/reproject.png){#fig-qgistools}
+
+Viele wichtige Tools lassen sich über die Menü Bar aufrufen (v.a. "Vector" und "Raster"). Die Tools lassen sich auch relativ rasch mit der Suchfunktion in "Processing Toolbox" finden.
+
+![Tool Reproject Layer](figures/saveto.jpg){#fig-saveToFile}
+
+Speichern Sie den neuen Strassendatensatz in einer *neuen* Datei, nicht als temporärer Layer. Normalerweise spielt dies keine Rolle, doch im Falle von "reproject" entsteht beim Speichern als temporärer Layer ein Fehler.
+
+## Übung 1.2: Daten clippen {#sec-ex-clip}
+
+Zoomen sie auf die Gemeindegrenze (Layers Panel → Rechtsklick auf Datensatz → *Zoom to layer*). Sie stellen fest, dass die Strassendaten über die Gemeindegrenze hinaus verlaufen. Wir möchten für die kommenden Übungen nur die Strassen, die _innerhalb_ der Gemeinde Wädenswil liegen. Dazu müssen wir das Strassennetz mit der Gemeindegrenze verschneiden ("clip"). Führen Sie das gleichnamige Werkzeug mit dem Input-Layer "OSM_highway" und dem Clip-Layer *Gemeinde_Waedenswil* aus. Speichern Sie die Ausgabe in einer neuen Datei. 
+
+Es gibt eine ganze Reihe Werkzeuge zum Begriff "clip". Entscheiden Sie selbst, welches für diese Fragestellung geeignet ist.
+
+:::{.callout-note}
+
+- Achten Sie darauf, dass dem neuen ("clipped") Datensatz das richtige Koordinatensystem zugewiesen wurde. Wenn nicht, gehe zu: Properties > Source > Assigned Coordinate Reference System (CRS), wähle EPSG:2056 - CH1903+ / LV95 und klicke auf Apply
+
+![](figures/crs_apply.png)
+:::

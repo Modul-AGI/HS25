@@ -1,0 +1,21 @@
+# Leistungsnachweis
+
+Es muss eine voll funktionsfähige Story Map erstellt werden, welche eine integrierte Web Map aus der vorherigen Übung enthält. Die Story Map soll in einer eigenen Gruppe veröffentlicht werden.
+
+Gehe folgendermassen vor: 
+
+- Erstelle in ArcGIS Online eine neue eigene Gruppe.
+
+- Benenne die Gruppe als «Leistungsnachweis Vorname Name». 
+
+- Definiere folgende Gruppeneigenschaften:
+    - Wer kann diese Gruppe sehen? -> Nur Gruppenmitglieder
+    - Wer kann Mitglied dieser Gruppe sein? -> Nur Mitglieder der eigenen Organisation
+    - Wie können Personen dieser Gruppe beitreten? -> Nach Einladung
+    - Wer kann Inhalte beitragen? -> Alle Gruppenmitglieder
+
+- Füge Hanno Rahn (rahn_zhaw) und Evelyn Terzer (terz_zhaw) deiner eigenen Gruppe «Leistungsnachweis Vorname Name» als Mitglied hinzu (via Benutzer einladen) ohne eine Bestätigung anzufordern.
+
+- Veröffentliche deine Story Map für alle Mitglieder Deiner Gruppe «Leistungsnachweis Vorname Name».
+
+Gib deine Lösung bis spätestens Freitag **20. Dezember 2024** auf Moodle ab. Lade hierzu den Link zu deiner Story Map hoch. Achte auf die korrekten Berechtigungen von Story Map und Web Map. Beide müssen diesselben Berechtigungen haben.
