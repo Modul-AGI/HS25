@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.19">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Arbeiten mit Server Datenbanken in ArcGIS Pro und pgAdmin – Modul AGI</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../B_Datenbanken_2/4_Uebung_Versionierung_Mehrbenutzer.html" rel="next">
+<link href="../B_Datenbanken_2/2_Uebung_Datenintegritaet.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46eeb4c476de49ef7df495821a6125d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-2e0ab3ffcb189ca14a0af92b40aeab37.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7fb1e60e55bf43cdfa666e432a973b20.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b2ec05c2233b4ee1e3f6843e3740eaac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+
+<!-- loads fontawesome, so that I can create a fontawesome button (see below) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script>
+
+// the following function adds padding to all h2 elements, so that I can 
+// easily present the content of the page in a more readable way
+function presenter(){
+    var paragraphs = document.querySelectorAll("h2", "h3");
+    paragraphs.forEach(function (paragraph) {
+        paragraph.classList.toggle("padding-top-500");
+    });
+}
+
+// once the page is loaded, the button is injected into the sidebar. This button
+// calls the presenter function (see above)
+window.onload = function() {
+    // create the button (similar to the buttons already availables)
+    const linkElement = document.createElement('a');
+
+    linkElement.classList.add('quarto-navigation-tool');
+    linkElement.classList.add('px-1');
+    linkElement.innerHTML = '<i class="fa-solid fa-person-chalkboard"></i>';
+    linkElement.href = '#';
+    linkElement.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+        presenter();
+    });
+
+    // Find the target element by its class name
+    const sidebar_tools = document.querySelector(".sidebar-tools-main")
+    sidebar_tools.appendChild(linkElement);
+};
+
+</script>
+
+
+<link rel="stylesheet" href="../custom.css">
+</head>
+
+<body class="nav-sidebar floating quarto-dark"><script id="quarto-html-before-body" type="application/javascript">
+    const toggleBodyColorMode = (bsSheetEl) => {
+      const mode = bsSheetEl.getAttribute("data-mode");
+      const bodyEl = window.document.querySelector("body");
+      if (mode === "dark") {
+        bodyEl.classList.add("quarto-dark");
+        bodyEl.classList.remove("quarto-light");
+      } else {
+        bodyEl.classList.add("quarto-light");
+        bodyEl.classList.remove("quarto-dark");
+      }
+    }
+    const toggleBodyColorPrimary = () => {
+      const bsSheetEl = window.document.querySelector("link#quarto-bootstrap:not([rel=disabled-stylesheet])");
+      if (bsSheetEl) {
+        toggleBodyColorMode(bsSheetEl);
+      }
+    }
+    const setColorSchemeToggle = (alternate) => {
+      const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+      for (let i=0; i < toggles.length; i++) {
+        const toggle = toggles[i];
+        if (toggle) {
+          if (alternate) {
+            toggle.classList.add("alternate");
+          } else {
+            toggle.classList.remove("alternate");
+          }
+        }
+      }
+    };
+    const toggleColorMode = (alternate) => {
+      // Switch the stylesheets
+      const primaryStylesheets = window.document.querySelectorAll('link.quarto-color-scheme:not(.quarto-color-alternate)');
+      const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+      manageTransitions('#quarto-margin-sidebar .nav-link', false);
+      if (alternate) {
+        // note: dark is layered on light, we don't disable primary!
+        enableStylesheet(alternateStylesheets);
+        for (const sheetNode of alternateStylesheets) {
+          if (sheetNode.id === "quarto-bootstrap") {
+            toggleBodyColorMode(sheetNode);
+          }
+        }
+      } else {
+        disableStylesheet(alternateStylesheets);
+        enableStylesheet(primaryStylesheets)
+        toggleBodyColorPrimary();
+      }
+      manageTransitions('#quarto-margin-sidebar .nav-link', true);
+      // Switch the toggles
+      setColorSchemeToggle(alternate)
+      // Hack to workaround the fact that safari doesn't
+      // properly recolor the scrollbar when toggling (#1455)
+      if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+        manageTransitions("body", false);
+        window.scrollTo(0, 1);
+        setTimeout(() => {
+          window.scrollTo(0, 0);
+          manageTransitions("body", true);
+        }, 40);
+      }
+    }
+    const disableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        stylesheet.rel = 'disabled-stylesheet';
+      }
+    }
+    const enableStylesheet = (stylesheets) => {
+      for (let i=0; i < stylesheets.length; i++) {
+        const stylesheet = stylesheets[i];
+        if(stylesheet.rel !== 'stylesheet') { // for Chrome, which will still FOUC without this check
+          stylesheet.rel = 'stylesheet';
+        }
+      }
+    }
+    const manageTransitions = (selector, allowTransitions) => {
+      const els = window.document.querySelectorAll(selector);
+      for (let i=0; i < els.length; i++) {
+        const el = els[i];
+        if (allowTransitions) {
+          el.classList.remove('notransition');
+        } else {
+          el.classList.add('notransition');
+        }
+      }
+    }
+    const isFileUrl = () => {
+      return window.location.protocol === 'file:';
+    }
+    const hasAlternateSentinel = () => {
+      let styleSentinel = getColorSchemeSentinel();
+      if (styleSentinel !== null) {
+        return styleSentinel === "alternate";
+      } else {
+        return false;
+      }
+    }
+    const setStyleSentinel = (alternate) => {
+      const value = alternate ? "alternate" : "default";
+      if (!isFileUrl()) {
+        window.localStorage.setItem("quarto-color-scheme", value);
+      } else {
+        localAlternateSentinel = value;
+      }
+    }
+    const getColorSchemeSentinel = () => {
+      if (!isFileUrl()) {
+        const storageValue = window.localStorage.getItem("quarto-color-scheme");
+        return storageValue != null ? storageValue : localAlternateSentinel;
+      } else {
+        return localAlternateSentinel;
+      }
+    }
+    const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+      const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+      const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+      let newTheme = '';
+      if(authorPrefersDark) {
+        newTheme = isAlternate ? baseTheme : alternateTheme;
+      } else {
+        newTheme = isAlternate ? alternateTheme : baseTheme;
+      }
+      const changeGiscusTheme = () => {
+        // From: https://github.com/giscus/giscus/issues/336
+        const sendMessage = (message) => {
+          const iframe = document.querySelector('iframe.giscus-frame');
+          if (!iframe) return;
+          iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+        }
+        sendMessage({
+          setConfig: {
+            theme: newTheme
+          }
+        });
+      }
+      const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+      if (isGiscussLoaded) {
+        changeGiscusTheme();
+      }
+    };
+    const authorPrefersDark = true;
+    const darkModeDefault = authorPrefersDark;
+    let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+    // Dark / light mode switch
+    window.quartoToggleColorScheme = () => {
+      // Read the current dark / light value
+      let toAlternate = !hasAlternateSentinel();
+      toggleColorMode(toAlternate);
+      setStyleSentinel(toAlternate);
+      toggleGiscusIfUsed(toAlternate, darkModeDefault);
+      window.dispatchEvent(new Event('resize'));
+    };
+    // Switch to dark mode if need be
+    if (hasAlternateSentinel()) {
+      toggleColorMode(true);
+    } else {
+      toggleColorMode(false);
+    }
+  </script>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../B_Datenbanken_2/1_Einleitung.html">Datenbanken II</a></li><li class="breadcrumb-item"><a href="../B_Datenbanken_2/3_Uebung_Server_Datenbanken.html"><span class="chapter-title">Arbeiten mit Server Datenbanken in ArcGIS Pro und pgAdmin</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../zhaw_sw_pos.png" alt="" class="sidebar-logo light-content py-0 d-lg-inline d-none">
+      <img src="../zhaw_sw_pos.png" alt="" class="sidebar-logo dark-content py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Modul AGI</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/modul-AGI/hs24" title="Quellcode" class="quarto-navigation-tool px-1" aria-label="Quellcode"><i class="bi bi-github"></i></a>
+    <a href="../Modul-AGI.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Dunkelmodus umschalten"><i class="bi"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Lesemodus umschalten">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Suchen"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Willkommen!</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../A_Unsicherheit/1_Einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">💥 Teil: Unsicherheit</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../A_Unsicherheit/2_Datengrundlage.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Datengrundlage</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../A_Unsicherheit/3_Datenvorverarbeitung.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Datenvorverarbeitung</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../A_Unsicherheit/4_Unsicherheit-Zeckenstandorte.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unsicherheit der gemeldeten Zeckenstichstandorte</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../A_Unsicherheit/5_Unschaerfe-des-Waldrandes.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Unschärfe des Waldrandes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../A_Unsicherheit/6_Automatisieren-Modelbuilder.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Automatisierung mit ModelBuilder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../A_Unsicherheit/7_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">🗃️ Teil: Datenbanken</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../B_Datenbanken_1/1_Einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datenbanken I</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../B_Datenbanken_1/2_Uebung.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../B_Datenbanken_2/1_Einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datenbanken II</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../B_Datenbanken_2/2_Uebung_Datenintegritaet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Datenintegrität</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../B_Datenbanken_2/3_Uebung_Server_Datenbanken.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Arbeiten mit Server Datenbanken in ArcGIS Pro und pgAdmin</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../B_Datenbanken_2/4_Uebung_Versionierung_Mehrbenutzer.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Versionierung und Mehrbenutzerbetrieb in ArcGIS Pro</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../B_Datenbanken_2/5_Uebung_SQL_Abfragen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abfragen in SQL mit pgAdmin und ArcGIS Pro</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../B_Datenbanken_3/1_Einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Datenbanken III</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../B_Datenbanken_3/2_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../B_Datenbanken_3/3_Uebung_Datenbankverbindung.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Datenbankverbindung zum Server aufbauen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../B_Datenbanken_3/4_Uebung_Abfragen_einblenden.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Abfragen aus der Datenbank in ArcGIS Pro einbinden</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../B_Datenbanken_3/5_Uebung_Geoverarbeitung.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Geoverarbeitung in der Datenbank mit ArcGIS Pro und SQL</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">🤖 Teil: Programmieren</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../C_Programmieren_1/1_Einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmieren I</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_1/2_Python-Command-Prompt.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Software Anleitungen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_1/3_Primitive_Datentypen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Primitive Datentypen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_1/4_Uebung_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_1/5_Komplexe_Datentypen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Komplexe Datentypen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_1/6_Uebung_2.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_1/8_Dictionary.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Dictionaries</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_1/9_Uebung_3.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_1/10_Tabellarische_Daten.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">DataFrames</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_1/11_Uebung_4.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_1/12_Uebung_5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 5</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../C_Programmieren_2/1_Einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmieren II</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_2/3_Python_Module.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Python Modules</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_2/4_Functions_I.html" class="sidebar-item-text sidebar-link"><span class="chapter-title"><em>Function</em> Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_2/5_Uebung_6.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_2/6_Functions_II.html" class="sidebar-item-text sidebar-link"><span class="chapter-title"><em>Function</em> Advanced</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_2/7_Uebung_7.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_2/8_If_else.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">If / Else</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_2/9_Uebung_8.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_2/10_Zufallzahlen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Zufallszahlen generieren</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_2/11_Uebung_9.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 9</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_2/12_Funktionen_in_DataFrames.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Funktionen in <em>DataFrames</em></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_2/13_Uebung_10.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_2/20_Anhang.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Anhang</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../C_Programmieren_3/1_Einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmieren III</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_3/2_For_Loops_Intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Einführung in <em>for loop</em></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_3/2_Uebung_11.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 11</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_3/3_For_Loops_Basics.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Basic <em>for loop</em></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_3/3_Uebung_12.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 12</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_3/4_For_Loops_Advanced.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Advanced <em>for loops</em></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_3/4_Uebung_13.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 13</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_3/5_GIS_in_Python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Input: GIS in Python</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_3/6_Raeumliche_Operationen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Räumliche Operationen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_3/6_Uebung_14.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 14</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_3/7_Spatial_Joins.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Spatial Joins</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_3/7_Uebung_15.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung 15</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_3/9_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../C_Programmieren_3/10_Anhang.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Anhang</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">🛣️ Teil: Netzwerkanalyse</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../D_Netzwerkanalyse_1/1_Netzwerkanalyse_I.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Netzwerkanalyse I</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../D_Netzwerkanalyse_1/2_Vorbereitung.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Vorbereitung</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../D_Netzwerkanalyse_1/3_QGIS.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Aufgabe 1: Operationen mit QGIS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../D_Netzwerkanalyse_1/4_GRASS_GIS.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Aufgabe 2: Zentralitätsmasse berechnen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../D_Netzwerkanalyse_2/1_Einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Netzwerkanalyse II</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../D_Netzwerkanalyse_2/1_Shortest_Path.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Aufgabe 3: Kürzeste Pfade (shortest path)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../D_Netzwerkanalyse_2/2_Travelling_Salesman.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Aufgabe 4: Traveling Salesperson</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../D_Netzwerkanalyse_3/1_Einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Netzwerkanalyse III</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../D_Netzwerkanalyse_3/2_Entsorgungsstelle.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Aufgabe 5: Entsorgungsstelle</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../D_Netzwerkanalyse_3/3_OEV-Gueteklassen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Aufgabe 6: ÖV-Güteklassen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../D_Netzwerkanalyse_3/4_Zentralitaetsmasse.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Aufgabe 7: Zentralitätsmasse</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../D_Netzwerkanalyse_3/5_Flaechen_verrechnen.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Aufgabe 8: Flächen verrechnen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../D_Netzwerkanalyse_3/6_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">🌍 Teil: WebGIS</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../E_WebGIS_1/1_Einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">WebGIS I</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../E_WebGIS_1/2_Uebung_Web_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Web Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../E_WebGIS_1/3_Uebung_Story_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Story Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../E_WebGIS_1/4_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../E_WebGIS_2/1_Einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">WebGIS II</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../E_WebGIS_2/2_Uebung_Zeckenstiche.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Visualisierung Zeckenstiche</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../E_WebGIS_2/3_Uebung_Leaflet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">(Optional) Übung Leaflet</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#übung-2-datenbankverbindung-zum-server-in-pgadmin-herstellen" id="toc-übung-2-datenbankverbindung-zum-server-in-pgadmin-herstellen" class="nav-link active" data-scroll-target="#übung-2-datenbankverbindung-zum-server-in-pgadmin-herstellen">Übung 2: Datenbankverbindung zum Server in pgAdmin herstellen</a></li>
+  <li><a href="#übung-3-verbindung-zur-postgresqlpostgis-datenbank-mit-arcgis-pro-herstellen" id="toc-übung-3-verbindung-zur-postgresqlpostgis-datenbank-mit-arcgis-pro-herstellen" class="nav-link" data-scroll-target="#übung-3-verbindung-zur-postgresqlpostgis-datenbank-mit-arcgis-pro-herstellen">Übung 3: Verbindung zur PostgreSQL/PostGIS Datenbank mit ArcGIS Pro herstellen</a></li>
+  <li><a href="#übung-4-datenbank-schemata-für-arcgis-pro-benutzer" id="toc-übung-4-datenbank-schemata-für-arcgis-pro-benutzer" class="nav-link" data-scroll-target="#übung-4-datenbank-schemata-für-arcgis-pro-benutzer">Übung 4: Datenbank Schemata für ArcGIS Pro Benutzer</a></li>
+  <li><a href="#übung-5-datenbankschema-prüfen" id="toc-übung-5-datenbankschema-prüfen" class="nav-link" data-scroll-target="#übung-5-datenbankschema-prüfen">Übung 5: Datenbankschema prüfen</a></li>
+  <li><a href="#übung-6-datenimport-in-die-datenbank-über-pgadmin" id="toc-übung-6-datenimport-in-die-datenbank-über-pgadmin" class="nav-link" data-scroll-target="#übung-6-datenimport-in-die-datenbank-über-pgadmin">Übung 6: Datenimport in die Datenbank über pgAdmin</a></li>
+  <li><a href="#übung-7-datenimport-in-die-datenbank-mit-einer-sql-datei" id="toc-übung-7-datenimport-in-die-datenbank-mit-einer-sql-datei" class="nav-link" data-scroll-target="#übung-7-datenimport-in-die-datenbank-mit-einer-sql-datei">Übung 7: Datenimport in die Datenbank mit einer SQL-Datei</a></li>
+  <li><a href="#übung-8-geometrieimport-in-die-datenbank" id="toc-übung-8-geometrieimport-in-die-datenbank" class="nav-link" data-scroll-target="#übung-8-geometrieimport-in-die-datenbank">Übung 8: Geometrieimport in die Datenbank</a></li>
+  <li><a href="#übung-9-geometrieimport-in-die-datenbank-mit-sql-datei" id="toc-übung-9-geometrieimport-in-die-datenbank-mit-sql-datei" class="nav-link" data-scroll-target="#übung-9-geometrieimport-in-die-datenbank-mit-sql-datei">Übung 9: Geometrieimport in die Datenbank mit SQL-Datei</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/modul-AGI/hs24/edit/main/B_Datenbanken_2/3_Uebung_Server_Datenbanken.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../B_Datenbanken_2/1_Einleitung.html">Datenbanken II</a></li><li class="breadcrumb-item"><a href="../B_Datenbanken_2/3_Uebung_Server_Datenbanken.html"><span class="chapter-title">Arbeiten mit Server Datenbanken in ArcGIS Pro und pgAdmin</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">Arbeiten mit Server Datenbanken in ArcGIS Pro und pgAdmin</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="übung-2-datenbankverbindung-zum-server-in-pgadmin-herstellen" class="level2">
+<h2 class="anchored" data-anchor-id="übung-2-datenbankverbindung-zum-server-in-pgadmin-herstellen">Übung 2: Datenbankverbindung zum Server in pgAdmin herstellen</h2>
+<p>In den nächsten Übungen wollen wir eine Beispiel Datenbank mit dem dort bereits implementierten Datenbankmodell abfragen. Hierzu müssen wir in einem ersten Schritt eine Verbindung zum PostgreSQL/PostGIS Datenbankserver herstellen. Hierfür nutzen wir das Datenbank-Administrations-Werkzeug pgAdmin.</p>
+<ol type="1">
+<li>Starten Sie pgAdmin.</li>
+<li>Im Dashboard klicken Sie auf NEW Server und geben die folgenden Verbindungsparameter ein:</li>
+<li>Register General: Name: svma-s-01323_waelder_studentNr. Verwenden Sie dabei die Nr. Ihres zugewiesenen Benutzers (siehe <a href="#fig-pgadmin1" class="quarto-xref">Abbildung&nbsp;<span>9.1</span></a>)</li>
+<li>Register Connection (siehe <a href="#fig-pgadmin2" class="quarto-xref">Abbildung&nbsp;<span>9.2</span></a>):
+<ul>
+<li>Host name/address: svma-s-01323.zhaw.ch</li>
+<li>Port: 5432</li>
+<li>Maintenance database: waelder</li>
+<li>Username: studentNr (Verwenden Sie hier Ihren zugewiesenen Anmeldenamen)</li>
+<li>Passwort: (Verwenden Sie hier Ihr zugewiesenes Passwort)</li>
+</ul></li>
+<li>Alle anderen Einstellungen können belassen werden. Speichern Sie mit Klick auf Save.</li>
+<li>Lassen Sie sich nicht davon verunsichern, dass es bereits einige Einträge hat. Da auf dem Server bereits andere Datenbanken installiert sind, sehen Sie auch diese. Navigieren Sie zu unserer Datenbank “waelder” und verschaffen sich einen Überblick über die vorhandenen Tabellen.</li>
+<li>Verwenden Sie für alle folgenden Übungen diese Datenbankverbindung, wenn nichts anderes angegeben ist (siehe <a href="#fig-pgadmin2" class="quarto-xref">Abbildung&nbsp;<span>9.2</span></a>).</li>
+</ol>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-pgadmin1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pgadmin1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_pgadmin.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pgadmin1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.1: PG Admin Oberfläche
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-pgadmin2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pgadmin2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_pgadmin2.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pgadmin2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.2: PG Admin Connection
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="übung-3-verbindung-zur-postgresqlpostgis-datenbank-mit-arcgis-pro-herstellen" class="level2">
+<h2 class="anchored" data-anchor-id="übung-3-verbindung-zur-postgresqlpostgis-datenbank-mit-arcgis-pro-herstellen">Übung 3: Verbindung zur PostgreSQL/PostGIS Datenbank mit ArcGIS Pro herstellen</h2>
+<p>Nachdem die Datenbank erstellt wurde und eine Verbindung über pgadmin eingerichtet wurde, benötigen wir auch eine Verbindung von ArcGIS Pro zu der Datenbank.</p>
+<ol type="1">
+<li>Starten Sie ArcGIS Pro und erstellen ein neues Projekt mit dem Namen “Datenbankzugriff”</li>
+<li>Öffnen Sie das Catalog-Fenster oder das Register Catalog und wählen Sie “Databases” (siehe <a href="#fig-connect1" class="quarto-xref">Abbildung&nbsp;<span>9.3</span></a>).</li>
+<li>Im Kontextmenü (rechte Maustaste) kann eine neue Datenbankverbindung zur Server Datenbank hergestellt werden.
+<ul>
+<li>Databases→Kontextmenü→New Database Connection</li>
+</ul></li>
+<li>Geben Sie im Database Connection Fenster die notwendigen Verbindungsparameter ein (siehe <a href="#fig-connect3" class="quarto-xref">Abbildung&nbsp;<span>9.4</span></a>).
+<ul>
+<li>Database Platform: PostgreSQL</li>
+<li>Instance: svma-s-01323.zhaw.ch</li>
+<li>Authentication Type: Database authentication</li>
+<li>User Name: studentNr (Verwenden Sie hier Ihren zugewiesenen Anmeldenamen)</li>
+<li>Password: (Verwenden Sie hier Ihr zugewiesenes Passwort)</li>
+<li>Database: waelder</li>
+</ul></li>
+<li>Ein Klick auf OK stellt die Verbindung zur Datenbank her.</li>
+<li>Sie können der Datenbankverbindung noch einen sinnvollen Namen geben. Es empfiehlt sich eine Kombination aus dem Servernamen, der verbundenen Datenbank und dem Benutzer. Z.B. “svma-s-01323_waelder_student1”</li>
+<li>Unter dem Eintrag “Databases” im Catalog gibt es jetzt eine neue Datenbankverbindung zur Datenbank (siehe <a href="#fig-connect4" class="quarto-xref">Abbildung&nbsp;<span>9.5</span></a>).</li>
+</ol>
+<div class="quarto-layout-panel" data-layout="[[1], [1], [1,1]]">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-connect1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-connect1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_connect1.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-connect1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.3: Neue Datenbankverbindung in ArcGIS Pro
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div id="fig-connect3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-connect3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_connect3.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-connect3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.4: Notwendige Verbindungsparameter eingeben
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-connect4" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-connect4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_connect4.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-connect4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.5: Neue Datenbankverbindung ist erstellt
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="übung-4-datenbank-schemata-für-arcgis-pro-benutzer" class="level2">
+<h2 class="anchored" data-anchor-id="übung-4-datenbank-schemata-für-arcgis-pro-benutzer">Übung 4: Datenbank Schemata für ArcGIS Pro Benutzer</h2>
+<p>Nachdem die Datenbank erstellt wurde und alle Verbindungen eingerichtet sind, ist die Datenbank startklar. ArcGIS pro nutzt für die Daten jeweils ein eigenes Schema. Das Schema hat dabei den Namen des Datenbank Admin Users.</p>
+<ol type="1">
+<li>Nutzen Sie wieder die Verbindung mit der Datenbank “waelder” in pgAdmin und öffnen Sie die Inhalte/Eigenschaften mit Klick auf den kleinen Pfeil.</li>
+<li>Navigieren Sie zum Eintrag Schemas. Dort sind 4 Einträge zu sehen. Ein Schema ist eine Art abgeschlossener Namensraum für die Datenhaltung. Es empfiehlt sich thematisch zusammenpassende Tabellen in einem gemeinsamen Schema zu speichern. Für die meisten Datenbank-Anwendungen genügt es aber alle Tabellen im default Schema “public” zu erstellen. Für den Zugriff über ArcGIS wurde aber durch das Werkzeug “Create Database User” ein spezielles Schema mit dem Namen des Database Users erstellt. Dies ist notwendig damit auch ArcGIS Pro auf die Daten zugreifen und diese verwalten kann. Das entsprechende Schema bekommt dabei immer den Namen des Admin Datenbankbenutzers. In diesem Fall “arcgispro_editor”. Sie können dort z.B. auch ein Schema mit Namen “sde” vom Geodatenbank-Administrator sehen (siehe <a href="#fig-db2-uebung4-1" class="quarto-xref">Abbildung&nbsp;<span>9.6</span></a>).</li>
+<li>Öffnen Sie das public Schema. Hier gibt es bereits Einträge. Hier werden die zugehörigen Informationen der Datenbank, wie Sichten, Funktionen usw. zugänglich gemacht. Interessant ist zunächst aber nur der Eintrag “Tables (3)”. In Klammern ist immer die Anzahl der vorhandenen Datenbanktabellen angegeben. Wie wir sehen, gibt es default-Tabellen, welche bereits erstellt wurden. Die Tabelle “spatial_ref_sys” enthält z.B. alle Koordinatensysteme. Die Tabelle “sde_spatial_references” ist eine Hilfstabelle für Koordinatensysteme von ArcGIS Pro. Löschen Sie diese beiden Tabellen NIEMALS. Ohne diese Tabellen sind bestimmte Funktionen nicht mehr ausführbar (siehe <a href="#fig-db2-uebung4-2" class="quarto-xref">Abbildung&nbsp;<span>9.7</span></a>)</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Der Name des Schemas muss in zukünftigen Abfragen immer dem Tabellennamen vorangestellt werden, damit klar ist aus welchem Schema abgefragt werden soll.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Falls Sie einmal eigene Tabellen erstellen sollten: Es empfiehlt sich alle räumlichen Tabellen direkt in ArcGIS Pro zu erstellen. Dadurch entscheidet ArcGIS Pro selbstständig über die korrekten Datentypen und Geometrietypen. Alle anderen Tabellen sowie Fremdschlüssel usw. können auch in pgadmin erstellt werden. Alle Tabellen wurden im ArcGIS Pro Schema “arcgispro_editor” erstellt.</p>
+</div>
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-db2-uebung4-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-db2-uebung4-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_uebung4_1.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-db2-uebung4-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.6: PG Admin Schemas
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-db2-uebung4-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-db2-uebung4-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_uebung4_2.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-db2-uebung4-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.7: PG Admin Tables
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="übung-5-datenbankschema-prüfen" class="level2">
+<h2 class="anchored" data-anchor-id="übung-5-datenbankschema-prüfen">Übung 5: Datenbankschema prüfen</h2>
+<p>Für die kommenden Übungen nutzen wir die Datenbank “waelder” auf unserem Server. Den Zugriff haben wir in den vorigen Übungen eingerichtet. Um einen Überblick zu bekommen, lesen Sie das folgende Datenbankschema und machen sich mit den Tabellen, Attributen und Abhängigkeiten vertraut. Da Sie jetzt alle gemeinsam dieselben Tabellen bearbeiten, gibt es in jeder Tabelle jeweils ein Feld “id_erfasser”. Sobald Sie Tabellen mit Daten befüllen, schreiben Sie bitte immer jeweils Ihre studentNr in das Feld “id_erfasser”, damit die Einträge später unterscheidbar sind.</p>
+<p><img src="figures/screenshot_uebung5.jpg" class="img-fluid"></p>
+</section>
+<section id="übung-6-datenimport-in-die-datenbank-über-pgadmin" class="level2">
+<h2 class="anchored" data-anchor-id="übung-6-datenimport-in-die-datenbank-über-pgadmin">Übung 6: Datenimport in die Datenbank über pgAdmin</h2>
+<p>Da jetzt alle Tabellen vorliegen sollen diese noch mit ein paar Beispiel-Daten gefüllt werden. Auch hier bietet es sich an räumliche Objekte (Geometrien) mit Hilfe von ArcGIS Pro zu erfassen. Nicht-räumliche Objekte können meist sogar schneller über SQL importiert werden.</p>
+<ol type="1">
+<li>Suchen Sie in der Datenbank “waelder” das schema “arcgispro_editor”.</li>
+<li>Öffnen Sie anschliessend den SQL Editor von pgadmin. Sie finden das so genannte Query Tool im Kontextmenü des Schemas oder in der Menüleiste oben unter Tools→Query Tool</li>
+<li>Importieren Sie mit Hilfe eines SQL Statements eine Tierart in die Tabelle “tierarten”.</li>
+<li>Da Sie jetzt alle gemeinsam und gleichzeitig Daten in dieselbe Tabelle einfüllen und Sie die Einträge noch unterscheiden wollen, fügen Sie unter id_erfasser jeweils ihre zugewiesene studentNr (nur die Zahl) ein.</li>
+<li>Benutzen Sie dazu das INSERT Statement und tippen es in das Query Tool (siehe <a href="#fig-db2-uebung6-1" class="quarto-xref">Abbildung&nbsp;<span>9.8</span></a>)
+<ul>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>   <span class="kw">INSERT</span> <span class="kw">INTO</span> arcgispro_editor.tierarten (id_tierart, name_tierart, id_erfasser) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>   <span class="kw">Values</span> (<span class="kw">DEFAULT</span>, <span class="st">'Bär'</span>, studentNr);</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li>Schliessen Sie die Eingabe mit Klick auf Execute ab.</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>DEFAULT ist ein SQL Befehlswort, welches den Zähler für die id_tierart automatisch auf den nächsten freien Wert setzt. So kann die id_tierart automatisch fortlaufend hochnummeriert werden. Sie dürfen gern ein eigenes Tier in die Datenbank einfüllen.</p>
+<p>Achten Sie darauf, dass Text immer in einfache Anführungszeichen (Das Zeichen auf der ?- Taste) gesetzt werden muss. Bei Copy &amp; Paste aus Dateien wird oft das Anführungszeichen verändert.Beachten Sie ausserdem die Punktschreibweise, dabei muss der Name des Schemas “arcgispro_editor” immer mit Punkt verbunden vor dem Namen der Tabelle angegeben werden. Jedes Statement wird mit Semikolon abgeschlossen.</p>
+</div>
+</div>
+<ol start="6" type="1">
+<li>Lassen Sie sich den Inhalt der Tabelle ausgeben. Dies können Sie über ein SELECT SQL Statement ausführen (siehe <a href="#fig-db2-uebung6-2" class="quarto-xref">Abbildung&nbsp;<span>9.9</span></a>).
+<ul>
+<li><div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode sql code-with-copy"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>   <span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">FROM</span> arcgispro_editor.tierarten;</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div></li>
+</ul></li>
+<li>Sie können erkennen, dass ihr Tier mit Ihrer studentNr als id_erfasser in die Tabelle eingetragen wurde. Vermutlich sehen Sie auch bereits Einträge Ihrer Mit-Studierenden.</li>
+<li>Navigieren Sie im Object Explorer von pgAdmin zur Tabelle “tierarten”.</li>
+<li>Über das Kontextmenü können ebenfalls die Inhalte der Tabelle angezeigt werden (siehe <a href="#fig-db2-uebung6-3" class="quarto-xref">Abbildung&nbsp;<span>9.10</span></a>).
+<ol type="a">
+<li>Tabelle “tierarten”→Kontextmenü→View/Edit Data→All Rows</li>
+</ol></li>
+<li>Es öffnet sich automatisch das Query Tool und die Inhalte der Tabelle werden angezeigt.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Auf diese Weise kann immer nur die komplette Tabelle angezeigt werden. Filter oder sonstige Einschränkungen müssen als SQL Statement abgesetzt werden.</p>
+</div>
+</div>
+<div id="fig-db2-uebung6-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-db2-uebung6-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_uebung6_1.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-db2-uebung6-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.8: Insert Statement
+</figcaption>
+</figure>
+</div>
+<div id="fig-db2-uebung6-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-db2-uebung6-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_uebung6_2.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-db2-uebung6-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.9: Select Statement
+</figcaption>
+</figure>
+</div>
+<div id="fig-db2-uebung6-3" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-db2-uebung6-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_uebung6_3.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-db2-uebung6-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.10: Überprüfen der Tabelleninhalte
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="übung-7-datenimport-in-die-datenbank-mit-einer-sql-datei" class="level2">
+<h2 class="anchored" data-anchor-id="übung-7-datenimport-in-die-datenbank-mit-einer-sql-datei">Übung 7: Datenimport in die Datenbank mit einer SQL-Datei</h2>
+<p>Jedes SQL Statement kann in einer Datei abgespeichert werden. Dadurch lassen sich bequem z.B. gleich mehrere Daten in die Datenbank einlesen.</p>
+<ol type="1">
+<li>Bleiben Sie in der Datenbank “waelder” im schema “arcgispro_editor”.</li>
+<li>Öffnen Sie das Query Tool.</li>
+<li>Laden Sie die Datei “tierarten.sql” <a href="https://moodle.zhaw.ch/mod/resource/view.php?id=974486">aus dem Moodle</a> und speichern Sie in Ihrem Ordner.</li>
+<li>Öffnen Sie die Datei in einem beliebigen Texteditor und ändern das Wort “studentNr” in Ihre studentNr ab. Denken Sie sich ausserdem ein paar eigene/andere Tierarten aus und schreiben diese ebenfalls in die Datei (siehe <a href="#fig-db2-uebung7-1" class="quarto-xref">Abbildung&nbsp;<span>9.11</span></a>).</li>
+<li>Über das kleine Ordner Symbol (Im Menü des Query Tools links oben) kann eine SQL-Datei geladen werden. Laden Sie die geänderte “tierarten.sql” Datei in pgAdmin.</li>
+<li>Die Auswahl lädt den Inhalt der Datei ins Query Tool (siehe <a href="#fig-db2-uebung7-2" class="quarto-xref">Abbildung&nbsp;<span>9.12</span></a>).</li>
+<li>Schliessen Sie die Eingabe mit Klick auf Execute ab.</li>
+<li>Schauen Sie sich erneut den Inhalt der Tabelle “tierarten” an. Die Tabelle sollte jetzt die eigenen Tierarten plus ein paar Einträge Ihrer Mit-Studierenden enthalten.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Da der Primärschlüssel der Tabelle nur auf id_tierart gesetzt ist und wir alle zusammen auf derselben Tabelle arbeiten, gibt es einige Tierarten bestimmt doppelt. Das ist normal.</p>
+</div>
+</div>
+<div id="fig-db2-uebung7-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-db2-uebung7-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_uebung7_1.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-db2-uebung7-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.11: Insert statments
+</figcaption>
+</figure>
+</div>
+<div id="fig-db2-uebung7-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-db2-uebung7-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_uebung7_2.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-db2-uebung7-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.12: Query tool
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="übung-8-geometrieimport-in-die-datenbank" class="level2">
+<h2 class="anchored" data-anchor-id="übung-8-geometrieimport-in-die-datenbank">Übung 8: Geometrieimport in die Datenbank</h2>
+<p>Herkömmliche GIS Methoden zum Erstellen und Importieren von Geometrien ins GIS sollten Ihnen aus dem GIS Basic Modul bereits bekannt sein. Auch in ArcGIS Pro können Geometrien z.B. über ein Shapefile in eine Geodatenbank importiert werden. Ausserdem können Geometrien z.B. aus einem Luftbild digitalisiert und direkt in der Geodatenbank gespeichert werden.</p>
+<ol type="1">
+<li>Laden Sie die Datei “waelder.zip” <a href="https://moodle.zhaw.ch/mod/resource/view.php?id=974488">aus dem Moodle</a> und entpacken Sie die Dateien. Es handelt sich um ein Shapefile mit einigen Wäldern.</li>
+<li>Starten Sie ArcGIS Pro und laden das Projekt “Datenbankzugriff”.</li>
+<li>Fügen Sie das Shapefile ein und erfassen Sie mit dem Digitalisierungsmöglichkeiten von ArcGIS Pro zusätzlich ein paar eigene fehlende Wälder.</li>
+<li>Öffnen Sie die Attributtabelle.</li>
+<li>Erfassen Sie im Feld “id_erfasser” wiederum Ihre zugewiesene studentNr (Nur die Zahl). Alle weiteren Attribute können Sie beliebig erfassen. Denken Sie sich einfach etwas aus.</li>
+<li>Importieren Sie die Daten anschliessend folgendermassen in die Feature Class “waelder” in der Datenbank auf dem Server.</li>
+<li>Kontextmenü der Feature Class “waelder”→Load Data. Es öffnet sich das Werkzeug “Append” (siehe <a href="#fig-db2-uebung8-1" class="quarto-xref">Abbildung&nbsp;<span>9.13</span></a>)
+<ul>
+<li>Input Dataset: Shapefile “waelder”</li>
+<li>Target Dataset: waelder.arcgispro_editor.waelder</li>
+<li>Field Matching Type: Use the Field Map to reconcile schema differences. Shapefiles können nur Spaltenbezeichnungen mit 10 Zeichen speichern. Alles andere wird abgeschnitten. Das Attribut “beschreibung” ist deshalb in der Datenbank als “beschreibung” gespeichert, im Shapefile aber nur als “beschreibu”. Dies hat zur Folge, dass das Schema beider Feature Classes nicht gleich ist. Aus diesem Grund muss hier explizit die Übereinstimmung der Spalten bestimmt werden. Mit dem kleinen Stiftsymbol können Sie die Felder anpassen bzw. zuweisen. (siehe <a href="#fig-db2-uebung8-2-1" class="quarto-xref">Abbildung&nbsp;<span>9.14</span></a>) Das gleiche gilt für das Feld “id_erfasser” bzw. “id_erfasse” (siehe <a href="#fig-db2-uebung8-2" class="quarto-xref">Abbildung&nbsp;<span>9.15</span></a>).</li>
+</ul></li>
+<li>Erstellen Sie eine neue Karte in ArcGIS Pro und laden Sie die Feature Class “waelder” aus der Server Datenbank.</li>
+<li>Sie haben jetzt die Wälder in die Datenbank importiert.</li>
+<li>Schauen Sie sich die Wälder auch in pgAdmin an. Machen Sie hierzu eine Select Abfrage im Query Tool. In der Ergebnis Tabelle sehen Sie in der Geometry-Spalte ein kleines Karten-Symbol (View all Geometries in this column). Dies öffnet den “Geometry Viewer”. Sie sollten auch dort die Geometrien der importierten Wälder sehen (siehe <a href="#fig-db2-uebung8-3" class="quarto-xref">Abbildung&nbsp;<span>9.16</span></a>).</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tipp
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Da wir jetzt alle unsere Wälder in dieselbe Datenbank laden, sind natürlich einige Wälder doppelt vorhanden. Dies ist für unser Vorhaben aber nicht weiter schlimm.</p>
+</div>
+</div>
+<div id="fig-db2-uebung8-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-db2-uebung8-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_uebung8_1.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-db2-uebung8-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.13: Load data
+</figcaption>
+</figure>
+</div>
+<div class="quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-db2-uebung8-2-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-db2-uebung8-2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_uebung8_2_1.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-db2-uebung8-2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.14: Geoprocessing Append
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-db2-uebung8-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-db2-uebung8-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_uebung8_2.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-db2-uebung8-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.15: Geoprocessing Append
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="fig-db2-uebung8-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-db2-uebung8-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_uebung8_3.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-db2-uebung8-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.16: GIS GUI mit Wälder
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="übung-9-geometrieimport-in-die-datenbank-mit-sql-datei" class="level2">
+<h2 class="anchored" data-anchor-id="übung-9-geometrieimport-in-die-datenbank-mit-sql-datei">Übung 9: Geometrieimport in die Datenbank mit SQL-Datei</h2>
+<p>Auch Geometrien können ebenso wie Sachdaten über eine SQL-Datei in die Datenbank kopiert werden.</p>
+<ol type="1">
+<li>Laden Sie die Datei “sichtungsmeldungen.sql” <a href="https://moodle.zhaw.ch/mod/resource/view.php?id=974487">aus dem Moodle</a>. Es handelt sich um eine SQL-Datei mit Sichtungsmeldungen von Tieren.</li>
+<li>Öffnen Sie die Datei in einem beliebigen Texteditor. Was sehen Sie? Was fällt auf?</li>
+<li>Sie werden bemerken, dass die Geometrie über die Funktion ST_GeomFromText lesbar dargestellt werden kann. Der Geometrietyp von ArcGIS Pro wird dann über diese Funktion automatisch umgewandelt. I.d.R. ist es aber sehr viel einfacher Geometrien über ArcGIS Pro zu importieren oder zu erstellen. Sie sollen hier aber einmal sehen, dass es auch direkt über SQL geht.</li>
+<li>Die Attribute (Spalten in der DB) in der Datei sind Kommagetrennt in Klammern nach dem Wert VALUES. Die Reihenfolge ist diesselbe wie in der Klammer vor dem VALUES.</li>
+<li>Passen Sie die Datei an, indem Sie als objectid (erstes Attribut) ihre studentNr gefolgt von einer 0 eintragen und als id_erfasser (letztes Attribut) jeweils Ihre studentNr (Nur die Zahl ohne 0) eintragen. Denken Sie sich auch eine sinnvolle Schweizer-Koordinate in der Nähe der anderen Objekte aus, damit Sie nicht alle denselben Punkt importieren. Die Punkte dürfen, müssen aber nicht im Wald liegen. Variieren Sie etwas. Sie können eine Koordinate einfach im Map-Fenster von ArcGIS Pro ablesen und ebenfalls in der Datei anpassen. Es kommt jetzt hier nicht auf Genauigkeit der Lage des Punktes an. Über die id_tierart können Sie sich ein beliebiges Tier aussuchen. Tragen Sie eine vorhandene id_tierart aus Ihrer Tierarten Tabelle aus Übung 6 ein. Passen Sie zum Schluss auch noch das Datum an (siehe <a href="#fig-db2-uebung9-1" class="quarto-xref">Abbildung&nbsp;<span>9.17</span></a>).</li>
+<li>Starten Sie pgAdmin und laden die Datenbank “waelder” im Schema “arcgispro_editor”</li>
+<li>Importieren Sie die Sichtungsmeldung mit Hilfe der SQL-Datei in die Datenbank.</li>
+<li>Schauen Sie sich die Daten in pgadmin und in ArcGIS Pro an. Sie sollten einige Punkte in der Karte sehen (siehe <a href="#fig-db2-uebung9-2" class="quarto-xref">Abbildung&nbsp;<span>9.18</span></a> und <a href="#fig-db2-uebung9-3" class="quarto-xref">Abbildung&nbsp;<span>9.19</span></a>).</li>
+</ol>
+<div id="fig-db2-uebung9-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-db2-uebung9-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_uebung9_1.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-db2-uebung9-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.17: Anpassungen INSERT Statement
+</figcaption>
+</figure>
+</div>
+<div id="fig-db2-uebung9-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-db2-uebung9-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_uebung9_2.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-db2-uebung9-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.18: pgAdmin Select Statement
+</figcaption>
+</figure>
+</div>
+<div id="fig-db2-uebung9-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-db2-uebung9-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/screenshot_uebung9_3.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-db2-uebung9-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;9.19: GIS GUI mit Wälder und Sichtungen
+</figcaption>
+</figure>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    // Ensure there is a toggle, if there isn't float one in the top right
+    if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+      const a = window.document.createElement('a');
+      a.classList.add('top-right');
+      a.classList.add('quarto-color-scheme-toggle');
+      a.href = "";
+      a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+      const i = window.document.createElement("i");
+      i.classList.add('bi');
+      a.appendChild(i);
+      window.document.body.appendChild(a);
+    }
+    setColorSchemeToggle(hasAlternateSentinel())
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../B_Datenbanken_2/2_Uebung_Datenintegritaet.html" class="pagination-link" aria-label="Datenintegrität">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Datenintegrität</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../B_Datenbanken_2/4_Uebung_Versionierung_Mehrbenutzer.html" class="pagination-link" aria-label="Versionierung und Mehrbenutzerbetrieb in ArcGIS Pro">
+        <span class="nav-page-text"><span class="chapter-title">Versionierung und Mehrbenutzerbetrieb in ArcGIS Pro</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/modul-AGI/hs24/edit/main/B_Datenbanken_2/3_Uebung_Server_Datenbanken.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li></ul></div></div></div></footer></body></html>
