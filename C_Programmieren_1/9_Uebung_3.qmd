@@ -1,6 +1,6 @@
 ---
 output: false
-echo: true                      # set to true to show solution
+echo: false                      # set to true to show solution
 code-fold: true
 code-summary: "Musterlösung"    
 ---
@@ -48,7 +48,11 @@ me["groesse"] = 181
 Erstelle eine neue *Dictionary* `people` mit den *Keys* "vornamen", "nachnamen" und "groesse" und jeweils 3 Einträge pro *Key*.
 
 ```{python}
-people = {"vornamen": ["Christopher", "Henning", "Severin"], "nachnamen": ["Annen","May", "Kantereit"], "groessen": [174, 182, 162]}
+people = {
+  "vornamen": ["Christopher", "Henning", "Severin"], 
+  "nachnamen": ["Annen","May", "Kantereit"], 
+  "groessen": [174, 182, 162]
+  }
 ```
 
 ## Übung 3.6

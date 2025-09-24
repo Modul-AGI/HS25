@@ -1,9 +1,10 @@
 ---
 output: false
 echo: false                      # set to true to show solution
-code-fold: true                  # set to true to show solution
-code-summary: "Musterlösung"    
+code-fold: true
+code-summary: "Musterlösung"
 ---
+
 
 # Übung 7
 
@@ -27,8 +28,9 @@ Die eben erstellte Funktion `times` benötigt 2 Argumente (die miteinander multi
 **Zusatzaufgabe**: Was passiert, wenn du den ersten Parameter in einen optionalen Parameter umwandelst?
 
 ```{python}
+#| error: true
 def times(x, y = 1):
-    return x * y
+   return x * y
 ```
 
 ```{python}
@@ -36,7 +38,7 @@ times(3)
 ```
 
 ```{python}
-#| error: false
+#| error: true
 
 # (Zusatzaufgabe)
 def times(x = 1, y):

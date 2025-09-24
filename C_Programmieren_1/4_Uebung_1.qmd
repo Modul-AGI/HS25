@@ -1,6 +1,6 @@
 ---
 output: false
-echo: true                      # set to true to show solution
+echo: false                      # set to true to show solution
 code-fold: true
 code-summary: "Musterlösung"    
 ---
@@ -12,6 +12,7 @@ code-summary: "Musterlösung"
 Um diese Übung zu lösen, erstellt ihr am besten ein neues Python File (⨁ New → New File → Python File) und speichert dies direkt ab.
 
 :::
+
 
 <!-- % Variablen erstellen -->
 ## Übung 1.1

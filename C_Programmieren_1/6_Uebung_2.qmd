@@ -1,6 +1,6 @@
 ---
 output: false
-echo: true                      # set to true to show solution
+echo: false                      # set to true to show solution
 code-fold: true
 code-summary: "Musterlösung"    
 ---

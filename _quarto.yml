@@ -22,7 +22,6 @@ format:
 
 execute:
   freeze: true
-  error: true
   echo: true
   output: true
   message: false
@@ -30,7 +29,7 @@ execute:
     
 book:
   title: "Modul AGI"
-  subtitle: "HS24"
+  subtitle: "HS25"
   author: "Forschungsgruppe Geoinformatik"
   reader-mode: true
   downloads: [pdf]
@@ -51,7 +50,7 @@ book:
       - A_Unsicherheit/5_Unschaerfe-des-Waldrandes.qmd
       - A_Unsicherheit/6_Automatisieren-Modelbuilder.qmd
       - A_Unsicherheit/7_Leistungsnachweis.qmd
-    - ---
+    - "---"
     - part: "🗃️ Teil: Datenbanken"
     - part: "B_Datenbanken_1/1_Einleitung.qmd"
       chapters: 
@@ -68,7 +67,7 @@ book:
       - B_Datenbanken_3/3_Uebung_Datenbankverbindung.qmd
       - B_Datenbanken_3/4_Uebung_Abfragen_einblenden.qmd
       - B_Datenbanken_3/5_Uebung_Geoverarbeitung.qmd
-    - ---
+    - "---"
     - part: "🤖 Teil: Programmieren"
     - part: "C_Programmieren_1/1_Einleitung.qmd"
       chapters:
@@ -77,7 +76,6 @@ book:
       - C_Programmieren_1/4_Uebung_1.qmd
       - C_Programmieren_1/5_Komplexe_Datentypen.qmd
       - C_Programmieren_1/6_Uebung_2.qmd
-      # - C_Programmieren_1/7_JupyterNotebook.qmd
       - C_Programmieren_1/8_Dictionary.qmd
       - C_Programmieren_1/9_Uebung_3.qmd
       - C_Programmieren_1/10_Tabellarische_Daten.qmd
@@ -96,7 +94,7 @@ book:
       - C_Programmieren_2/11_Uebung_9.qmd
       - C_Programmieren_2/12_Funktionen_in_DataFrames.qmd
       - C_Programmieren_2/13_Uebung_10.qmd
-      - C_Programmieren_2/20_Anhang.qmd 
+      - C_Programmieren_2/20_Anhang.qmd
     - part: "C_Programmieren_3/1_Einleitung.qmd"
       chapters:
       - C_Programmieren_3/2_For_Loops_Intro.qmd
@@ -110,10 +108,9 @@ book:
       - C_Programmieren_3/6_Uebung_14.qmd
       - C_Programmieren_3/7_Spatial_Joins.qmd
       - C_Programmieren_3/7_Uebung_15.qmd
-      # - C_Programmieren_3/8_Daten_Visualisieren.qmd moved to 10_Anhang.qmd
       - C_Programmieren_3/9_Leistungsnachweis.qmd
       - C_Programmieren_3/10_Anhang.qmd
-    - ---
+    - "---"
     - part: "🛣️ Teil: Netzwerkanalyse"
     - part: "D_Netzwerkanalyse_1/1_Netzwerkanalyse_I.qmd"
       chapters: 
@@ -131,15 +128,14 @@ book:
       - D_Netzwerkanalyse_3/4_Zentralitaetsmasse.qmd
       - D_Netzwerkanalyse_3/5_Flaechen_verrechnen.qmd
       - D_Netzwerkanalyse_3/6_Leistungsnachweis.qmd
-    - ---
-    - part: "🌍 Teil: WebGIS"
-    - part: "E_WebGIS_1/1_Einleitung.qmd"
-      chapters: 
-      - E_WebGIS_1/2_Uebung_Web_Map.qmd
-      - E_WebGIS_1/3_Uebung_Story_Map.qmd
-      - E_WebGIS_1/4_Leistungsnachweis.qmd
-    - part: "E_WebGIS_2/1_Einleitung.qmd"
-      chapters: 
-      - E_WebGIS_2/2_Uebung_Zeckenstiche.qmd
-      - E_WebGIS_2/3_Uebung_Leaflet.qmd
-    # - Markdown.qmd
+    - "---"
+    # - part: "🌍 Teil: WebGIS"
+    # - part: "E_WebGIS_1/1_Einleitung.qmd"
+    #   chapters: 
+    #   - E_WebGIS_1/2_Uebung_Web_Map.qmd
+    #   - E_WebGIS_1/3_Uebung_Story_Map.qmd
+    #   - E_WebGIS_1/4_Leistungsnachweis.qmd
+    # - part: "E_WebGIS_2/1_Einleitung.qmd"
+    #   chapters: 
+    #   - E_WebGIS_2/2_Uebung_Zeckenstiche.qmd
+    #   - E_WebGIS_2/3_Uebung_Leaflet.qmd

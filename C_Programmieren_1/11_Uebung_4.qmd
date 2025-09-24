@@ -1,6 +1,6 @@
 ---
 output: false
-echo: true                      # set to true to show solution
+echo: false                      # set to true to show solution
 code-fold: true
 code-summary: "Musterlösung"    
 ---
@@ -17,7 +17,11 @@ Importiere `pandas` und nutze die Funktion `DataFrame`, um `people` in eine Data
 
 import pandas as pd
 
-people = {"vornamen": ["Christopher", "Henning", "Severin"], "nachnamen": ["Annen","May", "Kantereit"], "groessen": [174, 182, 162]}
+people = {
+  "vornamen": ["Christopher", "Henning", "Severin"], 
+  "nachnamen": ["Annen","May", "Kantereit"], 
+  "groessen": [174, 182, 162]
+  }
 
 
 people_df = pd.DataFrame(people)
