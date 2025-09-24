@@ -788,57 +788,6 @@ window.onload = function() {
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">🌍 Teil: WebGIS</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_1/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS I</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/2_Uebung_Web_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Web Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/3_Uebung_Story_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Story Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/4_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_2/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS II</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/2_Uebung_Zeckenstiche.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Visualisierung Zeckenstiche</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/3_Uebung_Leaflet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">(Optional) Übung Leaflet</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -874,27 +823,27 @@ window.onload = function() {
 <p>Ähnlich wie eine List ist eine Dictionary ein Behälter, wo mehrere Elemente abgespeichert werden können. Wie bei einem Wörterbuch bekommt jedes Element ein “Schlüsselwort”, mit dem man den Eintrag finden kann. Unter dem Eintrag “trump” findet man im Langenscheidt Wörterbuch (1977) die Erklärung “erdichten, schwindeln, sich aus den Fingern saugen”.</p>
 <p><img src="figures/trump.jpg" class="img-fluid"></p>
 <p>In Python würde man diese <em>Dictionary</em> folgendermassen erstellen:</p>
-<div id="7e2491b5" class="cell" data-execution_count="1">
+<div id="a20386cd" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>langenscheidt <span class="op">=</span> {<span class="st">"trump"</span>:<span class="st">"erdichten- schwindeln- sich aus den Fingern saugen"</span>}</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Schlüssel (von nun an mit <em>Key</em> bezeichnet) des Eintrages lautet “trump” und der dazugehörige Wert (<em>Value</em>) “erdichten- schwindeln- aus den Fingern saugen”. Beachte die geschweiften Klammern (<code>{</code> und <code>}</code>) bei der Erstellung einer <em>Dictionary</em>.</p>
 <p>Eine <em>Dictionary</em> besteht aber meistens nicht aus einem, sondern aus mehreren Einträgen: Diese werden Kommagetrennt aufgeführt.</p>
-<div id="6eb50290" class="cell" data-execution_count="2">
+<div id="6e41b958" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>langenscheidt <span class="op">=</span> {<span class="st">"trump"</span>:<span class="st">"erdichten- schwindeln- sich aus den Fingern saugen"</span>, <span class="st">"trumpery"</span>:<span class="st">"Plunder- Ramsch- Schund"</span>}</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Der Clou der <em>Dictionary</em> ist, dass man nun einen Eintrag mittels dem <em>Key</em> aufrufen kann. Wenn wir also nun wissen wollen, was “trump” heisst, ermitteln wir dies mit der nachstehenden Codezeile:</p>
-<div id="9efbec7b" class="cell" data-execution_count="3">
+<div id="3070da02" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>langenscheidt[<span class="st">"trump"</span>]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="3">
 <pre><code>'erdichten- schwindeln- sich aus den Fingern saugen'</code></pre>
 </div>
 </div>
 <p>Um eine <em>Dictionary</em> mit einem weiteren Eintrag zu ergänzen, geht man sehr ähnlich vor wie beim Abrufen von Einträgen.</p>
-<div id="c9ccfba4" class="cell" data-execution_count="4">
+<div id="0f48fd87" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>langenscheidt[<span class="st">"trumpet"</span>] <span class="op">=</span> <span class="st">"trompete"</span> </span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Ein <em>Key</em> kann auch mehrere Einträge enthalten. An unserem Langenscheidt Beispiel: Das Wort “trump” ist zwar eindeutig, doch “trumpery” hat vier verschiedene Bedeutungen. In so einem Fall können wir einem Eintrag auch eine <em>List</em> von Werten zuweisen. Beachte die eckigen Klammern und die Kommas, welche die Listeneinträge voneinander trennt.</p>
-<div id="9b0609a5" class="cell" data-execution_count="5">
+<div id="bca017e0" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>langenscheidt[<span class="st">"trumpery"</span>] <span class="op">=</span> [<span class="st">"Plunder- Ramsch- Schund"</span>, </span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Gewäsch- Quatsch"</span>, </span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                             <span class="st">"Schund- Kitsch"</span>, </span>
@@ -907,7 +856,7 @@ window.onload = function() {
  'billig- nichtssagend']</code></pre>
 </div>
 </div>
-<div id="2d237cc2" class="cell" data-execution_count="6">
+<div id="968c9e08" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(langenscheidt[<span class="st">"trumpery"</span>])</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>4</code></pre>

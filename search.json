@@ -754,7 +754,7 @@
     "href": "C_Programmieren_1/4_Uebung_1.html",
     "title": "Übung 1",
     "section": "",
-    "text": "Übung 1.1\nErstelle eine Variabel vorname mit deinem Vornamen und eine zweite Variabel nachname mit deinem Nachnamen. Was sind vorname und nachname für Datentypen?\nMusterlösung\nvorname = \"Guido\"\nnachname = \"van Rossum\"\n\ntype(vorname) # es handelt sich um den Datentyp \"str\", also String (Text)",
+    "text": "Übung 1.1\nErstelle eine Variabel vorname mit deinem Vornamen und eine zweite Variabel nachname mit deinem Nachnamen. Was sind vorname und nachname für Datentypen?",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Übung 1</span>"
@@ -765,7 +765,7 @@
     "href": "C_Programmieren_1/4_Uebung_1.html#übung-1.2",
     "title": "Übung 1",
     "section": "Übung 1.2",
-    "text": "Übung 1.2\n“Klebe” Vor- und Nachname mit einem Leerschlag dazwischen zusammen.\n\n\nMusterlösung\nvorname + \" \" + nachname",
+    "text": "Übung 1.2\n“Klebe” Vor- und Nachname mit einem Leerschlag dazwischen zusammen.",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Übung 1</span>"
@@ -776,7 +776,7 @@
     "href": "C_Programmieren_1/4_Uebung_1.html#übung-1.3",
     "title": "Übung 1",
     "section": "Übung 1.3",
-    "text": "Übung 1.3\nErstelle eine Variabel groesse_cm mit deiner Körpergrösse in Zentimeter. Was ist das für ein Datentyp?\n\n\nMusterlösung\ngroesse_cm = 184\ntype(groesse_cm) # es handelt sich hierbei um den Datentyp \"integer\"",
+    "text": "Übung 1.3\nErstelle eine Variabel groesse_cm mit deiner Körpergrösse in Zentimeter. Was ist das für ein Datentyp?",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Übung 1</span>"
@@ -787,7 +787,7 @@
     "href": "C_Programmieren_1/4_Uebung_1.html#übung-1.4",
     "title": "Übung 1",
     "section": "Übung 1.4",
-    "text": "Übung 1.4\nErmittle deine Grösse in Fuss auf der Basis von groesse_cm (1 Fuss entspricht 30.48 cm). Was ist das für ein Datentyp?\n\n\nMusterlösung\ngroesse_fuss = groesse_cm / 30.48\ntype(groesse_fuss) # es handelt sich um den Datentyp \"float\"",
+    "text": "Übung 1.4\nErmittle deine Grösse in Fuss auf der Basis von groesse_cm (1 Fuss entspricht 30.48 cm). Was ist das für ein Datentyp?",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Übung 1</span>"
@@ -798,7 +798,7 @@
     "href": "C_Programmieren_1/4_Uebung_1.html#übung-1.5",
     "title": "Übung 1",
     "section": "Übung 1.5",
-    "text": "Übung 1.5\nErstelle eine boolsche Variable blond und setzte sie auf True, wenn diese Eigenschaft auf dich zutrifft, und False, falls nicht.\n\n\nMusterlösung\nblond = False",
+    "text": "Übung 1.5\nErstelle eine boolsche Variable blond und setzte sie auf True, wenn diese Eigenschaft auf dich zutrifft, und False, falls nicht.",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Übung 1</span>"
@@ -809,7 +809,7 @@
     "href": "C_Programmieren_1/4_Uebung_1.html#übung-1.6",
     "title": "Übung 1",
     "section": "Übung 1.6",
-    "text": "Übung 1.6\nErstelle eine Variabel einwohner mit der Einwohnerzahl der Schweiz (8’603’900, per 31. Dezember 2019). Erstelle eine zweite Variabel flaeche (ohne Umlaute!) mit der Flächengrösse der Schweiz (41’285 km\\(^2\\)). Berechne nun die Einwohnerdichte.\n\n\nMusterlösung\neinwohner = 8603900\nflaeche = 41285\n\ndichte = einwohner / flaeche\n\ndichte",
+    "text": "Übung 1.6\nErstelle eine Variabel einwohner mit der Einwohnerzahl der Schweiz (8’603’900, per 31. Dezember 2019). Erstelle eine zweite Variabel flaeche (ohne Umlaute!) mit der Flächengrösse der Schweiz (41’285 km\\(^2\\)). Berechne nun die Einwohnerdichte.",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Übung 1</span>"
@@ -820,7 +820,7 @@
     "href": "C_Programmieren_1/4_Uebung_1.html#übung-1.7",
     "title": "Übung 1",
     "section": "Übung 1.7",
-    "text": "Übung 1.7\nErstelle eine Variabel gewicht_kg (kg) und groesse_m (m) und berechne aufgrund von gewicht_kg und groesse_m ein BodyMassIndex (\\(BMI=\\frac{m}{l^2}\\), \\(m\\): Körpermasse in Kilogramm, \\(l\\): Körpergrösse in Meter).\n\n\nMusterlösung\ngewicht_kg = 85\ngroesse_m = groesse_cm / 100\n\ngewicht_kg / (groesse_m * groesse_m)",
+    "text": "Übung 1.7\nErstelle eine Variabel gewicht_kg (kg) und groesse_m (m) und berechne aufgrund von gewicht_kg und groesse_m ein BodyMassIndex (\\(BMI=\\frac{m}{l^2}\\), \\(m\\): Körpermasse in Kilogramm, \\(l\\): Körpergrösse in Meter).",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Übung 1</span>"
@@ -842,7 +842,7 @@
     "href": "C_Programmieren_1/6_Uebung_2.html",
     "title": "Übung 2",
     "section": "",
-    "text": "Übung 2.1\nMusterlösung\nvornamen = [\"Christopher\", \"Henning\", \"Severin\"]\nnachnamen = [\"Annen\", \"May\", \"Kantereit\"]\n\ngroessen = [174, 182, 162]",
+    "text": "Übung 2.1",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Übung 2</span>"
@@ -864,7 +864,7 @@
     "href": "C_Programmieren_1/6_Uebung_2.html#übung-2.2",
     "title": "Übung 2",
     "section": "Übung 2.2",
-    "text": "Übung 2.2\nWie erhältst du den ersten Eintrag in der Variable vornamen?\n\n\nMusterlösung\nvornamen[0]",
+    "text": "Übung 2.2\nWie erhältst du den ersten Eintrag in der Variable vornamen?",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Übung 2</span>"
@@ -875,7 +875,7 @@
     "href": "C_Programmieren_1/6_Uebung_2.html#übung-2.3",
     "title": "Übung 2",
     "section": "Übung 2.3",
-    "text": "Übung 2.3\nListen können durch die Methode append ergänzt werden (s.u.). Ergänze die Listen vornamen, nachnamen und groessen durch je einen Eintrag.\n\nvornamen.append(\"Malte\")\n\n\n\nMusterlösung\nnachnamen.append(\"Huck\")\n\ngroessen.append(177)",
+    "text": "Übung 2.3\nListen können durch die Methode append ergänzt werden (s.u.). Ergänze die Listen vornamen, nachnamen und groessen durch je einen Eintrag.\n\nvornamen.append(\"Malte\")",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Übung 2</span>"
@@ -886,7 +886,7 @@
     "href": "C_Programmieren_1/6_Uebung_2.html#übung-2.4",
     "title": "Übung 2",
     "section": "Übung 2.4",
-    "text": "Übung 2.4\nErmittle die Summe aller Werte in groessen. Tipp: Nutze dazu sum()\n\n\nMusterlösung\nsum(groessen)",
+    "text": "Übung 2.4\nErmittle die Summe aller Werte in groessen. Tipp: Nutze dazu sum()",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Übung 2</span>"
@@ -897,7 +897,7 @@
     "href": "C_Programmieren_1/6_Uebung_2.html#übung-2.5",
     "title": "Übung 2",
     "section": "Übung 2.5",
-    "text": "Übung 2.5\nErmittle die Anzahl Werte in groessen . Tipp: Nutze dazu len()\n\n\nMusterlösung\nlen(groessen)",
+    "text": "Übung 2.5\nErmittle die Anzahl Werte in groessen . Tipp: Nutze dazu len()",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Übung 2</span>"
@@ -908,7 +908,7 @@
     "href": "C_Programmieren_1/6_Uebung_2.html#sec-mittelwert",
     "title": "Übung 2",
     "section": "Uebung 2.6",
-    "text": "Uebung 2.6\nBerechne die durchschnittliche Grösse aller Personen in groessen. Tipp: Nutze dazu len() und sum().\n\n\nMusterlösung\nsum(groessen) / len(groessen)",
+    "text": "Uebung 2.6\nBerechne die durchschnittliche Grösse aller Personen in groessen. Tipp: Nutze dazu len() und sum().",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Übung 2</span>"
@@ -919,7 +919,7 @@
     "href": "C_Programmieren_1/6_Uebung_2.html#übung-2.7",
     "title": "Übung 2",
     "section": "Übung 2.7",
-    "text": "Übung 2.7\nErmittle nun noch die Minimum- und Maximumwerte aus groessen (finde die dazugehörige Funktion selber heraus).\n\n\nMusterlösung\nmin(groessen)\nmax(groessen)",
+    "text": "Übung 2.7\nErmittle nun noch die Minimum- und Maximumwerte aus groessen (finde die dazugehörige Funktion selber heraus).",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Übung 2</span>"
@@ -941,7 +941,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html",
     "title": "Übung 3",
     "section": "",
-    "text": "Übung 3.1\nErstelle eine Dictionary mit folgenden Einträgen: Vorname und Nachname von (d)einer Person. Weise diese Dictionary der Variable me zu.\nMusterlösung\nme = {\"vorname\": \"Guido\", \"nachname\": \"van Rossum\"}",
+    "text": "Übung 3.1\nErstelle eine Dictionary mit folgenden Einträgen: Vorname und Nachname von (d)einer Person. Weise diese Dictionary der Variable me zu.",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -952,7 +952,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html#übung-3.2",
     "title": "Übung 3",
     "section": "Übung 3.2",
-    "text": "Übung 3.2\nRufe verschiedene Elemente aus der Dictionary via Key ab.\n\n\nMusterlösung\nme[\"nachname\"]",
+    "text": "Übung 3.2\nRufe verschiedene Elemente aus der Dictionary via Key ab.",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -963,7 +963,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html#übung-3.3",
     "title": "Übung 3",
     "section": "Übung 3.3",
-    "text": "Übung 3.3\nNutze me, um nachstehenden Satz (mit deinen Values) zu erstellen:\n\n\nMusterlösung\n\"Mein Name ist \"+me[\"nachname\"] +\", \"+ me[\"vorname\"]+\" \"+me[\"nachname\"]\n\n\n'Mein Name ist van Rossum, Guido van Rossum'",
+    "text": "Übung 3.3\nNutze me, um nachstehenden Satz (mit deinen Values) zu erstellen:\n'Mein Name ist van Rossum, Guido van Rossum'",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -974,7 +974,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html#übung-3.4",
     "title": "Übung 3",
     "section": "Übung 3.4",
-    "text": "Übung 3.4\nErgänze die Dictionary me durch einen Eintrag “groesse” mit (d)einer Grösse.\n\n\nMusterlösung\nme[\"groesse\"] = 181",
+    "text": "Übung 3.4\nErgänze die Dictionary me durch einen Eintrag “groesse” mit (d)einer Grösse.",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -985,7 +985,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html#übung-3.5",
     "title": "Übung 3",
     "section": "Übung 3.5",
-    "text": "Übung 3.5\nErstelle eine neue Dictionary people mit den Keys “vornamen”, “nachnamen” und “groesse” und jeweils 3 Einträge pro Key.\n\n\nMusterlösung\npeople = {\"vornamen\": [\"Christopher\", \"Henning\", \"Severin\"], \"nachnamen\": [\"Annen\",\"May\", \"Kantereit\"], \"groessen\": [174, 182, 162]}",
+    "text": "Übung 3.5\nErstelle eine neue Dictionary people mit den Keys “vornamen”, “nachnamen” und “groesse” und jeweils 3 Einträge pro Key.",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -996,7 +996,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html#übung-3.6",
     "title": "Übung 3",
     "section": "Übung 3.6",
-    "text": "Übung 3.6\nRufe den ersten Vornamen deiner Dict auf. Dazu musst du dein Wissen über Listen und Dictionaries kombinieren.\n\n\nMusterlösung\npeople[\"vornamen\"][0]",
+    "text": "Übung 3.6\nRufe den ersten Vornamen deiner Dict auf. Dazu musst du dein Wissen über Listen und Dictionaries kombinieren.",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -1007,7 +1007,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html#übung-3.7",
     "title": "Übung 3",
     "section": "Übung 3.7",
-    "text": "Übung 3.7\nRufe den dritten Nachname deiner Dict auf.\n\n\nMusterlösung\npeople[\"nachnamen\"][2]",
+    "text": "Übung 3.7\nRufe den dritten Nachname deiner Dict auf.",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -1018,7 +1018,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html#übung-3.8",
     "title": "Übung 3",
     "section": "Übung 3.8",
-    "text": "Übung 3.8\nBerechne den Mittelwert aller grössen in deiner Dict\n\n\nMusterlösung\nsum(people[\"groessen\"])/len(people[\"groessen\"])",
+    "text": "Übung 3.8\nBerechne den Mittelwert aller grössen in deiner Dict",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -1029,7 +1029,7 @@
     "href": "C_Programmieren_1/10_Tabellarische_Daten.html",
     "title": "DataFrames",
     "section": "",
-    "text": "Schauen wir uns nochmals die Dictionary people aus der letzten Übung an. Diese ist ein Spezialfall einer Dictionary: Jeder Eintrag besteht aus einer Liste von gleich vielen Werten. Wie bereits erwähnt, kann es in einem solchen Fall sinnvoll sein, die Dictionary als Tabelle darzustellen.\n\npeople = {\"vornamen\": [\"Christopher\", \"Henning\", \"Severin\"], \"nachnamen\": [\"Annen\",\"May\", \"Kantereit\"], \"groessen\": [174, 182, 162]}\n\n\nimport pandas as pd # Was diese Zeile beudeutet lernen wir später\n\npeople_df = pd.DataFrame(people)\n\npeople_df\n\n\n\n\n\n\n\n\nvornamen\nnachnamen\ngroessen\n\n\n\n\n0\nChristopher\nAnnen\n174\n\n\n1\nHenning\nMay\n182\n\n\n2\nSeverin\nKantereit\n162",
+    "text": "Schauen wir uns nochmals die Dictionary people aus der letzten Übung an. Diese ist ein Spezialfall einer Dictionary: Jeder Eintrag besteht aus einer Liste von gleich vielen Werten. Wie bereits erwähnt, kann es in einem solchen Fall sinnvoll sein, die Dictionary als Tabelle darzustellen.\n\npeople = {\n  \"vornamen\": [\"Christopher\", \"Henning\", \"Severin\"], \n  \"nachnamen\": [\"Annen\",\"May\", \"Kantereit\"], \n  \"groessen\": [174, 182, 162]\n  }\n\n\nimport pandas as pd # Was diese Zeile beudeutet lernen wir später\n\npeople_df = pd.DataFrame(people)\n\npeople_df\n\n\n\n\n\n\n\n\nvornamen\nnachnamen\ngroessen\n\n\n\n\n0\nChristopher\nAnnen\n174\n\n\n1\nHenning\nMay\n182\n\n\n2\nSeverin\nKantereit\n162",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>23</span>  <span class='chapter-title'>DataFrames</span>"
@@ -1040,7 +1040,7 @@
     "href": "C_Programmieren_1/11_Uebung_4.html",
     "title": "Übung 4",
     "section": "",
-    "text": "Übung 4.1\nImportiere pandas und nutze die Funktion DataFrame, um people in eine DataFrame umzuwandeln (siehe dazu das Beispiel unten). Weise den Output der Variablen people_df zu und schau dir people_df an.\nimport pandas as pd\n\npeople = {\"vornamen\": [\"Christopher\", \"Henning\", \"Severin\"], \"nachnamen\": [\"Annen\",\"May\", \"Kantereit\"], \"groessen\": [174, 182, 162]}\n\n\npeople_df = pd.DataFrame(people)",
+    "text": "Übung 4.1\nImportiere pandas und nutze die Funktion DataFrame, um people in eine DataFrame umzuwandeln (siehe dazu das Beispiel unten). Weise den Output der Variablen people_df zu und schau dir people_df an.\nimport pandas as pd\n\npeople = {\n  \"vornamen\": [\"Christopher\", \"Henning\", \"Severin\"], \n  \"nachnamen\": [\"Annen\",\"May\", \"Kantereit\"], \n  \"groessen\": [174, 182, 162]\n  }\n\n\npeople_df = pd.DataFrame(people)",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Übung 4</span>"
@@ -1084,7 +1084,7 @@
     "href": "C_Programmieren_1/11_Uebung_4.html#sec-ex-sel-col",
     "title": "Übung 4",
     "section": "Übung 4.5",
-    "text": "Übung 4.5\nUm eine einzelne Spalte zu selektieren (z.B. die Spalte “ID”), kann man gleich vorgehen wie bei der Selektion eines Eintrags in einer Dictionary. Probiere es aus.\n\n\nMusterlösung\nzeckenstiche[\"ID\"]",
+    "text": "Übung 4.5\nUm eine einzelne Spalte zu selektieren (z.B. die Spalte “ID”), kann man gleich vorgehen wie bei der Selektion eines Eintrags in einer Dictionary. Probiere es aus.",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Übung 4</span>"
@@ -1095,7 +1095,7 @@
     "href": "C_Programmieren_1/11_Uebung_4.html#sec-ex-new-col",
     "title": "Übung 4",
     "section": "Übung 4.6",
-    "text": "Übung 4.6\nAuch das Erstellen einer neuen Spalte ist identisch mit der Erstellung eines neuen Dictionary Eintrags. Erstelle eine neue Spalte “Stichtyp” mit dem Wert “Zecke” auf jeder Zeile (s.u.).\n\nzeckenstiche[\"Stichtyp\"] = \"Zecke\"\n\n\n\nMusterlösung\nzeckenstiche",
+    "text": "Übung 4.6\nAuch das Erstellen einer neuen Spalte ist identisch mit der Erstellung eines neuen Dictionary Eintrags. Erstelle eine neue Spalte “Stichtyp” mit dem Wert “Zecke” auf jeder Zeile (s.u.).\n\nzeckenstiche[\"Stichtyp\"] = \"Zecke\"",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Übung 4</span>"
@@ -1490,7 +1490,7 @@
     "href": "C_Programmieren_2/11_Uebung_9.html#sec-ex-offset-function",
     "title": "Übung 9",
     "section": "Übung 9.5",
-    "text": "Übung 9.5\nNun haben wir das zufällige Verschieben eines Einzelpunktes am Beispiel einer Dummykoordinaten (0/0) durchgespielt. In der nächsten Aufgabe (Funktionen in DataFrames) werden wir alle unsere Zeckenstichkoordinaten auf diese Weise zufällig verschieben um einen simulierten Zeckenstichdatensatz ähnlich wie Abbildung 34.1 zu erhalten.\nDafür brauchen wir die eben erarbeiteten Einzelschritte als Funktion, um diese auf alle Zeckenstiche anwenden zu können.\nErstelle jetzt eine Funktion namens offset_coordinate welche als Input eine x oder y-Achsenwert annimmt und eine leicht verschobene Wert zurückgibt.** Integriere die Standartabweichung der Verteilung als optionalen Parameter mit dem Namen distance und einem Defaultwert von 100.\n\n# die Funktion sollte so funktionieren:\noffset_coordinate(x_start)\n\n-99.87034152252974",
+    "text": "Übung 9.5\nNun haben wir das zufällige Verschieben eines Einzelpunktes am Beispiel einer Dummykoordinaten (0/0) durchgespielt. In der nächsten Aufgabe (Funktionen in DataFrames) werden wir alle unsere Zeckenstichkoordinaten auf diese Weise zufällig verschieben um einen simulierten Zeckenstichdatensatz ähnlich wie Abbildung 34.1 zu erhalten.\nDafür brauchen wir die eben erarbeiteten Einzelschritte als Funktion, um diese auf alle Zeckenstiche anwenden zu können.\nErstelle jetzt eine Funktion namens offset_coordinate welche als Input eine x oder y-Achsenwert annimmt und eine leicht verschobene Wert zurückgibt.** Integriere die Standartabweichung der Verteilung als optionalen Parameter mit dem Namen distance und einem Defaultwert von 100.\n\n# die Funktion sollte so funktionieren:\noffset_coordinate(x_start)\n\n-31.883084158535397",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>34</span>  <span class='chapter-title'>Übung 9</span>"
@@ -1501,7 +1501,7 @@
     "href": "C_Programmieren_2/11_Uebung_9.html#sec-offset-vis",
     "title": "Übung 9",
     "section": "Übung 9.6",
-    "text": "Übung 9.6\nNun ist es wichtig, dass wir unser Resultat visuell überprüfen. Im Beispiel unten wende ich die in der letzten Übung erstellte Funktion offset_coordinate() 1’000 mal auf die Dummykoordinate an. Nutze deine Funktion offset_coordinate um eine Visualisierung gemäss untenstehendem beispiel zu machen.\n\nx_neu_list = [offset_coordinate(x_start) for i in range(1, 1000)]\ny_neu_list = [offset_coordinate(y_start) for i in range(1, 1000)]\n\n# Liste in eine Pandas DataFrame überführen\nmysim = pd.DataFrame({\"x\" : x_neu_list, \"y\" : y_neu_list})\n\nmysim.plot(\"x\", \"y\", kind = \"scatter\")\n\nfrom matplotlib import pyplot as plt\nplt.axis(\"equal\")\n\n(np.float64(-276.4138173551481),\n np.float64(328.23128802707674),\n np.float64(-345.23987160827943),\n np.float64(380.6391610005407))",
+    "text": "Übung 9.6\nNun ist es wichtig, dass wir unser Resultat visuell überprüfen. Im Beispiel unten wende ich die in der letzten Übung erstellte Funktion offset_coordinate() 1’000 mal auf die Dummykoordinate an. Nutze deine Funktion offset_coordinate um eine Visualisierung gemäss untenstehendem beispiel zu machen.\n\nx_neu_list = [offset_coordinate(x_start) for i in range(1, 1000)]\ny_neu_list = [offset_coordinate(y_start) for i in range(1, 1000)]\n\n# Liste in eine Pandas DataFrame überführen\nmysim = pd.DataFrame({\"x\" : x_neu_list, \"y\" : y_neu_list})\n\nmysim.plot(\"x\", \"y\", kind = \"scatter\")\n\nfrom matplotlib import pyplot as plt\nplt.axis(\"equal\")\n\n(np.float64(-315.2456585950146),\n np.float64(361.05675140877463),\n np.float64(-436.1352498217142),\n np.float64(391.7696516895894))",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>34</span>  <span class='chapter-title'>Übung 9</span>"
@@ -1545,7 +1545,7 @@
     "href": "C_Programmieren_2/13_Uebung_10.html#sec-ex-apply",
     "title": "Übung 10",
     "section": "Übung 10.3",
-    "text": "Übung 10.3\npandas kennt eine ganze Familie von Methoden, um Spalten zu Manipulieren und Daten zu Aggregieren (apply, map, mapapply, assign). Es würde den Rahmen dieses Kurses sprengen, die alle im Detail durchzugehen, es lohnt sich aber sehr sich mit diesen auseinanderzusetzen wenn man sich näher mit Python befassen möchte.\nIm unserem Fall brauchen wir lediglich die Methode apply um die Funktion offset_coordinate() auf die Zeckenstichkoordinaten anzuwenden. Dabei gehen wir wie folgt for:\n\nzeckenstiche[\"x\"].apply(offset_coordinate)\n#\\______1_______/ \\_2_/\\_______3_________/\n\n# 1. Spalte selektieren ([\"x\"])\n# 2. Methode \"apply\" aufrufen\n# 3. Function übergeben\n\nVerwende dieses Schema um auch offset_coordinate auf die y Spalte anzuwenden und speichere den Output dieser beiden Operationen als neue Spalten x_sim sowie y_sim. Die DataFrame zeckenstiche sollte danach wie folgt aussehen:\n\n\nMusterlösung\nzeckenstiche[\"x_sim\"] = zeckenstiche[\"x\"].apply(offset_coordinate)\nzeckenstiche[\"y_sim\"] = zeckenstiche[\"y\"].apply(offset_coordinate)\n\n\n\nzeckenstiche\n\n\n\n\n\n\n\n\nID\naccuracy\nx\ny\nx_sim\ny_sim\n\n\n\n\n0\n2550\n439.128951\n2681116\n1250648\n2.681232e+06\n1.250747e+06\n\n\n1\n10437\n301.748542\n2681092\n1250672\n2.680961e+06\n1.250613e+06\n\n\n2\n9174\n301.748542\n2681128\n1250683\n2.681053e+06\n1.250678e+06\n\n\n3\n8773\n301.748542\n2681111\n1250683\n2.681087e+06\n1.250616e+06\n\n\n4\n2764\n301.748529\n2681131\n1250692\n2.681091e+06\n1.250899e+06\n\n\n5\n2513\n301.748529\n2681171\n1250711\n2.681210e+06\n1.250682e+06\n\n\n6\n9185\n301.748542\n2681107\n1250712\n2.681163e+06\n1.250478e+06\n\n\n7\n28521\n301.748542\n2681124\n1250720\n2.681236e+06\n1.250811e+06\n\n\n8\n26745\n301.748542\n2681117\n1250725\n2.681157e+06\n1.250571e+06\n\n\n9\n27391\n301.748542\n2681138\n1250725\n2.681169e+06\n1.250636e+06",
+    "text": "Übung 10.3\npandas kennt eine ganze Familie von Methoden, um Spalten zu Manipulieren und Daten zu Aggregieren (apply, map, mapapply, assign). Es würde den Rahmen dieses Kurses sprengen, die alle im Detail durchzugehen, es lohnt sich aber sehr sich mit diesen auseinanderzusetzen wenn man sich näher mit Python befassen möchte.\nIm unserem Fall brauchen wir lediglich die Methode apply um die Funktion offset_coordinate() auf die Zeckenstichkoordinaten anzuwenden. Dabei gehen wir wie folgt for:\n\nzeckenstiche[\"x\"].apply(offset_coordinate)\n#\\______1_______/ \\_2_/\\_______3_________/\n\n# 1. Spalte selektieren ([\"x\"])\n# 2. Methode \"apply\" aufrufen\n# 3. Function übergeben\n\nVerwende dieses Schema um auch offset_coordinate auf die y Spalte anzuwenden und speichere den Output dieser beiden Operationen als neue Spalten x_sim sowie y_sim. Die DataFrame zeckenstiche sollte danach wie folgt aussehen:\n\n\nMusterlösung\nzeckenstiche[\"x_sim\"] = zeckenstiche[\"x\"].apply(offset_coordinate)\nzeckenstiche[\"y_sim\"] = zeckenstiche[\"y\"].apply(offset_coordinate)\n\n\n\nzeckenstiche\n\n\n\n\n\n\n\n\nID\naccuracy\nx\ny\nx_sim\ny_sim\n\n\n\n\n0\n2550\n439.128951\n2681116\n1250648\n2.681158e+06\n1.250614e+06\n\n\n1\n10437\n301.748542\n2681092\n1250672\n2.681078e+06\n1.250813e+06\n\n\n2\n9174\n301.748542\n2681128\n1250683\n2.681121e+06\n1.250565e+06\n\n\n3\n8773\n301.748542\n2681111\n1250683\n2.681035e+06\n1.250775e+06\n\n\n4\n2764\n301.748529\n2681131\n1250692\n2.681108e+06\n1.250690e+06\n\n\n5\n2513\n301.748529\n2681171\n1250711\n2.681080e+06\n1.250714e+06\n\n\n6\n9185\n301.748542\n2681107\n1250712\n2.681116e+06\n1.250858e+06\n\n\n7\n28521\n301.748542\n2681124\n1250720\n2.681241e+06\n1.250837e+06\n\n\n8\n26745\n301.748542\n2681117\n1250725\n2.681252e+06\n1.250647e+06\n\n\n9\n27391\n301.748542\n2681138\n1250725\n2.681329e+06\n1.250655e+06",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>36</span>  <span class='chapter-title'>Übung 10</span>"
@@ -1567,7 +1567,7 @@
     "href": "C_Programmieren_2/13_Uebung_10.html#übung-10.5",
     "title": "Übung 10",
     "section": "Übung 10.5",
-    "text": "Übung 10.5\nUm die Original x/y-Werte sowie die simulierten Daten im gleichen Plot darzustellen, wird folgendermassen vorgegangen: Der erste Datensatz wird mit .plot() visualisiert, wobei der Output einer Variabel (z.B. basemap) zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit .plot() visualisiert, wobei auf den ersten Plot via dem Argument ax verwiesen wird.\nBei den roten Punkten handelt es sich um die Original-Zeckenstichen, bei den blauen um die simulierten (leicht verschoben) Zeckenstiche. Visualisiere deine eigenen Zeckenstiche auf diese Weise.\n\nfrom matplotlib import pyplot as plt\n\nbasemap = zeckenstiche.plot(\"x\", \"y\", kind = \"scatter\", color = \"red\")\nzeckenstiche.plot(\"x_sim\", \"y_sim\", kind = \"scatter\", ax = basemap, color = \"blue\")\n\nplt.axis(\"equal\")\n\n(np.float64(2681088.05),\n np.float64(2681174.95),\n np.float64(1250638.1171760987),\n np.float64(1250740.1834372114))",
+    "text": "Übung 10.5\nUm die Original x/y-Werte sowie die simulierten Daten im gleichen Plot darzustellen, wird folgendermassen vorgegangen: Der erste Datensatz wird mit .plot() visualisiert, wobei der Output einer Variabel (z.B. basemap) zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit .plot() visualisiert, wobei auf den ersten Plot via dem Argument ax verwiesen wird.\nBei den roten Punkten handelt es sich um die Original-Zeckenstichen, bei den blauen um die simulierten (leicht verschoben) Zeckenstiche. Visualisiere deine eigenen Zeckenstiche auf diese Weise.\n\nfrom matplotlib import pyplot as plt\n\nbasemap = zeckenstiche.plot(\"x\", \"y\", kind = \"scatter\", color = \"red\")\nzeckenstiche.plot(\"x_sim\", \"y_sim\", kind = \"scatter\", ax = basemap, color = \"blue\")\n\nplt.axis(\"equal\")\n\n(np.float64(2681085.4824053277),\n np.float64(2681175.072266413),\n np.float64(1250642.1735586843),\n np.float64(1250740.3180150718))",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>36</span>  <span class='chapter-title'>Übung 10</span>"
@@ -1852,7 +1852,7 @@
     "href": "C_Programmieren_3/4_Uebung_13.html#übung-13.3",
     "title": "Übung 13",
     "section": "Übung 13.3",
-    "text": "Übung 13.3\nNutze die Funktion offset_coordinate (Lösung aus Übung 8.5) um einen Punkt in einem Koordinatensystem zu verschieben. Diesmal soll der Punkt aber nicht nur 1x, sondern 100x verschoben werden (100 Simulationen).",
+    "text": "Übung 13.3\nNutze die Funktion offset_coordinate (Lösung aus Übung 9.5) um einen Punkt in einem Koordinatensystem zu verschieben. Diesmal soll der Punkt aber nicht nur 1x, sondern 100x verschoben werden (100 Simulationen).",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>43</span>  <span class='chapter-title'>Übung 13</span>"
@@ -2171,7 +2171,7 @@
     "href": "C_Programmieren_3/10_Anhang.html#sec-viz",
     "title": "Anhang",
     "section": "",
-    "text": "Histogramm aus List\npandas vereinfacht das Visualisieren von Daten sogar soweit, dass es sich jewils lohnt seine Listen, Dictionaries usw. zuerst in eine Series oder DataFrame zu überführen um sie zu visualisieren (wie ich zum Beispiel in Zufallszahlen generieren jeweils gemacht habe).\n\nimport random\nimport pandas as pd\n\nrandom_gamma = [random.gammavariate(1, 1) for x in range(1000)]\n\nrandom_gamma = pd.Series(random_gamma)\n\nrandom_gamma.plot(kind = \"hist\", bins = 50)\n\n\n\n\n\n\n\n\nWeitere Beispiele zu Histogrammen aus Listen findet ihr im Kapitel Zufallszahlen generieren .\n\n\nBoxplot aus List\nDas Visualisieren als Boxplot ist sehr ähnlich, man ersetzt \"hist\" lediglich durch \"box. Eine komplette liste der möglichen Argumente für findet ihr hier: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.plot.html\n\nrandom_gamma.plot(kind = \"box\")\n\n\n\n\n\n\n\n\n\n\nScatterplot aus DataFrame\nUm einen Scatterplot zu erstellen, braucht es eine DataFrame (eine Series reicht hierfür nicht aus).\n\nzeckenstiche = pd.read_csv(\"data/zeckenstiche.csv\")\n\n\n---------------------------------------------------------------------------\nFileNotFoundError                         Traceback (most recent call last)\nCell In[3], line 1\n----&gt; 1 zeckenstiche = pd.read_csv(\"data/zeckenstiche.csv\")\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1026, in read_csv(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)\n   1013 kwds_defaults = _refine_defaults_read(\n   1014     dialect,\n   1015     delimiter,\n   (...)\n   1022     dtype_backend=dtype_backend,\n   1023 )\n   1024 kwds.update(kwds_defaults)\n-&gt; 1026 return _read(filepath_or_buffer, kwds)\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/pandas/io/parsers/readers.py:620, in _read(filepath_or_buffer, kwds)\n    617 _validate_names(kwds.get(\"names\", None))\n    619 # Create the parser.\n--&gt; 620 parser = TextFileReader(filepath_or_buffer, **kwds)\n    622 if chunksize or iterator:\n    623     return parser\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1620, in TextFileReader.__init__(self, f, engine, **kwds)\n   1617     self.options[\"has_index_names\"] = kwds[\"has_index_names\"]\n   1619 self.handles: IOHandles | None = None\n-&gt; 1620 self._engine = self._make_engine(f, self.engine)\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/pandas/io/parsers/readers.py:1880, in TextFileReader._make_engine(self, f, engine)\n   1878     if \"b\" not in mode:\n   1879         mode += \"b\"\n-&gt; 1880 self.handles = get_handle(\n   1881     f,\n   1882     mode,\n   1883     encoding=self.options.get(\"encoding\", None),\n   1884     compression=self.options.get(\"compression\", None),\n   1885     memory_map=self.options.get(\"memory_map\", False),\n   1886     is_text=is_text,\n   1887     errors=self.options.get(\"encoding_errors\", \"strict\"),\n   1888     storage_options=self.options.get(\"storage_options\", None),\n   1889 )\n   1890 assert self.handles is not None\n   1891 f = self.handles.handle\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/pandas/io/common.py:873, in get_handle(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)\n    868 elif isinstance(handle, str):\n    869     # Check whether the filename is to be opened in binary mode.\n    870     # Binary mode does not support 'encoding' and 'newline'.\n    871     if ioargs.encoding and \"b\" not in ioargs.mode:\n    872         # Encoding\n--&gt; 873         handle = open(\n    874             handle,\n    875             ioargs.mode,\n    876             encoding=ioargs.encoding,\n    877             errors=errors,\n    878             newline=\"\",\n    879         )\n    880     else:\n    881         # Binary mode\n    882         handle = open(handle, ioargs.mode)\n\nFileNotFoundError: [Errno 2] No such file or directory: 'data/zeckenstiche.csv'\n\n\n\n\nzeckenstiche.plot(\"x\", \"y\", kind = \"scatter\")\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[4], line 1\n----&gt; 1 zeckenstiche.plot(\"x\", \"y\", kind = \"scatter\")\n\nNameError: name 'zeckenstiche' is not defined\n\n\n\n\n\nStatische Karte aus GeoDataFrame\nUm aus GeoDataFrames Karten zu machen verwendet man ebenfalls die .plot() Methode. Um wirklich schöne Karten mit Python herzustellen braucht man viel Übung. Für eine schnelle Visualisierung reicht aber die .plot() Methode.\n\nimport geopandas as gpd\n\nzeckenstiche = gpd.read_file(\"data/zeckenstiche.gpkg\")\nwald = gpd.read_file(\"data/wald.gpkg\")\n\n\n---------------------------------------------------------------------------\nDataSourceError                           Traceback (most recent call last)\nCell In[5], line 3\n      1 import geopandas as gpd\n----&gt; 3 zeckenstiche = gpd.read_file(\"data/zeckenstiche.gpkg\")\n      4 wald = gpd.read_file(\"data/wald.gpkg\")\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/geopandas/io/file.py:294, in _read_file(filename, bbox, mask, columns, rows, engine, **kwargs)\n    291             from_bytes = True\n    293 if engine == \"pyogrio\":\n--&gt; 294     return _read_file_pyogrio(\n    295         filename, bbox=bbox, mask=mask, columns=columns, rows=rows, **kwargs\n    296     )\n    298 elif engine == \"fiona\":\n    299     if pd.api.types.is_file_like(filename):\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/geopandas/io/file.py:547, in _read_file_pyogrio(path_or_bytes, bbox, mask, rows, **kwargs)\n    538     warnings.warn(\n    539         \"The 'include_fields' and 'ignore_fields' keywords are deprecated, and \"\n    540         \"will be removed in a future release. You can use the 'columns' keyword \"\n   (...)\n    543         stacklevel=3,\n    544     )\n    545     kwargs[\"columns\"] = kwargs.pop(\"include_fields\")\n--&gt; 547 return pyogrio.read_dataframe(path_or_bytes, bbox=bbox, **kwargs)\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/pyogrio/geopandas.py:261, in read_dataframe(path_or_buffer, layer, encoding, columns, read_geometry, force_2d, skip_features, max_features, where, bbox, mask, fids, sql, sql_dialect, fid_as_index, use_arrow, on_invalid, arrow_to_pandas_kwargs, **kwargs)\n    256 if not use_arrow:\n    257     # For arrow, datetimes are read as is.\n    258     # For numpy IO, datetimes are read as string values to preserve timezone info\n    259     # as numpy does not directly support timezones.\n    260     kwargs[\"datetime_as_string\"] = True\n--&gt; 261 result = read_func(\n    262     path_or_buffer,\n    263     layer=layer,\n    264     encoding=encoding,\n    265     columns=columns,\n    266     read_geometry=read_geometry,\n    267     force_2d=gdal_force_2d,\n    268     skip_features=skip_features,\n    269     max_features=max_features,\n    270     where=where,\n    271     bbox=bbox,\n    272     mask=mask,\n    273     fids=fids,\n    274     sql=sql,\n    275     sql_dialect=sql_dialect,\n    276     return_fids=fid_as_index,\n    277     **kwargs,\n    278 )\n    280 if use_arrow:\n    281     meta, table = result\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/pyogrio/raw.py:196, in read(path_or_buffer, layer, encoding, columns, read_geometry, force_2d, skip_features, max_features, where, bbox, mask, fids, sql, sql_dialect, return_fids, datetime_as_string, **kwargs)\n     56 \"\"\"Read OGR data source into numpy arrays.\n     57 \n     58 IMPORTANT: non-linear geometry types (e.g., MultiSurface) are converted\n   (...)\n    191 \n    192 \"\"\"\n    194 dataset_kwargs = _preprocess_options_key_value(kwargs) if kwargs else {}\n--&gt; 196 return ogr_read(\n    197     get_vsi_path_or_buffer(path_or_buffer),\n    198     layer=layer,\n    199     encoding=encoding,\n    200     columns=columns,\n    201     read_geometry=read_geometry,\n    202     force_2d=force_2d,\n    203     skip_features=skip_features,\n    204     max_features=max_features or 0,\n    205     where=where,\n    206     bbox=bbox,\n    207     mask=_mask_to_wkb(mask),\n    208     fids=fids,\n    209     sql=sql,\n    210     sql_dialect=sql_dialect,\n    211     return_fids=return_fids,\n    212     dataset_kwargs=dataset_kwargs,\n    213     datetime_as_string=datetime_as_string,\n    214 )\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/pyogrio/_io.pyx:1239, in pyogrio._io.ogr_read()\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/pyogrio/_io.pyx:219, in pyogrio._io.ogr_open()\n\nDataSourceError: data/zeckenstiche.gpkg: No such file or directory\n\n\n\nEinfache Plots ohne anpassung:\n\nwald.plot()\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[6], line 1\n----&gt; 1 wald.plot()\n\nNameError: name 'wald' is not defined\n\n\n\nAnpassung der Plot Grösse:\n\nwald.plot(figsize = (5,5))\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[7], line 1\n----&gt; 1 wald.plot(figsize = (5,5))\n\nNameError: name 'wald' is not defined\n\n\n\nChoroplethenkarte Karte\n\nfrom matplotlib.colors import ListedColormap\n\nmy_cmap = ListedColormap([\"green\",\"lightgrey\"])\nwald.plot(column = \"Wald_text\", legend = True, cmap = my_cmap)\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[8], line 4\n      1 from matplotlib.colors import ListedColormap\n      3 my_cmap = ListedColormap([\"green\",\"lightgrey\"])\n----&gt; 4 wald.plot(column = \"Wald_text\", legend = True, cmap = my_cmap)\n\nNameError: name 'wald' is not defined\n\n\n\nMehrere Layers:\n\nbase = wald.plot(column = \"Wald_text\", legend = True, cmap = my_cmap)\nzeckenstiche.plot(color = \"Red\", ax = base)\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[9], line 1\n----&gt; 1 base = wald.plot(column = \"Wald_text\", legend = True, cmap = my_cmap)\n      2 zeckenstiche.plot(color = \"Red\", ax = base)\n\nNameError: name 'wald' is not defined\n\n\n\n\n\nInteraktive Karten aus GeoDataFrame\nWeitere Informationen dazu findet ihr hier: https://geopandas.org/docs/user_guide/interactive_mapping.html\nVollautomatisch, ohne Anpassungen:\n\nzeckenstiche.explore()\n\nZeckenstiche Rot eingefärbt:\n\nzeckenstiche.explore(color = \"red\")\n\nZeckenstiche nach \"accuracy\" eingefärbt:\n\nzeckenstiche.explore(column = \"accuracy\")\n\nWald nach \"Wald_text\" eingefärbt (beachte, dass ich my_cmap weiter oben erstellt habe!):\n\nwald.explore(column = \"Wald_text\", cmap = my_cmap)\n\nZwei übereinander gelagerte Layers:\n\nbase = wald.explore(column = \"Wald_text\", cmap = my_cmap)\nzeckenstiche.explore(m = base, color = \"red\")\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[10], line 1\n----&gt; 1 base = wald.explore(column = \"Wald_text\", cmap = my_cmap)\n      2 zeckenstiche.explore(m = base, color = \"red\")\n\nNameError: name 'wald' is not defined",
+    "text": "Histogramm aus List\npandas vereinfacht das Visualisieren von Daten sogar soweit, dass es sich jewils lohnt seine Listen, Dictionaries usw. zuerst in eine Series oder DataFrame zu überführen um sie zu visualisieren (wie ich zum Beispiel in Zufallszahlen generieren jeweils gemacht habe).\n\nimport random\nimport pandas as pd\n\nrandom_gamma = [random.gammavariate(1, 1) for x in range(1000)]\n\nrandom_gamma = pd.Series(random_gamma)\n\nrandom_gamma.plot(kind = \"hist\", bins = 50)\n\n\n\n\n\n\n\n\nWeitere Beispiele zu Histogrammen aus Listen findet ihr im Kapitel Zufallszahlen generieren .\n\n\nBoxplot aus List\nDas Visualisieren als Boxplot ist sehr ähnlich, man ersetzt \"hist\" lediglich durch \"box. Eine komplette liste der möglichen Argumente für findet ihr hier: https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.Series.plot.html\n\nrandom_gamma.plot(kind = \"box\")\n\n\n\n\n\n\n\n\n\n\nScatterplot aus DataFrame\nUm einen Scatterplot zu erstellen, braucht es eine DataFrame (eine Series reicht hierfür nicht aus).\n\nzeckenstiche = pd.read_csv(\"data/zeckenstiche.csv\")\n\n\nzeckenstiche.plot(\"x\", \"y\", kind = \"scatter\")\n\n\n\n\n\n\n\n\n\n\nStatische Karte aus GeoDataFrame\nUm aus GeoDataFrames Karten zu machen verwendet man ebenfalls die .plot() Methode. Um wirklich schöne Karten mit Python herzustellen braucht man viel Übung. Für eine schnelle Visualisierung reicht aber die .plot() Methode.\n\nimport geopandas as gpd\n\nzeckenstiche = gpd.read_file(\"data/zeckenstiche.gpkg\")\nwald = gpd.read_file(\"data/wald.gpkg\")\n\nEinfache Plots ohne anpassung:\n\nwald.plot()\n\n\n\n\n\n\n\n\nAnpassung der Plot Grösse:\n\nwald.plot(figsize = (5,5))\n\n\n\n\n\n\n\n\nChoroplethenkarte Karte\n\nfrom matplotlib.colors import ListedColormap\n\nmy_cmap = ListedColormap([\"green\",\"lightgrey\"])\nwald.plot(column = \"Wald_text\", legend = True, cmap = my_cmap)\n\n\n\n\n\n\n\n\nMehrere Layers:\n\nbase = wald.plot(column = \"Wald_text\", legend = True, cmap = my_cmap)\nzeckenstiche.plot(color = \"Red\", ax = base)\n\n\n\n\n\n\n\n\n\n\nInteraktive Karten aus GeoDataFrame\nWeitere Informationen dazu findet ihr hier: https://geopandas.org/docs/user_guide/interactive_mapping.html\nVollautomatisch, ohne Anpassungen:\n\nzeckenstiche.explore()\n\nZeckenstiche Rot eingefärbt:\n\nzeckenstiche.explore(color = \"red\")\n\nZeckenstiche nach \"accuracy\" eingefärbt:\n\nzeckenstiche.explore(column = \"accuracy\")\n\nWald nach \"Wald_text\" eingefärbt (beachte, dass ich my_cmap weiter oben erstellt habe!):\n\nwald.explore(column = \"Wald_text\", cmap = my_cmap)\n\nZwei übereinander gelagerte Layers:\n\nbase = wald.explore(column = \"Wald_text\", cmap = my_cmap)\nzeckenstiche.explore(m = base, color = \"red\")\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>50</span>  <span class='chapter-title'>Anhang</span>"
@@ -2182,7 +2182,7 @@
     "href": "C_Programmieren_3/10_Anhang.html#sec-geoviz",
     "title": "Anhang",
     "section": "Anhang 2: Geodaten visualisieren",
-    "text": "Anhang 2: Geodaten visualisieren\nIn folgenden Beispielen zeigen wir noch ein paar einfache Wege, wie ihr die Zeckenstichdaten visualisieren könnt.\n\nimport pandas as pd\nimport geopandas as gpd\nimport matplotlib.pyplot as plt\nimport descartes\n\nwald = gpd.read_file(\"data/wald.gpkg\")\nzeckenstiche_full = pd.read_csv(\"data/zeckenstiche_full.csv\")\n\ngeom = gpd.points_from_xy(zeckenstiche_full['x'], zeckenstiche_full['y'])\n\nzeckenstiche_gpd = gpd.GeoDataFrame(\n    zeckenstiche_full,\n    geometry=geom,\n    crs = 2056)\n\n\n---------------------------------------------------------------------------\nDataSourceError                           Traceback (most recent call last)\nCell In[11], line 6\n      3 import matplotlib.pyplot as plt\n      4 import descartes\n----&gt; 6 wald = gpd.read_file(\"data/wald.gpkg\")\n      7 zeckenstiche_full = pd.read_csv(\"data/zeckenstiche_full.csv\")\n      9 geom = gpd.points_from_xy(zeckenstiche_full['x'], zeckenstiche_full['y'])\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/geopandas/io/file.py:294, in _read_file(filename, bbox, mask, columns, rows, engine, **kwargs)\n    291             from_bytes = True\n    293 if engine == \"pyogrio\":\n--&gt; 294     return _read_file_pyogrio(\n    295         filename, bbox=bbox, mask=mask, columns=columns, rows=rows, **kwargs\n    296     )\n    298 elif engine == \"fiona\":\n    299     if pd.api.types.is_file_like(filename):\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/geopandas/io/file.py:547, in _read_file_pyogrio(path_or_bytes, bbox, mask, rows, **kwargs)\n    538     warnings.warn(\n    539         \"The 'include_fields' and 'ignore_fields' keywords are deprecated, and \"\n    540         \"will be removed in a future release. You can use the 'columns' keyword \"\n   (...)\n    543         stacklevel=3,\n    544     )\n    545     kwargs[\"columns\"] = kwargs.pop(\"include_fields\")\n--&gt; 547 return pyogrio.read_dataframe(path_or_bytes, bbox=bbox, **kwargs)\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/pyogrio/geopandas.py:261, in read_dataframe(path_or_buffer, layer, encoding, columns, read_geometry, force_2d, skip_features, max_features, where, bbox, mask, fids, sql, sql_dialect, fid_as_index, use_arrow, on_invalid, arrow_to_pandas_kwargs, **kwargs)\n    256 if not use_arrow:\n    257     # For arrow, datetimes are read as is.\n    258     # For numpy IO, datetimes are read as string values to preserve timezone info\n    259     # as numpy does not directly support timezones.\n    260     kwargs[\"datetime_as_string\"] = True\n--&gt; 261 result = read_func(\n    262     path_or_buffer,\n    263     layer=layer,\n    264     encoding=encoding,\n    265     columns=columns,\n    266     read_geometry=read_geometry,\n    267     force_2d=gdal_force_2d,\n    268     skip_features=skip_features,\n    269     max_features=max_features,\n    270     where=where,\n    271     bbox=bbox,\n    272     mask=mask,\n    273     fids=fids,\n    274     sql=sql,\n    275     sql_dialect=sql_dialect,\n    276     return_fids=fid_as_index,\n    277     **kwargs,\n    278 )\n    280 if use_arrow:\n    281     meta, table = result\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/pyogrio/raw.py:196, in read(path_or_buffer, layer, encoding, columns, read_geometry, force_2d, skip_features, max_features, where, bbox, mask, fids, sql, sql_dialect, return_fids, datetime_as_string, **kwargs)\n     56 \"\"\"Read OGR data source into numpy arrays.\n     57 \n     58 IMPORTANT: non-linear geometry types (e.g., MultiSurface) are converted\n   (...)\n    191 \n    192 \"\"\"\n    194 dataset_kwargs = _preprocess_options_key_value(kwargs) if kwargs else {}\n--&gt; 196 return ogr_read(\n    197     get_vsi_path_or_buffer(path_or_buffer),\n    198     layer=layer,\n    199     encoding=encoding,\n    200     columns=columns,\n    201     read_geometry=read_geometry,\n    202     force_2d=force_2d,\n    203     skip_features=skip_features,\n    204     max_features=max_features or 0,\n    205     where=where,\n    206     bbox=bbox,\n    207     mask=_mask_to_wkb(mask),\n    208     fids=fids,\n    209     sql=sql,\n    210     sql_dialect=sql_dialect,\n    211     return_fids=return_fids,\n    212     dataset_kwargs=dataset_kwargs,\n    213     datetime_as_string=datetime_as_string,\n    214 )\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/pyogrio/_io.pyx:1239, in pyogrio._io.ogr_read()\n\nFile ~/miniconda3/envs/modul-agi/lib/python3.12/site-packages/pyogrio/_io.pyx:219, in pyogrio._io.ogr_open()\n\nDataSourceError: data/wald.gpkg: No such file or directory\n\n\n\n\nKernel Density Plot\nMit der Erweiterung seaborn lassen sich mit wenigen Zeilen Code eine Kernel Density rechnen und visualisieren. Siehe nachstehenden Code:\n\nimport seaborn as sns\n\nf, ax = plt.subplots(1, figsize=(6, 6))\nwald.boundary.plot(linewidth=0.1, ax=ax)\nzeckenstiche_gpd.plot(color='red', linewidth=0.1, ax=ax)\n\nsns.kdeplot(x = zeckenstiche_full.x, y= zeckenstiche_full.y,shade = False,n_levels = 10, cmap = \"viridis\", ax = ax)\n\nax.set_axis_off()\nplt.show()\n\n\n---------------------------------------------------------------------------\nModuleNotFoundError                       Traceback (most recent call last)\nCell In[12], line 1\n----&gt; 1 import seaborn as sns\n      3 f, ax = plt.subplots(1, figsize=(6, 6))\n      4 wald.boundary.plot(linewidth=0.1, ax=ax)\n\nModuleNotFoundError: No module named 'seaborn'\n\n\n\n\n\nHintergrundkarte\nMit der Erweiterung contextily kann man sehr schnell und einfach Hintergrundkarten in den Plot einbinden. Dafür muss das GeoDataFrame vorher aber in WGS84 Koordinaten (EPSG 3857) konvertiert werden (mit to_crs, s.u.).\n\nimport contextily as ctx\n\nf, ax = plt.subplots(1, figsize=(6, 6))\nzeckenstiche_gpd.to_crs(epsg = 3857).plot(ax = ax)\nctx.add_basemap(ax)\n\nax.set_axis_off()\nplt.show()\n\n\n---------------------------------------------------------------------------\nModuleNotFoundError                       Traceback (most recent call last)\nCell In[13], line 1\n----&gt; 1 import contextily as ctx\n      3 f, ax = plt.subplots(1, figsize=(6, 6))\n      4 zeckenstiche_gpd.to_crs(epsg = 3857).plot(ax = ax)\n\nModuleNotFoundError: No module named 'contextily'\n\n\n\n\n\nKDE mit Hintergrundkarte\nKernel Denisty und Hintergrundkarte können auch kombiniert werden:\n\nlat = zeckenstiche_gpd.to_crs(epsg = 3857).geometry.x\nlng = zeckenstiche_gpd.to_crs(epsg = 3857).geometry.y\n\nf, ax = plt.subplots(1, figsize=(6, 6))\n\nsns.kdeplot(x = lat,y = lng,shade = False,n_levels = 25, cmap = \"viridis\", ax = ax)\nctx.add_basemap(ax)\n\nax.set_axis_off()\nplt.show()\n\n\n---------------------------------------------------------------------------\nNameError                                 Traceback (most recent call last)\nCell In[14], line 1\n----&gt; 1 lat = zeckenstiche_gpd.to_crs(epsg = 3857).geometry.x\n      2 lng = zeckenstiche_gpd.to_crs(epsg = 3857).geometry.y\n      4 f, ax = plt.subplots(1, figsize=(6, 6))\n\nNameError: name 'zeckenstiche_gpd' is not defined",
+    "text": "Anhang 2: Geodaten visualisieren\nIn folgenden Beispielen zeigen wir noch ein paar einfache Wege, wie ihr die Zeckenstichdaten visualisieren könnt.\n\nimport pandas as pd\nimport geopandas as gpd\nimport matplotlib.pyplot as plt\nimport descartes\n\nwald = gpd.read_file(\"data/wald.gpkg\")\nzeckenstiche_full = pd.read_csv(\"data/zeckenstiche_full.csv\")\n\ngeom = gpd.points_from_xy(zeckenstiche_full['x'], zeckenstiche_full['y'])\n\nzeckenstiche_gpd = gpd.GeoDataFrame(\n    zeckenstiche_full,\n    geometry=geom,\n    crs = 2056)\n\n\nKernel Density Plot\nMit der Erweiterung seaborn lassen sich mit wenigen Zeilen Code eine Kernel Density rechnen und visualisieren. Siehe nachstehenden Code:\n\nimport seaborn as sns\n\nf, ax = plt.subplots(1, figsize=(6, 6))\nwald.boundary.plot(linewidth=0.1, ax=ax)\nzeckenstiche_gpd.plot(color='red', linewidth=0.1, ax=ax)\n\nsns.kdeplot(x = zeckenstiche_full.x, y= zeckenstiche_full.y,shade = False,n_levels = 10, cmap = \"viridis\", ax = ax)\n\nax.set_axis_off()\nplt.show()\n\n\n\n\n\n\n\n\n\n\nHintergrundkarte\nMit der Erweiterung contextily kann man sehr schnell und einfach Hintergrundkarten in den Plot einbinden. Dafür muss das GeoDataFrame vorher aber in WGS84 Koordinaten (EPSG 3857) konvertiert werden (mit to_crs, s.u.).\n\nimport contextily as ctx\n\nf, ax = plt.subplots(1, figsize=(6, 6))\nzeckenstiche_gpd.to_crs(epsg = 3857).plot(ax = ax)\nctx.add_basemap(ax)\n\nax.set_axis_off()\nplt.show()\n\n\n\n\n\n\n\n\n\n\nKDE mit Hintergrundkarte\nKernel Denisty und Hintergrundkarte können auch kombiniert werden:\n\nlat = zeckenstiche_gpd.to_crs(epsg = 3857).geometry.x\nlng = zeckenstiche_gpd.to_crs(epsg = 3857).geometry.y\n\nf, ax = plt.subplots(1, figsize=(6, 6))\n\nsns.kdeplot(x = lat,y = lng,shade = False,n_levels = 25, cmap = \"viridis\", ax = ax)\nctx.add_basemap(ax)\n\nax.set_axis_off()\nplt.show()",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>50</span>  <span class='chapter-title'>Anhang</span>"
@@ -2656,356 +2656,6 @@
     "crumbs": [
       "Netzwerkanalyse III",
       "<span class='chapter-number'>60</span>  <span class='chapter-title'>Leistungsnachweis</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/1_Einleitung.html",
-    "href": "E_WebGIS_1/1_Einleitung.html",
-    "title": "WebGIS I",
-    "section": "",
-    "text": "HinweisÜbungsziele\n\n\n\n\nDu bist in der Lage auf dem ArcGIS Online Organisationskonto Deine Inhalte zu organisieren und die Freigabeeigenschaften von Inhalten zu ändern.\nDu kannst in ArcGIS Pro eine Karte vorbereiten, eine Zeitanimation aktivieren und ArcGIS Pro Karten auf einem ArcGIS Online Organisationskonto als Web Maps veröffentlichen.\nDu kannst eine Web Map zielgerichtet gestalten und basierend auf bestehenden Web Maps neue Web Map Applikationen erstellen.\nDu weisst, wie Du eine Story Map erstellen und diese mit Inhalten füllen kannst.",
-    "crumbs": [
-      "WebGIS I"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/2_Uebung_Web_Map.html",
-    "href": "E_WebGIS_1/2_Uebung_Web_Map.html",
-    "title": "Übung Web Map",
-    "section": "",
-    "text": "Übung 1: Erste Schritte mit ArcGIS Online (Online Tutorial)\nFühre das Online Tutorial «Erste Schritte mit ArcGIS Online» durch. Damit erlernst Du die grundlegenden Funktionalitäten der Kartenerstellung in ArcGIS Online.\nLink zum Tutorial",
-    "crumbs": [
-      "WebGIS I",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Übung Web Map</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-2-arcgis-online-inhaltsseite-organisieren",
-    "href": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-2-arcgis-online-inhaltsseite-organisieren",
-    "title": "Übung Web Map",
-    "section": "Übung 2: ArcGIS Online: Inhaltsseite organisieren",
-    "text": "Übung 2: ArcGIS Online: Inhaltsseite organisieren\nIn ArcGIS Online kann die eigene Inhaltsseite personalisiert werden. Es können Ordner erstellt werden in denen Inhalte verwaltet und organisiert werden können.\n\nMelde Dich mit Deinen persönlichen Nutzerdaten auf dem ArcGIS Online Organisationskonto der ZHAW an: ZHAW ArcGIS Maps\nWechsle von der Startseite in das Register Inhalt. Im Ordner «Alle eigenen Inhalte» sollten die beiden Inhalte «At-Risk Population in Houston» (Instant App) und «Houston Evacuation Map» (Web Map) welche Du im Rahmen der ersten Übung (Online Tutorial) erstellt hast, aufgeführt sein.\n\n\n\n\n\nErstelle einen neuen Ordner mit dem Namen «Modul AGI» in dem Du alle Inhalte ablegen kannst, welche Du im Rahmen dieses Moduls auf ArcGIS Online hochlädst. Klicke hierfür auf «Neu», und gib den Namen für den neu zu erstellenden Ordner ein.\n\n\n\n\n\nVerschiebe nun die beiden Inhalte «At-Risk Population in Houston» (Web Mapping Application) und «Houston Evacuation Map» (Web Map) in den soeben neu erstellten Ordner. Gehe hierfür zurück auf den Ordner «Alle meine Inhalte». Selektiere die beiden Inhalte und klicke auf die Option «Verschieben».\n\nWähle im sich öffnenden Fenster «Element verschieben» den Ordner «Modul AGI» und verschiebe diese Inhalte in den neuen Ordner\n\n\n\n\n\nLege alle Deine Inhalte, welche Du im Rahmen dieses Moduls auf ArcGIS Online hochlädst im Ordner «Modul AGI» ab.\nDu kannst jederzeit neue Ordner erstellen und so Deine Inhalte auf ArcGIS Online organisieren.",
-    "crumbs": [
-      "WebGIS I",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Übung Web Map</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-3-arcgis-online-freigabeeigenschaften-bei-bestehenden-inhalten-ändern",
-    "href": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-3-arcgis-online-freigabeeigenschaften-bei-bestehenden-inhalten-ändern",
-    "title": "Übung Web Map",
-    "section": "Übung 3: ArcGIS Online: Freigabeeigenschaften bei bestehenden Inhalten ändern",
-    "text": "Übung 3: ArcGIS Online: Freigabeeigenschaften bei bestehenden Inhalten ändern\nBei der Durchführung des Esri Online Tutorials «Erste Schritte mit ArcGIS Online» hast Du sowohl die Web Map als auch die Web Mapping Application für «Alle (öffentlich)» freigegeben. Ändere nun die Freigabe dieser beiden Inhalte, damit diese nur noch von Dir aufgerufen werden können.\n\nZeige die Inhalte im Ordner «Modul AGI».\nKlicke bei der Web Mapping Application «At-Risk Population in Houston» auf das Globus-Symbol.\n\nÄndere im Freigabefenster nun die Freigabeeigenschaften für diesen Inhalt. Diese Anwendung soll nun nicht mehr für die Öffentlichkeit freigegeben sein, sondern nur noch für Dich (Du kannst die Anwendung öffnen, andere haben jedoch keinen Zugriff mehr darauf). Wähle hierfür die Option «Eigentümer».\n\n\n\n\n\nFühre dasselbe für die Web Map «Houston Evacuation Map» durch.",
-    "crumbs": [
-      "WebGIS I",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Übung Web Map</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-4-arcgis-pro-karte-einrichten",
-    "href": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-4-arcgis-pro-karte-einrichten",
-    "title": "Übung Web Map",
-    "section": "Übung 4: ArcGIS Pro: Karte einrichten",
-    "text": "Übung 4: ArcGIS Pro: Karte einrichten\nLade die Daten von Moodle herunter (ZIP-File: Daten Einführungsübung ArcGIS Online), extrahiere die Daten unter einem sinnvollen Ordnerpfad und erstelle ein neues ArcGIS Pro Projekt mit dem Namen E_ArcGIS_Online im Ordner, in dem Du die Übungsdaten extrahiert hast.\n\n\n\n\n\n\nTipp\n\n\n\nÜbrigens: Du kannst alle Deine Karten (Maps) welche Du im Laufe dieses Unterrichtsblocks erstellst in diesem Projekt speichern\n\n\n\nStarte ArcGIS Pro und erstelle ein neues ArcGIS Pro Projekt mit dem Namen «E_ArcGIS_Online».\nMelde Dich mit Deinen persönlichen Benutzerdaten (kürzel_student / PW) in ArcGIS Pro beim ArcGIS Online Portal der ZHAW an (sofern Du noch nicht angemeldet bist).\nBenenne die neue Map als «Einführung» (Contents Pane &gt; Kontextmenü Map &gt; Properties &gt; Map Properties &gt; General Tab &gt; bei Name Eingabe vornehmen &gt; mit OK bestätigen).\n\nGehe in das Catalog Window und überprüfe die Inhalte im Projektordner. Zusätzlich zur Projekt-GDB sollte die Geodatenbank «uebung_online_publikation.gdb» aufgeführt sein. Falls nicht, erstelle im Catalog Pane eine Verbindung zum Ordner her, in dem Du die heutigen Übungsdaten entpackt hast (Catalog Pane &gt; Project &gt; Folders &gt; Kontextmenü Add Folder Connection).\n\n\n\n\n\nDie Geodatenbank «uebung_online_publikation.gdb» enthält folgende Feature Classes:",
-    "crumbs": [
-      "WebGIS I",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Übung Web Map</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-5-arcgis-pro-koordinatensystem-anpassen",
-    "href": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-5-arcgis-pro-koordinatensystem-anpassen",
-    "title": "Übung Web Map",
-    "section": "Übung 5: ArcGIS Pro: Koordinatensystem anpassen",
-    "text": "Übung 5: ArcGIS Pro: Koordinatensystem anpassen\nDamit die Daten später auf ArcGIS Online veröffentlicht werden können, muss den Daten das Koordinatensystem «WGS 1984 Web Mercator Auxiliary Sphere» zugewiesen werden. Momentan ist den fünf Layern noch das Schweizerische Koordinatensystem zugewiesen. Führe für jeden einzelnen Layer eine Koordinatentransformation durch.\n\n\n\n\n\n\nTipp\n\n\n\nUm Probleme bei der Veröffentlichung auf ArcGIS Online zu vermeiden empfiehlt es sich, immer mit dem Koordinatensystem «WGS 1984 Web Mercator Auxiliary Sphere» zu arbeiten.\n\n\n\nÖffne das Geoprocessing Window (Menü Analysis &gt; Tools)\n\nSuche nach «Project» und öffne das Tool «Project (Data Management Tools). Transformiere die fünf Layers vom Schweizerischen Koordinatensystem in das projizierte weltweite Koordinatensystem. Definiere hierfür die nötigen Werkzeug-Parameter. Speichere die Output Layers in der gleichen Geodatenbank (uebung_online_publikation.gdb), jeweils ohne «_lv95» (bsp. picknickplatz). Das Koordinatensystem WGS 1984 Web Mercator Auxiliary Sphere findest Du unter folgendem Pfad: Projected coordinate system &gt; World &gt; WGS 1984 Web Mercator (auxiliary sphere). Füge es doch zu Deinen Favoriten hinzu.\n\n\n\n\n\nNach Ausführung des Werkzeugs «Project» werden die Layers automatisch der Karte «Einfuehrung» hinzugefügt.\n\nWichtig: Entfernen Sie den Layer «veloweg» aus Ihrer Karte.",
-    "crumbs": [
-      "WebGIS I",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Übung Web Map</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-6-arcgis-pro-vorbereitung-der-karte",
-    "href": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-6-arcgis-pro-vorbereitung-der-karte",
-    "title": "Übung Web Map",
-    "section": "Übung 6: ArcGIS Pro: Vorbereitung der Karte",
-    "text": "Übung 6: ArcGIS Pro: Vorbereitung der Karte\nSymbolisiere die vier Layer in einer Art und Weise, dass sie gut voneinander unterschieden werden können. Weise dem Layer «stadtkreis» eine Einzelwert-Legende basierend auf dem Feld «kname» zu und versehe diesen Layer mit einer Transparenz. Ändere zudem die Basemap auf «Light Gray Canvas».\n\nAktiviere nun für den Layer «zeckenstiche» die Zeiteigenschaften:\n\nContents Window &gt; Kontextmenü Layer «zeckenstiche» &gt; Properties.\nWähle unter Time folgende Einstellungen und bestätige sie mit OK:\n\nLayer Time: Each feature has a single time field\nTime Field: date\n\n\n\nFür den Layer «zeckenstiche» hast Du die Zeiteigenschaften aktiviert und Du kannst nun im Menüband «Time» die Eigenschaften der Zeitanimation definieren und anpassen.",
-    "crumbs": [
-      "WebGIS I",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Übung Web Map</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-7-arcgis-pro-veröffentlichen-publishing-einer-karte",
-    "href": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-7-arcgis-pro-veröffentlichen-publishing-einer-karte",
-    "title": "Übung Web Map",
-    "section": "Übung 7: ArcGIS Pro: Veröffentlichen (Publishing) einer Karte",
-    "text": "Übung 7: ArcGIS Pro: Veröffentlichen (Publishing) einer Karte\nIm Folgenden wird diese Karte mitsamt all ihren Inhalten, Symbolisierung und Funktionalitäten als Web Map auf ArcGIS Online veröffentlicht (direkt via ArcGIS Pro). Vergewissere Dich, dass Du mit dem ZHAW ArcGIS Online Organisationskonto verbunden bist (Portal Connection) und speichere das ArcGIS Pro Projekt.\n\nWechsle in das Menüband «Share»\nWähle anschliessend «Web Map»\n\nGebe der Karte einen Namen (Zecken Stadt Zürich Vorname Name), schreibe eine kurze Zusammen-fassung und definiere Tags. Wähle folgende Einstellungen:\n\nSelect a Configuration: Copy all data Exploratory\nLocation Folder: Modul AGI (Die Inhalte werden in ArcGIS Online in diesem Ordner abgelegt)\nShare With: Groups (wähle «Modul Angewandte Geoinformatik HS 2021»; die Karte und die Feature Layers werden nur für diese Gruppe freigegeben).\n\n\n\n\n\n\nKlicke auf «Analyze» und löse bei Bedarf die angezeigten Probleme. Nutze zur Lösung der etwaigen Probleme die ArcGIS Webhelp. Sofern die Warnung «Layer does not have a feature template set» erscheint, kann diese vernachlässigt werden.\nDie Meldung «00374 Unique numeric IDs are not assigned» kann über das Kontextmenü gelöst werden. (Kontextmenü -&gt; «Auto-Assign IDs Sequentially»)\nVeröffentliche anschliessend die Web Map mit «Share». Dieser Vorgang kann einige Zeit in Anspruch nehmen.",
-    "crumbs": [
-      "WebGIS I",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Übung Web Map</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-8-arcgis-pro-veröffentlichen-publishing-eines-layers",
-    "href": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-8-arcgis-pro-veröffentlichen-publishing-eines-layers",
-    "title": "Übung Web Map",
-    "section": "Übung 8: ArcGIS Pro: Veröffentlichen (Publishing) eines Layers",
-    "text": "Übung 8: ArcGIS Pro: Veröffentlichen (Publishing) eines Layers\nIn der vorangehenden Übung 7 hast Du eine gesamte Karte als Web Map veröffentlicht. Manchmal müssen oder sollen jedoch nur einzelne (oder mehrere) Layers als Web Layers veröffentlicht werden ohne gleichzeitige Erstellung einer Web Map. Erstelle nun in Deinem ArcGIS Pro Projekt eine neue Karte und lade den Layer «veloweg» hinzu. Anschliessend kann dieser Layer als einzelner Feature Layer auf ArcGIS Online veröffentlicht werden.\n\nGehe wiederum ins Menü «Share» und wähle «Web Layer &gt; Publish Web Layer».\n\nGebe dem Layer den Namen «Velowege Vorname Name», schreibe eine kurze Zusammenfassung und definiere Tags. Wähle folgende Einstellungen:\n\nLayer Type: Feature\nLocation Folder: Modul AGI (Der Layer wird in ArcGIS Online in diesem Ordner abgelegt)\nShare With: Groups (wähle «Modul Angewandte Geoinformatik HS 2022»; der Feature Layer wird nur für diese Gruppe freigegeben).\n\n\n\n\n\n\nKlicke auf «Analyze» und löse angezeigte Probleme.\nDie Meldung «00374 Unique numeric IDs are not assigned» kann über das Kontextmenü gelöst werden. (Kontextmenü -&gt; «Auto-Assign IDs Sequentially»)\nVeröffentliche anschliessend den Web Layer «Velowege Vorname Name» mit «Share». Dieser Vorgang kann einige Zeit in Anspruch nehmen.\nSpeichere das ArcGIS Pro Projekt.",
-    "crumbs": [
-      "WebGIS I",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Übung Web Map</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-9-arcgis-online-web-map-anpassen",
-    "href": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-9-arcgis-online-web-map-anpassen",
-    "title": "Übung Web Map",
-    "section": "Übung 9: ArcGIS Online: Web Map anpassen",
-    "text": "Übung 9: ArcGIS Online: Web Map anpassen\nWechsle in einen Internet Browser und melde Dich beim ZHAW ArcGIS Online Organisationskonto an. Wechsle anschliessend in das Menü «Inhalt» und betrachte die Inhalte im Ordner «Modul AGI». Momentan sollten zwei Feature Layer inkl. Service Definition, zwei Web Maps und eine Web Mapping Application (Instant App) als Inhalte sichtbar sein.\n\nInhalte können auch gelöscht werden, beispielsweise benötigst Du die Web Mapping Application «At-Risk Population in Houston» und die Web Map «Houston Evacuation Map» nicht mehr. Selektiere die beiden Inhalte und durch Klicken auf «Löschen» kannst Du diese Inhalte unwiderruflich löschen. Merke Dir: Sofern Du nur die Web Map löschst, funktioniert die Web Mapping Application nicht mehr. Jede Web Mapping Application basiert immer auf einer Web Map!\n\nÖffne nun die Web Map «Zecken Stadt Zürich Vorname Name». Klicke auf «…» und wähle «In Map Viewer öffnen» (evtl. in neuem Browser-Fenster öffnen).\n\nDie Web Map enthält die vier Feature Layer «zeckenstiche», «picknickplatz», «vitaparcours» und «stadtkreis». Ändere nun die Namen der Layer (bsp. Zeckenstiche Zeit-animiert statt zeckenstiche):\n\nGehe auf «Inhalt».\nÖffne bei Layer «zeckenstiche» das Kontextmenü durch Klicken auf «…»\nWähle «Umbenennen» und ändere den Layernamen auf «Zeckenstiche Zeit-animiert»\n\n\n\n\n\nPasse die Namen der anderen Layers an (bsp. Grossschreibung)\n\nFüge nun das Veloweg-Netz der Stadt Zürich als zusätzlichen Feature Layer zur Karte.\n\nWähle «Hinzufügen» und dann «Durchsuchen von Layern» (beende bei Bedarf die Zeitanimation).\n\n\n\n\n\nSuche unter «Eigene Inhalte». Gib im Suchfeld «Veloweg» ein. Der Layer sollte dann angezeigt werden. Füge den Layer durch Klicken auf «+» der Karte hinzu. Der Layer wird der Karte hinzugefügt.\n\n\n\n\n\n\nVerändere die Layer-Reihenfolge. Verschiebe den Layer «Velowege» unterhalb von «Vita Parcours».\n\nGehe in den Reiter «Layer».\nVerschiebe mittels drag and drop den Layer «Velowege» an die gewünschte Position und ändere den Namen des Layers.\nAlternative: Klicke unter Inhalt beim Layer «Velowege» auf die drei vertikalen Punkte und verschiebe den Layer an den gewünschten Ort.\n\n\n\n\n\n\nÄndere das Symbol für den Layer «Velowege» (bsp. ein dezentes dunkelgrau).\n\nSelektiere den Layer «Velowege» in der Layer-Ansicht.\nÖffne das Menü «Styles» (vertikales Menü rechts).\n\n\n\n\n\nGehe auf «Style-Optionen»\nKlicke auf das Stift-Symbol und ändere die Linienfarbe und -breite.\n\n\n\n\n\nBestätige die Eingaben mit “Fertig” &gt; “Fertig”\n\nLade nun den Layer «Zeckenstiche Zeit-animiert» ein zweites Mal zur Webmap. Hierfür musst Du die Web-Feature-Layers «Zecken Stadt Zürich Vorname Name» nochmals zur Karte hinzufügen und anschliessend die Layers, welche nicht doppelt vorhanden sein sollen wieder entfernen. Ändere anschliessend den Style und deaktiviere die Zeitanimation.\n\nWähle «Hinzufügen». Füge den Web-Layer mit dem Namen «Zecken Stadt Zürich Vorname Name_WFL1» mittels «+» Button zur Karte hinzu.\n\nHebe zuerst mittels «Gruppierung aufheben) die Gruppierung auf (dieser Feature Layer enthält vier verschiedene Layers). Entferne anschliessend die Layers «Picknickplatz», «Vitaparcours» und «Stadtkreis» aus der Webmap, denn diese Layers sollen nicht doppelt in der Webmap enthalten sein. Führe dies für jeden Layer einzeln durch.\n\nÄndere anschliessend beim neu hinzugefügten Zeckenstich-Layer den Namen zu «Gemeldete Zeckenstiche».\nDeaktiviere nun die Option Zeitanimation im Layer «Gemeldete Zeckenstiche». Gehe in diesem Layer auf «Eigenschaften anzeigen» und deaktiviere die Zeiteigenschaften im entsprechenden Abschnitt.\n\nVerschiebe danach diesen Layer unterhalb des Layers «Zeckenstiche Zeit-animiert».\nVerändere beim Layer «Zeckenstiche Zeit-animiert» den Style, so dass sich die animierten Zeckenstiche deutlich von den gemeldeten Zeckenstichen unterscheiden lassen. Wähle beispielsweise ein gelbes Punktsymbol inklusive Blooming-Effekt. Symboleffekte können via Reiter «Effekte» definiert werden.\nEntferne beim Layer «Zeckenstiche Zeit-animiert» das Pop-up via «Pop-up konfigurieren». Somit wird verhindert, dass das Pop-up beim Anklicken eines Zeckenstich-Standortes zwei Mal aufgerufen wird.\n\n\n\n\n\nPop-ups können übrigens über das Menü «Pop-ups» benutzerdefiniert angepasst werden. Probiere diverse Optionen für andere Layer aus.\nDie Zeit-Animation kann im linken Bereich über das Menü «Karteneigenschaften» und dann «Optionen des Zeitschiebereglers» angepasst werden (Intervall, Geschwindigkeit etc.). Probiere auch hier unterschiedliche Optionen aus.\n\nErstelle nun noch zwei Bookmarks (Lesezeichen) für die Stadtkreise 7 und 10. Zoome hierfür in den Bereich des Stadtkreises 7. Gehe dann auf «Lesezeichen» &gt; «Lesezeichen hinzufügen», gib «Stadtkreis 7» ein und bestätige die Eingabe mit der Enter-Taste. Gehe gleich vor für den Stadtkreis 10. Zoome nachfolgend wieder auf das gesamte Stadtgebiet.\nDie Karte ist nun soweit vorbereitet, damit basierend auf dieser Web Map eine Web Mapping Applikation erstellt werden kann (folgende Übungen). Speichere die Karte via «Speichern und öffnen &gt; Speichern».\nErst nachdem die Layers einer Karte fertig symbolisiert sind, die Pop-ups konfiguriert und die Layer-Funktionalitäten etc. definiert sind kann eine Web Mapping Applikation erstellt werden. Die Web Mapping Applikation übernimmt die grundlegenden Einstellungen, welche in der Web Map definiert sind.\n\n\n\n\n\n\nTipp\n\n\n\nIn der Regel müssen sowohl die Web Map als auch die Web Mapping Applikation auf dieselbe Art und Weise freigegeben werden. Dies gilt natürlich auch für alle Web-Layers welche in einer Karte enthalten sind.",
-    "crumbs": [
-      "WebGIS I",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Übung Web Map</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-10-arcgis-online-web-app-erstellen-via-instant-maps",
-    "href": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-10-arcgis-online-web-app-erstellen-via-instant-maps",
-    "title": "Übung Web Map",
-    "section": "Übung 10: ArcGIS Online: Web App erstellen via “Instant Maps”",
-    "text": "Übung 10: ArcGIS Online: Web App erstellen via “Instant Maps”\nErstelle nun eine Web Mapping Applikation basierend auf der vorher konfigurierten Web Map. In dieser Übung arbeiten wir mit «Instant Maps». Hierfür muss die Karte zuerst im «Map Viewer» geöffnet werden. Anschliessend generierst Du die Web Mapping Applikation über die Option «Instant Apps» (analog Übung 1 – Online Tutorial).\n\nWähle die Option «Schieberegler» und gehe auf «Vorschau». Gehe Zurück und erstelle die App mit «Auswählen».\nBenenne die App als «Zecken App Zürich Vorname Name», lege sie im Ordner Modul AGI ab und wähle «App erstellen»\n\n\n\n\n\nGehe durch die 5 Schritte, aktiviere die Pop-Ups, die Lesezeichen und die Layer Liste. Veröffentliche anschliessend die Web App.\nErgänze die Web App nun noch mit einem zusätzlichen WMS-Layer. Gehe hierfür zuerst auf www.geolion.zh.ch und suche nach «Klimamodell». Gehe auf «Klimamodell ZH: Analysekarten (Raster)», öffne das Register «Datenbezug» und wähle den Link unter Datenbezug -&gt; «WMS».\nWechsle in ArcGIS Online auf «Inhalt» und füge den WMS-Klimamodell via « + Neues Element» hinzu. Wähle die Option «URL».\n\nKopiere nun die WMS-URL in geolion und füge sie in ArcGIS Online im entsprechenden Feld ein. Füge nach http ein s ein (https://wms.zh.ch…..) Wähle die Option WMS (OGC) und klicke auf «Weiter». Wähle in der Liste den WMS-Layer «Lufttemperatur Tag».\nDefiniere folgende Parameter:\n\nTitel = Lufttemperatur Tag\nOrdner = Modul AGI\nTags = Temperatur\nZusammenfassung = Lufttemperatur Tag auf 2m Höhe über Grund um 14 Uhr\n\n\nÖffne in ArcGIS Online die Web Map «Zecken Stadt Zürich Vorname Name». Gehe auf «Hinzufügen &gt; Layer durchsuchen» und füge den Layer «Lufttemperatur Tag» zur Web Map hinzu. Verändere die Layerhierarchie und platziere die Temperaturkarte zuunterst.\nSpeichere die Änderungen.\nÖffne nun die Web App. Der Layer «Lufttemperatur Tag» ist nun auch in der Web App enthalten und kann je nach Bedarf ein- und ausgeblendet werden (so wie alle anderen Layer auch).",
-    "crumbs": [
-      "WebGIS I",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Übung Web Map</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-11-arcgis-online-web-app-erstellen-via-experience-builder",
-    "href": "E_WebGIS_1/2_Uebung_Web_Map.html#übung-11-arcgis-online-web-app-erstellen-via-experience-builder",
-    "title": "Übung Web Map",
-    "section": "Übung 11: ArcGIS Online: Web App erstellen via “Experience Builder”",
-    "text": "Übung 11: ArcGIS Online: Web App erstellen via “Experience Builder”\nNun wirst Du eine zweite Web App erstellen, dieses Mal mit Unterstützung des Experience Builders. Der Experience Builder erlaubt eine viel flexiblere Gestaltung der Web App, insbesondere können verschiedenste Widgets in die Applikation integriert werden.\n\nÖffne wiederum die Web Map «Zecken Stadt Zürich Vorname Name» und wähle im Menü links die Option «App erstellen &gt; Experience Builder»\nWähle die Vorlage «Foldable». Du kannst eine Vorschau betrachten und dann via «Erstellen» in die Design-Oberfläche wechseln.\nNun kannst Du die Web App nach Belieben konfigurieren, mit Widgets ergänzen und Funktionalitäten einbinden.\nKlicke nach Abschluss der Konfiguration auf «Speichern unter» und weise einen sinnvollen Namen zu. Veröffentliche anschliessend die Anwendung.",
-    "crumbs": [
-      "WebGIS I",
-      "<span class='chapter-number'>61</span>  <span class='chapter-title'>Übung Web Map</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/3_Uebung_Story_Map.html",
-    "href": "E_WebGIS_1/3_Uebung_Story_Map.html",
-    "title": "Übung Story Map",
-    "section": "",
-    "text": "Übung 1: Story Map im ZHAW ArcGIS Online Portal erstellen\nStory Maps vermitteln in interaktiver Form Informationen zu einem Ort, Ereignis, Problem, Trend oder Muster in einem geographischen Kontext. Textliche Inhalte können mit Fotos, Videos, Audiodateien und interaktiven Karten kombiniert werden.\nFür diese Übung werden keine Daten zur Verfügung gestellt. Du kannst eine Story Map basierend auf einem in diesem Modul behandelten Themenbereich und deren vorhandenen Daten aufbauen – oder alternativ – die Grundlage für die Story Map (eine mögliche Dokumentationsart) Deines Semesterprojekts entwerfen. Die Story Map erstellst Du auf dem ZHAW ArcGIS Online Portal.\nDer einfachste Weg eine Story Map zu erstellen, geht am schnellsten via ZHAW ArcGIS Online Oberfläche im Menü «Inhalt». Am besten erstellst Du vorgängig einen eigenen Ordner, in dem alle Inhalte der Story Map abgelegt sind.",
-    "crumbs": [
-      "WebGIS I",
-      "<span class='chapter-number'>62</span>  <span class='chapter-title'>Übung Story Map</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/3_Uebung_Story_Map.html#übung-1-story-map-im-zhaw-arcgis-online-portal-erstellen",
-    "href": "E_WebGIS_1/3_Uebung_Story_Map.html#übung-1-story-map-im-zhaw-arcgis-online-portal-erstellen",
-    "title": "Übung Story Map",
-    "section": "",
-    "text": "Melde Dich mit Deinen persönlichen Nutzerdaten auf dem ArcGIS Online Organisationskonto der ZHAW an: https://zhaw.maps.arcgis.com\nWechsle von der Startseite in das Register Inhalt. Erstelle bei Bedarf einen neuen Ordner für die Story Map (via Symbol «Neuen Ordner erstellen»).\nGehe auf «App Erstellen».\n\nWähle die Option «StoryMaps»\n\nÜber das Hilfemenü (oben rechts) hast Du Zugriff auf verschieden Links, unter denen Du Hilfe zur Erstellung einer Story Map erhältst.\n\nÖffne die Links jeweils in einem neuen Browser-Tab.\n\nÜberblick: Allgemein Information zu Story Maps.\nDokumentation: Lese was eine Story Map ist und informiere Dich, wie Du eine erste Story erstellen und veröffentlichen kannst.\n\nRessourcen: Hier findest Du Tipps, was Du bei der Erstellung von Story Maps beachten musst damit diese aussagekräftig und fesselnd sind. Beachte hier die Story «Nine steps to great storytelling» (https://storymaps.arcgis.com/stories/429bc4eed5f145109e603c9711a33407). Über folgendes Tutorial wird Dir vermittelt, wie Du deine Story erstellen kannst: Tutorial\nFAQ: Hier findest Du Antworten zu häufig gestellten Fragen.\n\nErstelle nun den ersten Entwurf einer Story Map. Über die Option «Entwerfen» kannst Du das Erscheinungsbild Deiner Story anpassen.\n\nÜber die Option «Vorschau» kannst Du dir eine Vorschau der erarbeiteten Story anzeigen lassen (am besten in einem neuen Browser-Tab öffnen).\n\nDie Option «Veröffentlichen» ermöglicht Dir, die Story zu veröffentlichen und die Freigabeeinstellungen anzupassen.\n\nErstelle nun Deine Story Map, fülle die Story mit Inhalten (Text, Bilder, Grafiken, Web Maps, Videos, Links etc.). Nutze selbständig die zur Verfügung stehenden Hilfe-Optionen (vorangehende Seite). Beachte: Bevor Du eine Web Map in eine Story Map integrieren kannst, muss diese vorgängig erstellt werden. Dabei müssen alle Inhalte auf die gleiche Art und Weise freigegeben werden.\nArbeite selbständig und sei kreativ. Probiere verschiedene Dinge aus. Beachte jeweils die Freigabeeigenschaften.",
-    "crumbs": [
-      "WebGIS I",
-      "<span class='chapter-number'>62</span>  <span class='chapter-title'>Übung Story Map</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_1/4_Leistungsnachweis.html",
-    "href": "E_WebGIS_1/4_Leistungsnachweis.html",
-    "title": "Leistungsnachweis",
-    "section": "",
-    "text": "Es muss eine voll funktionsfähige Story Map erstellt werden, welche eine integrierte Web Map aus der vorherigen Übung enthält. Die Story Map soll in einer eigenen Gruppe veröffentlicht werden.\nGehe folgendermassen vor:\n\nErstelle in ArcGIS Online eine neue eigene Gruppe.\nBenenne die Gruppe als «Leistungsnachweis Vorname Name».\nDefiniere folgende Gruppeneigenschaften:\n\nWer kann diese Gruppe sehen? -&gt; Nur Gruppenmitglieder\nWer kann Mitglied dieser Gruppe sein? -&gt; Nur Mitglieder der eigenen Organisation\nWie können Personen dieser Gruppe beitreten? -&gt; Nach Einladung\nWer kann Inhalte beitragen? -&gt; Alle Gruppenmitglieder\n\nFüge Hanno Rahn (rahn_zhaw) und Evelyn Terzer (terz_zhaw) deiner eigenen Gruppe «Leistungsnachweis Vorname Name» als Mitglied hinzu (via Benutzer einladen) ohne eine Bestätigung anzufordern.\nVeröffentliche deine Story Map für alle Mitglieder Deiner Gruppe «Leistungsnachweis Vorname Name».\n\nGib deine Lösung bis spätestens Freitag 20. Dezember 2024 auf Moodle ab. Lade hierzu den Link zu deiner Story Map hoch. Achte auf die korrekten Berechtigungen von Story Map und Web Map. Beide müssen diesselben Berechtigungen haben.",
-    "crumbs": [
-      "WebGIS I",
-      "<span class='chapter-number'>63</span>  <span class='chapter-title'>Leistungsnachweis</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/1_Einleitung.html",
-    "href": "E_WebGIS_2/1_Einleitung.html",
-    "title": "WebGIS II",
-    "section": "",
-    "text": "HinweisÜbungsziele\n\n\n\n\nDu kannst eine Map mit mehreren Layern und einer Legende in Python erstellen.\nDu kannst deine Map und weitere Elemente mittels Chunk Options als HTML publizieren. \nOptional: Du kennst die grundlegenden Webtechnologien wie HyperText Markup Language (HTML), JavaScript und Cascading Style Sheets (CSS).\nOptional: Du hast dich mit Leaflet, der beliebtesten Open-Source-JavaScript-Bibliothek, vertraut gemacht.\nOptional: Du kannst das GeoJson-Dateiformat verwenden.",
-    "crumbs": [
-      "WebGIS II"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/2_Uebung_Zeckenstiche.html",
-    "href": "E_WebGIS_2/2_Uebung_Zeckenstiche.html",
-    "title": "Übung Visualisierung Zeckenstiche",
-    "section": "",
-    "text": "Übung 1: Vorbereitung\nIn dieser Übung wollen wir mit unseren originalen und simulierten Zeckenstichen aus dem Block Programmieren eine interaktive Karte erstellen. Zudem werdet ihr weitere Tools und Tipps erhalten, wie ihr euren Code aufwerten und zum Schluss als HTML darstellen könnt.",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>64</span>  <span class='chapter-title'>Übung Visualisierung Zeckenstiche</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/2_Uebung_Zeckenstiche.html#übung-1-vorbereitung",
-    "href": "E_WebGIS_2/2_Uebung_Zeckenstiche.html#übung-1-vorbereitung",
-    "title": "Übung Visualisierung Zeckenstiche",
-    "section": "",
-    "text": "Bitte ladet zuerst die Übungsdaten hier runter und entpackt diese.\nKreiert eine neue Python-Environment und installiert die für diese Übung benötigten Packages via Terminal gemäss Conda Environment erstellen\nconda create --name geopython3\nconda activate geopython3\nconda install -c conda-forge geopandas folium matplotlib mapclassify jupiterlab quarto\nStartet nun Positron via Terminal gemäss Conda Environment erstellen\nKreiert ein neues Quarto-File (New &gt; New File… &gt; Quarto Document) und speichert es in eurem Arbeitsordner ab.\n\n\nAufbau eines Quarto Dokumentes\nEin Quarto Dokument hat grob drei Elemente: (1) Den Header bzw. die Metadaten, (2) die Code Chunks und (3) die Textbereiche\n\nDer Header wird beim Erstellen des Dokumentes bereits erstellt. Beim format könnt ihr definieren, wie am Ende eurer Dokument gerendert werden soll. Möglich sind u.a. HTML, PDF und MS Word. Wir belassen für heute das vordefinierte Format html, weitere Anpassungen folgen weiter unten.\n---\ntitle: \"Untitled\"\nformat: html\n---\nDer Code wird in sogenannten Code Chunks geschrieben. Eine neue Zelle fügt ihr ein, indem ihr Ctrl+Shift+I drückt. Falls in der eckigen Klammer nicht python stehen sollte, müsst ihr das in diesem Fall anpassen.\nZwischen die Code Chunks könnt ihr euren Text schreiben. Die Basics, wie ihr euren Text formatieren könnt, findet ihr hier\n\nEin Auschnitt des Quarto Dokumentes für die Übungen von Programmieren I hat z.B. so ausgesehen: \n\n\nPackages und Daten laden\nImportiert nun als erstes die zwei Packages geopandas und folium. Schreibt den Code in einer Code Cell.\nLadet zudem die drei Datensätze wald.gpkg, zeckenstiche_original.gpkg und zeckenstiche_simuliert.gpkg mit der read_file Funktion von Geopandas.",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>64</span>  <span class='chapter-title'>Übung Visualisierung Zeckenstiche</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/2_Uebung_Zeckenstiche.html#übung-2-base-map",
-    "href": "E_WebGIS_2/2_Uebung_Zeckenstiche.html#übung-2-base-map",
-    "title": "Übung Visualisierung Zeckenstiche",
-    "section": "Übung 2: Base Map",
-    "text": "Übung 2: Base Map\nNun können wir unsere Karte bauen. Zuerst müssen wir eine Basiskarte erstellen, zu welcher wir dann die weiteren Layer hinzufügen können. Dazu nutzen wir nun Folium. Als Mittelpunkt der Karte wählen wir die WGS84 Koordinaten der Stadt Zürich (Zurich latitude: 47.36667, longitude: 8.55) aus.\n\n# Zurich latitude longitude: 47.36667, 8.55\nmap = folium.Map(location=[47.36667, 8.55], zoom_start = 13, tiles = \"cartodbpositron\")\n\nIhr könnt mit den Tiles und dem Zoom Level experimentieren. Information zu den Tiles findet ihr hier.",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>64</span>  <span class='chapter-title'>Übung Visualisierung Zeckenstiche</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/2_Uebung_Zeckenstiche.html#übung-3-wald-layer-hinzufügen",
-    "href": "E_WebGIS_2/2_Uebung_Zeckenstiche.html#übung-3-wald-layer-hinzufügen",
-    "title": "Übung Visualisierung Zeckenstiche",
-    "section": "Übung 3: Wald Layer hinzufügen",
-    "text": "Übung 3: Wald Layer hinzufügen\nNun wollen wir die Waldflächen als unseren ersten Layer hinzufügen. Ihr habt die .explore() Funktion bereits kennengelernt. Sie verfügt über diverse interessante Attribute, welche wir nun benutzen wollen.\nDa unser Wald-Datensatz aus zwei Zeilen mit Wald und Nicht-Wald besteht, müssen wir die Waldflächen zuerst noch rausfiltern.\nFolium kann nur das weltweite CRS WGS84 (EPSG:4326) verarbeiten und da der Geodataframe Wald das Schweizer CRS CH1903+ / LV95 (EPSG:2056) verwendet, müssen wir dieses mittels to_crs() transformieren, bevor wir ihn visualisieren können.\nTipp: Wenn ihr am Schluss des Commands ein ; hinzufügt, wird kein Output generiert. Somit wird nicht für jeden Layer den wir hinzufügen, eine Karte erstellt.\n\n# Wald zur Karte hinzufügen\nis_wald = wald[wald[\"Wald_text\"] == \"ja\"] # Selektieren nur den Wald\nis_wald.to_crs(4326).explore(\n    m = map,           # Fügt diesen Layer der Map map hinzu\n    color = \"green\",   # Der Layer wird grün dargestellt\n    tooltip = False,   # Es werden keine Daten angezeigt, wenn man über ein Objekt hovered.\n    highlight = False, # Das Objekt wird nicht hervorgehoben, wenn man darüber hovered.\n    name = \"Wald\"      # Der Name des Layers\n);",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>64</span>  <span class='chapter-title'>Übung Visualisierung Zeckenstiche</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/2_Uebung_Zeckenstiche.html#übung-4-original-und-simulierter-zeckenstich-layer-hinzufügen",
-    "href": "E_WebGIS_2/2_Uebung_Zeckenstiche.html#übung-4-original-und-simulierter-zeckenstich-layer-hinzufügen",
-    "title": "Übung Visualisierung Zeckenstiche",
-    "section": "Übung 4: Original und simulierter Zeckenstich Layer hinzufügen",
-    "text": "Übung 4: Original und simulierter Zeckenstich Layer hinzufügen\nNun wollen wir neben dem Wald Layer (Polygon) den originalen Zeckenstiche Layer (Punkte) hinzufügen. Kopiere dazu den unteren Code.\n\n# Original Zeckenstiche zur Karte hinzufügen\nzeckenstiche_original_gpd.to_crs(4326).explore(\n    m = map,                                     # Fügt diesen Layer der Map map hinzu\n    color = \"red\",                               # Der Layer wird rot dargestellt\n    marker_kwds = dict(radius = 1, fill = True), # Optionen für das Aussehen der Punkte\n    tooltip = \"ID\",                              # Beim Hovern über das Objekt wird die ID dargestellt\n    name = \"Original Zeckenstiche\"               # Der Name des Layers\n);\n\nNun wollen wir die simulierten Zeckenstiche darstellen. Als Vorlage könnt ihr den Code von oben kopieren. Erweitere die Funktion explore um folgende Logik:\n\nGerne würden wir die Spalte “Radius” mit der Farbvariation viridis visualisieren. Nutze hierfür die Attribute column und cmap.\nZudem soll die Legende des Layers dargestellt werden. Zudem wollen wir keine Colorbar als Legende haben. Nutze dafür die Optionen der Legende legend_kwds = dict(colorbar = False).\nIn den Tooltips sollen neben der ID noch der Radius und der Run dargestellt werden.\nNenne den Layer “Simulation Zeckenstiche”.\n\nWeitere Informationen zur explore Funktion findet ihr hier.",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>64</span>  <span class='chapter-title'>Übung Visualisierung Zeckenstiche</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/2_Uebung_Zeckenstiche.html#übung-5-layer-control-hinzufügen",
-    "href": "E_WebGIS_2/2_Uebung_Zeckenstiche.html#übung-5-layer-control-hinzufügen",
-    "title": "Übung Visualisierung Zeckenstiche",
-    "section": "Übung 5: Layer Control hinzufügen",
-    "text": "Übung 5: Layer Control hinzufügen\nZum Abschluss wollen wir noch ein Layer Control hinzufügen, damit wir die verschiedenen Layer ein- und ausblenden können. Schaut dafür im User Guide von Folium und sucht nach der Layer Control Funktion und versucht diese eurer map hinzuzufügen. Zum Schluss kannst du die map aufrufen, damit diese Dargestellt wird. Das finale Produkt sollte wie folgt aussehen:\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook\n\n\nNun ist unsere Map fertig. Inspiziert diese und spielt mit den Radien und Runs herum und versucht auch die Grössen und Farben der Points anzupassen, bis Ihr mit dem Resultat zufrieden seid.",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>64</span>  <span class='chapter-title'>Übung Visualisierung Zeckenstiche</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/2_Uebung_Zeckenstiche.html#übung-6-quarto-dokument-verschönern",
-    "href": "E_WebGIS_2/2_Uebung_Zeckenstiche.html#übung-6-quarto-dokument-verschönern",
-    "title": "Übung Visualisierung Zeckenstiche",
-    "section": "Übung 6: Quarto Dokument verschönern",
-    "text": "Übung 6: Quarto Dokument verschönern\n\nVorbereiten von Quarto und Darstellung (Preview) unseres Dokumentes\nWir erweiteren jetzt unseren Header mit den Metadaten. Dies bewirkt, dass euer Quarto Output neben einem Titel auch einen Autor hat. Zudem sagen wir Quarto, dass wir mit Python3 arbeiten. Für unseren Ausgabeformat, welches HTML sein soll, definieren wir folgende globale Optionen:\n\nembed-resources: true: Generiert ein einzelnes HTML File.\ncode-fold: true: Alle Code Cells werden eingeklappt.\n\n---\ntitle: Visualisierung Zeckenstiche\nauthor: Vorname Nachname\njupyter: python3\nformat:\n    html:\n        embed-resources: true\n        code-fold: true\n---\nQuarto gibt uns zudem die Möglichkeit, unser File als Vorschau darzustellen. Wechselt hierfür zum Terminal in Positron. Mit dem Command quarto preview NameQuartoDokument.qmd erhaltet ihr ein Preview in eurem Browser. Achtet darauf, dass im Terminal geopython3 als Interpreter steht.\n\n\nCell Options\nCell Options können dazu benutzt werden, um das Verhalten einer Cell zu verändern. Dabei werden diese Optionen mittels des Vorschubs #| am Anfang der Cell eingefügt. Wenn ihr eine Option für alle Cells haben wollt, könnt ihr diese als globale Optionen in den Metadaten von Quarto setzen (analog zu code-fold: true).\n#| echo: false\n#| code-summary: This is a Title for a collapsed Code Block\n\nPython Code...\nDie häufigsten Options sind:\n\neval: Soll die Code Cell ausgeführt werden.\necho: Soll der Code der Cell angezeigt werden.\noutput: Soll der Code Output dargestellt werden.\ncode-fold: Soll die Code Cell eingeklappt werden.\ncode-summary: Wenn code-fold auf true gesetzt ist kann ein Titel für die Code Cell gesetzt werden.\n\nEs gibt aber noch viele weitere Möglichkeiten (siehe hier).\n\n\nPage Layout\nMit Quarto könnt ihr euer Webseiten-Layout relativ einfach anpassen. Ihr könnt zum Beispiel mit folgendem Code ein Grid erstellen, welcher aus zwei Spalten besteht. Eine Spalte ist 9 und die zweite 3 breit. Die Gesamtbreite ist immer 12.\n::: {.grid}\n\n::: {.g-col-9}\nText 1\n:::\n\n::: {.g-col-3}\nText 2\n:::\n\n:::\nWeitere Möglichkeiten findet ihr hier.\n\n\nTabellen\nEine Tabelle muss nach folgender Markdown Syntax erstellt werden (siehe Quarto Tables):\n|Name |Gender|Age  |Origin | \n|-----|:-----|:---:|:-----:|\n|Jack |Male  |23   |USA    |\n|Susan|Female|22   |Canada |\n\n: Name der Tabelle {#tbl-names}\n\nDie erste Zeile ist die Tabellenüberschrift\nDie zweite Zeile beinhaltet Bindestriche “-” und optionalen Doppelpunkten “:”, um den Text in den Spalten auszurichten.\n\n:--- für die linke Ausrichtung\n:---: für die mittlere Ausrichtung\n---: für die rechte Ausrichtung\n\nDie weiteren Zeilen beinhalten der Tabelleninhalt.\nMit dem : unter der Tabelle kannst du den Namen der Tabelle definieren. Mit {#tbl-???} kannst du den Namen für einen Querverweise im Text erstellen. Dieser kann dann mittels @tbl-??? im Text aufrufen.\n\nEine praktische Hilfe für das Erstellen einer Tabelle ist der Tablesgenerator.\n\n\nBilder\nEin Bild kann ebenfalls via Markdown Syntax hinzugefügt werden. Zuerst folgt die Caption des Bildes, gefolgt vom Bild selbst. Mit {#fig-???} kannst du einen Querverweis für das Bild erstellen. Gleich wie bei der Tabelle kannst du ihn im Text mittels @fig-??? aufrufen.\n![Caption](../images/test.png){#fig-???}\nWeitere Information findet ihr auf Quarto.\n\n\nAufgabe\nSeht euch die Webseite an. Versucht nun die Struktur dieser Webseite so gut wie möglich in eurem Quarto Dokument nachzubauen. Nutzt dafür die oben beschriebenen Methoden. Das Bild findet ihr in den Übungsdaten.\nBenutze zudem die Cell Options, um euren Code sauber darzustellen. Nutzt dazu echo und output, um unnötige Cell Codes und Outputs nicht auszugeben. Benenne zudem alle eingeklappten Code Cells sinnvoll mittels code-summary.",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>64</span>  <span class='chapter-title'>Übung Visualisierung Zeckenstiche</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/2_Uebung_Zeckenstiche.html#übung-7-notebook-in-html-konvertieren-und-publizieren",
-    "href": "E_WebGIS_2/2_Uebung_Zeckenstiche.html#übung-7-notebook-in-html-konvertieren-und-publizieren",
-    "title": "Übung Visualisierung Zeckenstiche",
-    "section": "Übung 7: Notebook in HTML konvertieren und publizieren",
-    "text": "Übung 7: Notebook in HTML konvertieren und publizieren\nDamit wir nun unser Quarto Dokument publizieren können, müssen wir davon einen Output generieren.\nDazu nutzen wir wieder Quarto im Terminal. Aber anstelle des preview Commands nutzen wir den render Command, sprich quarto render NameQuartoDokument.qmd. Da wir in den Quarto Metadaten als Format HTML angegeben haben, wird Quarto ein HTML File generieren.\nErstellt nun einen neuen Ordner und kopiert euer HTML File hinein. Ändere den Namen des HTMLs auf index.html. Euer HTML werden wir nun kurzfristig auf Netlify publizieren. Öffnet dazu diesen Link und drag und drop euren eben erstellten Ordner. Über den angezeigten Link könnt ihr nun, nachdem ihr das automatisch generierte Passwort eingegeben habt, eine Stunde lang auf eure Webseite zugreifen.",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>64</span>  <span class='chapter-title'>Übung Visualisierung Zeckenstiche</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/3_Uebung_Leaflet.html",
-    "href": "E_WebGIS_2/3_Uebung_Leaflet.html",
-    "title": "(Optional) Übung Leaflet",
-    "section": "",
-    "text": "Übung 1: Erste Schritte mit HTML\nHTML Tutorial\nDie HyperText Markup Language (HTML) ist die Standard Markup Language für Inhalte, die in einem Webbrowser angezeigt werden sollen. Einfach ausgedrückt ist HTML die Sprache um den Inhalt einer Webseite zu definieren. Praktisch alle Webseiten basieren auf HTML.\nLass uns mit einem einfachen Editor eurer Wahl ein erstes einfaches HTML-Dokument erstellen.\nVorgeschlagene Editoren:\nÖffnet den Editor Eurer Wahl und erstellt eine grundlegende HTML-Struktur, indem ihr das folgende Codefragment einfügt.\nSpeichert das Dokument als index.html in Eurem Arbeitsverzeichnis ab und öffnet es in einem von euch bevorzugten Browser. Ihr solltet etwas ähnliches wie die folgende Abbildung sehen (Abbildung 65.1).\nAlle HTML-Dokumente müssen mit einer Dokumenttyp-Deklaration beginnen: &lt;!DOCTYPE html&gt;. Das HTML-Dokument selbst beginnt mit &lt;html&gt; und endet mit &lt;/html&gt;. Der sichtbare Teil des HTML-Dokuments liegt zwischen &lt;body&gt; und &lt;/body&gt;. In diesem Abschnitt haben wir unsere erste Überschrift &lt;h1&gt;&lt;/h1&gt; positioniert, sowie das HTML-Element &lt;p&gt;&lt;/p&gt;, welches einen Absatz innerhalb des Body-Abschnitts definiert. Mehr zum Thema fHTML-Elemente findet Ihr unter folgendem Link HTML Elemente.",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>65</span>  <span class='chapter-title'>(Optional) Übung Leaflet</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/3_Uebung_Leaflet.html#übung-1-erste-schritte-mit-html",
-    "href": "E_WebGIS_2/3_Uebung_Leaflet.html#übung-1-erste-schritte-mit-html",
-    "title": "(Optional) Übung Leaflet",
-    "section": "",
-    "text": "Sublimetext\nNotepad++\nAtom\n\n\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n    &lt;head&gt;\n        &lt;title&gt;Page title&lt;/title&gt;\n    &lt;/head&gt;\n    &lt;body&gt;\n        &lt;h1&gt;My first heading&lt;/h1&gt;\n        &lt;p&gt;The first paragraph.&lt;/p&gt;\n    &lt;/body&gt;\n&lt;/html&gt;\n\n\n\n\n\n\n\nAbbildung 65.1: Ihre Erste HTML-Seite",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>65</span>  <span class='chapter-title'>(Optional) Übung Leaflet</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/3_Uebung_Leaflet.html#übung-2-erste-schritte-mit-javascript-und-der-leaflet-bibliothek",
-    "href": "E_WebGIS_2/3_Uebung_Leaflet.html#übung-2-erste-schritte-mit-javascript-und-der-leaflet-bibliothek",
-    "title": "(Optional) Übung Leaflet",
-    "section": "Übung 2: Erste Schritte mit JavaScript und der Leaflet-Bibliothek",
-    "text": "Übung 2: Erste Schritte mit JavaScript und der Leaflet-Bibliothek\nJavaScript Tutorial\nIn der Welt der Webentwicklung ist HTML die Basis von allem, da es uns die Möglichkeit gibt, unsere Inhalte im Web darzustellen. Das, was die Dinge wirklich interessant und interaktiv macht, ist jedoch JavaScript. JavaScript ist im Moment die beliebteste Programmiersprache der Welt. Wenn HTML den Inhalt der Webseite definiert, definiert JavaScript dessen Verhalten. In HTML wird der JavaScript-Code zwischen den Tags &lt;script&gt; und &lt;/script&gt; in einem beliebigen Teil unseres HTML-Codes (Head oder Body) eingefügt.\nIn dieser Übung verwenden wir zur Entwicklung einer einfachen Webkarte die Library Leaflet. Leaflet ist die beliebteste Open-Source-JavaScript-Library für die Entwicklung interaktiver Webkarten. Ihr Hauptvorteil besteht darin, dass sie effizient auf allen wichtigen Desktop- und Mobilplattformen läuft und auf einer einfach zu verwendenden und gut dokumentierten Anwendungsprogrammierschnittstelle (API) basiert.\n\nGeht zurück in Euer HTML-Dokument, das Ihr in Übung 1 erstellt habt und löscht die Elemente &lt;h1&gt; und &lt;p&gt;, sodass nur noch der leere &lt;body&gt; übrig ist.\n\nAls nächsten Schritt werden wir ein &lt;div&gt;-Element für die Definition unserer Karte erstellen. Ein &lt;div&gt; HTML-Element ist ein allgemeiner Container, der keine Auswirkung auf den Inhalt oder das Layout hat, bis er in irgendeiner Art und Weise mit Hilfe einer Styling-Sprache angesteuert wird. Hier kommt der dritte wichtige Akteur der Webentwicklung ins Spiel. Nämlich die Sprache Cascading Style Sheets kurz CSS. CSS ist die Sprache, die verwendet wird, um ein HTML-Dokument zu gestalten und um zu beschreiben, wie unsere Inhalte im Web dargestellt werden sollen. In HTML wird der CSS-Code zwischen den Tags &lt;style&gt; und &lt;/style&gt; innerhalb der &lt;head&gt;-Tags eingefügt.\nCSS Tutorial\n\nErstellt ein div-Element, um die Karten-ID festzulegen, damit wir unsere Karte gestalten können.\n&lt;div id = \"map\"&gt;&lt;/div&gt;\nVerwendet den # CSS-Selektor CSS-Selektoren innerhalb der &lt;style&gt;&lt;/style&gt;-Tags, um unsere Karte auf Vollbild zu setzen, indem Ihr die absolute Positionierung in die Ecken setzen.\n&lt;style&gt;\n    #map {position: absolute; top: 0; bottom: 0; left: 0; right: 0;}\n&lt;/style&gt;\nNun werden wir die Leaflet-Bibliothek in unser File einbinden. Geht dazu auf Leaflet. Kopiert die folgenden zwei Codezeilen, welche die Leaflet CSS- und JavaScript-Dateien enthalten, in den Head-Bereich Eures HTML-Dokuments.\n&lt;link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.9.3/dist/leaflet.css\" integrity=\"sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=\" crossorigin=\"\" /&gt;\n&lt;script src=\"https://unpkg.com/leaflet@1.9.3/dist/leaflet.js\" integrity=\"sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=\" crossorigin=\"\"&gt;&lt;/script&gt;\nAls nächstes erstellen wir eine neue Variable (innerhalb von &lt;script&gt;&lt;/script&gt;), welcher wir unsere bereits definierte Karte zuweisen. Im Folgenden definieren wir das Zentrum unserer Karte sowie die gewünschte Schärfeebene.\nvar map = L.map('map', {center: [46.944, 8.028], zoom: 8}); // Focus on Switzerland\nUm einen geigneten Tile Layer zu finden, könnt Ihr die Website Maptiler durchforsten. Wählt eine Map die Euch gefällt aus, scrollt nach unten zu den Tiles und kopiert den Link (siehe Abbildung 65.2).\n\n\n\n\n\n\nAbbildung 65.2: Tile kopieren\n\n\n\n\nFügt den Link mit der Methode L.tileLayer() hinzu. Diese Methode von Leaflet erlaubt es uns den Tile Layer zu hosten (Leaflet-Erweiterungsmethoden). Aus Referenzierungsgründen ist es wichtig das Wir auch die Attribution hinzufügen (siehe Abbildung 65.3), welche am Ende der gleichen Webseite zu finden ist (Tipp: Ihr könnt diesen Schritt aus dem Code unten kopieren).\nFüge schliesslich alles mit der Methode addTo(map) zu unserer Karte hinzu.\n\n\n\n\n\n\nAbbildung 65.3: Kopieren der Attribution für die Nennung der Autoren\n\n\n\n\n\n\n\n\n\n\n\nTipp\n\n\n\nUm die Daten zu erhalten, müsst Ihr ein kostenloses Konto erstellen. (Ihr könnt dazu eure ZHAW-E-Mail-Konto verwenden).\n\n\nNachdem Ihr die oben genannten Schritte durchgeführt habt, sollte Euer Code wie folgt aussehen:\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n    &lt;head&gt;\n        &lt;link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.9.3/dist/leaflet.css\" integrity=\"sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=\" crossorigin=\"\" /&gt;\n        &lt;script src=\"https://unpkg.com/leaflet@1.9.3/dist/leaflet.js\" integrity=\"sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=\" crossorigin=\"\"&gt;&lt;/script&gt;\n        &lt;style&gt;\n            #map {position: absolute; top: 0; bottom: 0; left: 0; right: 0;}\n        &lt;/style&gt;\n    &lt;/head&gt;\n    &lt;body&gt;\n        &lt;div id = \"map\"&gt;&lt;/div&gt;\n        &lt;script&gt;\n            var map = L.map('map', {center: [46.944, 8.028],zoom: 8});\n            L.tileLayer('https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=4X87DmrzALHNsvjVPyhW', {attribution: '&lt;a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"&gt;&copy; MapTiler&lt;/a&gt; &lt;a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"&gt;&copy; OpenStreetMap contributors&lt;/a&gt;'}).addTo(map);\n        &lt;/script&gt;\n    &lt;/body&gt;\n&lt;/html&gt;\n\nSpeichert das Dokument (index.html) und öffnet es in Eurem bevorzugten Browser. Das Ergebnis sollte ähnlich aussehen wie Abbildung 65.4.\n\n\n\n\n\n\n\nAbbildung 65.4: Interaktive Webkarte mit Leaflet JavaScript-Bibliothek",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>65</span>  <span class='chapter-title'>(Optional) Übung Leaflet</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/3_Uebung_Leaflet.html#übung-3-geojson-datei-zur-webkarte-hinzufügen",
-    "href": "E_WebGIS_2/3_Uebung_Leaflet.html#übung-3-geojson-datei-zur-webkarte-hinzufügen",
-    "title": "(Optional) Übung Leaflet",
-    "section": "Übung 3: GeoJson-Datei zur Webkarte hinzufügen",
-    "text": "Übung 3: GeoJson-Datei zur Webkarte hinzufügen\nGeoJson ist ein sehr verbreitetes Dateiformat zur Kodierung einer Vielzahl von geografischen Datenstrukturen. In der Webkartenentwicklung können GeoJson Variablen innerhalb einer JavaScript-Datei zugewiesen werden.\n\nLadet von Moodle die Übungsdateien herunter und speichert alles im gleichen Ordner, in dem Euer Dokument index.html liegt. Einer der Hauptvorteile von JavaScript ist, dass es sich gut in ein HTML-Dokument integrieren lässt. Mit den Tags `&lt;script&gt;&lt;/script&gt; können wir beliebig viele JavaScript-Dateien mit dem Haupt-HTML-Dokument verknüpfen. Dies werden wir mit der Datei kantons.js tun.\nVerknüpft die Datei kantons.js im Head Eueres Dokuments (nach dem Leaflet Script) wie folgt:\n&lt;script src=\"kantons.js\"&gt;&lt;/script&gt;\nÖffnet nun die Datei kantons.js und kopiert den Namen der Variable, in der die Geojson-Daten gespeichert sind. Fügt diese anschliessend wie folgt zu Eurer Karte hinzu:\nL.geoJSON(nameOfTheVariable).addTo(map); \n\nNach dem Speichern und Aktualisieren Eures index.html-Dokuments sollte Eure Karte wie Abbildung 65.5 aussehen.\n\n\n\n\n\n\nAbbildung 65.5: Interaktive Webkarte mit den Kantonen der Schweiz",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>65</span>  <span class='chapter-title'>(Optional) Übung Leaflet</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/3_Uebung_Leaflet.html#übung-4-farbe-in-die-webkarte-einbringen",
-    "href": "E_WebGIS_2/3_Uebung_Leaflet.html#übung-4-farbe-in-die-webkarte-einbringen",
-    "title": "(Optional) Übung Leaflet",
-    "section": "Übung 4: Farbe in die Webkarte einbringen",
-    "text": "Übung 4: Farbe in die Webkarte einbringen\nDas Ziel dieser Übung ist die Entwicklung einer interaktiven Choroplethenkarte. Jeder der räumlichen Einheiten (Kanton der Schweiz), wird eine Farbe zugewiesen. Jede Farbe basiert dabei auf einem spezifischen Geojson-Attribut, in unserem Fall die Bevölkerungszahl jedes Kantons.\n\nÖffnet erneut die Datei kantons.js und untersuchet die Geojson-Datei. Suchet nach dem Attribut welches die Bevölkerungszahl der Kantone representiert (siehe Abbildung 65.6).\n\n\n\n\n\n\n\nAbbildung 65.6: JavaScript-Datei mit einer Sammlung von geografischen Datenstrukturen im Geojson-Format\n\n\n\n\nAls Nächstes werden wir die folgenden beiden Funktionen (getColor(d), style(feature)) verwenden, um jedem Kanton eine Farbe auf der Grundlage seiner Bevölkerungszahl zuzuweisen. Kopiert die folgenden Funktionen und fügt diese nach der map-Variablen in Euer Dokument ein.\nfunction getColor(d) {\n    return d &gt; 1000000 ? '#084594' :\n    d &gt; 500000 ? '#2171b5' :\n    d &gt; 200000 ? '#4292c6' :\n    d &gt; 100000 ? '#6baed6' :\n    d &gt; 50000 ? '#9ecae1' :\n    d &gt; 20000 ? '#c6dbef' :\n    d &gt; 10000 ? '#deebf7' :\n    '#f7fbff';\n}\n\nfunction style(feature) {\n    return {\n        // using the population property as argument\n        fillColor: getColor(feature.properties.Bevolkerung),\n        weight: 2,\n        opacity: 1,\n        color: 'white',\n        dashArray: '3',\n        fillOpacity: 0.7\n    };\n}\nDie erste Funktion (getColor(d)) gibt das Argument d als Farbcode (z.B. #9ecae1) zurück, nachdem dessen Wert überprüft wurde. Wenn d zum Beispiel grösser als 1’000’000 ist, erhalten wir die Farbe #084594.\nDie Funktion (getColor(d)) wird dann innerhalb der zweiten Funktion (style(feature)) aufgerufen und nimmt als Argument das Attribut Bevolkerung der Variable kantons, die in der Datei kantons.js gespeichert ist. Schliesslich weist die Funktion style(feature) als Füllfarbe (fillColor) das Ergebnis der Funktion getColor(d) zu.\nWir fügen nun als Style-Eigenschaft unseres L.geoJson-Objekts die Funktion style(feature) wie folgt hinzu:\nL.geoJSON(kantons, {style: style}).addTo(map); \n\nNachdem Euer Dokument gespeichert und Euer Browser aktualisiert ist, sollte Eure Karte wie Abbildung 65.7 aussehen.\n\n\n\n\n\n\nAbbildung 65.7: Web Interaktive Choroplethenkarte mit den Kantonen der Schweiz",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>65</span>  <span class='chapter-title'>(Optional) Übung Leaflet</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/3_Uebung_Leaflet.html#übung-5-hinzufügen-von-interaktion-zur-webkarte",
-    "href": "E_WebGIS_2/3_Uebung_Leaflet.html#übung-5-hinzufügen-von-interaktion-zur-webkarte",
-    "title": "(Optional) Übung Leaflet",
-    "section": "Übung 5: Hinzufügen von Interaktion zur Webkarte",
-    "text": "Übung 5: Hinzufügen von Interaktion zur Webkarte\nNachdem wir die Choroplethenkarte entwickelt haben, wäre es schön, wenn wir ihr etwas Interaktivität geben könnten. Dazu verwenden wir eine der wichtigsten Funktionen von JavaScript, den Event Listener. Kurz gesagt definieren Event Listener die Art und Weise, wie die Endbenutzer mit dem Webinhalt interagieren können. Der wohl bekannteste ist der Onclick-Listener. Onclick-Listener definieren, was passiert, wenn der Benutzer irgendwo auf der Seite klickt. In unserem Fall ist es unser Ziel, dass wir auf jede räumlichen Einheiten (Kantone) in unserer Karte klicken können und wir im Gegenzug möglichst viele Informationen zurückerhalten. Genauer gesagt wollen wir, dass bei jedem Klick auf einen Kanton der Name und die Bevölkerungszahl auf dem Bildschirm angezeigt wird.\nIn einem ersten Schritt müssen wir sicherstellen, dass unsere GeoJSON-Ebene über eine Variable zugänglich ist, indem wir sie vor unseren Listenern definieren.\n\nErstellt eine Variable mit dem Namen geojson, direkt nach der Variable map wie folgt:\nvar map = L.map(\"map\", {center: [46.984, 8.950], zoom:7}); // focus on Switzerland\nvar geojson;\nZuerst definieren wir, was bei einem Klick passieren soll. In userem Fall soll ein Popup mit dem Namen und der Bevölkerungszahl des Kontons erscheinen. Die Funktion sieht wie folgt aus:\nfunction showInfo(e) {\n    geojson.bindPopup(\"Kanton: \" + \" \" + e.target.feature.properties.NAME + \n    '&lt;/b&gt;&lt;br /&gt;' + \n    \"Bevolkerung: \" + e.target.feature.properties.Bevolkerung);\n}\nIn der obigen Funktion (showInfo(e)) verknüpfen wir mit unserer Geojson-Variable ein Popup-Objekt (Leaflet popup), in das wir einen Text sowie die Attribute NAME und Bevolkerung jedes der in unserem e.target-Objekt enthaltenen räumlichen Merkmale einbinden. In unserem Fall ist das e.target-Objekt die Variable kantons (gespeichert in der Datei kantons.js). (Mehr über e.target)\nAls nächsten Schritt verwenden wir die Funktion onEachFeature, um die Funktion showInfo(e) mit dem onclick-Listener zu verknüpfen. Dies ist die Standardfunktion zur Verknüpfung der JavaScript-Listener mit den jeweiligen Funktionen, die für die Ausführung einer bestimmten Aufgabe erstellt wurden. Wir hätten zum Beispiel eine andere Funktion definieren können, die jedes Mal aufgerufen wird, wenn wir den Mauszeiger über ein bestimmtes Element unserer HTML-Struktur bewegen. In unserem Fall definieren wir den onclick listener wie folgt:\nfunction onEachFeature(feature, layer) {\n    layer.on({\n        click: showInfo\n    });\n}\nDer letzte Schritt besteht darin, unsere GeoJSON-Ebene anzupassen, indem wir ihr die Option onEachFeature hinzufügen (L.geoJson documentation).\ngeojson = L.geoJson(kantons, {\n    style: style,\n    onEachFeature: onEachFeature\n}).addTo(map);\n\nNachdem Ihr Eure HTML-Struktur aktualisiert habt, speichert Eure Datei index.html und aktualisiert den Browser. Versucht nun auf der Karte herumzuklicken und schaut was passiert. Ihr solltet etwas ähnliches sehen wie Abbildung 65.8.\n\n\n\n\n\n\nAbbildung 65.8: Web Interaktive Choroplethenkarte mit den Kantonen der Schweiz (mit Interaktivität)",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>65</span>  <span class='chapter-title'>(Optional) Übung Leaflet</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/3_Uebung_Leaflet.html#übung-6-der-webkarte-eine-legende-hinzufügen",
-    "href": "E_WebGIS_2/3_Uebung_Leaflet.html#übung-6-der-webkarte-eine-legende-hinzufügen",
-    "title": "(Optional) Übung Leaflet",
-    "section": "Übung 6: Der Webkarte eine Legende hinzufügen",
-    "text": "Übung 6: Der Webkarte eine Legende hinzufügen\nUm eine Legende zu unserer Webkarte hinzuzufügen, werden wir JavaScript und CSS verwenden.\n\nVerwendet die beiden verbleibenden Dateien control.js und control.css (zu finden im Ordner data). Speichert diese beiden Dateien in Eurem Arbeitsverzeichnis (der Pfad, in dem sich auch index.html und kantons.js befinden)\nVerknüpft diese beiden Dateien mit Eurem Haupt-HTML-Dokument am Ende des Body-Abschnitts wie folgt.\n&lt;!-- Linking the js and css code for the legend --&gt;\n&lt;script src=\"control.js\"&gt;&lt;/script&gt;\n&lt;link rel=\"stylesheet\" type=\"text/css\" href=\"control.css\"/&gt;\nSpeichert die Datei index.html und aktualisieren die Browserseite. Die Webseite sollte nun wie Abbildung 65.9 aussehen.\n\n\n\n\n\n\n\nAbbildung 65.9: Web Interaktive Choroplethenkarte mit den Kantonen der Schweiz (Endgültige Version)\n\n\n\nÖffnet die beiden Dateien, die Ihr zuletzt zur Karte hinzugefügt habt, und versucht, den darin enthaltenen Code zu interpretieren. Versucht, etwas zu ändern und seht anschliessend, wie sich diese Aktion auf Eure Karte auswirkt.\nGlückwunsch!! Ihr habt soeben Eure erste voll funktionsfähige interaktive Webkarte erstellt und dabei nur die grundlegenden Webtechnologien verwendet. Man könnte dieses HTML nun zum Beispiel über Netlify Drop Online zur Verfügung stellen.",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>65</span>  <span class='chapter-title'>(Optional) Übung Leaflet</span>"
-    ]
-  },
-  {
-    "objectID": "E_WebGIS_2/3_Uebung_Leaflet.html#endgültige-lösung",
-    "href": "E_WebGIS_2/3_Uebung_Leaflet.html#endgültige-lösung",
-    "title": "(Optional) Übung Leaflet",
-    "section": "Endgültige Lösung",
-    "text": "Endgültige Lösung\nindex.html\n&lt;!DOCTYPE html&gt;\n&lt;html&gt;\n    &lt;head&gt;\n        &lt;link rel=\"stylesheet\" href=\"https://unpkg.com/leaflet@1.9.3/dist/leaflet.css\" integrity=\"sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=\" crossorigin=\"\" /&gt;\n        &lt;script src=\"https://unpkg.com/leaflet@1.9.3/dist/leaflet.js\" integrity=\"sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=\" crossorigin=\"\"&gt;&lt;/script&gt;\n        &lt;script src=\"kantons.js\"&gt;&lt;/script&gt;\n        &lt;style&gt;\n            #map {position: absolute; top: 0; bottom: 0; left: 0; right: 0;}\n        &lt;/style&gt;\n    &lt;/head&gt;\n    &lt;body&gt;\n        &lt;div id = \"map\"&gt;&lt;/div&gt;\n        &lt;script&gt;\n            var map = L.map('map', {center: [46.944, 8.028],zoom: 8});\n            var geojson;\n            // function for coloring the cantons based on their population property\n            \n            function getColor(d) {\n                return d &gt; 1000000 ? '#084594' :\n                d &gt; 500000 ? '#2171b5' :\n                d &gt; 200000 ? '#4292c6' :\n                d &gt; 100000 ? '#6baed6' :\n                d &gt; 50000 ? '#9ecae1' :\n                d &gt; 20000 ? '#c6dbef' :\n                d &gt; 10000 ? '#deebf7' :\n                '#f7fbff';\n            }\n            \n            function style(feature) {\n                return {\n                    fillColor: getColor(feature.properties.Bevolkerung), // using the population property as argument\n                    weight: 2,\n                    opacity: 1,\n                    color: 'white',\n                    dashArray: '3',\n                    fillOpacity: 0.7\n               };\n           }\n           \n            function showInfo(e) {\n                geojson.bindPopup(\"Kanton: \" + \" \" + e.target.feature.properties.NAME + '&lt;/b&gt;&lt;br/&gt;' + \"Bevolkerung: \" + e.target.feature.properties.Bevolkerung);\n            }\n            \n            function onEachFeature(feature, layer) {\n                layer.on({\n                    click: showInfo\n                });\n            }\n            \n            L.tileLayer('https://api.maptiler.com/maps/streets-v2/256/{z}/{x}/{y}.png?key=4X87DmrzALHNsvjVPyhW', {attribution: '&lt;a href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"&gt;&copy; MapTiler&lt;/a&gt; &lt;a href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"&gt;&copy; OpenStreetMap contributors&lt;/a&gt;'}).addTo(map);\n\n            geojson = L.geoJson(kantons, {\n                style: style,\n                onEachFeature: onEachFeature\n            }).addTo(map);\n        &lt;/script&gt;\n        \n        &lt;!-- Linking the js and css code for the legend --&gt;\n        &lt;script src=\"control.js\"&gt;&lt;/script&gt;\n        &lt;link rel=\"stylesheet\" type=\"text/css\" href=\"control.css\"/&gt;\n    &lt;/body&gt;\n&lt;/html&gt;",
-    "crumbs": [
-      "WebGIS II",
-      "<span class='chapter-number'>65</span>  <span class='chapter-title'>(Optional) Übung Leaflet</span>"
     ]
   }
 ]

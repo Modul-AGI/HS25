@@ -817,57 +817,6 @@ window.Quarto = {
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">🌍 Teil: WebGIS</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_1/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS I</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/2_Uebung_Web_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Web Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/3_Uebung_Story_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Story Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/4_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_2/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS II</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/2_Uebung_Zeckenstiche.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Visualisierung Zeckenstiche</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/3_Uebung_Leaflet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">(Optional) Übung Leaflet</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -922,7 +871,7 @@ window.Quarto = {
 <section id="sec-ex-functions-bmi" class="level2">
 <h2 class="anchored" data-anchor-id="sec-ex-functions-bmi">Übung 7.3</h2>
 <p>Erstelle eine Funktion namens <code>bmi</code>, die aus Grösse und Gewicht einen BodyMassIndex berechnet (<span class="math inline">\(BMI=\frac{m}{l^2}\)</span>, <span class="math inline">\(m\)</span>: Körpermasse in Kilogramm, <span class="math inline">\(l\)</span>: Körpergrösse in Meter). Das Resultat soll etwa folgendermassen aussehen:</p>
-<div id="f1040902" class="cell" data-execution_count="7">
+<div id="12f1674e" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bmi(groesse_m <span class="op">=</span> <span class="fl">1.8</span>, gewicht_kg <span class="op">=</span> <span class="dv">88</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>27.160493827160494</code></pre>
@@ -933,7 +882,7 @@ window.Quarto = {
 <section id="übung-7.4" class="level2">
 <h2 class="anchored" data-anchor-id="übung-7.4">Übung 7.4</h2>
 <p>Erstelle eine Funktion <code>mittelwert()</code>, welche den Mittelwert aus einer Liste (<code>List</code>) von Zahlen berechnet. Nutze dazu <code>sum()</code> und <code>len()</code> analog <a href="../C_Programmieren_1/6_Uebung_2.html#sec-mittelwert" class="quarto-xref"><span>Uebung 2.6</span></a>. Das Resultat sollte folgendermassen aussehen:</p>
-<div id="e1f1955a" class="cell" data-execution_count="9">
+<div id="9639dfc4" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>meine_zahlen <span class="op">=</span> [<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">550</span>, <span class="dv">1000</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>mittelwert(meine_zahlen)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="9">
@@ -946,7 +895,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="übung-7.5">Übung 7.5</h2>
 <p>Erstelle eine Funktion <code>celsius_zu_farenheit</code>, welche eine beliebige Zahl von Grad Celsius in Grad Farenheit konvertiert. Zur Erinnerung: <em>Temperatur in °F = Temperatur in °C x 1,8 + 32</em>.</p>
 <p>Das Resultat sollte folgendermassen aussehen:</p>
-<div id="0da80aa4" class="cell" data-execution_count="11">
+<div id="2d7e2b55" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>celsius_zu_farenheit(celsius <span class="op">=</span> <span class="dv">25</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
 <pre><code>77.0</code></pre>

@@ -788,57 +788,6 @@ window.onload = function() {
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">🌍 Teil: WebGIS</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_1/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS I</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/2_Uebung_Web_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Web Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/3_Uebung_Story_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Story Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/4_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_2/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS II</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/2_Uebung_Zeckenstiche.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Visualisierung Zeckenstiche</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/3_Uebung_Leaflet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">(Optional) Übung Leaflet</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -873,7 +822,7 @@ window.onload = function() {
 <p>Ein Grundprinzip von Programmieren ist “DRY” (<em>Don’t repeat yourself</em>). Wenn unser Script viele ähnliche Codezeilen enthält ist das ein Zeichen dafür, dass man besser eine <em>Function</em> schreiben sollte. Das hat viele Vorteile: Unter anderem wird der Code lesbarer, einfacher zu warten und kürzer.</p>
 <p>Um mit Python gut zurechtzukommen ist das Schreiben von eigenen <em>Functions</em> unerlässlich. Dies ist auch nicht weiter schwierig: Eine <em>Function</em> wird mit <code>def</code> eingeleitet, braucht einen Namen, einen Input und einen Output.</p>
 <p>Wenn wir zum Beispiel eine Function erstellen wollen die uns grüsst, so geht dies folgendermassen:</p>
-<div id="effc7d13" class="cell" data-execution_count="1">
+<div id="a16348c2" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sag_hallo():</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Hallo!"</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -886,30 +835,30 @@ window.onload = function() {
 <li>Die letzte eingerückte Zeile (in unserem Fall ist das die einzige Zeile) gibt mit <code>return</code> an, was die <em>Function</em> zurück geben soll (der Output). In unserem Fall soll sie “Hallo!” zurück geben.</li>
 </ul>
 <p>Das war’s schon! Jetzt können wir diese <em>Function</em> schon nutzen:</p>
-<div id="b76758cc" class="cell" data-execution_count="2">
+<div id="73b8ab04" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>sag_hallo()</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>'Hallo!'</code></pre>
 </div>
 </div>
 <p>Diese <em>Function</em> ohne Input ist wenig nützlich. Meist wollen wir der <em>Function</em> etwas - einen Input - übergeben können. Beispielsweise könnten wir der <em>Function</em> unseren Vornamen übergeben, damit wir persönlich gegrüsst werden:</p>
-<div id="af94847d" class="cell" data-execution_count="3">
+<div id="5f9a8557" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sag_hallo(vorname):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Hallo "</span> <span class="op">+</span> vorname <span class="op">+</span> <span class="st">"!"</span> </span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Nun können wir der Function ein Argument übergeben. In folgendem Beispiel ist <code>vorname</code> ein Parameter, “Guido” ist sein Argument.</p>
-<div id="6772e0a2" class="cell" data-execution_count="4">
+<div id="984d69e5" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sag_hallo(vorname <span class="op">=</span> <span class="st">"Guido"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>'Hallo Guido!'</code></pre>
 </div>
 </div>
 <p>Wir können auch eine <em>Function</em> gestalten, die mehrere Parameter annimmt. Beispielweise könnte <code>sag_hallo()</code> zusätzlich noch einen Parameter <code>nachname</code> erwarten:</p>
-<div id="1d3e231a" class="cell" data-execution_count="5">
+<div id="0c08366c" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sag_hallo(vorname, nachname):</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Hallo "</span> <span class="op">+</span> vorname <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> nachname <span class="op">+</span> <span class="st">"!"</span> </span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="4f425397" class="cell" data-execution_count="6">
+<div id="2d4887c2" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>sag_hallo(vorname <span class="op">=</span> <span class="st">"Guido"</span>, nachname <span class="op">=</span> <span class="st">"van Rossum"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>'Hallo Guido van Rossum!'</code></pre>

@@ -58,7 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -143,7 +143,7 @@ window.onload = function() {
 };
 
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
 
 <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
@@ -791,57 +791,6 @@ window.onload = function() {
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">🌍 Teil: WebGIS</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_1/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS I</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/2_Uebung_Web_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Web Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/3_Uebung_Story_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Story Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/4_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_2/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS II</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/2_Uebung_Zeckenstiche.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Visualisierung Zeckenstiche</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/3_Uebung_Leaflet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">(Optional) Übung Leaflet</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -874,10 +823,14 @@ window.onload = function() {
 
 
 <p>Schauen wir uns nochmals die <em>Dictionary</em> <code>people</code> aus der letzten Übung an. Diese ist ein Spezialfall einer Dictionary: Jeder Eintrag besteht aus einer Liste von gleich vielen Werten. Wie bereits erwähnt, kann es in einem solchen Fall sinnvoll sein, die Dictionary als Tabelle darzustellen.</p>
-<div id="47bddd2b" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>people <span class="op">=</span> {<span class="st">"vornamen"</span>: [<span class="st">"Christopher"</span>, <span class="st">"Henning"</span>, <span class="st">"Severin"</span>], <span class="st">"nachnamen"</span>: [<span class="st">"Annen"</span>,<span class="st">"May"</span>, <span class="st">"Kantereit"</span>], <span class="st">"groessen"</span>: [<span class="dv">174</span>, <span class="dv">182</span>, <span class="dv">162</span>]}</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="535b914e" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>people <span class="op">=</span> {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="st">"vornamen"</span>: [<span class="st">"Christopher"</span>, <span class="st">"Henning"</span>, <span class="st">"Severin"</span>], </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="st">"nachnamen"</span>: [<span class="st">"Annen"</span>,<span class="st">"May"</span>, <span class="st">"Kantereit"</span>], </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">"groessen"</span>: [<span class="dv">174</span>, <span class="dv">182</span>, <span class="dv">162</span>]</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  }</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="6c0cdffa" class="cell" data-execution_count="2">
+<div id="43e74185" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd <span class="co"># Was diese Zeile beudeutet lernen wir später</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>people_df <span class="op">=</span> pd.DataFrame(people)</span>

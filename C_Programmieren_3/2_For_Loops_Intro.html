@@ -788,57 +788,6 @@ window.onload = function() {
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">🌍 Teil: WebGIS</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_1/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS I</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/2_Uebung_Web_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Web Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/3_Uebung_Story_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Story Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/4_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_2/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS II</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/2_Uebung_Zeckenstiche.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Visualisierung Zeckenstiche</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/3_Uebung_Leaflet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">(Optional) Übung Leaflet</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -881,7 +830,7 @@ window.onload = function() {
 <section id="die-grundform" class="level2">
 <h2 class="anchored" data-anchor-id="die-grundform">Die Grundform</h2>
 <p>Nirgends ist der Aspekt der Automatisierung so sichtbar wie in <em>for loops</em>. Loops sind “Schleifen” wo eine Aufgabe beliebig lange wiederholt wird. Auch <em>for loops</em> sind im Grunde genommen simple. Auf den ersten Blick sieht eine <em>for loop</em> aus wie eine <em>Function</em> definition (siehe <a href="../C_Programmieren_2/4_Functions_I.html" class="quarto-xref"><span>Function Basics</span></a> und <a href="../C_Programmieren_2/6_Functions_II.html" class="quarto-xref"><span>Function Advanced</span></a>). Im folgenden Beispiel seht ihr ein minimales Beispiel einer <em>for loop</em>.</p>
-<div id="f8a39f08" class="cell" data-execution_count="1">
+<div id="a85f3e28" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> platzhalter <span class="kw">in</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>]:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Iteration"</span>,platzhalter)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -904,7 +853,7 @@ Iteration 2</code></pre>
 <h2 class="anchored" data-anchor-id="der-iterator">Der Iterator</h2>
 <p>Im obigen Beispiel haben wir über eine <em>List</em> iteriert, wir haben also eine Liste als Iterator verwendet. Es gibt aber noch andere “Dinge”, über die wir iterieren können. Angenommen wir wollen den gleichen <em>for loop</em> mit den Zahlen von 0 bis 100 oder 100 bis 1’000 durchführen. Es wäre ganz schön mühsam, alle Zahlen von 0 bis 100 manuell in einer Liste zu erfassen. Zu diesem Zweck können wir die Funktion <code>range</code> verwenden. Mit <code>range(3)</code> erstellen wir einen Iterator mit den Werten 0, 1 und 2. Mit <code>range(100,1001)</code> erhalten wir die Werte von 100 bis 1’000.</p>
 <p>Der gleiche <em>loop</em> wie oben lautet mit <code>range</code> folgendermassen:</p>
-<div id="d9ccf4e1" class="cell" data-execution_count="2">
+<div id="4d2a0535" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> platzhalter <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Iteration"</span>,platzhalter)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">

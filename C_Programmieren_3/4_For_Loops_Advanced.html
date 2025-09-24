@@ -788,57 +788,6 @@ window.onload = function() {
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">🌍 Teil: WebGIS</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_1/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS I</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/2_Uebung_Web_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Web Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/3_Uebung_Story_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Story Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/4_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_2/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS II</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/2_Uebung_Zeckenstiche.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Visualisierung Zeckenstiche</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/3_Uebung_Leaflet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">(Optional) Übung Leaflet</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -897,7 +846,7 @@ Hinweis
 </div>
 </div>
 </div>
-<div id="13f2a550" class="cell" data-execution_count="1">
+<div id="3d61e9b1" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>eltern <span class="op">=</span> [<span class="st">"Papa"</span>, <span class="st">"Mama"</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>band <span class="op">=</span> [<span class="st">"Il Buono"</span>, <span class="st">"Il Brutto"</span>, <span class="st">"Il Cattivo"</span>]</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -963,7 +912,7 @@ We like to party!
 <section id="verkürzte-schreibweise" class="level2">
 <h2 class="anchored" data-anchor-id="verkürzte-schreibweise">Verkürzte Schreibweise</h2>
 <p>Es ist äusserst häufig der Fall, dass wir den Output aus einem Loop in einer Liste abspeichern wollen. Wie das geht haben wir ja bereits in <a href="3_For_Loops_Basics.html" class="quarto-xref"><span>Basic for loop</span></a> gelernt:</p>
-<div id="ca9453e3" class="cell" data-execution_count="2">
+<div id="781d26d1" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>rollen <span class="op">=</span> [<span class="st">"bitch"</span>,<span class="st">"lover"</span>,<span class="st">"child"</span>,<span class="st">"mother"</span>,<span class="st">"sinner"</span>,<span class="st">"saint"</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>refrain <span class="op">=</span> []</span>
@@ -972,11 +921,11 @@ We like to party!
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    refrain.append(liedzeile)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Nur ist das ein <em>bisschen</em> umständlich, weil wir dafür viele Zeilen Code brauchen, um etwas eigentlich ganz simples zu bewerkstelligen. Es gibt deshalb dafür auch eine verkürzte Schreibweise, welche ich in der letzten Woche bereits einmal verwendet habe (siehe <a href="../C_Programmieren_2/11_Uebung_9.html#sec-offset-vis" class="quarto-xref"><span>Übung 9.6</span></a>). Der obige Loop hat in der verkürzten Schreibweise die folgende Form:</p>
-<div id="b09bcc24" class="cell" data-execution_count="3">
+<div id="4b3c3ffb" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>refrain <span class="op">=</span> [<span class="st">"I'm a "</span><span class="op">+</span> rolle <span class="cf">for</span> rolle <span class="kw">in</span> rollen]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Diese verkürzte Schreibweise heisst in Python <em>list comprehension</em> und sie ist äusserst praktisch, wenn man sie beherrscht. Das Beherrschen ist aber nicht zentral, es reicht schon wenn ihr eine solche Schreibweise wieder erkennt und richtig interpretieren könnt (im Sinne von “<em>Aha, hier wird also in einem Loop eine Liste erstellt</em>”). In der folgenden Darstellung seht ihr farblich, welche Elemente sich in der verkürzten Schreibweise wo wiederfinden und welche Elemente gar nicht wiederverwendet werden.</p>
-<div id="1f777abc" class="cell" data-execution_count="4">
+<div id="facd4c73" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>rollen <span class="op">=</span> [<span class="st">"bitch"</span>,<span class="st">"lover"</span>,<span class="st">"child"</span>,<span class="st">"mother"</span>,<span class="st">"sinner"</span>,<span class="st">"saint"</span>]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="columns">

@@ -20,41 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -817,57 +782,6 @@ window.Quarto = {
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">🌍 Teil: WebGIS</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_1/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS I</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/2_Uebung_Web_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Web Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/3_Uebung_Story_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Story Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/4_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_2/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS II</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/2_Uebung_Zeckenstiche.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Visualisierung Zeckenstiche</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/3_Uebung_Leaflet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">(Optional) Übung Leaflet</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -928,85 +842,30 @@ Tipp&nbsp;18.1
 <section id="übung-1.1" class="level2">
 <h2 class="anchored" data-anchor-id="übung-1.1">Übung 1.1</h2>
 <p>Erstelle eine Variabel <code>vorname</code> mit deinem Vornamen und eine zweite Variabel <code>nachname</code> mit deinem Nachnamen. Was sind <code>vorname</code> und <code>nachname</code> für Datentypen?</p>
-<div id="7b45d67c" class="cell" data-execution_count="1">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>vorname <span class="op">=</span> <span class="st">"Guido"</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>nachname <span class="op">=</span> <span class="st">"van Rossum"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(vorname) <span class="co"># es handelt sich um den Datentyp "str", also String (Text)   </span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-1.2" class="level2">
 <h2 class="anchored" data-anchor-id="übung-1.2">Übung 1.2</h2>
 <p>“Klebe” Vor- und Nachname mit einem Leerschlag dazwischen zusammen.</p>
-<div id="bf38f314" class="cell" data-execution_count="2">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>vorname <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> nachname</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-1.3" class="level2">
 <h2 class="anchored" data-anchor-id="übung-1.3">Übung 1.3</h2>
 <p>Erstelle eine Variabel <code>groesse_cm</code> mit deiner Körpergrösse in Zentimeter. Was ist das für ein Datentyp?</p>
-<div id="7dd220ec" class="cell" data-execution_count="3">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>groesse_cm <span class="op">=</span> <span class="dv">184</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(groesse_cm) <span class="co"># es handelt sich hierbei um den Datentyp "integer"</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-1.4" class="level2">
 <h2 class="anchored" data-anchor-id="übung-1.4">Übung 1.4</h2>
 <p>Ermittle deine Grösse in Fuss auf der Basis von <code>groesse_cm</code> (1 Fuss entspricht 30.48 cm). Was ist das für ein Datentyp?</p>
-<div id="f5efdc64" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>groesse_fuss <span class="op">=</span> groesse_cm <span class="op">/</span> <span class="fl">30.48</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(groesse_fuss) <span class="co"># es handelt sich um den Datentyp "float"</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-1.5" class="level2">
 <h2 class="anchored" data-anchor-id="übung-1.5">Übung 1.5</h2>
 <p>Erstelle eine boolsche Variable blond und setzte sie auf <code>True</code>, wenn diese Eigenschaft auf dich zutrifft, und <code>False</code>, falls nicht.</p>
-<div id="5266a2aa" class="cell" data-execution_count="5">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>blond <span class="op">=</span> <span class="va">False</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-1.6" class="level2">
 <h2 class="anchored" data-anchor-id="übung-1.6">Übung 1.6</h2>
 <p>Erstelle eine Variabel <code>einwohner</code> mit der Einwohnerzahl der Schweiz (8’603’900, per 31. Dezember 2019). Erstelle eine zweite Variabel <code>flaeche</code> (ohne Umlaute!) mit der Flächengrösse der Schweiz (41’285 km<span class="math inline">\(^2\)</span>). Berechne nun die Einwohnerdichte.</p>
-<div id="4c4cdf21" class="cell" data-execution_count="6">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>einwohner <span class="op">=</span> <span class="dv">8603900</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>flaeche <span class="op">=</span> <span class="dv">41285</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>dichte <span class="op">=</span> einwohner <span class="op">/</span> flaeche</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>dichte</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-1.7" class="level2">
 <h2 class="anchored" data-anchor-id="übung-1.7">Übung 1.7</h2>
 <p>Erstelle eine Variabel <code>gewicht_kg</code> (kg) und <code>groesse_m</code> (m) und berechne aufgrund von <code>gewicht_kg</code> und <code>groesse_m</code> ein BodyMassIndex (<span class="math inline">\(BMI=\frac{m}{l^2}\)</span>, <span class="math inline">\(m\)</span>: Körpermasse in Kilogramm, <span class="math inline">\(l\)</span>: Körpergrösse in Meter).</p>
-<div id="8af8ade6" class="cell" data-execution_count="7">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>gewicht_kg <span class="op">=</span> <span class="dv">85</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>groesse_m <span class="op">=</span> groesse_cm <span class="op">/</span> <span class="dv">100</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>gewicht_kg <span class="op">/</span> (groesse_m <span class="op">*</span> groesse_m)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 
 
 </section>

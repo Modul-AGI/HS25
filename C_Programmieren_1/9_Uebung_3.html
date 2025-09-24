@@ -788,57 +788,6 @@ window.onload = function() {
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">🌍 Teil: WebGIS</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_1/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS I</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/2_Uebung_Web_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Web Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/3_Uebung_Story_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Story Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/4_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_2/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS II</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/2_Uebung_Zeckenstiche.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Visualisierung Zeckenstiche</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/3_Uebung_Leaflet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">(Optional) Übung Leaflet</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -886,83 +835,35 @@ window.onload = function() {
 <section id="übung-3.1" class="level2">
 <h2 class="anchored" data-anchor-id="übung-3.1">Übung 3.1</h2>
 <p>Erstelle eine <em>Dictionary</em> mit folgenden Einträgen: Vorname und Nachname von (d)einer Person. Weise diese <em>Dictionary</em> der Variable <code>me</code> zu.</p>
-<div id="2e829944" class="cell" data-execution_count="1">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>me <span class="op">=</span> {<span class="st">"vorname"</span>: <span class="st">"Guido"</span>, <span class="st">"nachname"</span>: <span class="st">"van Rossum"</span>}</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-3.2" class="level2">
 <h2 class="anchored" data-anchor-id="übung-3.2">Übung 3.2</h2>
 <p>Rufe verschiedene Elemente aus der <em>Dictionary</em> via <em>Key</em> ab.</p>
-<div id="62b5072d" class="cell" data-execution_count="2">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>me[<span class="st">"nachname"</span>]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-3.3" class="level2">
 <h2 class="anchored" data-anchor-id="übung-3.3">Übung 3.3</h2>
 <p>Nutze <code>me</code>, um nachstehenden Satz (mit <strong>deinen</strong> <em>Values</em>) zu erstellen:</p>
-<div id="087f1d5f" class="cell" data-execution_count="3">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">"Mein Name ist "</span><span class="op">+</span>me[<span class="st">"nachname"</span>] <span class="op">+</span><span class="st">", "</span><span class="op">+</span> me[<span class="st">"vorname"</span>]<span class="op">+</span><span class="st">" "</span><span class="op">+</span>me[<span class="st">"nachname"</span>]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">'Mein Name ist van Rossum, Guido van Rossum'</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">'Mein Name ist van Rossum, Guido van Rossum'</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="übung-3.4" class="level2">
 <h2 class="anchored" data-anchor-id="übung-3.4">Übung 3.4</h2>
 <p>Ergänze die <em>Dictionary</em> <code>me</code> durch einen Eintrag “groesse” mit (d)einer Grösse.</p>
-<div id="9b53d9a3" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>me[<span class="st">"groesse"</span>] <span class="op">=</span> <span class="dv">181</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-3.5" class="level2">
 <h2 class="anchored" data-anchor-id="übung-3.5">Übung 3.5</h2>
 <p>Erstelle eine neue <em>Dictionary</em> <code>people</code> mit den <em>Keys</em> “vornamen”, “nachnamen” und “groesse” und jeweils 3 Einträge pro <em>Key</em>.</p>
-<div id="249df52d" class="cell" data-execution_count="5">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>people <span class="op">=</span> {<span class="st">"vornamen"</span>: [<span class="st">"Christopher"</span>, <span class="st">"Henning"</span>, <span class="st">"Severin"</span>], <span class="st">"nachnamen"</span>: [<span class="st">"Annen"</span>,<span class="st">"May"</span>, <span class="st">"Kantereit"</span>], <span class="st">"groessen"</span>: [<span class="dv">174</span>, <span class="dv">182</span>, <span class="dv">162</span>]}</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-3.6" class="level2">
 <h2 class="anchored" data-anchor-id="übung-3.6">Übung 3.6</h2>
 <p>Rufe den <strong>ersten</strong> Vornamen deiner <em>Dict</em> auf. Dazu musst du dein Wissen über Listen und Dictionaries kombinieren.</p>
-<div id="ad4f3cb6" class="cell" data-execution_count="6">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>people[<span class="st">"vornamen"</span>][<span class="dv">0</span>]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-3.7" class="level2">
 <h2 class="anchored" data-anchor-id="übung-3.7">Übung 3.7</h2>
 <p>Rufe den <strong>dritten</strong> Nachname deiner <em>Dict</em> auf.</p>
-<div id="0a1498c4" class="cell" data-execution_count="7">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>people[<span class="st">"nachnamen"</span>][<span class="dv">2</span>]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-3.8" class="level2">
 <h2 class="anchored" data-anchor-id="übung-3.8">Übung 3.8</h2>
 <p>Berechne den Mittelwert aller grössen in deiner <em>Dict</em></p>
-<div id="1c8a14bd" class="cell" data-execution_count="8">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(people[<span class="st">"groessen"</span>])<span class="op">/</span><span class="bu">len</span>(people[<span class="st">"groessen"</span>])</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 
 
 </section>

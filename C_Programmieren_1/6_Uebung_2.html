@@ -788,57 +788,6 @@ window.onload = function() {
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">🌍 Teil: WebGIS</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_1/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS I</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/2_Uebung_Web_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Web Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/3_Uebung_Story_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Story Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/4_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_2/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS II</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/2_Uebung_Zeckenstiche.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Visualisierung Zeckenstiche</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/3_Uebung_Leaflet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">(Optional) Übung Leaflet</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -889,81 +838,33 @@ window.onload = function() {
 <li>Erstelle eine zweite Variable <code>nachnamen</code> bestehend aus einer <em>List</em> mit 3 Nachnamen</li>
 <li>Erstelle eine Variable <code>groessen</code> bestehend aus einer <em>List</em> mit 3 Grössenangaben in Zentimeter.</li>
 </ol>
-<div id="8a1f1988" class="cell" data-execution_count="1">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>vornamen <span class="op">=</span> [<span class="st">"Christopher"</span>, <span class="st">"Henning"</span>, <span class="st">"Severin"</span>]</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>nachnamen <span class="op">=</span> [<span class="st">"Annen"</span>, <span class="st">"May"</span>, <span class="st">"Kantereit"</span>]</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>groessen <span class="op">=</span> [<span class="dv">174</span>, <span class="dv">182</span>, <span class="dv">162</span>]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-2.2" class="level2">
 <h2 class="anchored" data-anchor-id="übung-2.2">Übung 2.2</h2>
 <p>Wie erhältst du den ersten Eintrag in der Variable <code>vornamen</code>?</p>
-<div id="72c4afcd" class="cell" data-execution_count="2">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>vornamen[<span class="dv">0</span>]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-2.3" class="level2">
 <h2 class="anchored" data-anchor-id="übung-2.3">Übung 2.3</h2>
 <p>Listen können durch die Methode <code>append</code> ergänzt werden (s.u.). Ergänze die Listen <code>vornamen</code>, <code>nachnamen</code> und <code>groessen</code> durch je einen Eintrag.</p>
-<div id="7943f64c" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>vornamen.append(<span class="st">"Malte"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="6b251091" class="cell" data-execution_count="4">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>nachnamen.append(<span class="st">"Huck"</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>groessen.append(<span class="dv">177</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
+<div id="ee240785" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>vornamen.append(<span class="st">"Malte"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="übung-2.4" class="level2">
 <h2 class="anchored" data-anchor-id="übung-2.4">Übung 2.4</h2>
 <p>Ermittle die Summe aller Werte in <code>groessen</code>. Tipp: Nutze dazu <code>sum()</code></p>
-<div id="8b38ca44" class="cell" data-execution_count="5">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(groessen)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-2.5" class="level2">
 <h2 class="anchored" data-anchor-id="übung-2.5">Übung 2.5</h2>
 <p>Ermittle die Anzahl Werte in <code>groessen</code> . Tipp: Nutze dazu <code>len()</code></p>
-<div id="89c5a906" class="cell" data-execution_count="6">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(groessen)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="sec-mittelwert" class="level2">
 <h2 class="anchored" data-anchor-id="sec-mittelwert">Uebung 2.6</h2>
 <p>Berechne die durchschnittliche Grösse aller Personen in <code>groessen</code>. Tipp: Nutze dazu <code>len()</code> und <code>sum()</code>.</p>
-<div id="744c065c" class="cell" data-execution_count="7">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">sum</span>(groessen) <span class="op">/</span> <span class="bu">len</span>(groessen)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 </section>
 <section id="übung-2.7" class="level2">
 <h2 class="anchored" data-anchor-id="übung-2.7">Übung 2.7</h2>
 <p>Ermittle nun noch die Minimum- und Maximumwerte aus <code>groessen</code> (finde die dazugehörige Funktion selber heraus).</p>
-<div id="c6703a1d" class="cell" data-execution_count="8">
-<details class="code-fold">
-<summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="bu">min</span>(groessen)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">max</span>(groessen)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
 
 
 </section>

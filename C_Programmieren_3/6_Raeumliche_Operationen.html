@@ -788,57 +788,6 @@ window.onload = function() {
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
-        <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">🌍 Teil: WebGIS</span></span>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_1/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS I</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/2_Uebung_Web_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Web Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/3_Uebung_Story_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Story Map</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_1/4_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a href="../E_WebGIS_2/1_Einleitung.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">WebGIS II</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/2_Uebung_Zeckenstiche.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Visualisierung Zeckenstiche</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../E_WebGIS_2/3_Uebung_Leaflet.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">(Optional) Übung Leaflet</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
     </ul>
     </div>
 </nav>
@@ -880,7 +829,7 @@ window.onload = function() {
 
 
 <p>Was bringt uns diese <em>Geo</em> Erweiterung? Mit <em>GeoDataFrames</em> sind nun alle räumliche Operationen möglich, die wir bereits aus ArcGIS kennen aber mit einfachen <em>DataFrames</em> noch nicht möglich waren. Ich möchte dies an ein paar Beispielen demonstrieren. Dazu müssen wir die Zeckenstiche in GeoDataFrame konvertiert und in ein Geopackage exportiert haben, wie in <a href="5_GIS_in_Python.html" class="quarto-xref"><span>Input: GIS in Python</span></a> beschrieben.</p>
-<div id="f567b923" class="cell" data-execution_count="1">
+<div id="1b24b54d" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>zeckenstiche <span class="op">=</span> gpd.read_file(<span class="st">"data/zeckenstiche.gpkg"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
@@ -900,7 +849,7 @@ Hinweis
 <li>Welcher Datentyp eure Operation <em>braucht</em>, seht ihr in <a href="https://geopandas.org/">der Dokumentation</a>. Welcher Datentyp ihr <em>habt</em>, seht ihr mit <code>type()</code>.</li>
 <li>Um ein Objekt von einem Format in das andere zu konvertieren (angenommen das Objekt heisst <code>x</code>), braucht ihr folgenden Code:</li>
 </ul>
-<div id="b093f9e0" class="cell" data-execution_count="2">
+<div id="ae579842" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># von GeoDataFrame zu Geoseries:</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>zecken_geoseries <span class="op">=</span> gpd.GeoSeries(zeckenstiche[<span class="st">"geometry"</span>])          </span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -912,11 +861,11 @@ Hinweis
 <section id="buffer" class="level2">
 <h2 class="anchored" data-anchor-id="buffer">Buffer</h2>
 <p>Eine typische GIS-Operation ist das “Buffern” von Objekten. Der ArcGIS Befehl <a href="https://pro.arcgis.com/en/pro-app/tool-reference/analysis/buffer.htm">“Buffer”</a> erreichen wir in Geopandas mit <code>.buffer()</code>. Folgender Code macht einen Buffer mit einer Distanz von 10m.</p>
-<div id="44103b85" class="cell" data-execution_count="3">
+<div id="93dfd9d4" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>buffered <span class="op">=</span> zeckenstiche.<span class="bu">buffer</span>(<span class="dv">10</span>) </span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Um Geopandas-Objekte zu plotten, kann man einfach <code>.plot()</code> verwenden. Zudem kann man mit <code>boundary</code> die Umrisse eines Polygons extrahieren:</p>
-<div id="49f418a4" class="cell" data-execution_count="4">
+<div id="5f685f04" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>base <span class="op">=</span> buffered.boundary.plot() <span class="co"># plottet die boundries    </span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>zeckenstiche.plot(ax <span class="op">=</span> base, color <span class="op">=</span> <span class="st">"black"</span>) <span class="co"># plottet die Punkte</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
@@ -932,7 +881,7 @@ Hinweis
 <section id="union" class="level2">
 <h2 class="anchored" data-anchor-id="union">Union</h2>
 <p>Mit <code>unary_union</code> können wir aus unserer <em>Point</em>-Geometrie ein <em>MultiPoint</em> erstellen (siehe <a href="5_GIS_in_Python.html#sec-pythongis-datenstruktur" class="quarto-xref"><span>Aufbau von GeoDataFrames</span></a>). Dieser Befehl lautet in ArcGIS <a href="https://pro.arcgis.com/de/pro-app/latest/tool-reference/analysis/union.htm">Union</a>.</p>
-<div id="d8111513" class="cell" data-execution_count="5">
+<div id="53f0bddf" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>zeckenstiche_union <span class="op">=</span> zeckenstiche[<span class="st">"geometry"</span>].unary_union</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(zeckenstiche_union) <span class="co"># Es handelt sich nun um den Typ "MultiPoint"</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
@@ -941,7 +890,7 @@ Hinweis
 </div>
 </div>
 <p>Wenn wir uns <code>zeckenstiche_union</code> nun mit <code>print</code> anschauen sehen wir, dass sämtliche Koordinaten in einem Objekt zusammengepackt sind:</p>
-<div id="11d16138" class="cell" data-execution_count="6">
+<div id="7c3ce81a" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(zeckenstiche_union)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>MULTIPOINT ((2681092 1250672), (2681107 1250712), (2681111 1250683), (2681116 1250648), (2681117 1250725), (2681124 1250720), (2681128 1250683), (2681131 1250692), (2681138 1250725), (2681171 1250711))</code></pre>
@@ -951,17 +900,17 @@ Hinweis
 <section id="sec-raeumliche-operationen-mbg" class="level2">
 <h2 class="anchored" data-anchor-id="sec-raeumliche-operationen-mbg">Minimum Bounding Geometry</h2>
 <p>Über ein <em>MultiPoint</em> lassen sich jetzt wunderbar sogenannte (in ESRI Terminologie) <a href="https://pro.arcgis.com/de/pro-app/tool-reference/data-management/minimum-bounding-geometry.htm">Minimum Bounding Geometries</a> rechnen. Mit den gleichnamigen Funktionen können wir nun eine <code>convex_hull</code> <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> sowie eine <code>envelope</code> <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> über alle Punkte rechnen.</p>
-<div id="d0d1b490" class="cell" data-execution_count="7">
+<div id="badb782b" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>my_convex_hull <span class="op">=</span> zeckenstiche_union.convex_hull</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>my_envelope <span class="op">=</span> zeckenstiche_union.envelope</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Nun konvertiere ich beide Polygon-Geometrien in <em>GeoSeries</em>, damit sie einfacher zu visualisieren sind:</p>
-<div id="1642bb63" class="cell" data-execution_count="8">
+<div id="91882137" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>my_convex_hull <span class="op">=</span> gpd.GeoSeries(my_convex_hull)</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>my_envelope <span class="op">=</span> gpd.GeoSeries(my_envelope)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Um die beiden Objekte nebeneinander zu visualisieren, importiere ich zuerst <code>pyplot</code> aus <code>matplotlib</code> (mit dem alias <code>plt</code>) und erstelle <code>subplots</code></p>
-<div id="d81a7f33" class="cell" data-execution_count="9">
+<div id="b409b1f3" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>,sharex<span class="op">=</span><span class="va">True</span>, sharey <span class="op">=</span> <span class="va">True</span>,figsize <span class="op">=</span> (<span class="dv">9</span>, <span class="dv">9</span>))</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -986,15 +935,15 @@ Hinweis
 <section id="overlay" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="overlay">Overlay</h2>
 <p>Viele der Funktionen aus dem ESRI Toolset <a href="https://pro.arcgis.com/de/pro-app/tool-reference/analysis/an-overview-of-the-overlay-toolset.htm">“Overlay”</a> sind in der <em>Geopandas</em> Funktion <code>overlay</code> verpackt. Um sie zu demonstrieren nutze ich die Geometrien, die wir in weiter oben erstellt haben (<code>buffered</code> und <code>my_convex_hull</code>). Zuerst muss ich sie aber noch von <em>GeoSeries</em> in <em>GeoDataFrames</em> konvertieren.</p>
-<div id="fd22e3aa" class="cell" data-execution_count="10">
+<div id="90376533" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>buffered_gdf <span class="op">=</span> gpd.GeoDataFrame(geometry <span class="op">=</span> buffered, crs <span class="op">=</span> <span class="dv">2056</span>)               </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>my_convex_hull_gdf <span class="op">=</span> gpd.GeoDataFrame(geometry <span class="op">=</span> my_convex_hull, crs <span class="op">=</span> <span class="dv">2056</span>) </span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Nun kann ich beispielsweise die Overlay-Funktion <code>difference</code> ausführen:</p>
-<div id="01224c47" class="cell" data-execution_count="11">
+<div id="a56b1658" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>my_difference <span class="op">=</span> gpd.overlay(my_convex_hull_gdf,buffered_gdf, how<span class="op">=</span><span class="st">'difference'</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="81cd30bc" class="cell page-columns page-full" data-execution_count="12">
+<div id="ccc030de" class="cell page-columns page-full" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Bereitet die drei Subplots vor ################</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2, ax3) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">3</span>, sharex<span class="op">=</span><span class="va">True</span>, sharey <span class="op">=</span> <span class="va">True</span>, figsize <span class="op">=</span> (<span class="dv">18</span>,<span class="dv">9</span>))</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#################################################</span></span>
