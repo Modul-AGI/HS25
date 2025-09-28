@@ -12,4 +12,4 @@ Die Dokumentation muss Folgendes beinhalten:
 #### Abgabeform und ‐termin:
 Reichen Sie Ihre vollständige Dokumentation spätestens bis Mittwoch 23. Oktober 2024 (2 Wochen nach letztem Input) als PDF über Moodle ein. Ihr findet dies unter der Aufgabenstellung im Abschnitt Geodatenbanken 3.
 
-[Abgabe Leistungsnachweis](https://moodle.zhaw.ch/mod/assign/view.php?id=974520)
+[Abgabe Leistungsnachweis](https://moodle.zhaw.ch/mod/assign/view.php?id=1695196)
