@@ -5,7 +5,7 @@ aufzubereiten, um Sie anschliessend im ArcGIS Pro einzubinden und zu visualisier
 
 OPTIONAL: Es ist Ihnen selbst überlassen, ob Sie in den kommenden Übungen die bestehende Server Datenbank nutzen möchten oder Ihre eigene lokale Pflanzendatenbank. Die Übungen beziehen sich auf die Server Variante. Bei eigener Datenbank passen Sie die Datanbank Verbindungsparameter entsprechend an. Wie Sie Ihre eigene lokale Pflanzendatenbank aufsetzen ist in den Vorbereitungsübungen auf Moodle beschrieben.
 
-[Unterlagen auf Moodle](https://moodle.zhaw.ch/mod/resource/view.php?id=974496)
+[Unterlagen auf Moodle](https://moodle.zhaw.ch/mod/resource/view.php?id=1695171)
 
 ## Übung 1: (Wiederholung) Datenbankverbindung zum Server in pgAdmin herstellen
 
@@ -13,7 +13,7 @@ In den folgenden Übungen wollen wir mit einer Datenbank auf einem ZHAW‐Server
 
 1. Starten Sie pgAdmin.
 2. Im Dashboard klicken Sie auf NEW Server und geben die folgenden Verbindungsparameter ein:
-3. Register General: Name: svma‐s‐01323_modulagi_pdb_studentNr. Verwenden Sie dabei die Nr.
+3. Register General: Name: modulagi_pdb_studentNr. Verwenden Sie dabei die Nr.
 Ihres zugewiesenen Benutzers.
 4. Register Connection (siehe @fig-db3-uebung1-1):
     - Host name/address: svma‐s‐01323.zhaw.ch
