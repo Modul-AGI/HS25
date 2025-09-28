@@ -10,6 +10,6 @@ Die Dokumentation muss Folgendes beinhalten:
 - Stellen Sie zum Schluss ArcGIS Pro und SQL/PostGIS gegenüber. Überlegen Sie sich Argumente für und gegen den Einsatz von ArcGIS Pro bzw. von SQL/PostGIS. Wann würden Sie ArcGIS Pro nutzen? Wann eher SQL/PostGIS? Befragen Sie dazu auch einschlägige Literatur und starten Sie eine Web‐Recherche. Dokumentieren Sie Ihre Erkenntnisse in ein paar kurzen Sätzen.
 
 #### Abgabeform und ‐termin:
-Reichen Sie Ihre vollständige Dokumentation spätestens bis Mittwoch 23. Oktober 2024 (2 Wochen nach letztem Input) als PDF über Moodle ein. Ihr findet dies unter der Aufgabenstellung im Abschnitt Geodatenbanken 3.
+Reichen Sie Ihre vollständige Dokumentation spätestens bis Mittwoch 22. Oktober 2025 (2 Wochen nach letztem Input) als PDF über Moodle ein. Ihr findet dies unter der Aufgabenstellung im Abschnitt Geodatenbanken 3.
 
 [Abgabe Leistungsnachweis](https://moodle.zhaw.ch/mod/assign/view.php?id=974520)
