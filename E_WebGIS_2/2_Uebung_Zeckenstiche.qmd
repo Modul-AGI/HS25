@@ -1,5 +1,5 @@
 ---
-echo: false                      # set to true to show solution
+echo: true                      # set to true to show solution
 code-fold: false                 # set to true to show solution
 code-summary: "Musterlösung"    
 ---
