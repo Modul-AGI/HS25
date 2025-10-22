@@ -49,6 +49,9 @@ Das Problem ist etwas schwierig zu Packen weil wir die "von - bis" Uhrzeiten in 
 
 
 ```{mermaid}
+%%| echo: false
+
+
 graph LR
     A[uhrzeit < 5] 
     A-->|yes| B[Gute Nacht]

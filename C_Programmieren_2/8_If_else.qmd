@@ -72,6 +72,8 @@ suggest_song(24)
 Dabei ist wichtig, dass man sich jeweils die Ausführungslogik vor Augen führt.
 
 ```{mermaid}
+%%| echo: false
+
 graph LR
     A[alter < 20] 
     A-->|yes| B[Kesha: 'Tik Tok']
