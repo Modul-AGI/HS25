@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -74,12 +74,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46eeb4c476de49ef7df495821a6125d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-2e0ab3ffcb189ca14a0af92b40aeab37.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4ff66e45b39d49436fe97d3fe27b9920.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-7189cfbe658407b8e3271b23029239e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-7fb1e60e55bf43cdfa666e432a973b20.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b2ec05c2233b4ee1e3f6843e3740eaac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -341,7 +341,7 @@ window.onload = function() {
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Modul AGI</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/modul-AGI/hs24" title="Quellcode" class="quarto-navigation-tool px-1" aria-label="Quellcode"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/modul-AGI/HS25" title="Quellcode" class="quarto-navigation-tool px-1" aria-label="Quellcode"><i class="bi bi-github"></i></a>
     <a href="../Modul-AGI.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Dunkelmodus umschalten"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Lesemodus umschalten">
@@ -805,7 +805,7 @@ window.onload = function() {
   <li><a href="#übung-8.2" id="toc-übung-8.2" class="nav-link" data-scroll-target="#übung-8.2">Übung 8.2</a></li>
   <li><a href="#übung-8.3" id="toc-übung-8.3" class="nav-link" data-scroll-target="#übung-8.3">Übung 8.3</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/modul-AGI/hs24/edit/main/C_Programmieren_2/9_Uebung_8.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/modul-AGI/HS25/edit/main/C_Programmieren_2/9_Uebung_8.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -833,10 +833,22 @@ window.onload = function() {
 <section id="sec-ex-ifelse-gruezi2" class="level2">
 <h2 class="anchored" data-anchor-id="sec-ex-ifelse-gruezi2">Übung 8.1</h2>
 <p>Erstelle eine neue Funktion <code>gruezi3</code> die <code>gruezi</code> (aus <a href="5_Uebung_6.html#sec-functions1-ex-gruezi" class="quarto-xref"><span>Übung 6.1</span></a>) um einem weiteren Parameter <code>uhrzeit</code> erweitert. Die Funktion soll vor 18 Uhr (<code>uhrzeit &lt; 18</code>) mit “Guten Tag” und sonst mit “Guten Abend” grüssen. Um es einfach zu halten: Die Zeitangbe muss in Dezimalzahlen erfolgen (also nicht <code>20:15 Uhr</code> sondern <code>20.25</code>).</p>
-<div id="802e425f" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># die Lösung sollte etwa folgendermasssen funktionieren:</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>gruezi3(<span class="st">"Guido"</span>, uhrzeit <span class="op">=</span> <span class="dv">21</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="e017fe9d" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Musterlösung</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gruezi3(nachname, uhrzeit):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(uhrzeit <span class="op">&lt;</span> <span class="dv">18</span>):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        grussform <span class="op">=</span> <span class="st">"Tag"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>        grussform <span class="op">=</span> <span class="st">"Abend"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Guten "</span> <span class="op">+</span> grussform <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> nachname</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="9c4d4946" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># die Lösung sollte etwa folgendermasssen funktionieren:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>gruezi3(<span class="st">"Guido"</span>, uhrzeit <span class="op">=</span> <span class="dv">21</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="2">
 <pre><code>'Guten Abend Guido'</code></pre>
 </div>
@@ -887,6 +899,19 @@ Tabelle&nbsp;32.1: Uhrzeiten und ihre Begrüssungsformen
 </div>
 <p>Das Problem ist etwas schwierig zu Packen weil wir die “von - bis” Uhrzeiten in eine Ja/Nein Logik überführen müssen. Überlege dir zuerst eine Ausführungslogik und schreibe danach die <code>if</code>, <code>elif</code>und <code>else</code> Operationen. Hier unser Vorschlag:</p>
 <div class="cell" data-layout-align="default">
+<details class="code-fold">
+<summary>Musterlösung</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode default code-with-copy"><code class="sourceCode default"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>graph LR</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    A[uhrzeit &lt; 5] </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    A--&gt;|yes| B[Gute Nacht]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    A--&gt;|no| C[Uhrzeit &lt; 11]</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    C--&gt;|yes| D[Guten Morgen]</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    C--&gt;|no| E[Uhrzeit &lt; 18]</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    E--&gt;|yes| F[Guten Tag]</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    E--&gt;|no| G[Uhrzeit &lt; 22]</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    G--&gt;|yes| H[Guten Abend]</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    G--&gt;|no| I[Gute Nacht]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
@@ -906,6 +931,24 @@ Tabelle&nbsp;32.1: Uhrzeiten und ihre Begrüssungsformen
 <p></p></figure><p></p>
 </div>
 </div>
+</div>
+<div id="1d40e76a" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Musterlösung</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> gruezi2(nachname, anrede, uhrzeit):</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(uhrzeit <span class="op">&lt;</span> <span class="dv">5</span>):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        was <span class="op">=</span> <span class="st">"Gute Nacht"</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span>(uhrzeit <span class="op">&lt;</span> <span class="dv">11</span>):</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        was <span class="op">=</span> <span class="st">"Guten Morgen"</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span>(uhrzeit <span class="op">&lt;</span> <span class="dv">18</span>):</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        was <span class="op">=</span> <span class="st">"Guten Tag"</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span>(uhrzeit <span class="op">&lt;</span> <span class="dv">22</span>):</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        was <span class="op">=</span> <span class="st">"Guten Abend"</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>        was <span class="op">=</span> <span class="st">"Gute Nacht"</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> was <span class="op">+</span> <span class="st">", "</span> <span class="op">+</span> anrede <span class="op">+</span> <span class="st">" "</span><span class="op">+</span> nachname</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
 </div>
 <p>Teste die Funktion mit verschiedenen Optionen um sicherzustellen, dass sie richtig funktioniert.</p>
 </section>
@@ -955,9 +998,29 @@ Tabelle&nbsp;32.2: WHO Nutritional status
 </div>
 </figure>
 </div>
-<div id="4adfb94d" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Der Output sollte etwa folgedermassen aussehen</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>bmi2(<span class="fl">1.7</span>, <span class="dv">70</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="4973c9f9" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Musterlösung</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> bmi2(groesse_m, gewicht_kg):</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    bmi <span class="op">=</span> gewicht_kg <span class="op">/</span> (groesse_m <span class="op">*</span> groesse_m)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span>(bmi <span class="op">&lt;</span> <span class="fl">18.5</span>):</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"Underweight"</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span>(bmi <span class="op">&lt;=</span> <span class="fl">24.9</span>):</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"Normal weight"</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span>(bmi <span class="op">&lt;=</span> <span class="fl">29.9</span>):</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"Pre-obesity"</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span>(bmi <span class="op">&lt;=</span> <span class="fl">34.9</span>):</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"Obesity class I"</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">elif</span>(bmi <span class="op">&lt;=</span> <span class="fl">39.9</span>):</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"Obesity class II"</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>        cat <span class="op">=</span> <span class="st">"Obesity class III"</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">"Who classification: "</span> <span class="op">+</span> cat</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
+<div id="1b865ffe" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Der Output sollte etwa folgedermassen aussehen</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>bmi2(<span class="fl">1.7</span>, <span class="dv">70</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>'Who classification: Normal weight'</code></pre>
 </div>
@@ -1031,14 +1094,13 @@ Tabelle&nbsp;32.2: WHO Nutritional status
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1397,4 +1459,4 @@ Tabelle&nbsp;32.2: WHO Nutritional status
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/modul-AGI/hs24/edit/main/C_Programmieren_2/9_Uebung_8.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/modul-AGI/HS25/edit/main/C_Programmieren_2/9_Uebung_8.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li></ul></div></div></div></footer></body></html>

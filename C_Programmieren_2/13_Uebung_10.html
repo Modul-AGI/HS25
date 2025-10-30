@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -74,12 +74,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46eeb4c476de49ef7df495821a6125d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-2e0ab3ffcb189ca14a0af92b40aeab37.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4ff66e45b39d49436fe97d3fe27b9920.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-7189cfbe658407b8e3271b23029239e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-7fb1e60e55bf43cdfa666e432a973b20.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b2ec05c2233b4ee1e3f6843e3740eaac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -341,7 +341,7 @@ window.onload = function() {
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Modul AGI</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/modul-AGI/hs24" title="Quellcode" class="quarto-navigation-tool px-1" aria-label="Quellcode"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/modul-AGI/HS25" title="Quellcode" class="quarto-navigation-tool px-1" aria-label="Quellcode"><i class="bi bi-github"></i></a>
     <a href="../Modul-AGI.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Dunkelmodus umschalten"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Lesemodus umschalten">
@@ -807,7 +807,7 @@ window.onload = function() {
   <li><a href="#sec-ex-param" id="toc-sec-ex-param" class="nav-link" data-scroll-target="#sec-ex-param">Übung 10.4</a></li>
   <li><a href="#übung-10.5" id="toc-übung-10.5" class="nav-link" data-scroll-target="#übung-10.5">Übung 10.5</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/modul-AGI/hs24/edit/main/C_Programmieren_2/13_Uebung_10.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/modul-AGI/HS25/edit/main/C_Programmieren_2/13_Uebung_10.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -838,7 +838,7 @@ window.onload = function() {
 <li>Die Funktion <code>offset_coordinate</code> aus <a href="11_Uebung_9.html#sec-ex-offset-function" class="quarto-xref"><span>Übung 9.5</span></a></li>
 <li><em>zeckenstiche.csv</em> importiert als <code>pandas DataFrame</code> in der Variabel <code>zeckenstiche</code></li>
 </ol>
-<div id="28e35102" class="cell" data-execution_count="1">
+<div id="2b53aed8" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -851,24 +851,31 @@ window.onload = function() {
 <section id="übung-10.1" class="level2">
 <h2 class="anchored" data-anchor-id="übung-10.1">Übung 10.1</h2>
 <p>Mache dich nochmals damit vertraut, einzelne Spalten zu selektieren. Schau dir <a href="../C_Programmieren_1/10_Tabellarische_Daten.html" class="quarto-xref"><span>DataFrames</span></a> nochmals an wenn du nicht mehr weisst wie das geht.</p>
+<div id="3ad4f2b2" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Musterlösung</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"x"</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"y"</span>]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 <!-- % Neue Spalten erstellen -->
 </section>
 <section id="übung-10.2" class="level2">
 <h2 class="anchored" data-anchor-id="übung-10.2">Übung 10.2</h2>
 <p>Mache dich nochmals damit vertraut, wie man neue Spalten erstellt. Schau dir <a href="../C_Programmieren_1/10_Tabellarische_Daten.html" class="quarto-xref"><span>DataFrames</span></a> nochmals an wenn du nicht mehr weisst wie das geht. Erstelle ein paar neue Spalten nach dem Beispiel unten um die Hangriffe zu üben. Lösche die Spalten im Anschluss wieder mit <code>del zeckenstiche['test1']</code> etc.</p>
-<div id="bdb309e7" class="cell" data-execution_count="3">
+<div id="7b45d05c" class="cell" data-execution_count="3">
 <details class="code-fold">
 <summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"test1"</span>] <span class="op">=</span> <span class="st">"test1"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"test2"</span>] <span class="op">=</span> <span class="dv">10</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"test3"</span>] <span class="op">=</span> <span class="bu">range</span>(<span class="dv">10</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"test1"</span>] <span class="op">=</span> <span class="st">"test1"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"test2"</span>] <span class="op">=</span> <span class="dv">10</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"test3"</span>] <span class="op">=</span> <span class="bu">range</span>(<span class="dv">10</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="30920f7b" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zeckenstiche könnte danach folgendermassen aussehen:</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>zeckenstiche</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b023c9a1" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># zeckenstiche könnte danach folgendermassen aussehen:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>zeckenstiche</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="4">
 <div>
 
@@ -993,35 +1000,35 @@ window.onload = function() {
 </div>
 </div>
 </div>
-<div id="e127a4a7" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># unnötigen Spalten wieder entfernen:</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> zeckenstiche[<span class="st">'test1'</span>]</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> zeckenstiche[<span class="st">'test2'</span>]</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> zeckenstiche[<span class="st">'test3'</span>]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="65624531" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># unnötigen Spalten wieder entfernen:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> zeckenstiche[<span class="st">'test1'</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> zeckenstiche[<span class="st">'test2'</span>]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> zeckenstiche[<span class="st">'test3'</span>]</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="sec-ex-apply" class="level2">
 <h2 class="anchored" data-anchor-id="sec-ex-apply">Übung 10.3</h2>
 <p><code>pandas</code> kennt eine ganze Familie von Methoden, um Spalten zu Manipulieren und Daten zu Aggregieren (<code>apply</code>, <code>map</code>, <code>mapapply</code>, <code>assign</code>). Es würde den Rahmen dieses Kurses sprengen, die alle im Detail durchzugehen, es lohnt sich aber sehr sich mit diesen auseinanderzusetzen wenn man sich näher mit Python befassen möchte.</p>
 <p>Im unserem Fall brauchen wir lediglich die Methode <code>apply</code> um die Funktion <code>offset_coordinate()</code> auf die Zeckenstichkoordinaten anzuwenden. Dabei gehen wir wie folgt for:</p>
-<div id="161e5670" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"x"</span>].<span class="bu">apply</span>(offset_coordinate)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#\______1_______/ \_2_/\_______3_________/</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Spalte selektieren (["x"])</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Methode "apply" aufrufen</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Function übergeben</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="f5c18bfb" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"x"</span>].<span class="bu">apply</span>(offset_coordinate)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">#\______1_______/ \_2_/\_______3_________/</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Spalte selektieren (["x"])</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Methode "apply" aufrufen</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Function übergeben</span></span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Verwende dieses Schema um auch <code>offset_coordinate</code> auf die <code>y</code> Spalte anzuwenden und speichere den Output dieser beiden Operationen als neue Spalten <code>x_sim</code> sowie <code>y_sim</code>. Die <em>DataFrame</em> <code>zeckenstiche</code> sollte danach wie folgt aussehen:</p>
-<div id="9854b03a" class="cell" data-execution_count="7">
+<div id="2c3c46bb" class="cell" data-execution_count="7">
 <details class="code-fold">
 <summary>Musterlösung</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"x_sim"</span>] <span class="op">=</span> zeckenstiche[<span class="st">"x"</span>].<span class="bu">apply</span>(offset_coordinate)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"y_sim"</span>] <span class="op">=</span> zeckenstiche[<span class="st">"y"</span>].<span class="bu">apply</span>(offset_coordinate)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"x_sim"</span>] <span class="op">=</span> zeckenstiche[<span class="st">"x"</span>].<span class="bu">apply</span>(offset_coordinate)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"y_sim"</span>] <span class="op">=</span> zeckenstiche[<span class="st">"y"</span>].<span class="bu">apply</span>(offset_coordinate)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="13686069" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>zeckenstiche</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="500a9826" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>zeckenstiche</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
@@ -1045,8 +1052,8 @@ window.onload = function() {
 <td>439.128951</td>
 <td>2681116</td>
 <td>1250648</td>
-<td>2.681158e+06</td>
-<td>1.250614e+06</td>
+<td>2.681032e+06</td>
+<td>1.250680e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">1</th>
@@ -1054,8 +1061,8 @@ window.onload = function() {
 <td>301.748542</td>
 <td>2681092</td>
 <td>1250672</td>
-<td>2.681078e+06</td>
-<td>1.250813e+06</td>
+<td>2.681296e+06</td>
+<td>1.250750e+06</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">2</th>
@@ -1063,8 +1070,8 @@ window.onload = function() {
 <td>301.748542</td>
 <td>2681128</td>
 <td>1250683</td>
-<td>2.681121e+06</td>
-<td>1.250565e+06</td>
+<td>2.681251e+06</td>
+<td>1.250768e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">3</th>
@@ -1072,8 +1079,8 @@ window.onload = function() {
 <td>301.748542</td>
 <td>2681111</td>
 <td>1250683</td>
-<td>2.681035e+06</td>
-<td>1.250775e+06</td>
+<td>2.681143e+06</td>
+<td>1.250853e+06</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">4</th>
@@ -1081,8 +1088,8 @@ window.onload = function() {
 <td>301.748529</td>
 <td>2681131</td>
 <td>1250692</td>
-<td>2.681108e+06</td>
-<td>1.250690e+06</td>
+<td>2.681105e+06</td>
+<td>1.250767e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">5</th>
@@ -1090,8 +1097,8 @@ window.onload = function() {
 <td>301.748529</td>
 <td>2681171</td>
 <td>1250711</td>
-<td>2.681080e+06</td>
-<td>1.250714e+06</td>
+<td>2.681315e+06</td>
+<td>1.250709e+06</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">6</th>
@@ -1099,8 +1106,8 @@ window.onload = function() {
 <td>301.748542</td>
 <td>2681107</td>
 <td>1250712</td>
-<td>2.681116e+06</td>
-<td>1.250858e+06</td>
+<td>2.681278e+06</td>
+<td>1.250676e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">7</th>
@@ -1108,8 +1115,8 @@ window.onload = function() {
 <td>301.748542</td>
 <td>2681124</td>
 <td>1250720</td>
-<td>2.681241e+06</td>
-<td>1.250837e+06</td>
+<td>2.681235e+06</td>
+<td>1.250489e+06</td>
 </tr>
 <tr class="odd">
 <th data-quarto-table-cell-role="th">8</th>
@@ -1117,8 +1124,8 @@ window.onload = function() {
 <td>301.748542</td>
 <td>2681117</td>
 <td>1250725</td>
-<td>2.681252e+06</td>
-<td>1.250647e+06</td>
+<td>2.681172e+06</td>
+<td>1.250640e+06</td>
 </tr>
 <tr class="even">
 <th data-quarto-table-cell-role="th">9</th>
@@ -1126,8 +1133,8 @@ window.onload = function() {
 <td>301.748542</td>
 <td>2681138</td>
 <td>1250725</td>
-<td>2.681329e+06</td>
-<td>1.250655e+06</td>
+<td>2.681162e+06</td>
+<td>1.250572e+06</td>
 </tr>
 </tbody>
 </table>
@@ -1139,32 +1146,39 @@ window.onload = function() {
 <section id="sec-ex-param" class="level2">
 <h2 class="anchored" data-anchor-id="sec-ex-param">Übung 10.4</h2>
 <p>In <a href="#sec-ex-apply" class="quarto-xref"><span>Übung 10.3</span></a> haben wir unsere Funktion <code>offset_coordinate</code> aufgerufen, ohne den Parameter <code>distance</code> zu spezifizieren. Dies war möglich, weil wir für <code>distance</code> einen Defaultwert festgelegt hatten (100 Meter). Wir können aber auch zusätzliche Parameter kommagetrennt nach der Funktion angeben. Dies sieht folgendermassen aus:</p>
-<div id="44ba616e" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"x"</span>].<span class="bu">apply</span>(offset_coordinate, distance <span class="op">=</span> <span class="dv">200</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="959ef6d8" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"x"</span>].<span class="bu">apply</span>(offset_coordinate, distance <span class="op">=</span> <span class="dv">200</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Nutze diese Möglichkeit, um den Offset (<code>distance</code>) auf maximal 10 Meter zu reduzieren.</p>
+<div id="3c92cb00" class="cell" data-execution_count="10">
+<details class="code-fold">
+<summary>Musterlösung</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"x_sim"</span>] <span class="op">=</span> zeckenstiche[<span class="st">"x"</span>].<span class="bu">apply</span>(offset_coordinate, distance <span class="op">=</span> <span class="dv">10</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>zeckenstiche[<span class="st">"y_sim"</span>] <span class="op">=</span> zeckenstiche[<span class="st">"y"</span>].<span class="bu">apply</span>(offset_coordinate, distance <span class="op">=</span> <span class="dv">10</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+</div>
 </section>
 <section id="übung-10.5" class="level2">
 <h2 class="anchored" data-anchor-id="übung-10.5">Übung 10.5</h2>
 <p>Um die Original <code>x</code>/<code>y</code>-Werte sowie die simulierten Daten im gleichen Plot darzustellen, wird folgendermassen vorgegangen: Der erste Datensatz wird mit <code>.plot()</code> visualisiert, wobei der Output einer Variabel (z.B. <code>basemap</code>) zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit <code>.plot()</code> visualisiert, wobei auf den ersten Plot via dem Argument <code>ax</code> verwiesen wird.</p>
 <p>Bei den roten Punkten handelt es sich um die Original-Zeckenstichen, bei den blauen um die simulierten (leicht verschoben) Zeckenstiche. Visualisiere deine eigenen Zeckenstiche auf diese Weise.</p>
-<div id="a57d0cb1" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>basemap <span class="op">=</span> zeckenstiche.plot(<span class="st">"x"</span>, <span class="st">"y"</span>, kind <span class="op">=</span> <span class="st">"scatter"</span>, color <span class="op">=</span> <span class="st">"red"</span>)</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>zeckenstiche.plot(<span class="st">"x_sim"</span>, <span class="st">"y_sim"</span>, kind <span class="op">=</span> <span class="st">"scatter"</span>, ax <span class="op">=</span> basemap, color <span class="op">=</span> <span class="st">"blue"</span>)</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">"equal"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b5785eaf" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> matplotlib <span class="im">import</span> pyplot <span class="im">as</span> plt</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>basemap <span class="op">=</span> zeckenstiche.plot(<span class="st">"x"</span>, <span class="st">"y"</span>, kind <span class="op">=</span> <span class="st">"scatter"</span>, color <span class="op">=</span> <span class="st">"red"</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>zeckenstiche.plot(<span class="st">"x_sim"</span>, <span class="st">"y_sim"</span>, kind <span class="op">=</span> <span class="st">"scatter"</span>, ax <span class="op">=</span> basemap, color <span class="op">=</span> <span class="st">"blue"</span>)</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>plt.axis(<span class="st">"equal"</span>)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="11">
-<pre><code>(np.float64(2681085.4824053277),
- np.float64(2681175.072266413),
- np.float64(1250642.1735586843),
- np.float64(1250740.3180150718))</code></pre>
+<pre><code>(np.float64(2681086.76212888),
+ np.float64(2681189.168639887),
+ np.float64(1250643.9728175884),
+ np.float64(1250732.5708306462))</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="13_Uebung_10_files/figure-html/cell-12-output-2.png" width="593" height="443" class="figure-img"></p>
+<p><img src="13_Uebung_10_files/figure-html/cell-12-output-2.png" width="604" height="443" class="figure-img"></p>
 </figure>
 </div>
 </div>
@@ -1238,14 +1252,13 @@ window.onload = function() {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1604,4 +1617,4 @@ window.onload = function() {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/modul-AGI/hs24/edit/main/C_Programmieren_2/13_Uebung_10.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/modul-AGI/HS25/edit/main/C_Programmieren_2/13_Uebung_10.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li></ul></div></div></div></footer></body></html>

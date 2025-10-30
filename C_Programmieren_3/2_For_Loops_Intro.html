@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.24">
+<meta name="generator" content="quarto-1.8.19">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -74,12 +74,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-46eeb4c476de49ef7df495821a6125d9.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-2e0ab3ffcb189ca14a0af92b40aeab37.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4ff66e45b39d49436fe97d3fe27b9920.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-7189cfbe658407b8e3271b23029239e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-7fb1e60e55bf43cdfa666e432a973b20.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-b2ec05c2233b4ee1e3f6843e3740eaac.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -338,7 +338,7 @@ window.onload = function() {
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Modul AGI</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/modul-AGI/hs24" title="Quellcode" class="quarto-navigation-tool px-1" aria-label="Quellcode"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/modul-AGI/HS25" title="Quellcode" class="quarto-navigation-tool px-1" aria-label="Quellcode"><i class="bi bi-github"></i></a>
     <a href="../Modul-AGI.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Dunkelmodus umschalten"><i class="bi"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Lesemodus umschalten">
@@ -802,7 +802,7 @@ window.onload = function() {
   <li><a href="#der-iterator" id="toc-der-iterator" class="nav-link" data-scroll-target="#der-iterator">Der Iterator</a></li>
   <li><a href="#der-platzhalter" id="toc-der-platzhalter" class="nav-link" data-scroll-target="#der-platzhalter">Der Platzhalter</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/modul-AGI/hs24/edit/main/C_Programmieren_3/2_For_Loops_Intro.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/modul-AGI/HS25/edit/main/C_Programmieren_3/2_For_Loops_Intro.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -830,7 +830,7 @@ window.onload = function() {
 <section id="die-grundform" class="level2">
 <h2 class="anchored" data-anchor-id="die-grundform">Die Grundform</h2>
 <p>Nirgends ist der Aspekt der Automatisierung so sichtbar wie in <em>for loops</em>. Loops sind “Schleifen” wo eine Aufgabe beliebig lange wiederholt wird. Auch <em>for loops</em> sind im Grunde genommen simple. Auf den ersten Blick sieht eine <em>for loop</em> aus wie eine <em>Function</em> definition (siehe <a href="../C_Programmieren_2/4_Functions_I.html" class="quarto-xref"><span>Function Basics</span></a> und <a href="../C_Programmieren_2/6_Functions_II.html" class="quarto-xref"><span>Function Advanced</span></a>). Im folgenden Beispiel seht ihr ein minimales Beispiel einer <em>for loop</em>.</p>
-<div id="a85f3e28" class="cell" data-execution_count="1">
+<div id="92a65e04" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> platzhalter <span class="kw">in</span> [<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>]:</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Iteration"</span>,platzhalter)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -853,7 +853,7 @@ Iteration 2</code></pre>
 <h2 class="anchored" data-anchor-id="der-iterator">Der Iterator</h2>
 <p>Im obigen Beispiel haben wir über eine <em>List</em> iteriert, wir haben also eine Liste als Iterator verwendet. Es gibt aber noch andere “Dinge”, über die wir iterieren können. Angenommen wir wollen den gleichen <em>for loop</em> mit den Zahlen von 0 bis 100 oder 100 bis 1’000 durchführen. Es wäre ganz schön mühsam, alle Zahlen von 0 bis 100 manuell in einer Liste zu erfassen. Zu diesem Zweck können wir die Funktion <code>range</code> verwenden. Mit <code>range(3)</code> erstellen wir einen Iterator mit den Werten 0, 1 und 2. Mit <code>range(100,1001)</code> erhalten wir die Werte von 100 bis 1’000.</p>
 <p>Der gleiche <em>loop</em> wie oben lautet mit <code>range</code> folgendermassen:</p>
-<div id="4d2a0535" class="cell" data-execution_count="2">
+<div id="f6a2fa18" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> platzhalter <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Iteration"</span>,platzhalter)</span></code></pre></div><button title="In die Zwischenablage kopieren" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -941,14 +941,13 @@ Iteration 2</code></pre>
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -1307,4 +1306,4 @@ Iteration 2</code></pre>
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/modul-AGI/hs24/edit/main/C_Programmieren_3/2_For_Loops_Intro.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/modul-AGI/HS25/edit/main/C_Programmieren_3/2_For_Loops_Intro.qmd" class="toc-action"><i class="bi bi-github"></i>Seite editieren</a></li></ul></div></div></div></footer></body></html>

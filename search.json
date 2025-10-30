@@ -754,7 +754,7 @@
     "href": "C_Programmieren_1/4_Uebung_1.html",
     "title": "Übung 1",
     "section": "",
-    "text": "Übung 1.1\nErstelle eine Variabel vorname mit deinem Vornamen und eine zweite Variabel nachname mit deinem Nachnamen. Was sind vorname und nachname für Datentypen?",
+    "text": "Übung 1.1\nErstelle eine Variabel vorname mit deinem Vornamen und eine zweite Variabel nachname mit deinem Nachnamen. Was sind vorname und nachname für Datentypen?\nMusterlösung\nvorname = \"Guido\"\nnachname = \"van Rossum\"\n\ntype(vorname) # es handelt sich um den Datentyp \"str\", also String (Text)",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Übung 1</span>"
@@ -765,7 +765,7 @@
     "href": "C_Programmieren_1/4_Uebung_1.html#übung-1.2",
     "title": "Übung 1",
     "section": "Übung 1.2",
-    "text": "Übung 1.2\n“Klebe” Vor- und Nachname mit einem Leerschlag dazwischen zusammen.",
+    "text": "Übung 1.2\n“Klebe” Vor- und Nachname mit einem Leerschlag dazwischen zusammen.\n\n\nMusterlösung\nvorname + \" \" + nachname",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Übung 1</span>"
@@ -776,7 +776,7 @@
     "href": "C_Programmieren_1/4_Uebung_1.html#übung-1.3",
     "title": "Übung 1",
     "section": "Übung 1.3",
-    "text": "Übung 1.3\nErstelle eine Variabel groesse_cm mit deiner Körpergrösse in Zentimeter. Was ist das für ein Datentyp?",
+    "text": "Übung 1.3\nErstelle eine Variabel groesse_cm mit deiner Körpergrösse in Zentimeter. Was ist das für ein Datentyp?\n\n\nMusterlösung\ngroesse_cm = 184\ntype(groesse_cm) # es handelt sich hierbei um den Datentyp \"integer\"",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Übung 1</span>"
@@ -787,7 +787,7 @@
     "href": "C_Programmieren_1/4_Uebung_1.html#übung-1.4",
     "title": "Übung 1",
     "section": "Übung 1.4",
-    "text": "Übung 1.4\nErmittle deine Grösse in Fuss auf der Basis von groesse_cm (1 Fuss entspricht 30.48 cm). Was ist das für ein Datentyp?",
+    "text": "Übung 1.4\nErmittle deine Grösse in Fuss auf der Basis von groesse_cm (1 Fuss entspricht 30.48 cm). Was ist das für ein Datentyp?\n\n\nMusterlösung\ngroesse_fuss = groesse_cm / 30.48\ntype(groesse_fuss) # es handelt sich um den Datentyp \"float\"",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Übung 1</span>"
@@ -798,7 +798,7 @@
     "href": "C_Programmieren_1/4_Uebung_1.html#übung-1.5",
     "title": "Übung 1",
     "section": "Übung 1.5",
-    "text": "Übung 1.5\nErstelle eine boolsche Variable blond und setzte sie auf True, wenn diese Eigenschaft auf dich zutrifft, und False, falls nicht.",
+    "text": "Übung 1.5\nErstelle eine boolsche Variable blond und setzte sie auf True, wenn diese Eigenschaft auf dich zutrifft, und False, falls nicht.\n\n\nMusterlösung\nblond = False",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Übung 1</span>"
@@ -809,7 +809,7 @@
     "href": "C_Programmieren_1/4_Uebung_1.html#übung-1.6",
     "title": "Übung 1",
     "section": "Übung 1.6",
-    "text": "Übung 1.6\nErstelle eine Variabel einwohner mit der Einwohnerzahl der Schweiz (8’603’900, per 31. Dezember 2019). Erstelle eine zweite Variabel flaeche (ohne Umlaute!) mit der Flächengrösse der Schweiz (41’285 km\\(^2\\)). Berechne nun die Einwohnerdichte.",
+    "text": "Übung 1.6\nErstelle eine Variabel einwohner mit der Einwohnerzahl der Schweiz (8’603’900, per 31. Dezember 2019). Erstelle eine zweite Variabel flaeche (ohne Umlaute!) mit der Flächengrösse der Schweiz (41’285 km\\(^2\\)). Berechne nun die Einwohnerdichte.\n\n\nMusterlösung\neinwohner = 8603900\nflaeche = 41285\n\ndichte = einwohner / flaeche\n\ndichte",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Übung 1</span>"
@@ -820,7 +820,7 @@
     "href": "C_Programmieren_1/4_Uebung_1.html#übung-1.7",
     "title": "Übung 1",
     "section": "Übung 1.7",
-    "text": "Übung 1.7\nErstelle eine Variabel gewicht_kg (kg) und groesse_m (m) und berechne aufgrund von gewicht_kg und groesse_m ein BodyMassIndex (\\(BMI=\\frac{m}{l^2}\\), \\(m\\): Körpermasse in Kilogramm, \\(l\\): Körpergrösse in Meter).",
+    "text": "Übung 1.7\nErstelle eine Variabel gewicht_kg (kg) und groesse_m (m) und berechne aufgrund von gewicht_kg und groesse_m ein BodyMassIndex (\\(BMI=\\frac{m}{l^2}\\), \\(m\\): Körpermasse in Kilogramm, \\(l\\): Körpergrösse in Meter).\n\n\nMusterlösung\ngewicht_kg = 85\ngroesse_m = groesse_cm / 100\n\ngewicht_kg / (groesse_m * groesse_m)",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>18</span>  <span class='chapter-title'>Übung 1</span>"
@@ -842,7 +842,7 @@
     "href": "C_Programmieren_1/6_Uebung_2.html",
     "title": "Übung 2",
     "section": "",
-    "text": "Übung 2.1",
+    "text": "Übung 2.1\nMusterlösung\nvornamen = [\"Christopher\", \"Henning\", \"Severin\"]\nnachnamen = [\"Annen\", \"May\", \"Kantereit\"]\n\ngroessen = [174, 182, 162]",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Übung 2</span>"
@@ -864,7 +864,7 @@
     "href": "C_Programmieren_1/6_Uebung_2.html#übung-2.2",
     "title": "Übung 2",
     "section": "Übung 2.2",
-    "text": "Übung 2.2\nWie erhältst du den ersten Eintrag in der Variable vornamen?",
+    "text": "Übung 2.2\nWie erhältst du den ersten Eintrag in der Variable vornamen?\n\n\nMusterlösung\nvornamen[0]",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Übung 2</span>"
@@ -875,7 +875,7 @@
     "href": "C_Programmieren_1/6_Uebung_2.html#übung-2.3",
     "title": "Übung 2",
     "section": "Übung 2.3",
-    "text": "Übung 2.3\nListen können durch die Methode append ergänzt werden (s.u.). Ergänze die Listen vornamen, nachnamen und groessen durch je einen Eintrag.\n\nvornamen.append(\"Malte\")",
+    "text": "Übung 2.3\nListen können durch die Methode append ergänzt werden (s.u.). Ergänze die Listen vornamen, nachnamen und groessen durch je einen Eintrag.\n\nvornamen.append(\"Malte\")\n\n\n\nMusterlösung\nnachnamen.append(\"Huck\")\n\ngroessen.append(177)",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Übung 2</span>"
@@ -886,7 +886,7 @@
     "href": "C_Programmieren_1/6_Uebung_2.html#übung-2.4",
     "title": "Übung 2",
     "section": "Übung 2.4",
-    "text": "Übung 2.4\nErmittle die Summe aller Werte in groessen. Tipp: Nutze dazu sum()",
+    "text": "Übung 2.4\nErmittle die Summe aller Werte in groessen. Tipp: Nutze dazu sum()\n\n\nMusterlösung\nsum(groessen)",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Übung 2</span>"
@@ -897,7 +897,7 @@
     "href": "C_Programmieren_1/6_Uebung_2.html#übung-2.5",
     "title": "Übung 2",
     "section": "Übung 2.5",
-    "text": "Übung 2.5\nErmittle die Anzahl Werte in groessen . Tipp: Nutze dazu len()",
+    "text": "Übung 2.5\nErmittle die Anzahl Werte in groessen . Tipp: Nutze dazu len()\n\n\nMusterlösung\nlen(groessen)",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Übung 2</span>"
@@ -908,7 +908,7 @@
     "href": "C_Programmieren_1/6_Uebung_2.html#sec-mittelwert",
     "title": "Übung 2",
     "section": "Uebung 2.6",
-    "text": "Uebung 2.6\nBerechne die durchschnittliche Grösse aller Personen in groessen. Tipp: Nutze dazu len() und sum().",
+    "text": "Uebung 2.6\nBerechne die durchschnittliche Grösse aller Personen in groessen. Tipp: Nutze dazu len() und sum().\n\n\nMusterlösung\nsum(groessen) / len(groessen)",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Übung 2</span>"
@@ -919,7 +919,7 @@
     "href": "C_Programmieren_1/6_Uebung_2.html#übung-2.7",
     "title": "Übung 2",
     "section": "Übung 2.7",
-    "text": "Übung 2.7\nErmittle nun noch die Minimum- und Maximumwerte aus groessen (finde die dazugehörige Funktion selber heraus).",
+    "text": "Übung 2.7\nErmittle nun noch die Minimum- und Maximumwerte aus groessen (finde die dazugehörige Funktion selber heraus).\n\n\nMusterlösung\nmin(groessen)\nmax(groessen)",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Übung 2</span>"
@@ -941,7 +941,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html",
     "title": "Übung 3",
     "section": "",
-    "text": "Übung 3.1\nErstelle eine Dictionary mit folgenden Einträgen: Vorname und Nachname von (d)einer Person. Weise diese Dictionary der Variable me zu.",
+    "text": "Übung 3.1\nErstelle eine Dictionary mit folgenden Einträgen: Vorname und Nachname von (d)einer Person. Weise diese Dictionary der Variable me zu.\nMusterlösung\nme = {\"vorname\": \"Guido\", \"nachname\": \"van Rossum\"}",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -952,7 +952,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html#übung-3.2",
     "title": "Übung 3",
     "section": "Übung 3.2",
-    "text": "Übung 3.2\nRufe verschiedene Elemente aus der Dictionary via Key ab.",
+    "text": "Übung 3.2\nRufe verschiedene Elemente aus der Dictionary via Key ab.\n\n\nMusterlösung\nme[\"nachname\"]",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -963,7 +963,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html#übung-3.3",
     "title": "Übung 3",
     "section": "Übung 3.3",
-    "text": "Übung 3.3\nNutze me, um nachstehenden Satz (mit deinen Values) zu erstellen:\n'Mein Name ist van Rossum, Guido van Rossum'",
+    "text": "Übung 3.3\nNutze me, um nachstehenden Satz (mit deinen Values) zu erstellen:\n\n\nMusterlösung\n\"Mein Name ist \"+me[\"nachname\"] +\", \"+ me[\"vorname\"]+\" \"+me[\"nachname\"]\n\n\n'Mein Name ist van Rossum, Guido van Rossum'",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -974,7 +974,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html#übung-3.4",
     "title": "Übung 3",
     "section": "Übung 3.4",
-    "text": "Übung 3.4\nErgänze die Dictionary me durch einen Eintrag “groesse” mit (d)einer Grösse.",
+    "text": "Übung 3.4\nErgänze die Dictionary me durch einen Eintrag “groesse” mit (d)einer Grösse.\n\n\nMusterlösung\nme[\"groesse\"] = 181",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -985,7 +985,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html#übung-3.5",
     "title": "Übung 3",
     "section": "Übung 3.5",
-    "text": "Übung 3.5\nErstelle eine neue Dictionary people mit den Keys “vornamen”, “nachnamen” und “groesse” und jeweils 3 Einträge pro Key.",
+    "text": "Übung 3.5\nErstelle eine neue Dictionary people mit den Keys “vornamen”, “nachnamen” und “groesse” und jeweils 3 Einträge pro Key.\n\n\nMusterlösung\npeople = {\n  \"vornamen\": [\"Christopher\", \"Henning\", \"Severin\"], \n  \"nachnamen\": [\"Annen\",\"May\", \"Kantereit\"], \n  \"groessen\": [174, 182, 162]\n  }",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -996,7 +996,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html#übung-3.6",
     "title": "Übung 3",
     "section": "Übung 3.6",
-    "text": "Übung 3.6\nRufe den ersten Vornamen deiner Dict auf. Dazu musst du dein Wissen über Listen und Dictionaries kombinieren.",
+    "text": "Übung 3.6\nRufe den ersten Vornamen deiner Dict auf. Dazu musst du dein Wissen über Listen und Dictionaries kombinieren.\n\n\nMusterlösung\npeople[\"vornamen\"][0]",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -1007,7 +1007,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html#übung-3.7",
     "title": "Übung 3",
     "section": "Übung 3.7",
-    "text": "Übung 3.7\nRufe den dritten Nachname deiner Dict auf.",
+    "text": "Übung 3.7\nRufe den dritten Nachname deiner Dict auf.\n\n\nMusterlösung\npeople[\"nachnamen\"][2]",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -1018,7 +1018,7 @@
     "href": "C_Programmieren_1/9_Uebung_3.html#übung-3.8",
     "title": "Übung 3",
     "section": "Übung 3.8",
-    "text": "Übung 3.8\nBerechne den Mittelwert aller grössen in deiner Dict",
+    "text": "Übung 3.8\nBerechne den Mittelwert aller grössen in deiner Dict\n\n\nMusterlösung\nsum(people[\"groessen\"])/len(people[\"groessen\"])",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>22</span>  <span class='chapter-title'>Übung 3</span>"
@@ -1084,7 +1084,7 @@
     "href": "C_Programmieren_1/11_Uebung_4.html#sec-ex-sel-col",
     "title": "Übung 4",
     "section": "Übung 4.5",
-    "text": "Übung 4.5\nUm eine einzelne Spalte zu selektieren (z.B. die Spalte “ID”), kann man gleich vorgehen wie bei der Selektion eines Eintrags in einer Dictionary. Probiere es aus.",
+    "text": "Übung 4.5\nUm eine einzelne Spalte zu selektieren (z.B. die Spalte “ID”), kann man gleich vorgehen wie bei der Selektion eines Eintrags in einer Dictionary. Probiere es aus.\n\n\nMusterlösung\nzeckenstiche[\"ID\"]",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Übung 4</span>"
@@ -1095,7 +1095,7 @@
     "href": "C_Programmieren_1/11_Uebung_4.html#sec-ex-new-col",
     "title": "Übung 4",
     "section": "Übung 4.6",
-    "text": "Übung 4.6\nAuch das Erstellen einer neuen Spalte ist identisch mit der Erstellung eines neuen Dictionary Eintrags. Erstelle eine neue Spalte “Stichtyp” mit dem Wert “Zecke” auf jeder Zeile (s.u.).\n\nzeckenstiche[\"Stichtyp\"] = \"Zecke\"",
+    "text": "Übung 4.6\nAuch das Erstellen einer neuen Spalte ist identisch mit der Erstellung eines neuen Dictionary Eintrags. Erstelle eine neue Spalte “Stichtyp” mit dem Wert “Zecke” auf jeder Zeile (s.u.).\n\nzeckenstiche[\"Stichtyp\"] = \"Zecke\"\n\n\n\nMusterlösung\nzeckenstiche",
     "crumbs": [
       "Programmieren I",
       "<span class='chapter-number'>24</span>  <span class='chapter-title'>Übung 4</span>"
@@ -1204,7 +1204,7 @@
     "href": "C_Programmieren_2/5_Uebung_6.html",
     "title": "Übung 6",
     "section": "",
-    "text": "Übung 6.1\nBevor du mit den Übungen anfägst, solltest du bereits eine eigene Conda Environment nach der Anleitung in Übung 5 “Übung 5” erstellt haben.\nErstelle eine Function, die gruezi heisst, einen Nachnamen als Input annimmt und per Sie grüsst.\n# Das Resultat soll in etwa folgendermassen aussehen:\ngruezi(nachname = \"van Rossum\")\n\n'Guten Tag, van Rossum'",
+    "text": "Übung 6.1\nBevor du mit den Übungen anfägst, solltest du bereits eine eigene Conda Environment nach der Anleitung in Übung 5 “Übung 5” erstellt haben.\nErstelle eine Function, die gruezi heisst, einen Nachnamen als Input annimmt und per Sie grüsst.\nMusterlösung\ndef gruezi(nachname):\n    return \"Guten Tag, \" + nachname\n# Das Resultat soll in etwa folgendermassen aussehen:\ngruezi(nachname = \"van Rossum\")\n\n'Guten Tag, van Rossum'",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>28</span>  <span class='chapter-title'>Übung 6</span>"
@@ -1215,7 +1215,7 @@
     "href": "C_Programmieren_2/5_Uebung_6.html#sec-gruezi2",
     "title": "Übung 6",
     "section": "Übung 6.2",
-    "text": "Übung 6.2\nErstelle eine neue Funktion gruezi2 welche im Vergleich zu gruezi einen weiteren Parameter namens anrede annimmt.\n\n# Das Resultat soll in etwa folgendermassen aussehen:\ngruezi2(nachname = \"van Rossum\", anrede = \"Herr\")\n\n'Guten Tag, Herr van Rossum'",
+    "text": "Übung 6.2\nErstelle eine neue Funktion gruezi2 welche im Vergleich zu gruezi einen weiteren Parameter namens anrede annimmt.\n\n\nMusterlösung\ndef gruezi2(nachname, anrede):\n    return \"Guten Tag, \" + anrede + \" \" + nachname\n\n\n\n# Das Resultat soll in etwa folgendermassen aussehen:\ngruezi2(nachname = \"van Rossum\", anrede = \"Herr\")\n\n'Guten Tag, Herr van Rossum'",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>28</span>  <span class='chapter-title'>Übung 6</span>"
@@ -1226,7 +1226,7 @@
     "href": "C_Programmieren_2/5_Uebung_6.html#übung-6.3",
     "title": "Übung 6",
     "section": "Übung 6.3",
-    "text": "Übung 6.3\nErstelle eine Funktion add die zwei Zahlen summiert.\n\n# Das Resultat sollte folgendermassen aussehen:\nadd(zahl1 = 2, zahl2 = 10)\n\n12",
+    "text": "Übung 6.3\nErstelle eine Funktion add die zwei Zahlen summiert.\n\n\nMusterlösung\ndef add(zahl1, zahl2):\n    return zahl1 + zahl2\n\n\n\n# Das Resultat sollte folgendermassen aussehen:\nadd(zahl1 = 2, zahl2 = 10)\n\n12",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>28</span>  <span class='chapter-title'>Übung 6</span>"
@@ -1237,7 +1237,7 @@
     "href": "C_Programmieren_2/5_Uebung_6.html#übung-6.4",
     "title": "Übung 6",
     "section": "Übung 6.4",
-    "text": "Übung 6.4\nErstelle eine Funktion square, welche den Input quadriert.\n\n# Das Resultat sollte folgendermassen aussehen:\nsquare(zahl = 5)\n\n25",
+    "text": "Übung 6.4\nErstelle eine Funktion square, welche den Input quadriert.\n\n\nMusterlösung\ndef square(zahl):\n    return zahl * zahl\n\n# oder\n\ndef square(zahl):\n    return zahl**2\n\n\n\n# Das Resultat sollte folgendermassen aussehen:\nsquare(zahl = 5)\n\n25",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>28</span>  <span class='chapter-title'>Übung 6</span>"
@@ -1248,7 +1248,7 @@
     "href": "C_Programmieren_2/5_Uebung_6.html#übung-6.5",
     "title": "Übung 6",
     "section": "Übung 6.5",
-    "text": "Übung 6.5\nErstelle eine Funktion meter_zu_fuss, die eine beliebige Zahl von Meter in Fuss konvertiert. Zur Erinnerung: 30.48 cm ergeben 1 Fuss.\n\n# Das Resultat sollte folgendermassen aussehen:\n\nmeter_zu_fuss(meter = 1.80)\n\n5.905511811023622",
+    "text": "Übung 6.5\nErstelle eine Funktion meter_zu_fuss, die eine beliebige Zahl von Meter in Fuss konvertiert. Zur Erinnerung: 30.48 cm ergeben 1 Fuss.\n\n\nMusterlösung\ndef meter_zu_fuss(meter):\n    fuss = meter * 100 / 30.48\n    return fuss\n\n\n\n# Das Resultat sollte folgendermassen aussehen:\n\nmeter_zu_fuss(meter = 1.80)\n\n5.905511811023622",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>28</span>  <span class='chapter-title'>Übung 6</span>"
@@ -1325,7 +1325,7 @@
     "href": "C_Programmieren_2/7_Uebung_7.html",
     "title": "Übung 7",
     "section": "",
-    "text": "Übung 7.1\nErstelle eine Funktion namens times, die zwei Zahlen miteinander multipliziert.",
+    "text": "Übung 7.1\nErstelle eine Funktion namens times, die zwei Zahlen miteinander multipliziert.\nMusterlösung\ndef times(x, y):\n    return x * y\nMusterlösung\ntimes(2, 2)",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>30</span>  <span class='chapter-title'>Übung 7</span>"
@@ -1336,7 +1336,7 @@
     "href": "C_Programmieren_2/7_Uebung_7.html#übung-7.2",
     "title": "Übung 7",
     "section": "Übung 7.2",
-    "text": "Übung 7.2\nDie eben erstellte Funktion times benötigt 2 Argumente (die miteinander multipliziert werden). Wandle den zweiten Parameter in einen optionalen Parameter um (mit dem Defaultwert 1).\nZusatzaufgabe: Was passiert, wenn du den ersten Parameter in einen optionalen Parameter umwandelst?",
+    "text": "Übung 7.2\nDie eben erstellte Funktion times benötigt 2 Argumente (die miteinander multipliziert werden). Wandle den zweiten Parameter in einen optionalen Parameter um (mit dem Defaultwert 1).\nZusatzaufgabe: Was passiert, wenn du den ersten Parameter in einen optionalen Parameter umwandelst?\n\n\nMusterlösung\ndef times(x, y = 1):\n   return x * y\n\n\n\n\nMusterlösung\ntimes(3)\n\n\n\n\nMusterlösung\n# (Zusatzaufgabe)\ndef times(x = 1, y):\n    return x * y",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>30</span>  <span class='chapter-title'>Übung 7</span>"
@@ -1347,7 +1347,7 @@
     "href": "C_Programmieren_2/7_Uebung_7.html#sec-ex-functions-bmi",
     "title": "Übung 7",
     "section": "Übung 7.3",
-    "text": "Übung 7.3\nErstelle eine Funktion namens bmi, die aus Grösse und Gewicht einen BodyMassIndex berechnet (\\(BMI=\\frac{m}{l^2}\\), \\(m\\): Körpermasse in Kilogramm, \\(l\\): Körpergrösse in Meter). Das Resultat soll etwa folgendermassen aussehen:\n\nbmi(groesse_m = 1.8, gewicht_kg = 88)\n\n27.160493827160494",
+    "text": "Übung 7.3\nErstelle eine Funktion namens bmi, die aus Grösse und Gewicht einen BodyMassIndex berechnet (\\(BMI=\\frac{m}{l^2}\\), \\(m\\): Körpermasse in Kilogramm, \\(l\\): Körpergrösse in Meter). Das Resultat soll etwa folgendermassen aussehen:\n\n\nMusterlösung\ndef bmi(groesse_m, gewicht_kg):\n    return gewicht_kg / (groesse_m * groesse_m)\n\n\n\nbmi(groesse_m = 1.8, gewicht_kg = 88)\n\n27.160493827160494",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>30</span>  <span class='chapter-title'>Übung 7</span>"
@@ -1358,7 +1358,7 @@
     "href": "C_Programmieren_2/7_Uebung_7.html#übung-7.4",
     "title": "Übung 7",
     "section": "Übung 7.4",
-    "text": "Übung 7.4\nErstelle eine Funktion mittelwert(), welche den Mittelwert aus einer Liste (List) von Zahlen berechnet. Nutze dazu sum() und len() analog Uebung 2.6. Das Resultat sollte folgendermassen aussehen:\n\nmeine_zahlen = [50, 100, 550, 1000]\nmittelwert(meine_zahlen)\n\n425.0",
+    "text": "Übung 7.4\nErstelle eine Funktion mittelwert(), welche den Mittelwert aus einer Liste (List) von Zahlen berechnet. Nutze dazu sum() und len() analog Uebung 2.6. Das Resultat sollte folgendermassen aussehen:\n\n\nMusterlösung\ndef mittelwert(zahlen):\n    return sum(zahlen) / len(zahlen)\n\n\n\nmeine_zahlen = [50, 100, 550, 1000]\nmittelwert(meine_zahlen)\n\n425.0",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>30</span>  <span class='chapter-title'>Übung 7</span>"
@@ -1369,7 +1369,7 @@
     "href": "C_Programmieren_2/7_Uebung_7.html#übung-7.5",
     "title": "Übung 7",
     "section": "Übung 7.5",
-    "text": "Übung 7.5\nErstelle eine Funktion celsius_zu_farenheit, welche eine beliebige Zahl von Grad Celsius in Grad Farenheit konvertiert. Zur Erinnerung: Temperatur in °F = Temperatur in °C x 1,8 + 32.\nDas Resultat sollte folgendermassen aussehen:\n\ncelsius_zu_farenheit(celsius = 25)\n\n77.0",
+    "text": "Übung 7.5\nErstelle eine Funktion celsius_zu_farenheit, welche eine beliebige Zahl von Grad Celsius in Grad Farenheit konvertiert. Zur Erinnerung: Temperatur in °F = Temperatur in °C x 1,8 + 32.\n\n\nMusterlösung\ndef celsius_zu_farenheit(celsius):\n    farenheit = celsius * 1.8 + 32\n    return farenheit\n\n\nDas Resultat sollte folgendermassen aussehen:\n\ncelsius_zu_farenheit(celsius = 25)\n\n77.0",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>30</span>  <span class='chapter-title'>Übung 7</span>"
@@ -1380,7 +1380,7 @@
     "href": "C_Programmieren_2/7_Uebung_7.html#übung-7.6",
     "title": "Übung 7",
     "section": "Übung 7.6",
-    "text": "Übung 7.6\nSchreibe die letzte Funktion celsius_zu_farenheit in der lambda Notation.",
+    "text": "Übung 7.6\nSchreibe die letzte Funktion celsius_zu_farenheit in der lambda Notation.\n\n\nMusterlösung\ncelsius_in_farenheit2 = lambda celsius: celsius * 1.8 + 32",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>30</span>  <span class='chapter-title'>Übung 7</span>"
@@ -1402,7 +1402,7 @@
     "href": "C_Programmieren_2/9_Uebung_8.html",
     "title": "Übung 8",
     "section": "",
-    "text": "Übung 8.1\nErstelle eine neue Funktion gruezi3 die gruezi (aus Übung 6.1) um einem weiteren Parameter uhrzeit erweitert. Die Funktion soll vor 18 Uhr (uhrzeit &lt; 18) mit “Guten Tag” und sonst mit “Guten Abend” grüssen. Um es einfach zu halten: Die Zeitangbe muss in Dezimalzahlen erfolgen (also nicht 20:15 Uhr sondern 20.25).\n# die Lösung sollte etwa folgendermasssen funktionieren:\n\ngruezi3(\"Guido\", uhrzeit = 21)\n\n'Guten Abend Guido'",
+    "text": "Übung 8.1\nErstelle eine neue Funktion gruezi3 die gruezi (aus Übung 6.1) um einem weiteren Parameter uhrzeit erweitert. Die Funktion soll vor 18 Uhr (uhrzeit &lt; 18) mit “Guten Tag” und sonst mit “Guten Abend” grüssen. Um es einfach zu halten: Die Zeitangbe muss in Dezimalzahlen erfolgen (also nicht 20:15 Uhr sondern 20.25).\nMusterlösung\ndef gruezi3(nachname, uhrzeit):\n    if(uhrzeit &lt; 18):\n        grussform = \"Tag\"\n    else:\n        grussform = \"Abend\"\n\n    return \"Guten \" + grussform + \" \" + nachname\n# die Lösung sollte etwa folgendermasssen funktionieren:\n\ngruezi3(\"Guido\", uhrzeit = 21)\n\n'Guten Abend Guido'",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>32</span>  <span class='chapter-title'>Übung 8</span>"
@@ -1413,7 +1413,7 @@
     "href": "C_Programmieren_2/9_Uebung_8.html#übung-8.2",
     "title": "Übung 8",
     "section": "Übung 8.2",
-    "text": "Übung 8.2\nErweitere die Funktion gruezi2 so, dass zwischen folgende Uhrzeiten berücksichtigt werden:\n\n\n\nTabelle 32.1: Uhrzeiten und ihre Begrüssungsformen\n\n\n\n\n\nUhrzeit\nBegrüssungsform\n\n\n\n\n\n5 bis 11 Uhr\nGuten Morgen\n\n\n\n11 bis 18 Uhr\nGuten Tag\n\n\n\n18 bis 22 Uhr\nGuten Abend\n\n\n\n22 bis 5 Uhr\nGute Nacht\n\n\n\n\n\n\n\nDas Problem ist etwas schwierig zu Packen weil wir die “von - bis” Uhrzeiten in eine Ja/Nein Logik überführen müssen. Überlege dir zuerst eine Ausführungslogik und schreibe danach die if, elifund else Operationen. Hier unser Vorschlag:\n\n\n\n\n\ngraph LR\n    A[uhrzeit &lt; 5] \n    A--&gt;|yes| B[Gute Nacht]\n    A--&gt;|no| C[Uhrzeit &lt; 11]\n    C--&gt;|yes| D[Guten Morgen]\n    C--&gt;|no| E[Uhrzeit &lt; 18]\n    E--&gt;|yes| F[Guten Tag]\n    E--&gt;|no| G[Uhrzeit &lt; 22]\n    G--&gt;|yes| H[Guten Abend]\n    G--&gt;|no| I[Gute Nacht]\n\n\n\n\n\n\nTeste die Funktion mit verschiedenen Optionen um sicherzustellen, dass sie richtig funktioniert.",
+    "text": "Übung 8.2\nErweitere die Funktion gruezi2 so, dass zwischen folgende Uhrzeiten berücksichtigt werden:\n\n\n\nTabelle 32.1: Uhrzeiten und ihre Begrüssungsformen\n\n\n\n\n\nUhrzeit\nBegrüssungsform\n\n\n\n\n\n5 bis 11 Uhr\nGuten Morgen\n\n\n\n11 bis 18 Uhr\nGuten Tag\n\n\n\n18 bis 22 Uhr\nGuten Abend\n\n\n\n22 bis 5 Uhr\nGute Nacht\n\n\n\n\n\n\n\nDas Problem ist etwas schwierig zu Packen weil wir die “von - bis” Uhrzeiten in eine Ja/Nein Logik überführen müssen. Überlege dir zuerst eine Ausführungslogik und schreibe danach die if, elifund else Operationen. Hier unser Vorschlag:\n\n\nMusterlösung\ngraph LR\n    A[uhrzeit &lt; 5] \n    A--&gt;|yes| B[Gute Nacht]\n    A--&gt;|no| C[Uhrzeit &lt; 11]\n    C--&gt;|yes| D[Guten Morgen]\n    C--&gt;|no| E[Uhrzeit &lt; 18]\n    E--&gt;|yes| F[Guten Tag]\n    E--&gt;|no| G[Uhrzeit &lt; 22]\n    G--&gt;|yes| H[Guten Abend]\n    G--&gt;|no| I[Gute Nacht]\n\n\n\n\n\ngraph LR\n    A[uhrzeit &lt; 5] \n    A--&gt;|yes| B[Gute Nacht]\n    A--&gt;|no| C[Uhrzeit &lt; 11]\n    C--&gt;|yes| D[Guten Morgen]\n    C--&gt;|no| E[Uhrzeit &lt; 18]\n    E--&gt;|yes| F[Guten Tag]\n    E--&gt;|no| G[Uhrzeit &lt; 22]\n    G--&gt;|yes| H[Guten Abend]\n    G--&gt;|no| I[Gute Nacht]\n\n\n\n\n\n\n\n\nMusterlösung\ndef gruezi2(nachname, anrede, uhrzeit):\n    if(uhrzeit &lt; 5):\n        was = \"Gute Nacht\"\n    elif(uhrzeit &lt; 11):\n        was = \"Guten Morgen\"\n    elif(uhrzeit &lt; 18):\n        was = \"Guten Tag\"\n    elif(uhrzeit &lt; 22):\n        was = \"Guten Abend\"\n    else:\n        was = \"Gute Nacht\"\n\n    return was + \", \" + anrede + \" \"+ nachname\n\n\nTeste die Funktion mit verschiedenen Optionen um sicherzustellen, dass sie richtig funktioniert.",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>32</span>  <span class='chapter-title'>Übung 8</span>"
@@ -1424,7 +1424,7 @@
     "href": "C_Programmieren_2/9_Uebung_8.html#übung-8.3",
     "title": "Übung 8",
     "section": "Übung 8.3",
-    "text": "Übung 8.3\nErweitere die Funktion bmi aus Übung 7.3 so, dass statt dem berechneten BMI der “Nutritional status” aufgrund der WHO Klassifizierung ausgegeben wird:\n\n\n\nTabelle 32.2: WHO Nutritional status\n\n\n\n\n\nBMI\nNutritional status\n\n\n\n\nBelow 18.5\nUnderweight\n\n\n18.5–24.9\nNormal weight\n\n\n25.0–29.9\nPre-obesity\n\n\n30.0–34.9\nObesity class I\n\n\n35.0–39.9\nObesity class II\n\n\nAbove 40\nObesity class III\n\n\n\n\n\n\n\n# Der Output sollte etwa folgedermassen aussehen\nbmi2(1.7, 70)\n\n'Who classification: Normal weight'",
+    "text": "Übung 8.3\nErweitere die Funktion bmi aus Übung 7.3 so, dass statt dem berechneten BMI der “Nutritional status” aufgrund der WHO Klassifizierung ausgegeben wird:\n\n\n\nTabelle 32.2: WHO Nutritional status\n\n\n\n\n\nBMI\nNutritional status\n\n\n\n\nBelow 18.5\nUnderweight\n\n\n18.5–24.9\nNormal weight\n\n\n25.0–29.9\nPre-obesity\n\n\n30.0–34.9\nObesity class I\n\n\n35.0–39.9\nObesity class II\n\n\nAbove 40\nObesity class III\n\n\n\n\n\n\n\n\nMusterlösung\ndef bmi2(groesse_m, gewicht_kg):\n    bmi = gewicht_kg / (groesse_m * groesse_m)\n    if(bmi &lt; 18.5):\n        cat = \"Underweight\"\n    elif(bmi &lt;= 24.9):\n        cat = \"Normal weight\"\n    elif(bmi &lt;= 29.9):\n        cat = \"Pre-obesity\"\n    elif(bmi &lt;= 34.9):\n        cat = \"Obesity class I\"\n    elif(bmi &lt;= 39.9):\n        cat = \"Obesity class II\"\n    else:\n        cat = \"Obesity class III\"\n    return \"Who classification: \" + cat\n\n\n\n# Der Output sollte etwa folgedermassen aussehen\nbmi2(1.7, 70)\n\n'Who classification: Normal weight'",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>32</span>  <span class='chapter-title'>Übung 8</span>"
@@ -1446,7 +1446,7 @@
     "href": "C_Programmieren_2/11_Uebung_9.html",
     "title": "Übung 9",
     "section": "",
-    "text": "Übung 9.1\nNun wollen wir diesen Zufallszahlengenerator random nutzen um eine Funktion zu entwickeln, welche einen beliebigen Punkt (mit einer x-/y-Koordinate) zufällig in einem definierten Umkreis verschiebt. Unser Fernziel ist es, den simulierten Datensatz aus “Datenqualität und Unsicherheit” zu rekonstruieren (siehe unten). Der erste Schritt dorthin ist es, einen gemeldeten Punkt (rot in Abbildung 34.1) in einem definierten Umkreis zu verschieben.\nDas Ziel dieser Übung ist es also, dass wir eine Funktion entwickeln, die uns einen zufälligen Punkt in der Nähe eines Ursprungspunktes vorschlägt. Unser Vorgehen: Wir addieren jedem Koordinatenwert (x/y) des Ursprungspunktes einen Zufallswert, zum Beispiel zwischen -100 bis +100.\nBevor wir mit Koordinaten arbeiten wollt ihr euch zuerst mit dem Modul random vertraut machen. Importiere das Modul random und generiere eine Zufallszahl zwischen -100 und +100 aus einer uniformen Verteilung sowie aus einer Normalverteilung mit Mittelwert 100 und Standartabweichung 20.",
+    "text": "Übung 9.1\nNun wollen wir diesen Zufallszahlengenerator random nutzen um eine Funktion zu entwickeln, welche einen beliebigen Punkt (mit einer x-/y-Koordinate) zufällig in einem definierten Umkreis verschiebt. Unser Fernziel ist es, den simulierten Datensatz aus “Datenqualität und Unsicherheit” zu rekonstruieren (siehe unten). Der erste Schritt dorthin ist es, einen gemeldeten Punkt (rot in Abbildung 34.1) in einem definierten Umkreis zu verschieben.\nDas Ziel dieser Übung ist es also, dass wir eine Funktion entwickeln, die uns einen zufälligen Punkt in der Nähe eines Ursprungspunktes vorschlägt. Unser Vorgehen: Wir addieren jedem Koordinatenwert (x/y) des Ursprungspunktes einen Zufallswert, zum Beispiel zwischen -100 bis +100.\nBevor wir mit Koordinaten arbeiten wollt ihr euch zuerst mit dem Modul random vertraut machen. Importiere das Modul random und generiere eine Zufallszahl zwischen -100 und +100 aus einer uniformen Verteilung sowie aus einer Normalverteilung mit Mittelwert 100 und Standartabweichung 20.\nMusterlösung\nimport random\n\nrandom.uniform(-100, 100)\n\nrandom.normalvariate(100, 20)",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>34</span>  <span class='chapter-title'>Übung 9</span>"
@@ -1457,7 +1457,7 @@
     "href": "C_Programmieren_2/11_Uebung_9.html#übung-9.2",
     "title": "Übung 9",
     "section": "Übung 9.2",
-    "text": "Übung 9.2\nNun wollen wir uns den Koordinaten zuwenden. Erstelle als erstes zwei Dummykoordinaten x_start und y_start mit jeweils dem Wert 0. Diese sollen als “Ursprungskoordinaten” dienen.",
+    "text": "Übung 9.2\nNun wollen wir uns den Koordinaten zuwenden. Erstelle als erstes zwei Dummykoordinaten x_start und y_start mit jeweils dem Wert 0. Diese sollen als “Ursprungskoordinaten” dienen.\n\n\nMusterlösung\nx_start = 0\ny_start = 0",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>34</span>  <span class='chapter-title'>Übung 9</span>"
@@ -1468,7 +1468,7 @@
     "href": "C_Programmieren_2/11_Uebung_9.html#übung-9.3",
     "title": "Übung 9",
     "section": "Übung 9.3",
-    "text": "Übung 9.3\nGeneriere nun eine Zufallszahl, die aus einer Normalverteilung stammt und die in etwa zwischen -100 und +100 liegt. Weise diese Zahl der Variabel x_offset zu. Generiere danach eine zweite Zufallszahl (auf die gleiche Art) und weise diese y_offset zu.\n\n\n\n\n\n\nHinweis\n\n\n\n\n\nÜberlege dir, welcher Mittelwert Sinn macht um Werte zwischen -100 und +100 zu bekommen. Welche Zahl liegt zwischen -100 und +100?\nÜberlege dir als nächstes, welche Standartabweichung sinnvoll wäre. Zur Erinnerung: Etwa 68% der Werte liegen inerhalb von +/- 1 Standartabweichung (SD), 95% innerhalb von +/- 2 SD, 99% innerhalb von 3 SD (siehe unten):\n\n\n\n\n\n\nAbbildung 34.2: Normalverteilung und die Anteile innerhalb von 1 Standartabweichung (Mittelwert \\(\\mu\\) minus Standartabweichung \\(\\sigma\\)), 2 Standartabweichungen (\\(\\mu - 2\\times\\sigma)\\) und 2 Standartabweichungen (\\(\\mu - 3\\times\\sigma)\\). Quelle: cobocards",
+    "text": "Übung 9.3\nGeneriere nun eine Zufallszahl, die aus einer Normalverteilung stammt und die in etwa zwischen -100 und +100 liegt. Weise diese Zahl der Variabel x_offset zu. Generiere danach eine zweite Zufallszahl (auf die gleiche Art) und weise diese y_offset zu.\n\n\n\n\n\n\nHinweis\n\n\n\n\n\nÜberlege dir, welcher Mittelwert Sinn macht um Werte zwischen -100 und +100 zu bekommen. Welche Zahl liegt zwischen -100 und +100?\nÜberlege dir als nächstes, welche Standartabweichung sinnvoll wäre. Zur Erinnerung: Etwa 68% der Werte liegen inerhalb von +/- 1 Standartabweichung (SD), 95% innerhalb von +/- 2 SD, 99% innerhalb von 3 SD (siehe unten):\n\n\n\n\n\n\nAbbildung 34.2: Normalverteilung und die Anteile innerhalb von 1 Standartabweichung (Mittelwert \\(\\mu\\) minus Standartabweichung \\(\\sigma\\)), 2 Standartabweichungen (\\(\\mu - 2\\times\\sigma)\\) und 2 Standartabweichungen (\\(\\mu - 3\\times\\sigma)\\). Quelle: cobocards\n\n\n\n\n\n\n\n\nMusterlösung\n# Normalverteilte Werte mit Mittelwert 0 und Standartabweichung 100  \n# Achtung: bei dieser Standartabweichung sind ca 30% der Werte &gt; 100!\nx_offset = random.normalvariate(0, 100)\ny_offset = random.normalvariate(0, 100)\n\nx_offset\ny_offset",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>34</span>  <span class='chapter-title'>Übung 9</span>"
@@ -1479,7 +1479,7 @@
     "href": "C_Programmieren_2/11_Uebung_9.html#übung-9.4",
     "title": "Übung 9",
     "section": "Übung 9.4",
-    "text": "Übung 9.4\nAddiere nun die Zufallszahlen x_offset und y_offset jeweils zu den Dummykoordinaten x_start und y_start und weise diese neuen Koordinaten x_neu und y_neu zu. Die neuen Werte stellen die leicht verschobenen Ursprungskoordinaten dar. In meinem Fall sind diese um 10.2 Meter nach Osten (positiver Wert) bzw. 4.4 Meter nach Süden (negativer Wert) verschoben worden.\n\nx_neu\n\n10.246170309600945\n\n\n\ny_neu\n\n-4.443904000288846\n\n\n\n\nCode für die Visualisierung (nur FYI)\nimport pandas as pd\n\nmypoints = pd.DataFrame({\n    \"x\": [x_start, x_neu],\n    \"y\": [y_start, y_neu],\n    \"typ\": [\"start\", \"neu\"]\n    }\n)\n\nfrom matplotlib import pyplot as plt\n\nmypoints.plot(\"x\", \"y\", kind = \"scatter\", xlim = [-100, 100], ylim = [-100, 100], c = [\"red\", \"blue\"], title = \"Ursprung (rot) und Simulation (blau)\")",
+    "text": "Übung 9.4\nAddiere nun die Zufallszahlen x_offset und y_offset jeweils zu den Dummykoordinaten x_start und y_start und weise diese neuen Koordinaten x_neu und y_neu zu. Die neuen Werte stellen die leicht verschobenen Ursprungskoordinaten dar. In meinem Fall sind diese um 10.2 Meter nach Osten (positiver Wert) bzw. 4.4 Meter nach Süden (negativer Wert) verschoben worden.\n\n\nMusterlösung\nx_offset = 10.246170309600945\ny_offset = -4.443904000288846\n\nx_neu = x_start + x_offset\ny_neu = y_start + y_offset\n\n\n\nx_neu\n\n10.246170309600945\n\n\n\ny_neu\n\n-4.443904000288846\n\n\n\n\nCode für die Visualisierung (nur FYI)\nimport pandas as pd\n\nmypoints = pd.DataFrame({\n    \"x\": [x_start, x_neu],\n    \"y\": [y_start, y_neu],\n    \"typ\": [\"start\", \"neu\"]\n    }\n)\n\nfrom matplotlib import pyplot as plt\n\nmypoints.plot(\"x\", \"y\", kind = \"scatter\", xlim = [-100, 100], ylim = [-100, 100], c = [\"red\", \"blue\"], title = \"Ursprung (rot) und Simulation (blau)\")",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>34</span>  <span class='chapter-title'>Übung 9</span>"
@@ -1490,7 +1490,7 @@
     "href": "C_Programmieren_2/11_Uebung_9.html#sec-ex-offset-function",
     "title": "Übung 9",
     "section": "Übung 9.5",
-    "text": "Übung 9.5\nNun haben wir das zufällige Verschieben eines Einzelpunktes am Beispiel einer Dummykoordinaten (0/0) durchgespielt. In der nächsten Aufgabe (Funktionen in DataFrames) werden wir alle unsere Zeckenstichkoordinaten auf diese Weise zufällig verschieben um einen simulierten Zeckenstichdatensatz ähnlich wie Abbildung 34.1 zu erhalten.\nDafür brauchen wir die eben erarbeiteten Einzelschritte als Funktion, um diese auf alle Zeckenstiche anwenden zu können.\nErstelle jetzt eine Funktion namens offset_coordinate welche als Input eine x oder y-Achsenwert annimmt und eine leicht verschobene Wert zurückgibt.** Integriere die Standartabweichung der Verteilung als optionalen Parameter mit dem Namen distance und einem Defaultwert von 100.\n\n# die Funktion sollte so funktionieren:\noffset_coordinate(x_start)\n\n-31.883084158535397",
+    "text": "Übung 9.5\nNun haben wir das zufällige Verschieben eines Einzelpunktes am Beispiel einer Dummykoordinaten (0/0) durchgespielt. In der nächsten Aufgabe (Funktionen in DataFrames) werden wir alle unsere Zeckenstichkoordinaten auf diese Weise zufällig verschieben um einen simulierten Zeckenstichdatensatz ähnlich wie Abbildung 34.1 zu erhalten.\nDafür brauchen wir die eben erarbeiteten Einzelschritte als Funktion, um diese auf alle Zeckenstiche anwenden zu können.\nErstelle jetzt eine Funktion namens offset_coordinate welche als Input eine x oder y-Achsenwert annimmt und eine leicht verschobene Wert zurückgibt.** Integriere die Standartabweichung der Verteilung als optionalen Parameter mit dem Namen distance und einem Defaultwert von 100.\n\n\nMusterlösung\ndef offset_coordinate(old, distance = 100):\n    new = old + random.normalvariate(0, distance)\n    return new\n\n\n\n# die Funktion sollte so funktionieren:\noffset_coordinate(x_start)\n\n140.23909822962298",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>34</span>  <span class='chapter-title'>Übung 9</span>"
@@ -1501,7 +1501,7 @@
     "href": "C_Programmieren_2/11_Uebung_9.html#sec-offset-vis",
     "title": "Übung 9",
     "section": "Übung 9.6",
-    "text": "Übung 9.6\nNun ist es wichtig, dass wir unser Resultat visuell überprüfen. Im Beispiel unten wende ich die in der letzten Übung erstellte Funktion offset_coordinate() 1’000 mal auf die Dummykoordinate an. Nutze deine Funktion offset_coordinate um eine Visualisierung gemäss untenstehendem beispiel zu machen.\n\nx_neu_list = [offset_coordinate(x_start) for i in range(1, 1000)]\ny_neu_list = [offset_coordinate(y_start) for i in range(1, 1000)]\n\n# Liste in eine Pandas DataFrame überführen\nmysim = pd.DataFrame({\"x\" : x_neu_list, \"y\" : y_neu_list})\n\nmysim.plot(\"x\", \"y\", kind = \"scatter\")\n\nfrom matplotlib import pyplot as plt\nplt.axis(\"equal\")\n\n(np.float64(-315.2456585950146),\n np.float64(361.05675140877463),\n np.float64(-436.1352498217142),\n np.float64(391.7696516895894))",
+    "text": "Übung 9.6\nNun ist es wichtig, dass wir unser Resultat visuell überprüfen. Im Beispiel unten wende ich die in der letzten Übung erstellte Funktion offset_coordinate() 1’000 mal auf die Dummykoordinate an. Nutze deine Funktion offset_coordinate um eine Visualisierung gemäss untenstehendem beispiel zu machen.\n\nx_neu_list = [offset_coordinate(x_start) for i in range(1, 1000)]\ny_neu_list = [offset_coordinate(y_start) for i in range(1, 1000)]\n\n# Liste in eine Pandas DataFrame überführen\nmysim = pd.DataFrame({\"x\" : x_neu_list, \"y\" : y_neu_list})\n\nmysim.plot(\"x\", \"y\", kind = \"scatter\")\n\nfrom matplotlib import pyplot as plt\nplt.axis(\"equal\")\n\n(np.float64(-327.1562139309853),\n np.float64(317.58654557725527),\n np.float64(-427.24119534513835),\n np.float64(425.7817913184465))",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>34</span>  <span class='chapter-title'>Übung 9</span>"
@@ -1523,7 +1523,7 @@
     "href": "C_Programmieren_2/13_Uebung_10.html",
     "title": "Übung 10",
     "section": "",
-    "text": "Übung 10.1\nFür diese Übung brauchen wir\nMache dich nochmals damit vertraut, einzelne Spalten zu selektieren. Schau dir DataFrames nochmals an wenn du nicht mehr weisst wie das geht.",
+    "text": "Übung 10.1\nFür diese Übung brauchen wir\nMache dich nochmals damit vertraut, einzelne Spalten zu selektieren. Schau dir DataFrames nochmals an wenn du nicht mehr weisst wie das geht.\nMusterlösung\nzeckenstiche[\"x\"]\nzeckenstiche[\"y\"]",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>36</span>  <span class='chapter-title'>Übung 10</span>"
@@ -1545,7 +1545,7 @@
     "href": "C_Programmieren_2/13_Uebung_10.html#sec-ex-apply",
     "title": "Übung 10",
     "section": "Übung 10.3",
-    "text": "Übung 10.3\npandas kennt eine ganze Familie von Methoden, um Spalten zu Manipulieren und Daten zu Aggregieren (apply, map, mapapply, assign). Es würde den Rahmen dieses Kurses sprengen, die alle im Detail durchzugehen, es lohnt sich aber sehr sich mit diesen auseinanderzusetzen wenn man sich näher mit Python befassen möchte.\nIm unserem Fall brauchen wir lediglich die Methode apply um die Funktion offset_coordinate() auf die Zeckenstichkoordinaten anzuwenden. Dabei gehen wir wie folgt for:\n\nzeckenstiche[\"x\"].apply(offset_coordinate)\n#\\______1_______/ \\_2_/\\_______3_________/\n\n# 1. Spalte selektieren ([\"x\"])\n# 2. Methode \"apply\" aufrufen\n# 3. Function übergeben\n\nVerwende dieses Schema um auch offset_coordinate auf die y Spalte anzuwenden und speichere den Output dieser beiden Operationen als neue Spalten x_sim sowie y_sim. Die DataFrame zeckenstiche sollte danach wie folgt aussehen:\n\n\nMusterlösung\nzeckenstiche[\"x_sim\"] = zeckenstiche[\"x\"].apply(offset_coordinate)\nzeckenstiche[\"y_sim\"] = zeckenstiche[\"y\"].apply(offset_coordinate)\n\n\n\nzeckenstiche\n\n\n\n\n\n\n\n\nID\naccuracy\nx\ny\nx_sim\ny_sim\n\n\n\n\n0\n2550\n439.128951\n2681116\n1250648\n2.681158e+06\n1.250614e+06\n\n\n1\n10437\n301.748542\n2681092\n1250672\n2.681078e+06\n1.250813e+06\n\n\n2\n9174\n301.748542\n2681128\n1250683\n2.681121e+06\n1.250565e+06\n\n\n3\n8773\n301.748542\n2681111\n1250683\n2.681035e+06\n1.250775e+06\n\n\n4\n2764\n301.748529\n2681131\n1250692\n2.681108e+06\n1.250690e+06\n\n\n5\n2513\n301.748529\n2681171\n1250711\n2.681080e+06\n1.250714e+06\n\n\n6\n9185\n301.748542\n2681107\n1250712\n2.681116e+06\n1.250858e+06\n\n\n7\n28521\n301.748542\n2681124\n1250720\n2.681241e+06\n1.250837e+06\n\n\n8\n26745\n301.748542\n2681117\n1250725\n2.681252e+06\n1.250647e+06\n\n\n9\n27391\n301.748542\n2681138\n1250725\n2.681329e+06\n1.250655e+06",
+    "text": "Übung 10.3\npandas kennt eine ganze Familie von Methoden, um Spalten zu Manipulieren und Daten zu Aggregieren (apply, map, mapapply, assign). Es würde den Rahmen dieses Kurses sprengen, die alle im Detail durchzugehen, es lohnt sich aber sehr sich mit diesen auseinanderzusetzen wenn man sich näher mit Python befassen möchte.\nIm unserem Fall brauchen wir lediglich die Methode apply um die Funktion offset_coordinate() auf die Zeckenstichkoordinaten anzuwenden. Dabei gehen wir wie folgt for:\n\nzeckenstiche[\"x\"].apply(offset_coordinate)\n#\\______1_______/ \\_2_/\\_______3_________/\n\n# 1. Spalte selektieren ([\"x\"])\n# 2. Methode \"apply\" aufrufen\n# 3. Function übergeben\n\nVerwende dieses Schema um auch offset_coordinate auf die y Spalte anzuwenden und speichere den Output dieser beiden Operationen als neue Spalten x_sim sowie y_sim. Die DataFrame zeckenstiche sollte danach wie folgt aussehen:\n\n\nMusterlösung\nzeckenstiche[\"x_sim\"] = zeckenstiche[\"x\"].apply(offset_coordinate)\nzeckenstiche[\"y_sim\"] = zeckenstiche[\"y\"].apply(offset_coordinate)\n\n\n\nzeckenstiche\n\n\n\n\n\n\n\n\nID\naccuracy\nx\ny\nx_sim\ny_sim\n\n\n\n\n0\n2550\n439.128951\n2681116\n1250648\n2.681032e+06\n1.250680e+06\n\n\n1\n10437\n301.748542\n2681092\n1250672\n2.681296e+06\n1.250750e+06\n\n\n2\n9174\n301.748542\n2681128\n1250683\n2.681251e+06\n1.250768e+06\n\n\n3\n8773\n301.748542\n2681111\n1250683\n2.681143e+06\n1.250853e+06\n\n\n4\n2764\n301.748529\n2681131\n1250692\n2.681105e+06\n1.250767e+06\n\n\n5\n2513\n301.748529\n2681171\n1250711\n2.681315e+06\n1.250709e+06\n\n\n6\n9185\n301.748542\n2681107\n1250712\n2.681278e+06\n1.250676e+06\n\n\n7\n28521\n301.748542\n2681124\n1250720\n2.681235e+06\n1.250489e+06\n\n\n8\n26745\n301.748542\n2681117\n1250725\n2.681172e+06\n1.250640e+06\n\n\n9\n27391\n301.748542\n2681138\n1250725\n2.681162e+06\n1.250572e+06",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>36</span>  <span class='chapter-title'>Übung 10</span>"
@@ -1556,7 +1556,7 @@
     "href": "C_Programmieren_2/13_Uebung_10.html#sec-ex-param",
     "title": "Übung 10",
     "section": "Übung 10.4",
-    "text": "Übung 10.4\nIn Übung 10.3 haben wir unsere Funktion offset_coordinate aufgerufen, ohne den Parameter distance zu spezifizieren. Dies war möglich, weil wir für distance einen Defaultwert festgelegt hatten (100 Meter). Wir können aber auch zusätzliche Parameter kommagetrennt nach der Funktion angeben. Dies sieht folgendermassen aus:\n\nzeckenstiche[\"x\"].apply(offset_coordinate, distance = 200)\n\nNutze diese Möglichkeit, um den Offset (distance) auf maximal 10 Meter zu reduzieren.",
+    "text": "Übung 10.4\nIn Übung 10.3 haben wir unsere Funktion offset_coordinate aufgerufen, ohne den Parameter distance zu spezifizieren. Dies war möglich, weil wir für distance einen Defaultwert festgelegt hatten (100 Meter). Wir können aber auch zusätzliche Parameter kommagetrennt nach der Funktion angeben. Dies sieht folgendermassen aus:\n\nzeckenstiche[\"x\"].apply(offset_coordinate, distance = 200)\n\nNutze diese Möglichkeit, um den Offset (distance) auf maximal 10 Meter zu reduzieren.\n\n\nMusterlösung\nzeckenstiche[\"x_sim\"] = zeckenstiche[\"x\"].apply(offset_coordinate, distance = 10)\nzeckenstiche[\"y_sim\"] = zeckenstiche[\"y\"].apply(offset_coordinate, distance = 10)",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>36</span>  <span class='chapter-title'>Übung 10</span>"
@@ -1567,7 +1567,7 @@
     "href": "C_Programmieren_2/13_Uebung_10.html#übung-10.5",
     "title": "Übung 10",
     "section": "Übung 10.5",
-    "text": "Übung 10.5\nUm die Original x/y-Werte sowie die simulierten Daten im gleichen Plot darzustellen, wird folgendermassen vorgegangen: Der erste Datensatz wird mit .plot() visualisiert, wobei der Output einer Variabel (z.B. basemap) zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit .plot() visualisiert, wobei auf den ersten Plot via dem Argument ax verwiesen wird.\nBei den roten Punkten handelt es sich um die Original-Zeckenstichen, bei den blauen um die simulierten (leicht verschoben) Zeckenstiche. Visualisiere deine eigenen Zeckenstiche auf diese Weise.\n\nfrom matplotlib import pyplot as plt\n\nbasemap = zeckenstiche.plot(\"x\", \"y\", kind = \"scatter\", color = \"red\")\nzeckenstiche.plot(\"x_sim\", \"y_sim\", kind = \"scatter\", ax = basemap, color = \"blue\")\n\nplt.axis(\"equal\")\n\n(np.float64(2681085.4824053277),\n np.float64(2681175.072266413),\n np.float64(1250642.1735586843),\n np.float64(1250740.3180150718))",
+    "text": "Übung 10.5\nUm die Original x/y-Werte sowie die simulierten Daten im gleichen Plot darzustellen, wird folgendermassen vorgegangen: Der erste Datensatz wird mit .plot() visualisiert, wobei der Output einer Variabel (z.B. basemap) zugewiesen wird. Danach wird der zweite Datensatz ebenfalls mit .plot() visualisiert, wobei auf den ersten Plot via dem Argument ax verwiesen wird.\nBei den roten Punkten handelt es sich um die Original-Zeckenstichen, bei den blauen um die simulierten (leicht verschoben) Zeckenstiche. Visualisiere deine eigenen Zeckenstiche auf diese Weise.\n\nfrom matplotlib import pyplot as plt\n\nbasemap = zeckenstiche.plot(\"x\", \"y\", kind = \"scatter\", color = \"red\")\nzeckenstiche.plot(\"x_sim\", \"y_sim\", kind = \"scatter\", ax = basemap, color = \"blue\")\n\nplt.axis(\"equal\")\n\n(np.float64(2681086.76212888),\n np.float64(2681189.168639887),\n np.float64(1250643.9728175884),\n np.float64(1250732.5708306462))",
     "crumbs": [
       "Programmieren II",
       "<span class='chapter-number'>36</span>  <span class='chapter-title'>Übung 10</span>"
@@ -1709,7 +1709,7 @@
     "href": "C_Programmieren_3/2_Uebung_11.html#sec-for-gruss",
     "title": "Übung 11",
     "section": "Übung 11.2",
-    "text": "Übung 11.2\nKonstruiere eine Liste bestehend aus 3 Namen und nenne diese Liste namen. Erstelle danach einen for loop, mit welcher jede Person in der Liste gegrüsst wird. Nutze dafür print.\nDer Output könnte etwa so aussehen:\n\n\nCiao  Il Buono\nCiao  Il Brutto\nCiao  Il Cattivo",
+    "text": "Übung 11.2\nKonstruiere eine Liste bestehend aus 3 Namen und nenne diese Liste namen. Erstelle danach einen for loop, mit welcher jede Person in der Liste gegrüsst wird. Nutze dafür print.\n\n\nMusterlösung\nnamen = [\"Il Buono\", \"Il Brutto\", \"Il Cattivo\"]\n\nfor name in namen:\n    print(\"Ciao \",name)\n\n\nDer Output könnte etwa so aussehen:\n\n\nMusterlösung\nfor name in namen:\n    print(\"Ciao \",name)\n\n\nCiao  Il Buono\nCiao  Il Brutto\nCiao  Il Cattivo",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>39</span>  <span class='chapter-title'>Übung 11</span>"
@@ -1720,7 +1720,7 @@
     "href": "C_Programmieren_3/2_Uebung_11.html#übung-11.3",
     "title": "Übung 11",
     "section": "Übung 11.3",
-    "text": "Übung 11.3\nKopiere den folgenden For Loop und spiele hier mit den Werten herum. Verändere den For Loop so, dass er über die Werte von -5 bis +5 iteriert.\n\nfor nonsense in range(3, 5):\n    print(\"Iteration\",nonsense)\n\nIteration 3\nIteration 4",
+    "text": "Übung 11.3\nKopiere den folgenden For Loop und spiele hier mit den Werten herum. Verändere den For Loop so, dass er über die Werte von -5 bis +5 iteriert.\n\nfor nonsense in range(3, 5):\n    print(\"Iteration\",nonsense)\n\nIteration 3\nIteration 4\n\n\n\n\nMusterlösung\n# Iteriert von -5 bis +5\nfor platzhalter in range(-5,6):\n    print(\"Iteration\",platzhalter)",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>39</span>  <span class='chapter-title'>Übung 11</span>"
@@ -1731,7 +1731,7 @@
     "href": "C_Programmieren_3/2_Uebung_11.html#übung-11.4",
     "title": "Übung 11",
     "section": "Übung 11.4",
-    "text": "Übung 11.4\nBis jetzt haben unsere Loops nicht viel Arbeiten müssen. Erstelle nun einen For Loop, welcher für die Werte -5 bis +5 folgendes ausgibt:\nDas Quadrat von -5 ist 25\nDas Quadrat von -4 ist 16\n...",
+    "text": "Übung 11.4\nBis jetzt haben unsere Loops nicht viel Arbeiten müssen. Erstelle nun einen For Loop, welcher für die Werte -5 bis +5 folgendes ausgibt:\nDas Quadrat von -5 ist 25\nDas Quadrat von -4 ist 16\n...\n\n\nMusterlösung\nfor platzhalter in range(-5,6):\n    print(\"Das Quadrat von\",platzhalter, \"ist\",platzhalter*platzhalter)",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>39</span>  <span class='chapter-title'>Übung 11</span>"
@@ -1742,7 +1742,7 @@
     "href": "C_Programmieren_3/2_Uebung_11.html#sec-forloops-ex-party",
     "title": "Übung 11",
     "section": "Übung 11.5",
-    "text": "Übung 11.5\nBisher haben wir die Platzhaltervariabel immer in unserem Loop wiederverwendet. Das müssen wir aber gar nicht, wir können den for loop einfach nutzen um etwas x mal zu wiederholen. Erstellen einen for loop der folgende beiden Sätze 5x wiederholt:\nWho likes to party?\nWe like to party!\nWho likes to party?\n....\n\n\n\n\n\n\nHinweis\n\n\n\n\n\nNutze dafür zwei verschiedene print Befehle auf zwei Zeilen.",
+    "text": "Übung 11.5\nBisher haben wir die Platzhaltervariabel immer in unserem Loop wiederverwendet. Das müssen wir aber gar nicht, wir können den for loop einfach nutzen um etwas x mal zu wiederholen. Erstellen einen for loop der folgende beiden Sätze 5x wiederholt:\nWho likes to party?\nWe like to party!\nWho likes to party?\n....\n\n\n\n\n\n\nHinweis\n\n\n\n\n\nNutze dafür zwei verschiedene print Befehle auf zwei Zeilen.\n\n\n\n\n\nMusterlösung\nfor i in range(5):\n    print(\"Who likes to party?\")\n    print(\"We like to party!\")",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>39</span>  <span class='chapter-title'>Übung 11</span>"
@@ -1764,7 +1764,7 @@
     "href": "C_Programmieren_3/3_Uebung_12.html",
     "title": "Übung 12",
     "section": "",
-    "text": "Übung 12.1\nNehmen wir nochmals das Beispiel aus Übung 11.2. Erstelle nochmal ein Loop, wo drei Personen aus einer Liste gegrüsst werden. Diesmal sollen aber die drei Grüsse in einer Liste (z.B. mylist) gespeichert werden.\n# Das Resultat sieht dann so aus:\nmylist\n\n['Ciao Il Buono', 'Ciao Il Brutto', 'Ciao Il Cattivo']",
+    "text": "Übung 12.1\nNehmen wir nochmals das Beispiel aus Übung 11.2. Erstelle nochmal ein Loop, wo drei Personen aus einer Liste gegrüsst werden. Diesmal sollen aber die drei Grüsse in einer Liste (z.B. mylist) gespeichert werden.\nMusterlösung\nmylist = []\n\nfor name in [\"Il Buono\", \"Il Brutto\", \"Il Cattivo\"]:\n    mylist.append(\"Ciao \"+name)\n# Das Resultat sieht dann so aus:\nmylist\n\n['Ciao Il Buono', 'Ciao Il Brutto', 'Ciao Il Cattivo']",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>41</span>  <span class='chapter-title'>Übung 12</span>"
@@ -1775,7 +1775,7 @@
     "href": "C_Programmieren_3/3_Uebung_12.html#sec-ex-loopoutput",
     "title": "Übung 12",
     "section": "Übung 12.2",
-    "text": "Übung 12.2\nDer im Beispiel verwendete Refrain aus dem Lied “Bitch” von Meredith Brooks besteht bis auf zwei Zeilen aus Wiederholungen. Versuche mit zwei verschiedenen, aneinander gereihten for loops den ganzen Refrain in einer Liste zu speichern. Die beiden Teile die vom Muster Abweichen (“I do not feel ashamed” und “You know you wouldn’t want it any other way”) kannst du auch ausserhalb der Loops in die Listen einfügen (append).\n\n# Das Resultat sieht dann so aus:\nrefrain\n\n[\"I'm a bitch\",\n \"I'm a lover\",\n \"I'm a child\",\n \"I'm a mother\",\n \"I'm a sinner\",\n \"I'm a saint\",\n 'I do not feel ashamed',\n \"I'm your hell\",\n \"I'm your dream\",\n \"I'm nothing in between\",\n \"You know you wouldn't want it any other way\"]",
+    "text": "Übung 12.2\nDer im Beispiel verwendete Refrain aus dem Lied “Bitch” von Meredith Brooks besteht bis auf zwei Zeilen aus Wiederholungen. Versuche mit zwei verschiedenen, aneinander gereihten for loops den ganzen Refrain in einer Liste zu speichern. Die beiden Teile die vom Muster Abweichen (“I do not feel ashamed” und “You know you wouldn’t want it any other way”) kannst du auch ausserhalb der Loops in die Listen einfügen (append).\n\n\nMusterlösung\nrefrain = []\n\nfor rolle in [\"bitch\",\"lover\",\"child\",\"mother\",\"sinner\",\"saint\"]:\n    liedzeile = \"I'm a \"+ rolle \n    refrain.append(liedzeile)\nrefrain.append(\"I do not feel ashamed\")\nfor rolle in [\"your hell\",\"your dream\",\"nothing in between\"]:\n    liedzeile = \"I'm \"+ rolle \n    refrain.append(liedzeile)\nrefrain.append(\"You know you wouldn't want it any other way\") \n\n\n\n# Das Resultat sieht dann so aus:\nrefrain\n\n[\"I'm a bitch\",\n \"I'm a lover\",\n \"I'm a child\",\n \"I'm a mother\",\n \"I'm a sinner\",\n \"I'm a saint\",\n 'I do not feel ashamed',\n \"I'm your hell\",\n \"I'm your dream\",\n \"I'm nothing in between\",\n \"You know you wouldn't want it any other way\"]",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>41</span>  <span class='chapter-title'>Übung 12</span>"
@@ -1819,7 +1819,7 @@
     "href": "C_Programmieren_3/4_Uebung_13.html",
     "title": "Übung 13",
     "section": "",
-    "text": "Übung 13.1\nErstelle zwei Listen bestehend aus 3 Hundenamen (hunde) und 3 Katzennamen (katzen). Erstelle einen verschachtelten For Loop, wo jeder Hund jede Katze beisst und jede Katze jeden Hund kratzt.",
+    "text": "Übung 13.1\nErstelle zwei Listen bestehend aus 3 Hundenamen (hunde) und 3 Katzennamen (katzen). Erstelle einen verschachtelten For Loop, wo jeder Hund jede Katze beisst und jede Katze jeden Hund kratzt.\nMusterlösung\nhunde = [\"Bruno\", \"Berta\",\"Helmi\"]\nkatzen = [\"Greta\", \"Xavier\", \"Zachy\"]\n\nfor katze in katzen:\n    for hund in hunde:\n        print(hund, \"beisst\", katze+\" und \"+katze, \"kratzt \", hund)",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>43</span>  <span class='chapter-title'>Übung 13</span>"
@@ -1841,7 +1841,7 @@
     "href": "C_Programmieren_3/4_Uebung_13.html#übung-13.2",
     "title": "Übung 13",
     "section": "Übung 13.2",
-    "text": "Übung 13.2\nErstelle einen verschachtelten Loop, wo alle Kombinationen von 0 bis 9 miteinander addiert werden.",
+    "text": "Übung 13.2\nErstelle einen verschachtelten Loop, wo alle Kombinationen von 0 bis 9 miteinander addiert werden.\n\n\nMusterlösung\naddition = []\n\nwerte = range(10)\n\nfor i in werte:\n    for j in werte:\n        resultat = i+j\n        addition.append(resultat)",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>43</span>  <span class='chapter-title'>Übung 13</span>"
@@ -1852,7 +1852,7 @@
     "href": "C_Programmieren_3/4_Uebung_13.html#übung-13.3",
     "title": "Übung 13",
     "section": "Übung 13.3",
-    "text": "Übung 13.3\nNutze die Funktion offset_coordinate (Lösung aus Übung 9.5) um einen Punkt in einem Koordinatensystem zu verschieben. Diesmal soll der Punkt aber nicht nur 1x, sondern 100x verschoben werden (100 Simulationen).",
+    "text": "Übung 13.3\nNutze die Funktion offset_coordinate (Lösung aus Übung 9.5) um einen Punkt in einem Koordinatensystem zu verschieben. Diesmal soll der Punkt aber nicht nur 1x, sondern 100x verschoben werden (100 Simulationen).\n\n\nMusterlösung\nimport random\n\ndef offset_coordinate(old, distance = 100):\n    new = old + random.normalvariate(0, distance)\n    return new\n\nx_start = 0\ny_start = 0\n\nx_random = []\ny_random = []\nfor i in range(100):\n    x_new = offset_coordinate(x_start)\n    y_new = offset_coordinate(y_start)\n\n    x_random.append(x_new)\n    y_random.append(y_new)",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>43</span>  <span class='chapter-title'>Übung 13</span>"
@@ -1863,7 +1863,7 @@
     "href": "C_Programmieren_3/4_Uebung_13.html#übung-13.4-fakultativ",
     "title": "Übung 13",
     "section": "Übung 13.4 (fakultativ)",
-    "text": "Übung 13.4 (fakultativ)\nVersuche die Monte Carlo Simulation für die Annäherung an Pi (aus der ersten Übung “Datenqualität und Unsicherheit) mit einer Funktion und einem For Loop zu lösen.\nZur Erinnerung, die Vorgehensweise für die Annäherung an Pi geht folgendermassen:\n\nZufallskoordinaten (x, y) zwischen 0 und 1 erstellen\nDistanz zum Ursprung (0) mit der Formel \\(\\sqrt(x^2+y^2)\\) berechnen\nBestimmen ob sich der Punkt innerhalb des Kreisviertels befindet (\\(d &lt; 1\\))\nSchritte 1 & 2 mehrfach wiederholen\nAnteil der Punkte innerhalb des Kreisviertels mit 4 Multiplizieren\n\nTipps:\n\nFür die Erstellung der Zufallspunkte brauchst du die Funktion random() aus dem modul random\nSchritte 1 - 3 werden am sinnvollsten ein eine Funktion verpakt, welche keine Argumente benötigt\nSchritt 4 löst du am besten mit einer For loop mit range(100) (für 100 Wiederholungen)",
+    "text": "Übung 13.4 (fakultativ)\nVersuche die Monte Carlo Simulation für die Annäherung an Pi (aus der ersten Übung “Datenqualität und Unsicherheit) mit einer Funktion und einem For Loop zu lösen.\nZur Erinnerung, die Vorgehensweise für die Annäherung an Pi geht folgendermassen:\n\nZufallskoordinaten (x, y) zwischen 0 und 1 erstellen\nDistanz zum Ursprung (0) mit der Formel \\(\\sqrt(x^2+y^2)\\) berechnen\nBestimmen ob sich der Punkt innerhalb des Kreisviertels befindet (\\(d &lt; 1\\))\nSchritte 1 & 2 mehrfach wiederholen\nAnteil der Punkte innerhalb des Kreisviertels mit 4 Multiplizieren\n\nTipps:\n\nFür die Erstellung der Zufallspunkte brauchst du die Funktion random() aus dem modul random\nSchritte 1 - 3 werden am sinnvollsten ein eine Funktion verpakt, welche keine Argumente benötigt\nSchritt 4 löst du am besten mit einer For loop mit range(100) (für 100 Wiederholungen)\n\n\n\nMusterlösung\nimport random\n\n# erstelle eine Funktion, die zwei Zufallszahlen zwischen 0 und 1 generiert,\n# die Distanz zum Ursprung (0,0) berechnet und True retourniert, wenn der Wert ausserhalb des Kreisviertels liegt\ndef get_pi(): \n    x = random.random()\n    y = random.random()\n    pythagoras = (x**2+y**2)**0.5\n    ausserhalb = pythagoras &gt; 1\n    return ausserhalb\n\nget_pi()\n\n# die Funktion 100x wiederholen und die Anzahl Werte &gt; 1 zählen\nres = [get_pi() for x in range(100)]\n\n# Anteil der Werte &gt; 1 berechnen und mit 4 multiplizieren\n(100-sum(res))/100*4",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>43</span>  <span class='chapter-title'>Übung 13</span>"
@@ -1984,7 +1984,7 @@
     "href": "C_Programmieren_3/6_Uebung_14.html",
     "title": "Übung 14",
     "section": "",
-    "text": "Übung 14.1\nNun ist es Zeit, dass ihr selbst mit GeoDataFrames Hand anlegt. Achtet dabei immer auf die Datentypen eurer Daten (mit type) und konsultiert dazu Aufbau von GeoDataFrames. Zudem ist Geopandas gut dokumentiert, es lohnt ich diese immer wieder zu konsultieren: geopandas.org\nImportiere Geopandas und wandle zeckenstiche in eine GeoDataFrame um (zeckenstiche). Vergiss nicht, das Koordinatenbezugssystem festzulegen!",
+    "text": "Übung 14.1\nNun ist es Zeit, dass ihr selbst mit GeoDataFrames Hand anlegt. Achtet dabei immer auf die Datentypen eurer Daten (mit type) und konsultiert dazu Aufbau von GeoDataFrames. Zudem ist Geopandas gut dokumentiert, es lohnt ich diese immer wieder zu konsultieren: geopandas.org\nImportiere Geopandas und wandle zeckenstiche in eine GeoDataFrame um (zeckenstiche). Vergiss nicht, das Koordinatenbezugssystem festzulegen!\nMusterlösung\nimport pandas as pd\nimport geopandas as gpd\n\n# Übung 14.1\nzeckenstiche = pd.read_csv(\"data/zeckenstiche.csv\")\n\ngeom = gpd.points_from_xy(\n  zeckenstiche['x'],    # ↘\n  zeckenstiche['y']     # → die Geometrie Spalte\n  )   \n\nzeckenstiche_gpd = gpd.GeoDataFrame(\n    zeckenstiche,    # die DataFrame (\"Attributtabelle\")\n    geometry = geom, #\n    crs = 2056       # das Koordinatenbezugssystem (EPSG Code)\n)",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>46</span>  <span class='chapter-title'>Übung 14</span>"
@@ -1995,7 +1995,7 @@
     "href": "C_Programmieren_3/6_Uebung_14.html#übung-14.2",
     "title": "Übung 14",
     "section": "Übung 14.2",
-    "text": "Übung 14.2\nBuffere die Zeckenstiche um eine Distanz von 12 Meter und speichere den Output in der Variabel zeckenstiche_buffer. Visualisiere die gebufferten Punkte mit .explore().\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook",
+    "text": "Übung 14.2\nBuffere die Zeckenstiche um eine Distanz von 12 Meter und speichere den Output in der Variabel zeckenstiche_buffer. Visualisiere die gebufferten Punkte mit .explore().\n\n\nMusterlösung\nzeckenstiche_buffer = zeckenstiche_gpd.buffer(12)\nzeckenstiche_buffer.explore()\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>46</span>  <span class='chapter-title'>Übung 14</span>"
@@ -2006,7 +2006,7 @@
     "href": "C_Programmieren_3/6_Uebung_14.html#übung-14.3",
     "title": "Übung 14",
     "section": "Übung 14.3",
-    "text": "Übung 14.3\nExtrahiere die Umrisse von zeckenstiche_buffer und speichere diese in zeckenstiche_buffer_outline. Visualisiere anschliessend diese Umrisse.\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook",
+    "text": "Übung 14.3\nExtrahiere die Umrisse von zeckenstiche_buffer und speichere diese in zeckenstiche_buffer_outline. Visualisiere anschliessend diese Umrisse.\n\n\nMusterlösung\nzeckenstiche_buffer_outline = zeckenstiche_buffer.boundary\n\nzeckenstiche_buffer_outline.explore()\n\n\nMake this Notebook Trusted to load map: File -&gt; Trust Notebook",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>46</span>  <span class='chapter-title'>Übung 14</span>"
@@ -2028,7 +2028,7 @@
     "href": "C_Programmieren_3/6_Uebung_14.html#übung-14.5",
     "title": "Übung 14",
     "section": "Übung 14.5",
-    "text": "Übung 14.5\nBerechne “Envelope” von zeckenstiche_gpd anhand der Beispiele in Räumliche Operationen. Speichere den Output als zeckenstiche_envelope.\n\n\n\n\n\n\nHinweis\n\n\n\n\n\nDenk daran, dass du zuerst noch einen Union machen musst (siehe Räumliche Operationen)",
+    "text": "Übung 14.5\nBerechne “Envelope” von zeckenstiche_gpd anhand der Beispiele in Räumliche Operationen. Speichere den Output als zeckenstiche_envelope.\n\n\n\n\n\n\nHinweis\n\n\n\n\n\nDenk daran, dass du zuerst noch einen Union machen musst (siehe Räumliche Operationen)\n\n\n\n\n\nMusterlösung\nzeckenstiche_envelope = zeckenstiche_gpd.unary_union.envelope\n\nzeckenstiche_envelope",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>46</span>  <span class='chapter-title'>Übung 14</span>"
@@ -2039,7 +2039,7 @@
     "href": "C_Programmieren_3/6_Uebung_14.html#übung-14.6",
     "title": "Übung 14",
     "section": "Übung 14.6",
-    "text": "Übung 14.6\nExportiere zeckenstiche_gpd als “Geopackage” mit dem Namen “zeckenstiche.gpkg”. Lese nochmal Geodatenformate, wenn du nicht mehr weisst, wie das geht. Versuche anschliessend, “zeckenstiche.gpkg” wieder einzulesen.",
+    "text": "Übung 14.6\nExportiere zeckenstiche_gpd als “Geopackage” mit dem Namen “zeckenstiche.gpkg”. Lese nochmal Geodatenformate, wenn du nicht mehr weisst, wie das geht. Versuche anschliessend, “zeckenstiche.gpkg” wieder einzulesen.\n\n\nMusterlösung\nzeckenstiche.to_file(\"data/zeckenstiche.gpkg\")",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>46</span>  <span class='chapter-title'>Übung 14</span>"
@@ -2072,7 +2072,7 @@
     "href": "C_Programmieren_3/7_Uebung_15.html",
     "title": "Übung 15",
     "section": "",
-    "text": "Übung 15.1\nLade das File “wald.gpkg” (siehe Tabelle 1) herunter und speichere es in deiner Workings Directory. Importiere den Datensatz und speichere ihn in der Variable wald.\nSchau dir wald an (mit type, .plot() etc.)",
+    "text": "Übung 15.1\nLade das File “wald.gpkg” (siehe Tabelle 1) herunter und speichere es in deiner Workings Directory. Importiere den Datensatz und speichere ihn in der Variable wald.\nSchau dir wald an (mit type, .plot() etc.)\nMusterlösung\nimport geopandas as gpd \n\nwald = gpd.read_file(\"data/wald.gpkg\")\n\nwald\ntype(wald)\nwald.plot()",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>48</span>  <span class='chapter-title'>Übung 15</span>"
@@ -2083,7 +2083,7 @@
     "href": "C_Programmieren_3/7_Uebung_15.html#sec-ex-spatialjoin",
     "title": "Übung 15",
     "section": "Übung 15.2",
-    "text": "Übung 15.2\nFühre einen SpatialJoin zwischen wald und zeckenstiche durch. Vertausche die Reihenfolge (left_df, right_df) und schaue dir den Output an. Wodurch unterscheiden sich die beiden outputs? Was sagt dir das über die Funktionsweise von sjoin?\n\n\n\n\n\n\nHinweisWichtig!\n\n\n\nMelde dich bei den Betreuern wenn der SpatialJoin bei dir nicht funktioniert und du eine Fehlermeldung bekommst.",
+    "text": "Übung 15.2\nFühre einen SpatialJoin zwischen wald und zeckenstiche durch. Vertausche die Reihenfolge (left_df, right_df) und schaue dir den Output an. Wodurch unterscheiden sich die beiden outputs? Was sagt dir das über die Funktionsweise von sjoin?\n\n\n\n\n\n\nHinweisWichtig!\n\n\n\nMelde dich bei den Betreuern wenn der SpatialJoin bei dir nicht funktioniert und du eine Fehlermeldung bekommst.\n\n\n\n\nMusterlösung\nzeckenstiche_gpd = gpd.read_file(\"data/zeckenstiche.gpkg\")\n\ngpd.sjoin(left_df = zeckenstiche_gpd, right_df = wald)\ngpd.sjoin(left_df = wald, right_df = zeckenstiche_gpd) \n\n# in beiden Fällen hat der Output geich viele Zeilen. \n# In der ersten Variante ist die Geometrie\n# des Outputs \"Point\", im zweiten Fall \"Multipolygon\"",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>48</span>  <span class='chapter-title'>Übung 15</span>"
@@ -2094,7 +2094,7 @@
     "href": "C_Programmieren_3/7_Uebung_15.html#sec-ex-count",
     "title": "Übung 15",
     "section": "Übung 15.3",
-    "text": "Übung 15.3\nFühre nun den SpatialJoin aus Übung 15.2 in der Reihenfolge aus, der dir am sinnvollsten erscheint. Weise den Output dieser Operation der Variabel zeckenstiche_join zu.\nNutze nun die dazugewonnene Spalte Wald_text um die Anzahl Zeckenstich-Meldungen im Wald zu zählen. Dazu musst du wie folgt vorgehen:\n\nEntsprechende Spalte selektieren (siehe Übung 4.5)\nWerte in der Spalte mit “ja” vergleichen\nAnzahl True mit sum() zählen (True entspricht immer 1, False entspricht immer 0)",
+    "text": "Übung 15.3\nFühre nun den SpatialJoin aus Übung 15.2 in der Reihenfolge aus, der dir am sinnvollsten erscheint. Weise den Output dieser Operation der Variabel zeckenstiche_join zu.\nNutze nun die dazugewonnene Spalte Wald_text um die Anzahl Zeckenstich-Meldungen im Wald zu zählen. Dazu musst du wie folgt vorgehen:\n\nEntsprechende Spalte selektieren (siehe Übung 4.5)\nWerte in der Spalte mit “ja” vergleichen\nAnzahl True mit sum() zählen (True entspricht immer 1, False entspricht immer 0)\n\n\n\nMusterlösung\n# die folgende Variante (mit dem Output \"point\") ist sinnvoller, da auch\n# wir uns primär für die Punkte (Zeckenstiche) interessieren.\nzeckenstiche_join = gpd.sjoin(left_df = zeckenstiche_gpd, right_df = wald)\n\nsum(zeckenstiche_join[\"Wald_text\"] == \"ja\")",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>48</span>  <span class='chapter-title'>Übung 15</span>"
@@ -2105,7 +2105,7 @@
     "href": "C_Programmieren_3/7_Uebung_15.html#übung-15.4",
     "title": "Übung 15",
     "section": "Übung 15.4",
-    "text": "Übung 15.4\nBerechne nun Anteil der Zeckenstiche im Wald (gemessen an der Anzahl Zeckenstich-Meldungen total). Weise den Output der Variabel anteil_wald zu.",
+    "text": "Übung 15.4\nBerechne nun Anteil der Zeckenstiche im Wald (gemessen an der Anzahl Zeckenstich-Meldungen total). Weise den Output der Variabel anteil_wald zu.\n\n\nMusterlösung\nanteil_wald = sum(zeckenstiche_join[\"Wald_text\"] == \"ja\")/len(zeckenstiche_join[\"Wald_text\"])",
     "crumbs": [
       "Programmieren III",
       "<span class='chapter-number'>48</span>  <span class='chapter-title'>Übung 15</span>"
@@ -2225,7 +2225,7 @@
     "href": "D_Netzwerkanalyse_1/2_Vorbereitung.html#übung-1-qgis-installieren",
     "title": "Vorbereitung",
     "section": "Übung 1: QGIS installieren",
-    "text": "Übung 1: QGIS installieren\nAuf der QGIS Homepage qgis.org finden Sie die aktuellen QGIS Versionen für Windows, Linux, Mac und weitere Betriebssysteme in 32 und 64 bit. Laden Sie den passenden Standalone Installer des “Longterm release (most stable)” herunter (aktuell 3.34). Installieren Sie QGIS nach dem Download.\n\n\n\n\n\n\nWichtig\n\n\n\nWir empfehlen dringend, dass ihr QGIS auf Englisch umstellt:\nSettings → Options → General → User interface translation",
+    "text": "Übung 1: QGIS installieren\nAuf der QGIS Homepage qgis.org finden Sie die aktuellen QGIS Versionen für Windows, Linux, Mac und weitere Betriebssysteme in 32 und 64 bit. Laden Sie den passenden Standalone Installer des “Longterm release” herunter. Installieren Sie QGIS nach dem Download.\n\n\n\n\n\n\nWichtig\n\n\n\nWir empfehlen dringend, dass ihr QGIS auf Englisch umstellt:\nSettings → Options → General → User interface translation",
     "crumbs": [
       "Netzwerkanalyse I",
       "<span class='chapter-number'>51</span>  <span class='chapter-title'>Vorbereitung</span>"
