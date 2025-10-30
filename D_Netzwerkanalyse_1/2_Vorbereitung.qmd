@@ -33,7 +33,7 @@ Hier befinden sich alle Datensätze, die im Laufe des Blocks "Netzwerkanalyse" b
 
 ## Übung 1: QGIS installieren
 
-Auf der QGIS Homepage [qgis.org](https://www.qgis.org/de/site/forusers/download.html) finden Sie die aktuellen QGIS Versionen für Windows, Linux, Mac und weitere Betriebssysteme in 32 und 64 bit. Laden Sie den passenden Standalone Installer des "Longterm release (most stable)" herunter (aktuell **3.34**). Installieren Sie QGIS nach dem Download.
+Auf der QGIS Homepage [qgis.org](https://www.qgis.org/de/site/forusers/download.html) finden Sie die aktuellen QGIS Versionen für Windows, Linux, Mac und weitere Betriebssysteme in 32 und 64 bit. Laden Sie den passenden Standalone Installer des "Longterm release" herunter. Installieren Sie QGIS nach dem Download.
 
 
 :::{.callout-important}
