@@ -15,7 +15,7 @@ Damit wir im ersten Teil von Netzwerkanalyse direkt loslegen können, solltet ih
 
 ## Datensätze
 
-Laden Sie das File [netzwerkanalyse.gpkg](https://moodle.zhaw.ch/mod/resource/view.php?id=974542) von Moodle herunter. 
+Laden Sie das File netzwerkanalyse.gpkg (von [moodle](https://moodle.zhaw.ch)) herunter. 
 Hier befinden sich alle Datensätze, die im Laufe des Blocks "Netzwerkanalyse" benötigt werden:
 
 | Layer | Koord. System | Beschreibung | 
