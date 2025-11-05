@@ -2203,7 +2203,7 @@
     "href": "D_Netzwerkanalyse_1/2_Vorbereitung.html",
     "title": "Vorbereitung",
     "section": "",
-    "text": "Datensätze\nDamit wir im ersten Teil von Netzwerkanalyse direkt loslegen können, solltet ihr euch vorgängig mit QGIS vertraut machen. Dafür haben wir ein paar Übungen zusammengestellt, die ihr als Vorbereitung auf Netzwerkanalyse I erledigen solltet.\nLaden Sie das File netzwerkanalyse.gpkg von Moodle herunter. Hier befinden sich alle Datensätze, die im Laufe des Blocks “Netzwerkanalyse” benötigt werden:",
+    "text": "Datensätze\nDamit wir im ersten Teil von Netzwerkanalyse direkt loslegen können, solltet ihr euch vorgängig mit QGIS vertraut machen. Dafür haben wir ein paar Übungen zusammengestellt, die ihr als Vorbereitung auf Netzwerkanalyse I erledigen solltet.\nLaden Sie das File netzwerkanalyse.gpkg (von moodle) herunter. Hier befinden sich alle Datensätze, die im Laufe des Blocks “Netzwerkanalyse” benötigt werden:",
     "crumbs": [
       "Netzwerkanalyse I",
       "<span class='chapter-number'>51</span>  <span class='chapter-title'>Vorbereitung</span>"
