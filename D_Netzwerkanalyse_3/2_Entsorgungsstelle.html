@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de-DE" xml:lang="de-DE"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.26">
+<meta name="generator" content="quarto-1.9.11">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -39,12 +39,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-b758ccaa5987ceb1b75504551e579abf.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-a5dfee7ccc7f20503a6465e15a2cff9c.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-a5cc9e99dca6daa9fc4f9db80b98b5ad.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-4ff66e45b39d49436fe97d3fe27b9920.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-7189cfbe658407b8e3271b23029239e3.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-c68954332a9a728fbec0dcc4220298e5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-e69821dad1472a6108b528bac9299d56.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -753,6 +753,36 @@ window.onload = function() {
       </ul>
   </li>
         <li class="px-0"><hr class="sidebar-divider hi "></li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">🌍 Teil: WebGIS</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../E_WebGIS_1/1_Einleitung.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">WebGIS I</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../E_WebGIS_1/2_Uebung_Web_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Web Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../E_WebGIS_1/3_Uebung_Story_Map.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Übung Story Map</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../E_WebGIS_1/4_Leistungsnachweis.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Leistungsnachweis</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -809,35 +839,28 @@ window.onload = function() {
 </section>
 <section id="übung-5.2-linien-in-punkte-umwandeln" class="level2">
 <h2 class="anchored" data-anchor-id="übung-5.2-linien-in-punkte-umwandeln">Übung 5.2: Linien in Punkte Umwandeln</h2>
-<p>Um aus den Linien eine Oberfläche zu erhalten müssen wir die Kategorien aus dem Output von <code>v.net.iso</code> interpolieren. Dies funktioniert besser mit Punkten als Linien. In einem ersten Schritt müssen wir also den Output aus <code>v.net.iso</code> in Punkte umwandeln. Verwenden Sie hierfür das Werkzeug “Convert Line/Polygon Vertices to Points” (SAGA). Belassen sie das Häkchen bei “Insert additional Points” und setzten Sie die Distanz (“Insertion Distance”) auf 100 Meter. Führen Sie das Werkzeug mit “run” aus.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hinweis
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>In einigen Fällen kann es sein, dass SAGA von QGIS nicht erkannt wird, obwohl es auf dem Computer installiert ist. Damit SAGA in QGIS trotzdem benutzt werden kann, muss einmalig folgende Schritte ausgeführt werden.</p>
-<ol type="1">
-<li>Installieren Sie in QGIS das Plugin “Processing Saga NextGen Provider”.</li>
-<li>Gehen Sie in QGIS zu <em>Settings &gt; Options &gt; Processing &gt; Providers</em></li>
-<li>Unter <em>SAGA folder</em> geben Sie den Pfad an, wo SAGA auf Ihrem Computer installiert ist. Dieser Pfad sollte in etwa so aussehen: <code>C:\Program Files\QGIS 3.34.10\apps\saga</code></li>
-</ol>
-</div>
-</div>
+<p>Um aus den Linien eine Oberfläche zu erhalten müssen wir die Kategorien aus dem Output von <code>v.net.iso</code> interpolieren. Dies funktioniert besser mit Punkten als Linien. In einem ersten Schritt müssen wir also den Output aus <code>v.net.iso</code> in Punkte umwandeln. Verwenden Sie hierfür das Werkzeug <em>Extract Node</em> (Vector → Geometry Tools → Extract Node) <!-- "Convert Line/Polygon Vertices to Points" (SAGA). Belassen sie das Häkchen bei "Insert additional Points" und setzten Sie die Distanz ("Insertion Distance") auf 100 Meter. Führen Sie das Werkzeug mit "run" aus. --></p>
+<!--
+:::{.callout-note}
+
+In einigen Fällen kann es sein, dass SAGA von QGIS nicht erkannt wird, obwohl es auf dem Computer installiert ist. Damit SAGA in QGIS trotzdem benutzt werden kann, muss einmalig folgende Schritte ausgeführt werden.
+
+1. Installieren Sie in QGIS das Plugin "Processing Saga NextGen Provider".
+2. Gehen Sie in QGIS zu *Settings > Options > Processing > Providers*
+3. Unter *SAGA folder* geben Sie den Pfad an, wo SAGA auf Ihrem Computer installiert ist.  Dieser Pfad sollte in etwa so aussehen: `C:\Program Files\QGIS 3.34.10\apps\saga`
+
+:::
+
+-->
 </section>
 <section id="sec-ex-interpolate-points" class="level2">
 <h2 class="anchored" data-anchor-id="sec-ex-interpolate-points">Übung 5.3: Punkte interpolieren</h2>
-<p>Nun haben wir Punkte, die mit einer Interpolation in eine Oberfläche überführt werden können. Verwenden Sie dazu das Tool “Inverse distance weighted” (SAGA). Überlegen sie, was Sie interpolieren möchten und legen sie das entsprechende Feld in der Option “Attribute” fest. Zusätzlich können Sie folgende Parameter wählen:</p>
-<ul>
-<li>Cellsize: <code>25</code></li>
-<li>Search Range: <code>[0] local</code></li>
-<li>Maximum Search Distance: <code>500</code></li>
-<li>Weighting Function: <code>[1] Inverse Distance to a power</code></li>
-</ul>
+<p>Nun haben wir Punkte, die mit einer Interpolation in eine Oberfläche überführt werden können. Verwenden Sie dazu das Tool <em>IDW interpolation</em>. Überlegen sie, was Sie interpolieren möchten und legen sie das entsprechende Feld in der Option “Attribute” fest.</p>
+<!-- Zusätzlich können Sie folgende Parameter wählen: -->
+<!-- - Pixel size x / y: `25` -->
+<!-- - Search Range: `[0] local` -->
+<!-- - Maximum Search Distance: `500` -->
+<!-- - Weighting Function: `[1] Inverse Distance to a power` -->
 <p>Clippen sie den Output anschliessen auf die Gemeindegrenze mit dem Werkzeug “Clip Raster by mask layer”. Speichern Sie den geclippten Layer mit dem Namen abfall_raster.tif in ihrem Projektordner.</p>
 <p>Um den Datensatz zu visualisieren können sie im Reiter “Symbology” der Layereigenschaften den Rendertype “Singleband Pseudocolor” auswählen. Wählen Sie einen geeigneten Farbverlauf und klicken sie auf “classify” und anschliessend auf “ok”.</p>
 <div class="callout callout-style-default callout-note callout-titled">
