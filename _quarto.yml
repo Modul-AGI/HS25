@@ -129,12 +129,12 @@ book:
       - D_Netzwerkanalyse_3/5_Flaechen_verrechnen.qmd
       - D_Netzwerkanalyse_3/6_Leistungsnachweis.qmd
     - "---"
-    # - part: "🌍 Teil: WebGIS"
-    # - part: "E_WebGIS_1/1_Einleitung.qmd"
-    #   chapters: 
-    #   - E_WebGIS_1/2_Uebung_Web_Map.qmd
-    #   - E_WebGIS_1/3_Uebung_Story_Map.qmd
-    #   - E_WebGIS_1/4_Leistungsnachweis.qmd
+     - part: "🌍 Teil: WebGIS"
+     - part: "E_WebGIS_1/1_Einleitung.qmd"
+       chapters: 
+       - E_WebGIS_1/2_Uebung_Web_Map.qmd
+       - E_WebGIS_1/3_Uebung_Story_Map.qmd
+       - E_WebGIS_1/4_Leistungsnachweis.qmd
     # - part: "E_WebGIS_2/1_Einleitung.qmd"
     #   chapters: 
     #   - E_WebGIS_2/2_Uebung_Zeckenstiche.qmd
