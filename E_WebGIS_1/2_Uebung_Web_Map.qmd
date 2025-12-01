@@ -67,7 +67,7 @@ Projekt speichern
 
     ![](figures/arcgis_online_9.PNG)
 
-4. Gehe in das Catalog Window und überprüfe die Inhalte im Projektordner. Zusätzlich zur Projekt-GDB sollte die Geodatenbank «uebung_online_publikation.gdb» aufgeführt sein. Falls nicht, erstelle im Catalog Pane eine Verbindung zum Ordner her, in dem Du die heutigen Übungsdaten entpackt hast (Catalog Pane > Project > Folders > Kontextmenü Add Folder Connection).
+4. Gehe in das Catalog Window und überprüfe die Inhalte im Projektordner. Zusätzlich zur Projekt-GDB sollte die Geodatenbank «uebung_online_publikation.gdb» aufgeführt sein. Falls nicht, stelle im Catalog Pane eine Verbindung zum Ordner her, in dem Du die heutigen Übungsdaten entpackt hast (Catalog Pane > Project > Folders > Kontextmenü Add Folder Connection).
 
     ![](figures/arcgis_online_10.PNG){width="50%" fig-align="center"}
 
@@ -131,7 +131,7 @@ Im Folgenden wird diese Karte mitsamt all ihren Inhalten, Symbolisierung und Fun
 
     - Select a Configuration: 	Copy all data Exploratory
     - Location Folder: 	Modul AGI (Die Inhalte werden in ArcGIS Online in diesem Ordner abgelegt)
-    - Share With: 	Groups (wähle «Modul Angewandte Geoinformatik HS 2021»; die Karte und die Feature Layers werden nur für diese Gruppe freigegeben). 
+    - Share With: 	Groups (wähle «Modul Angewandte Geoinformatik HS 2025»; die Karte und die Feature Layers werden nur für diese Gruppe freigegeben). 
 
     ![](figures/arcgis_online_17.PNG){width="50%" fig-align="center"}
 
@@ -153,7 +153,7 @@ In der vorangehenden Übung 7 hast Du eine gesamte Karte als Web Map veröffentl
 
     - Layer Type: 	Feature
     - Location Folder: 	Modul AGI (Der Layer wird in ArcGIS Online in diesem Ordner abgelegt)
-    - Share With: 	Groups (wähle «Modul Angewandte Geoinformatik HS 2022»; der Feature Layer wird nur für diese Gruppe freigegeben).
+    - Share With: 	Groups (wähle «Modul Angewandte Geoinformatik HS 2025»; der Feature Layer wird nur für diese Gruppe freigegeben).
 
     ![](figures/arcgis_online_19.PNG){width="50%" fig-align="center"}
 
@@ -280,7 +280,7 @@ Erstelle nun eine Web Mapping Applikation basierend auf der vorher konfigurierte
 
 3. Gehe durch die 5 Schritte, aktiviere die Pop-Ups, die Lesezeichen und die Layer Liste. Veröffentliche anschliessend die Web App.
 
-4. Ergänze die Web App nun noch mit einem zusätzlichen WMS-Layer. Gehe hierfür zuerst auf www.geolion.zh.ch und suche nach «Klimamodell». Gehe auf «Klimamodell ZH: Analysekarten (Raster)», öffne das Register «Datenbezug» und wähle den Link unter Datenbezug -> «WMS».
+4. Ergänze die Web App nun noch mit einem zusätzlichen WMS-Layer. Gehe hierfür zuerst auf www.geolion.zh.ch und suche nach «Klimamodell». Gehe auf «Klimamodell 2024: Analysekarten (Raster)», öffne das Register «Datenbezug» und wähle den Link unter Datenbezug -> «WMS». Wir brauchen den GetCapabilities Link.
 
 5. Wechsle in ArcGIS Online auf «Inhalt» und füge den WMS-Klimamodell via « + Neues Element» hinzu. Wähle die Option «URL».
 
@@ -288,21 +288,21 @@ Erstelle nun eine Web Mapping Applikation basierend auf der vorher konfigurierte
 
     Kopiere nun die WMS-URL in geolion und füge sie in ArcGIS Online im entsprechenden Feld ein. Füge nach http ein s ein (https://wms.zh.ch.....)
     Wähle die Option WMS (OGC) und klicke auf «Weiter».
-    Wähle in der Liste den WMS-Layer «Lufttemperatur Tag».
+    Wähle in der Liste den WMS-Layer «Lufttemperatur Nacht [C°], 4 Uhr».
 
     Definiere folgende Parameter:
-    -	Titel = Lufttemperatur Tag
+    -	Titel = Lufttemperatur Nacht
     -	Ordner = Modul AGI
     -	Tags = Temperatur
-    -	Zusammenfassung = Lufttemperatur Tag auf 2m Höhe über Grund um 14 Uhr
+    -	Zusammenfassung = Lufttemperatur Nacht auf 2m Höhe über Grund um 4 Uhr
 
     ![](figures/arcgis_online_44.PNG)
 
-6. Öffne in ArcGIS Online die Web Map «Zecken Stadt Zürich Vorname Name». Gehe auf «Hinzufügen > Layer durchsuchen» und füge den Layer «Lufttemperatur Tag» zur Web Map hinzu. Verändere die Layerhierarchie und platziere die Temperaturkarte zuunterst.
+6. Öffne in ArcGIS Online die Web Map «Zecken Stadt Zürich Vorname Name». Gehe auf «Hinzufügen > Layer durchsuchen» und füge den Layer «Lufttemperatur Nacht» zur Web Map hinzu. Verändere die Layerhierarchie und platziere die Temperaturkarte zuunterst.
 
 7. Speichere die Änderungen.
 
-8. Öffne nun die Web App. Der Layer «Lufttemperatur Tag» ist nun auch in der Web App enthalten und kann je nach Bedarf ein- und ausgeblendet werden (so wie alle anderen Layer auch). 
+8. Öffne nun die Web App. Der Layer «Lufttemperatur Nacht» ist nun auch in der Web App enthalten und kann je nach Bedarf ein- und ausgeblendet werden (so wie alle anderen Layer auch). 
 
 ## Übung 11: ArcGIS Online: Web App erstellen via “Experience Builder”
 
